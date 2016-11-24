@@ -67,7 +67,6 @@ class ProductsSearch extends Products {
                 ->andFilterWhere(['like', 'code', $this->code])
                 ->andFilterWhere(['like', 'image', $this->image]);
         $query->orderBy('id DESC');
-
         return $dataProvider;
     }
 

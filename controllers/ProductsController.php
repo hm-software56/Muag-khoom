@@ -39,6 +39,7 @@ class ProductsController extends Controller {
         $this->layout = "main_2";
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination = ['defaultPageSize' => 50000];
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
@@ -48,7 +49,7 @@ class ProductsController extends Controller {
 
     public function actionSale() {
         $this->layout = "main_2";
-        $model = Products::find()->orderBy('qautity DESC')->all();
+        $model = Products::find()->orderBy('code ASC')->all();
         return $this->render('sale', [
                     'model' => $model,
         ]);

@@ -1,6 +1,4 @@
 
-
-
 <div class="row">
     <div class="col-md-12 ">
         <div class="line_bottom">
@@ -43,14 +41,14 @@
                         <td><?= $model->code ?></td>
                         <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="150"/></a></td>
                         <td><?= $model->name ?></td>
-                        <td><b><?= $model->qautity + count($command) ?></b></td>
-                        <td class="text-red"><?= $model->qautity ?></td>
-                        <td class="text-success"><?= count($command); ?></td>
-                        <td class="text-red"><?= number_format($model->pricebuy, 2) ?></td>
-                        <td class="text-success"><?= number_format($model->pricesale, 2) ?></td>
-                        <td class="text-red"><?= number_format($model->pricebuy * $model->qautity, 2) ?></td>
-                        <td class="text-success"><?= number_format($model->pricesale * count($command), 2) ?></td>
-                        <td class="text-success"><b><?= number_format(($model->pricesale * count($command)) - ($model->pricebuy * count($command)), 2) ?></b></td>
+                        <td><a class="text-black"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ຈຳ​ນວນທັງ​ໝົດ"><b><?= $model->qautity + count($command) ?></b></a></td>
+                        <td class="text-red"><a class="text-red"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ຈຳ​ນວນຍັງ​ເຫຼຶອ"><?= $model->qautity ?></a></td>
+                        <td class="text-success"><a class="text-success"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ຈຳ​ນວນຂາຍ​ແລ້ວ"><?= count($command); ?>​</a></td>
+                        <td class="text-red"><a class="text-red"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ລາ​ຄາຊື້"><?= number_format($model->pricebuy, 2) ?></a></td>
+                        <td class="text-success"><a class="text-success"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ລາ​ຄາຂາຍ"><?= number_format($model->pricesale, 2) ?></a></td>
+                        <td class="text-red"><a class="text-red"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ລວມລາ​ຄາຊື້"><?= number_format($model->pricebuy * $model->qautity, 2) ?></a></td>
+                        <td class="text-success"><a class="text-success"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ລວມລາ​ຄາຂາຍ"><?= number_format($model->pricesale * count($command), 2) ?>​</a></td>
+                        <td class="text-success"><a class="text-success"  tabindex="0" role="button" data-toggle="popover" data-trigger="focus"  data-content="ລວມ​ກຳ​ລາຍ​ທີ​ຂາຍ"><b><?= number_format(($model->pricesale * count($command)) - ($model->pricebuy * count($command)), 2) ?></b>​</a></td>
                     </tr>
                     <?php
                 }
@@ -78,4 +76,5 @@
             return '<img src="' + $(this).data('img') + '" width="150" />';
         }
     });
+	$("[data-toggle=popover]").popover();
 </script>

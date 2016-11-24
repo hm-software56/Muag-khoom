@@ -33443,3 +33443,115 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1479866361.901
     'REQUEST_TIME' => 1479866361
 ]
+2016-11-24 02:25:19 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: yii\data\ActiveDataProvider::pagination()' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Component.php:285
+Stack trace:
+#0 F:\Projectweb\muagkhoom\controllers\ProductsController.php(42): yii\base\Component->__call('pagination', Array)
+#1 F:\Projectweb\muagkhoom\controllers\ProductsController.php(42): yii\data\ActiveDataProvider->pagination(Array)
+#2 [internal function]: app\controllers\ProductsController->actionIndex()
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/index', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#9 {main}
+2016-11-24 02:25:19 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 240245
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49313'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Findex'
+    'REQUEST_URI' => '/web/index.php?r=products%2Findex'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479950719.004
+    'REQUEST_TIME' => 1479950719
+]

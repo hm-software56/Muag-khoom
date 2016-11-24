@@ -2,5 +2,5 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'timeout' => date('dHi') + 20,
+    'timeout' => date('dHi') + 60,
 ];
