@@ -1,6 +1,17 @@
 <?php
 
 use yii\bootstrap\Modal;
+
+if (Yii::$app->session->hasFlash('su')) {
+    echo \kartik\alert\Alert::widget([
+        'type' => \kartik\alert\Alert::TYPE_SUCCESS,
+        'title' => Yii::$app->session->getFlash('action'),
+        'icon' => 'glyphicon glyphicon-ok-sign',
+        'body' => Yii::$app->session->getFlash('su'),
+        'showSeparator' => false,
+        'delay' => 2000
+    ]);
+}
 ?>
 <?php
 Modal::begin(['clientOptions' => ['keyboard' => false], 'options' => ['id' => 'detail-modal',]])

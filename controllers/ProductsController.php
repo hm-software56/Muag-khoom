@@ -67,10 +67,33 @@ class ProductsController extends Controller {
             }
             $qtt = $product->qautity - $_POST['qtt'];
             Products::updateAll(['qautity' => $qtt], ['id' => $id]);
+            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ຢັ້ງ​ຢືນ​ການ​ຊື້​ສຳ​ເລັດ​ແລ້ວ..........'));
+            \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
             $this->redirect(['products/sale']);
         }
         return $this->renderAjax('order', [
                     'model' => $model,
+                    'product' => $product
+        ]);
+    }
+
+    public function actionCancle($id) {
+
+        // $model = new \app\models\Sale;
+        $product = Products::find()->where(['id' => $id])->one();
+
+        if (isset($_POST['qtt'])) {
+            for ($i = 1; $i <= $_POST['qtt']; $i++) {
+                $model = \app\models\Sale::find()->where(['products_id' => $id])->orderBy('id DESC')->one();
+                $model->delete();
+            }
+            $qtt = $product->qautity + $_POST['qtt'];
+            Products::updateAll(['qautity' => $qtt], ['id' => $id]);
+            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ຢັ້ງ​ຢືນ​ການ​ລືບ​ອອກສຳ​ເລັດ​ແລ້ວ..........'));
+            \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+            $this->redirect(['products/repaortsale']);
+        }
+        return $this->renderAjax('cancle', [
                     'product' => $product
         ]);
     }
@@ -179,7 +202,11 @@ class ProductsController extends Controller {
 
     public function actionRepaortsale() {
         $this->layout = "main_2";
-        $model = \app\models\Sale::find()->orderBy('products_id ASC')->all();
+        if (isset($_POST['date_sale']) && !empty($_POST['date_sale'])) {
+            $model = \app\models\Sale::find()->where(['date' => $_POST['date_sale']])->orderBy('products_id ASC')->all();
+        } else {
+            $model = \app\models\Sale::find()->orderBy('products_id ASC')->all();
+        }
         return $this->render('reportsale', ['model' => $model]);
     }
 

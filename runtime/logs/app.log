@@ -33555,3 +33555,3133 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1479950719.004
     'REQUEST_TIME' => 1479950719
 ]
+2016-11-24 03:09:09 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Setting unknown property: yii\jui\DatePicker::0' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Component.php:197
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\BaseYii.php(521): yii\base\Component->__set('0', Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Object.php(105): yii\BaseYii::configure(Object(yii\jui\DatePicker), Array)
+#2 [internal function]: yii\base\Object->__construct(Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\di\Container.php(379): ReflectionClass->newInstanceArgs(Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\di\Container.php(154): yii\di\Container->build('yii\jui\DatePic...', Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('yii\jui\DatePic...', Array, Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Widget.php(101): yii\BaseYii::createObject(Array)
+#7 F:\Projectweb\muagkhoom\views\products\reportsale.php(5): yii\base\Widget::widget(Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('reportsale', Array, Object(app\controllers\ProductsController))
+#12 F:\Projectweb\muagkhoom\controllers\ProductsController.php(183): yii\base\Controller->render('reportsale', Array)
+#13 [internal function]: app\controllers\ProductsController->actionRepaortsale()
+#14 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('repaortsale', Array)
+#17 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/repaor...', Array)
+#18 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#20 {main}
+2016-11-24 03:09:09 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/repaortsale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240369
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49539'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/repaortsale'
+    'REQUEST_URI' => '/web/index.php?r=products/repaortsale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479953349.54
+    'REQUEST_TIME' => 1479953349
+]
+2016-11-24 03:45:55 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('100')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:45:55 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '100'
+    '_' => '1479955552969'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240405
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'd01pVTNOdGslCwglQjckATN5PwVqJhgOGxo7Z2J3MQg0OlgPS3YiKA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49760'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=100&_=1479955552969'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=100&_=1479955552969'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955555.816
+    'REQUEST_TIME' => 1479955555
+]
+2016-11-24 03:46:04 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('102')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:46:04 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '102'
+    '_' => '1479955552970'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'd01pVTNOdGslCwglQjckATN5PwVqJhgOGxo7Z2J3MQg0OlgPS3YiKA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49762'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=102&_=1479955552970'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=102&_=1479955552970'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955564.017
+    'REQUEST_TIME' => 1479955564
+]
+2016-11-24 03:46:07 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('100')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:46:07 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '100'
+    '_' => '1479955552971'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'd01pVTNOdGslCwglQjckATN5PwVqJhgOGxo7Z2J3MQg0OlgPS3YiKA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49764'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=100&_=1479955552971'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=100&_=1479955552971'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955567.193
+    'REQUEST_TIME' => 1479955567
+]
+2016-11-24 03:46:09 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('100')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:46:09 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '100'
+    '_' => '1479955552972'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'd01pVTNOdGslCwglQjckATN5PwVqJhgOGxo7Z2J3MQg0OlgPS3YiKA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49766'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=100&_=1479955552972'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=100&_=1479955552972'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955569.622
+    'REQUEST_TIME' => 1479955569
+]
+2016-11-24 03:46:12 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('102')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:46:12 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '102'
+    '_' => '1479955552973'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'd01pVTNOdGslCwglQjckATN5PwVqJhgOGxo7Z2J3MQg0OlgPS3YiKA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49768'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=102&_=1479955552973'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=102&_=1479955552973'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955572.338
+    'REQUEST_TIME' => 1479955572
+]
+2016-11-24 03:46:43 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('100')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:46:43 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '100'
+    '_' => '1479955601133'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'OFJJLWFrMzlqFChdEBJjU3xmH304A19cVAUbHzBSdlp7JXh3GVNleg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49770'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=100&_=1479955601133'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=100&_=1479955601133'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955603.6
+    'REQUEST_TIME' => 1479955603
+]
+2016-11-24 03:46:57 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\order.php:14
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\order.php(14): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 14, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('order', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(75): yii\web\Controller->renderAjax('order', Array)
+#6 [internal function]: app\controllers\ProductsController->actionOrder('101')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('order', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/order', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 03:46:57 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/order'
+    'id' => '101'
+    '_' => '1479955613223'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Z2pyb0NjUjU1LBMfMhoCXyNeJD8aCz5QCz0gXRJaF1YkHUM1O1sEdg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49775'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Forder&id=101&_=1479955613223'
+    'REQUEST_URI' => '/web/index.php?r=products%2Forder&id=101&_=1479955613223'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955617.666
+    'REQUEST_TIME' => 1479955617
+]
+2016-11-24 03:50:20 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Missing required parameters: id' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php:93
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(49): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2016-11-24 03:50:20 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'product_id' => '13'
+    '_' => '1479955817182'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240410
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'ejJjRGdoajQodAI0FhE6Xj4GNRQ.AAZRFmUxdjZRL1c5RVIeH1A8dw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49791'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&product_id=13&_=1479955817182'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&product_id=13&_=1479955817182'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955820.188
+    'REQUEST_TIME' => 1479955820
+]
+2016-11-24 03:52:59 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:52:59 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'product_id' => '13'
+    '_' => '1479955977491'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240412
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'S1NablA1aXEZFTseIUw5Gw9nDD4JXQUUJwQIXAEMLBIIJGs0KA0/Mg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49798'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&product_id=13&_=1479955977491'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&product_id=13&_=1479955977491'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955979.359
+    'REQUEST_TIME' => 1479955979
+]
+2016-11-24 03:53:02 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:53:02 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'product_id' => '13'
+    '_' => '1479955977492'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240413
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'S1NablA1aXEZFTseIUw5Gw9nDD4JXQUUJwQIXAEMLBIIJGs0KA0/Mg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49799'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&product_id=13&_=1479955977492'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&product_id=13&_=1479955977492'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479955982.786
+    'REQUEST_TIME' => 1479955982
+]
+2016-11-24 03:53:40 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:53:40 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'product_id' => '13'
+    '_' => '1479955986421'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240413
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'dXNGOVBBLnAnNSdJITh.GjFHEGkJKUIVGSQUCwF4axM2BHdjKHl4Mw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49817'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&product_id=13&_=1479955986421'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&product_id=13&_=1479955986421'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956020.072
+    'REQUEST_TIME' => 1479956020
+]
+2016-11-24 03:55:16 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:55:16 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956114614'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240415
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'U3BFdlduLVcBNiQGJhd9PRdEEyYOBkEyPycXRAZXaDQQB3QsL1Z7FA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49823'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956114614'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956114614'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956116.699
+    'REQUEST_TIME' => 1479956116
+]
+2016-11-24 03:55:43 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: products/oder' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('oder', Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/oder', Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-11-24 03:55:43 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/oder'
+    'id' => '13'
+    '_' => '1479956141050'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240415
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'MHkuMGNOaHJiP09AEjc4GHRNeGA6JgQXXC58AjJ3LRFzDh9qG3Y.MQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49828'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Foder&id=13&_=1479956141050'
+    'REQUEST_URI' => '/web/index.php?r=products%2Foder&id=13&_=1479956141050'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956143.573
+    'REQUEST_TIME' => 1479956143
+]
+2016-11-24 03:56:37 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:56:37 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956194382'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240416
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'TDJ6bWRKUEUedBsdFTMALwgGLD09IjwgIGUoXzVzFSYPRUs3HHIGBg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49843'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956194382'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956194382'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956197.408
+    'REQUEST_TIME' => 1479956197
+]
+2016-11-24 03:56:41 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('14')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:56:41 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '14'
+    '_' => '1479956194383'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240416
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'TDJ6bWRKUEUedBsdFTMALwgGLD09IjwgIGUoXzVzFSYPRUs3HHIGBg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49848'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=14&_=1479956194383'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=14&_=1479956194383'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956201.01
+    'REQUEST_TIME' => 1479956201
+]
+2016-11-24 03:56:44 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(95): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:56:44 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956194384'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240416
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'TDJ6bWRKUEUedBsdFTMALwgGLD09IjwgIGUoXzVzFSYPRUs3HHIGBg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49852'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956194384'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956194384'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956204.559
+    'REQUEST_TIME' => 1479956204
+]
+2016-11-24 03:58:30 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:58:30 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956308936'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240418
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Tmc1eEJBR1ocIVQIMzgXMApTYygbKSs/IjBnShN4AjkNEAQiOnkRGQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49883'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956308936'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956308936'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956310.506
+    'REQUEST_TIME' => 1479956310
+]
+2016-11-24 03:58:56 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 03:58:56 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956333853'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240418
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'cURuNWtQWHUjAg9FGikIHzVwOGUyODQQHRM8BzppHRYyM19vE2gONg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49890'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956333853'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956333853'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956336.072
+    'REQUEST_TIME' => 1479956336
+]
+2016-11-24 04:01:00 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 04:01:00 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956458213'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240461
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'cS1nUW9xbmYjawYhHgg.DDUZMQE2GQIDHXo1Yz5IKwUyWlYLF0k4JQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49933'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956458213'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956458213'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956460.69
+    'REQUEST_TIME' => 1479956460
+]
+2016-11-24 04:01:42 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Unknown bootstrapping component ID: debug' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php:306
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(66): yii\base\Application->bootstrap()
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(267): yii\web\Application->bootstrap()
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Object.php(107): yii\base\Application->init()
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(206): yii\base\Object->__construct(Array)
+#4 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->__construct(Array)
+#5 {main}
+2016-11-24 04:01:42 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/repaortsale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/product'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49942'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/repaortsale'
+    'REQUEST_URI' => '/web/index.php?r=products/repaortsale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956502.341
+    'REQUEST_TIME' => 1479956502
+]
+2016-11-24 04:01:42 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Unknown bootstrapping component ID: debug' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php:306
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(66): yii\base\Application->bootstrap()
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(267): yii\web\Application->bootstrap()
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Object.php(107): yii\base\Application->init()
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(206): yii\base\Object->__construct(Array)
+#4 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->__construct(Array)
+#5 {main}
+2016-11-24 04:01:42 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/repaortsale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49943'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/repaortsale'
+    'REQUEST_URI' => '/web/index.php?r=products/repaortsale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956502.819
+    'REQUEST_TIME' => 1479956502
+]
+2016-11-24 04:02:08 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('30')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 04:02:08 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '30'
+    '_' => '1479956526239'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240462
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'WER6ZkRmV3EKAhsWNR8HGxxwLDYdDjsUNBMoVBVfEhIbM0s8PF4BMg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49956'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=30&_=1479956526239'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=30&_=1479956526239'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956528.384
+    'REQUEST_TIME' => 1479956528
+]
+2016-11-24 04:02:36 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('30')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 04:02:36 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '30'
+    '_' => '1479956526240'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240462
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'WER6ZkRmV3EKAhsWNR8HGxxwLDYdDjsUNBMoVBVfEhIbM0s8PF4BMg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49965'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=30&_=1479956526240'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=30&_=1479956526240'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956556.825
+    'REQUEST_TIME' => 1479956556
+]
+2016-11-24 04:03:25 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: F:\Projectweb\muagkhoom\views\products\cancel.php' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancel', Array, Object(app\controllers\ProductsController))
+#2 F:\Projectweb\muagkhoom\controllers\ProductsController.php(86): yii\web\Controller->renderAjax('cancel', Array)
+#3 [internal function]: app\controllers\ProductsController->actionCancle('30')
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-11-24 04:03:25 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '30'
+    '_' => '1479956602467'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240463
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'MDVjYmVqbHVicwISFBM8H3QBNTI8AgAQXGIxUDRTKRZzQlI4HVI6Ng=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49974'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=30&_=1479956602467'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=30&_=1479956602467'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956605.537
+    'REQUEST_TIME' => 1479956605
+]
+2016-11-24 04:05:36 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: model' in F:\Projectweb\muagkhoom\views\products\cancle.php:35
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\cancle.php(35): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\Projectweb\m...', 35, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancle', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancle', Array)
+#6 [internal function]: app\controllers\ProductsController->actionCancle('30')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 04:05:36 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '30'
+    '_' => '1479956734389'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240465
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'N1JVbFZiMmdlFDQcJxtiDXNmAzwPCl4CWwUHXgdbdwR0JWQ2LlpkJA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '50008'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=30&_=1479956734389'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=30&_=1479956734389'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479956736.036
+    'REQUEST_TIME' => 1479956736
+]
+2016-11-24 04:10:18 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: i' in F:\Projectweb\muagkhoom\views\products\cancle.php:29
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\cancle.php(29): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\Projectweb\m...', 29, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancle', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancle', Array)
+#6 [internal function]: app\controllers\ProductsController->actionCancle('30')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 04:10:18 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '30'
+    '_' => '1479956899872'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240470
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Mlh1aDR3U3JgHhQYRQ4DGHZsIzhtHz8XXg8nWmVOFhFxL0QyTE8FMQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '50042'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=30&_=1479956899872'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=30&_=1479956899872'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479957018.541
+    'REQUEST_TIME' => 1479957018
+]
+2016-11-24 04:10:35 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: i' in F:\Projectweb\muagkhoom\views\products\cancle.php:29
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\cancle.php(29): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\Projectweb\m...', 29, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancle', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancle', Array)
+#6 [internal function]: app\controllers\ProductsController->actionCancle('13')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 04:10:35 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '13'
+    '_' => '1479956899873'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240470
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Mlh1aDR3U3JgHhQYRQ4DGHZsIzhtHz8XXg8nWmVOFhFxL0QyTE8FMQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '50044'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=13&_=1479956899873'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=13&_=1479956899873'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479957035.154
+    'REQUEST_TIME' => 1479957035
+]
+2016-11-24 04:10:40 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: i' in F:\Projectweb\muagkhoom\views\products\cancle.php:29
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\cancle.php(29): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\Projectweb\m...', 29, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(325): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\View.php(210): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php(47): yii\web\View->renderAjax('cancle', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(97): yii\web\Controller->renderAjax('cancle', Array)
+#6 [internal function]: app\controllers\ProductsController->actionCancle('14')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cancle', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('products/cancle', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-11-24 04:10:40 [127.0.0.1][-][vsvq3k64p1qinod8ulfspdudi4][info][application] $_GET = [
+    'r' => 'products/cancle'
+    'id' => '14'
+    '_' => '1479956899874'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'vsvq3k64p1qinod8ulfspdudi4'
+    '_csrf' => '3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [photo_crop] => null
+        [photo_cropped] => null
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 15
+            'photo' => '2016112108112621.jpg'
+            'first_name' => 'Sale'
+            'last_name' => ''
+            'username' => 'sale'
+            'password' => '1234'
+            'status' => 1
+            'user_type' => 'User'
+            'date' => '2016-11-21'
+            'user_role_id' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240470
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Mlh1aDR3U3JgHhQYRQ4DGHZsIzhtHz8XXg8nWmVOFhFxL0QyTE8FMQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/repaortsale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=vsvq3k64p1qinod8ulfspdudi4; _csrf=3892ddb88d5f66d5113b0826946d37973fa1a2c3251329fcfdd3aeb84038a70ea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RFapqyPjD4VPYhlelWR2Q9EcCw1Zx8VC%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '50046'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fcancle&id=14&_=1479956899874'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fcancle&id=14&_=1479956899874'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1479957040.517
+    'REQUEST_TIME' => 1479957040
+]
