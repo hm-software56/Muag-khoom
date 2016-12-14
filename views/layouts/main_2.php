@@ -164,30 +164,7 @@ AppAsset::register($this);
                                 <?php
                             }
                             ?>
-                            <?php
-                            if (Yii::$app->session['user']->user_type == "Admin") {
-                                ?>
-                                <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=payment/report">
-                                        <i class="fa fa-sellsy"></i>ລາຍ​ງານ​ລາຍ​ຈ່າຍ</a>
-                                </li>
-                                <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=recieve-money/report">
-                                        <i class="fa fa-ra"></i>ລາຍ​ງານ​ລາຍ​ຮັບ</a>
-                                </li>
-                                <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=site/compare">
-                                        <i class="fa fa-th"></i> <span>ສົ​ມ​ທຽບ​ລາຍ​ຮັບ​ລ່າຍ​ຈ່າຍ</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user">
-                                        <i class="fa fa-user"></i> <span>ຈັດ​ການຜູ້​ເຂົ້າ​ລະ​ບົບ</span>
-                                    </a>
-                                </li>
-                                <?php
-                            }
-                            ?>
+
                         </ul>
                     </section>
                     <!-- /.sidebar -->
