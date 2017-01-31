@@ -21,7 +21,9 @@
         "kartik-v/yii2-money": "*",
         "yiisoft/yii2-jui": "^2.0",
         "fedemotta/yii2-widget-datatables": "*",
-        "kartik-v/yii2-widget-alert": "*"
+        "kartik-v/yii2-widget-alert": "*",
+        "loveorigami/yii2-slimscroll-widget": "*",
+        "yii2assets/yii2-printthis": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

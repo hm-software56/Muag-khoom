@@ -1,70 +1,74 @@
 <?php
 
-use yii\bootstrap\Modal;
-
-if (Yii::$app->session->hasFlash('su')) {
-    echo \kartik\alert\Alert::widget([
-        'type' => \kartik\alert\Alert::TYPE_SUCCESS,
-        'title' => Yii::$app->session->getFlash('action'),
-        'icon' => 'glyphicon glyphicon-ok-sign',
-        'body' => Yii::$app->session->getFlash('su'),
-        'showSeparator' => false,
-        'delay' => 2000
-    ]);
-}
+use lo\widgets\SlimScroll;
 ?>
-<?php
-Modal::begin(['clientOptions' => ['keyboard' => false], 'options' => ['id' => 'detail-modal',]])
-?>
-<div id='modalContent'></div>
-<?php yii\bootstrap\Modal::end() ?>
 <div class="row">
-    <?php
-    foreach ($model as $model) {
-        ?>
-        <div class="col-md-4 col-xs-12">
-            <div class="col-xs-6">
-                <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />
+    <div class="col-md-4 col-sm-4">
+        <div class="row">
+            <div class="col-md-12"  id="output" >
+                <?= $this->render('order') ?>
             </div>
-            <div class="col-xs-6">
-                ລະ​ຫັດ: <?= $model->code ?>
-                <br/>
-                ຊື່: <?= $model->name ?>
-                <br/>
-                ຈຳ​ນວນ: <span class="text-red"><b><?= $model->qautity ?></b></span><br/>
-                ລາ​ຄາ: <?= number_format($model->pricesale, 2) ?><br/>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8" style="border-left: 3px green solid; padding-top: 0px;">
+        <div class="row">
+            <div class="col-md-8 col-sm-8"></div>
+            <div class="col-md-4 col-sm-4">
                 <?php
-                if ($model->qautity != 0) {
-                    echo yii\helpers\Html::a('<span class="glyphicon glyphicon-shopping-cart"></span> ສັ່ງຊື້', '#', [
-                        'title' => 'View Detail',
-                        'onclick' => "$('#detail-modal').modal('show');
-                                    $.ajax({
-                                       type: 'GET',
-                                       cache: false,
-                                       url: '" . Yii::$app->urlManager->createUrl(['products/order', 'id' => $model->id]) . "',
-                                                success: function(response) {
-                                                      $('#detail-modal .modal-body').html(response);
-                                                },
-                                            });
-                                            return false;
-                                          ",
-                        'class' => 'btn bg-red btn-sm',
-                    ]);
-                    echo"<br/>";
-                    echo"<br/>";
-                } else {
-                    echo yii\helpers\Html::a('<span class="glyphicon glyphicon-shopping-cart"></span> ສັ່ງຊື້', '#', [
-                        'title' => 'View Detail',
-                        'class' => 'btn bg-success btn-sm',
-                    ]);
-                    echo"<br/>";
-                    echo"<br/>";
-                }
+                $form = yii\widgets\ActiveForm::begin();
+                $search = new \app\models\ProductsSearch;
+                echo $form->field($search, 'name')->textInput([
+                    'onchange' => '
+                $.post( "index.php?r=products/search1&searchtxt="+$(this).val(), function( data ) {
+                $( "#output" ).html( data );
+                });
+                ', 'placeholder' => 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ', 'id' => 'search'])->label(false);
+                yii\widgets\ActiveForm::end();
                 ?>
             </div>
         </div>
-        <?php
-    }
-    ?>
+        <div class="row" >
+            <?=
+            SlimScroll::widget([
+                'options' => [
+                    'height' => '500px'
+                ]
+            ]);
+            ?>
+            <?php
+            foreach ($model as $model) {
+                ?>
+                <div class="col-md-3 col-sm-3">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <?php
+                            echo yii\helpers\Html::a('<img src="' . Yii::$app->urlManager->baseUrl . '/images/thume/' . $model->image . '" class="thumbnail img-responsive" />', '#', [
+                                'title' => Yii::t('yii', 'Close'),
+                                'onclick' => "
+                        $.ajax({
+                       type     :'POST',
+                       cache    : false,
+                       url  : 'index.php?r=products/order&id=" . $model->id . "',
+                       success  : function(response) {
+                           $('#output').html(response);
+                       }
+                       });return false;",
+                            ]);
+                            ?>
+                            <?= $model->name ?>
+                            <br/>
+                            ລາ​ຄາ: <?= number_format($model->pricesale, 2) ?> ກີບ<br/><br/>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+            <?= SlimScroll::end(); ?>
+        </div>
+
+    </div>
 
 </div>

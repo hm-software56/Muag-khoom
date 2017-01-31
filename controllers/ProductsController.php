@@ -48,7 +48,7 @@ class ProductsController extends Controller {
     }
 
     public function actionSale() {
-        $this->layout = "main_2";
+        $this->layout = "main_pos";
         $model = Products::find()->orderBy('code ASC')->all();
         return $this->render('sale', [
                     'model' => $model,
@@ -56,24 +56,113 @@ class ProductsController extends Controller {
     }
 
     public function actionOrder($id) {
-        $model = new \app\models\Sale;
-        $product = Products::find()->where(['id' => $id])->one();
-        if (isset($_POST['qtt'])) {
-            for ($i = 1; $i <= $_POST['qtt']; $i++) {
-                $model = new \app\models\Sale;
-                $model->products_id = $id;
-                $model->date = date('Y-m-d');
-                $model->save();
+        if (!empty(\Yii::$app->session['product'])) {
+            $array = [];
+            $already_pr_id = false;
+            foreach (\Yii::$app->session['product'] as $order_p) {
+                if ($order_p['id'] == $id) {
+                    $already_pr_id = true;
+                    $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity'] + 1];
+                } else {
+                    $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity']];
+                }
             }
-            $qtt = $product->qautity - $_POST['qtt'];
-            Products::updateAll(['qautity' => $qtt], ['id' => $id]);
-            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ຢັ້ງ​ຢືນ​ການ​ຊື້​ສຳ​ເລັດ​ແລ້ວ..........'));
-            \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-            $this->redirect(['products/sale']);
+            if ($already_pr_id == false) {
+                $array[] = ['id' => $id, 'qautity' => 1];
+            }
+            Yii::$app->session['product'] = $array;
+        } else {
+            \Yii::$app->session['product'] = [['id' => $id, 'qautity' => 1]];
         }
         return $this->renderAjax('order', [
-                    'model' => $model,
-                    'product' => $product
+        ]);
+    }
+
+    public function actionOrdercancle() {
+        unset(Yii::$app->session['product']);
+        return $this->renderAjax('order');
+    }
+
+    public function actionOrderdelete($id) {
+        if (!empty(\Yii::$app->session['product'])) {
+            $array = [];
+            foreach (\Yii::$app->session['product'] as $order_p) {
+                if ($order_p['id'] != $id) {
+                    $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity']];
+                }
+            }
+            Yii::$app->session['product'] = $array;
+        }
+        return $this->renderAjax('order');
+    }
+
+    public function actionChageqautity($id) {
+        if (!empty(\Yii::$app->session['product'])) {
+            $array = [];
+            foreach (\Yii::$app->session['product'] as $order_p) {
+                if ($order_p['id'] == $id) {
+                    $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity'] - 1];
+                } else {
+                    $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity']];
+                }
+            }
+            Yii::$app->session['product'] = $array;
+        }
+        return $this->renderAjax('order', [
+        ]);
+    }
+
+    public function actionPay() {
+        if (isset($_GET['totalprice'])) {
+            \Yii::$app->session['totalprice'] = $_GET['totalprice'];
+            unset(\Yii::$app->session['payprice']);
+            unset(\Yii::$app->session['paystill']);
+            unset(\Yii::$app->session['paychange']);
+        }
+
+        if (isset($_GET['pricetxt'])) {
+            \Yii::$app->session['payprice'] = $_GET['pricetxt'];
+            if (\Yii::$app->session['totalprice'] - $_GET['pricetxt'] > 0) {
+                \Yii::$app->session['paystill'] = \Yii::$app->session['totalprice'] - $_GET['pricetxt'];
+            } else {
+                \Yii::$app->session['paystill'] = 0;
+            }
+            if (($_GET['pricetxt'] - \Yii::$app->session['totalprice']) > 0) {
+                \Yii::$app->session['paychange'] = $_GET['pricetxt'] - \Yii::$app->session['totalprice'];
+            } else {
+                \Yii::$app->session['paychange'] = 0;
+            }
+        }
+        return $this->renderAjax('pay');
+    }
+
+    public function actionOrdercomfirm() {
+        return $this->renderAjax('comfirm');
+    }
+
+    public function actionSearch($searchtxt) {
+        $model = Products::find()->where(['code' => $searchtxt])->one();
+        if (!empty($model)) {
+            if (!empty(\Yii::$app->session['product'])) {
+                $array = [];
+                $already_pr_id = false;
+                foreach (\Yii::$app->session['product'] as $order_p) {
+                    if ($order_p['id'] == $model->id) {
+                        $already_pr_id = true;
+                        $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity'] + 1];
+                    } else {
+                        $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity']];
+                    }
+                }
+                if ($already_pr_id == false) {
+                    $array[] = ['id' => $model->id, 'qautity' => 1];
+                }
+                Yii::$app->session['product'] = $array;
+            } else {
+                \Yii::$app->session['product'] = [['id' => $model->id, 'qautity' => 1]];
+            }
+        }
+        return $this->renderAjax('order', [
         ]);
     }
 
