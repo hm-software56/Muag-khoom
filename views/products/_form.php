@@ -11,13 +11,9 @@ use yii\widgets\ActiveForm;
 <div class="products-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'category_id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Category::find()->all(), 'id', 'name'), ['class' => 'form-control', 'prompt' => '']) ?>
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'qautity')->textInput() ?>
-
     <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d')])->label(FALSE) ?>
     <?= $form->field($model, 'pricebuy')->textInput(['data-a-sign' => 'ກີບ', 'data-a-dec' => ".", 'data-a-sep' => ",", 'id' => "money_dao"]) ?>
 

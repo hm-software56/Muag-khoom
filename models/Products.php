@@ -3,65 +3,44 @@
 namespace app\models;
 
 use Yii;
+use \app\models\base\Products as BaseProducts;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "products".
- *
- * @property integer $id
- * @property string $name
- * @property integer $qautity
- * @property string $date
- * @property string $code
- * @property integer $pricesale
- * @property integer $pricebuy
- * @property string $image
- *
- * @property Sale[] $sales
  */
-class Products extends \yii\db\ActiveRecord {
+class Products extends BaseProducts {
 
-    /**
-     * @inheritdoc
-     */
-    public static function tableName() {
-        return 'products';
+    public function behaviors() {
+        return ArrayHelper::merge(
+                        parent::behaviors(), [
+                        # custom behaviors
+                        ]
+        );
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules() {
-        return [
-            [['name', 'qautity', 'code', 'pricesale', 'pricebuy'], 'required'],
-            [['qautity'], 'integer'],
-            [['date'], 'safe'],
-            [['name', 'pricesale', 'pricebuy'], 'string', 'max' => 255],
-            [['code', 'image'], 'string', 'max' => 45],
-            [['code'], 'unique'],
-        ];
+        return ArrayHelper::merge(
+                        parent::rules(), [
+                    [['pricesale', 'pricebuy'], 'string', 'max' => 255],
+                        ]
+        );
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels() {
-        return [
-            'id' => 'ID',
-            'name' => 'ຊື່​ສີ້ນ​ຄ້າ',
-            'qautity' => '​ຈຳ​ນວນ',
-            'date' => '​ວັນ​ທີ',
-            'code' => '​ລະ​ຫັດ​ສີ້ນ​ຄ້າ',
-            'pricesale' => '​ລາ​ຄາ​ຂາຍ',
-            'pricebuy' => '​ລາ​ຄາ​ຊື້',
-            'image' => '​ຮູບ​ພາບ',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSales() {
-        return $this->hasMany(Sale::className(), ['products_id' => 'id']);
+        return ArrayHelper::merge(
+                        parent::rules(), [
+                    'id' => 'ລະ​ຫັດ',
+                    'name' => '​ຊື່ສ​ີນ​ຄ້າ',
+                    'qautity' => 'ຈຳ​ນວນ',
+                    'date' => '​ວັນ​ທີ່',
+                    'pricesale' => '​ລາ​ຄາ​ຊື້',
+                    'pricebuy' => '​ລາ​ຄາ​ຂາຍ',
+                    'image' => 'ຮູບ​ພາບ',
+                    'category_id' => 'ໜວດ​ສີນ​ຄ້າ',
+                    'user_id' => 'ຜູ້​ປ້ອນ​ເຂົ້າ',
+                        ]
+        );
     }
 
     public function beforeSave($insert) {

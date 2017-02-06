@@ -45,7 +45,6 @@ if (Yii::$app->session->hasFlash('su')) {
             'summary' => "",
             'columns' => [
 
-                'code',
                 [
                     'attribute' => 'image',
                     'filter' => false,
@@ -53,7 +52,7 @@ if (Yii::$app->session->hasFlash('su')) {
                     'format' => 'html',
                     'contentOptions' => ['style' => 'min-width: 50px;'],
                     'value' => function ($data) {
-                return Html::img(Yii::$app->request->BaseUrl . '/images/thume/' . $data->image, ['width' => '100px', 'class' => "img-responsive img-rounded"]);
+                return Html::img(Yii::$app->request->BaseUrl . '/images/thume/' . $data->image, ['width' => '50px', 'class' => "img-responsive img-rounded"]);
             },
                 ],
                 [
@@ -92,11 +91,27 @@ if (Yii::$app->session->hasFlash('su')) {
                 return number_format($data->pricesale, 2);
             },
                 ],
+                [
+                    'filter' => false,
+                    'attribute' => 'user_id',
+                    'format' => 'html',
+                    'contentOptions' => ['style' => 'min-width: 50px;'],
+                    'value' => function ($data) {
+                return $data->user->first_name;
+            },
+                ],
                 // 'image',
                 ['class' => 'yii\grid\ActionColumn',
-                    'template' => '{update} {delete}',
+                    'template' => '{view} {update} {delete}',
                     'buttons' => [
-                        'update' => function ($url, $model) {
+                        'view' => function ($url, $model) {
+                            return Html::a(
+                                            '<span class="glyphicon glyphicon-barcode"></span>', ['products/view', 'id' => $model->id], [
+                                        'class' => 'btn bg-blue btn-xs',
+                                            ]
+                            );
+                        },
+                                'update' => function ($url, $model) {
                             return Html::a(
                                             '<span class="glyphicon glyphicon-edit"></span>', ['products/update', 'id' => $model->id], [
                                         'class' => 'btn btn-success btn-xs',

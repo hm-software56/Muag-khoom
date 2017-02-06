@@ -3,7 +3,12 @@ body {
     height: 100%;
     background: #fff !important;
 }
-
+.alert {
+    padding: 5px !important;
+    margin-bottom:0px !important;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
 @media(min-width:768px) {
     .content {
     margin-top: 50px !important;

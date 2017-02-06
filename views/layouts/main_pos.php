@@ -68,7 +68,12 @@ AppAsset::register($this);
                                 ?>
                                 <li class="dropdown user user-menu">
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
-                                        <span class="glyphicon glyphicon-shopping-cart"></span>ຂາຍ​ສີ້ນ​ຄ້າ
+                                        <span class="glyphicon glyphicon-shopping-car t"></span>ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)
+                                    </a>
+                                </li>
+                                <li class="dropdown user user-menu">
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/index">
+                                        <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
                                     </a>
                                 </li>
                                 <li class="dropdown user user-menu">

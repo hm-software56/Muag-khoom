@@ -10,22 +10,24 @@ use app\models\Products;
 /**
  * ProductsSearch represents the model behind the search form about `app\models\Products`.
  */
-class ProductsSearch extends Products {
-
+class ProductsSearch extends Products
+{
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
-            [['id', 'qautity', 'pricesale', 'pricebuy'], 'integer'],
-            [['name', 'date', 'code', 'image'], 'safe'],
+            [['id', 'qautity', 'category_id', 'user_id'], 'integer'],
+            [['name', 'date', 'pricesale', 'pricebuy', 'image'], 'safe'],
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function scenarios() {
+    public function scenarios()
+    {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -37,7 +39,8 @@ class ProductsSearch extends Products {
      *
      * @return ActiveDataProvider
      */
-    public function search($params) {
+    public function search($params)
+    {
         $query = Products::find();
 
         // add conditions that should always apply here
@@ -59,15 +62,15 @@ class ProductsSearch extends Products {
             'id' => $this->id,
             'qautity' => $this->qautity,
             'date' => $this->date,
-            'pricesale' => $this->pricesale,
-            'pricebuy' => $this->pricebuy,
+            'category_id' => $this->category_id,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-                ->andFilterWhere(['like', 'code', $this->code])
-                ->andFilterWhere(['like', 'image', $this->image]);
-        $query->orderBy('id DESC');
+            ->andFilterWhere(['like', 'pricesale', $this->pricesale])
+            ->andFilterWhere(['like', 'pricebuy', $this->pricebuy])
+            ->andFilterWhere(['like', 'image', $this->image]);
+
         return $dataProvider;
     }
-
 }

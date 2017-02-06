@@ -23,7 +23,11 @@
         "fedemotta/yii2-widget-datatables": "*",
         "kartik-v/yii2-widget-alert": "*",
         "loveorigami/yii2-slimscroll-widget": "*",
-        "yii2assets/yii2-printthis": "^1.0"
+        "yii2assets/yii2-printthis": "^1.0",
+        "schmunk42/yii2-giiant": "@stable",
+        "yiisoft/yii2-imagine": "*",
+        "vilochane/yii2-barcode-generator": "dev-master",
+        "kartik-v/yii2-mpdf": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
