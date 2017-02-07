@@ -11,24 +11,15 @@ The minimum requirement by this project template that your Web server supports P
 INSTALLATION
 ------------
 
-### Install from an Archive File
+### Install
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-Set cookie validation key in `config/web.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
-```
+Download Zip file and unzip than copy project to www or html folder 
+after that import database 
 
 You can then access the application through the following URL:
 
 ~~~
-http://localhost/basic/web/
+http://localhost/pos/web/
 ~~~
 
 
