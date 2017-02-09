@@ -80,11 +80,10 @@ class SiteController extends Controller {
                 \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'));
                 \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
                 \Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
-                if ($user->id == "15") {
-                    return $this->redirect(['products/index']);
-                } else {
-                    return $this->redirect(['site/index']);
-                }
+                \Yii::$app->session['height_screen'] = ($_POST['hsc'] - 131);
+                // $user->height_screen = ($_POST['hsc'] - 131);
+                //$user->save();
+                return $this->redirect(['site/index']);
             } else {
                 \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານ​ປ້ອນ​ຊື່ຫຼື​ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ​ບໍ່ຖືກ'));
                 \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));

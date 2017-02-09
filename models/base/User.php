@@ -18,6 +18,7 @@ use Yii;
  * @property integer $status
  * @property string $user_type
  * @property string $date
+ * @property string $height_screen
  *
  * @property \app\models\Products[] $products
  * @property \app\models\Sale[] $sales
@@ -33,7 +34,7 @@ abstract class User extends \yii\db\ActiveRecord
     */
     const USER_TYPE_ADMIN = 'Admin';
     const USER_TYPE_USER = 'User';
-    const USER_TYPE_POS = 'pos';
+    const USER_TYPE_POS = 'POS';
     var $enum_labels = false;
     /**
      * @inheritdoc
@@ -56,6 +57,7 @@ abstract class User extends \yii\db\ActiveRecord
             [['date'], 'safe'],
             [['photo'], 'string', 'max' => 45],
             [['first_name', 'last_name', 'username', 'password'], 'string', 'max' => 255],
+            [['height_screen'], 'string', 'max' => 10],
             ['user_type', 'in', 'range' => [
                     self::USER_TYPE_ADMIN,
                     self::USER_TYPE_USER,
@@ -80,6 +82,7 @@ abstract class User extends \yii\db\ActiveRecord
             'status' => 'Status',
             'user_type' => 'User Type',
             'date' => 'Date',
+            'height_screen' => 'Height Screen',
         ];
     }
 

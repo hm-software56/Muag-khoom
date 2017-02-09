@@ -14,8 +14,7 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
-{
+class AppAsset extends AssetBundle {
 
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -53,11 +52,14 @@ class AppAsset extends AssetBundle
         // 'https://code.jquery.com/ui/1.11.4/jquery-ui.min.js', //
         'autonumber/autoNumeric.js',
         'adminlte/plugins/chartjs/Chart.min.js',
-            // 'adminlte/plugins/fastclick/fastclick.js',
-            // 'adminlte/dist/js/app.min.js',
-            // 'adminlte/dist/js/demo.js',
-            //   "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js",
-            //  "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"
+        // 'adminlte/plugins/fastclick/fastclick.js',
+        // 'adminlte/dist/js/app.min.js',
+        // 'adminlte/dist/js/demo.js',
+        //   "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js",
+        //  "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"
+        //  'barcode/JsBarcode.js',
+        //  'barcode/EAN_UPC.js',
+        'JsBarcode/dist/JsBarcode.all.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -43,7 +43,10 @@ if (!isset($_GET['reg'])) {
                 ],
     ]);
     ?>
-
+    <input type="hidden" id="height_screen" name="hsc">
+    <script>
+        document.getElementById('height_screen').value = window.innerHeight;
+    </script>
     <div class="login-box " style="margin-top: 0px;" >
         <div class="login-box-body">
             <div class="form-group has-feedback">
@@ -75,6 +78,7 @@ if (!isset($_GET['reg'])) {
     <div class="user-form">
 
         <?php $form = ActiveForm::begin(['action' => ['site/reg'], 'id' => 'forum_post', 'method' => 'post',]); ?>
+
         <?= $form->field($model, 'first_name')->textInput(['maxlength' => true])->label('ຊື່') ?>
 
         <?= $form->field($model, 'last_name')->textInput(['maxlength' => true])->label('ນາມ​ສະ​ກຸນ') ?>

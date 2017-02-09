@@ -53,10 +53,22 @@ class ProductsController extends Controller {
             unset(Yii::$app->session['product']);
             unset(\Yii::$app->session['cormfirm']);
         }
-        $model = Products::find()->orderBy('id ASC')->all();
-        return $this->render('sale', [
-                    'model' => $model,
-        ]);
+
+        if (isset($_GET['cid'])) {
+            if (!empty($_GET['cid'])) {
+                $model = Products::find()->where(['category_id' => $_GET['cid']])->orderBy('id ASC')->all();
+            } else {
+                $model = Products::find()->orderBy('id ASC')->all();
+            }
+            return $this->renderAjax('pos_pro', [
+                        'model' => $model,
+            ]);
+        } else {
+            $model = Products::find()->orderBy('id ASC')->all();
+            return $this->render('sale', [
+                        'model' => $model,
+            ]);
+        }
     }
 
     public function actionOrder($id) {

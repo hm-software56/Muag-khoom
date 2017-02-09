@@ -9,6 +9,9 @@ body {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+.thumbnail{
+    margin-bottom: 2px !important;
+}
 @media(min-width:768px) {
     .content {
     margin-top: 50px !important;

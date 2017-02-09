@@ -70170,3 +70170,3927 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1486213237.075
     'REQUEST_TIME' => 1486213237
 ]
+2017-02-08 08:44:44 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 08:44:43 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80904
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products/index'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '64990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486539883.87
+    'REQUEST_TIME' => 1486539883
+]
+2017-02-08 08:47:12 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 08:47:12 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80907
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65048'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540032.736
+    'REQUEST_TIME' => 1486540032
+]
+2017-02-08 08:48:22 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../../web/barcode/src/BarcodeGeneratorHTML.php): failed to open stream: No such file or directory' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:3
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\gbarcode.php(3): yii\base\ErrorHandler->handleError(2, 'include(../../w...', 'F:\Projectweb\m...', 3, Array)
+#1 F:\Projectweb\muagkhoom\views\products\gbarcode.php(3): include()
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(326): require('F:\Projectweb\m...')
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('gbarcode', Array, Object(app\controllers\ProductsController))
+#6 F:\Projectweb\muagkhoom\controllers\ProductsController.php(471): yii\base\Controller->render('gbarcode')
+#7 [internal function]: app\controllers\ProductsController->actionGbarcode()
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('gbarcode', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/gbarco...', Array)
+#12 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#14 {main}
+2017-02-08 08:48:21 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80908
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65113'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540101.782
+    'REQUEST_TIME' => 1486540101
+]
+2017-02-08 08:48:37 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(web/barcode/src/BarcodeGeneratorHTML.php): failed to open stream: No such file or directory' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:3
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\gbarcode.php(3): yii\base\ErrorHandler->handleError(2, 'include(web/bar...', 'F:\Projectweb\m...', 3, Array)
+#1 F:\Projectweb\muagkhoom\views\products\gbarcode.php(3): include()
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(326): require('F:\Projectweb\m...')
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('gbarcode', Array, Object(app\controllers\ProductsController))
+#6 F:\Projectweb\muagkhoom\controllers\ProductsController.php(471): yii\base\Controller->render('gbarcode')
+#7 [internal function]: app\controllers\ProductsController->actionGbarcode()
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('gbarcode', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/gbarco...', Array)
+#12 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#14 {main}
+2017-02-08 08:48:37 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80908
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65115'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540117.25
+    'REQUEST_TIME' => 1486540117
+]
+2017-02-08 08:48:50 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGenerator' not found' in F:\Projectweb\muagkhoom\web\barcode\src\BarcodeGeneratorHTML.php:6
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 08:48:50 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80908
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65116'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540130.79
+    'REQUEST_TIME' => 1486540130
+]
+2017-02-08 09:00:45 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:4
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:00:45 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80960
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65235'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540845.05
+    'REQUEST_TIME' => 1486540845
+]
+2017-02-08 09:01:04 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:4
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:01:04 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80961
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65239'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540864.341
+    'REQUEST_TIME' => 1486540864
+]
+2017-02-08 09:01:42 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:01:42 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80961
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65241'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540902.422
+    'REQUEST_TIME' => 1486540902
+]
+2017-02-08 09:02:25 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:02:24 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80962
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65245'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486540944.941
+    'REQUEST_TIME' => 1486540944
+]
+2017-02-08 09:07:57 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:07:57 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80967
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65272'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541277.096
+    'REQUEST_TIME' => 1486541277
+]
+2017-02-08 09:08:50 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:08:50 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80968
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65275'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541330.206
+    'REQUEST_TIME' => 1486541330
+]
+2017-02-08 09:09:12 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:09:12 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80969
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65277'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541352.551
+    'REQUEST_TIME' => 1486541352
+]
+2017-02-08 09:09:52 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'GeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:09:52 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80969
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65281'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541392.196
+    'REQUEST_TIME' => 1486541392
+]
+2017-02-08 09:10:17 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:17 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65283'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541417.145
+    'REQUEST_TIME' => 1486541417
+]
+2017-02-08 09:10:18 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:18 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65286'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541418.776
+    'REQUEST_TIME' => 1486541418
+]
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:18 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65287'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541418.901
+    'REQUEST_TIME' => 1486541418
+]
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65288'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541419.057
+    'REQUEST_TIME' => 1486541419
+]
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65289'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541419.213
+    'REQUEST_TIME' => 1486541419
+]
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65290'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541419.369
+    'REQUEST_TIME' => 1486541419
+]
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:19 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65291'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541419.588
+    'REQUEST_TIME' => 1486541419
+]
+2017-02-08 09:10:20 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:20 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65292'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541420.297
+    'REQUEST_TIME' => 1486541420
+]
+2017-02-08 09:10:20 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Picqer\Barcode\BarcodeGeneratorHTML' not found' in F:\Projectweb\muagkhoom\views\products\gbarcode.php:5
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-08 09:10:20 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 80970
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '65293'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486541420.547
+    'REQUEST_TIME' => 1486541420
+]
+2017-02-08 09:47:00 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Array to string conversion' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\helpers\BaseHtml.php:144
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\helpers\BaseHtml.php(144): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'F:\Projectweb\m...', 144, Array)
+#1 F:\Projectweb\muagkhoom\vendor\vilochane\yii2-barcode-generator\BarcodeGenerator.php(104): yii\helpers\BaseHtml::tag('div', Array)
+#2 F:\Projectweb\muagkhoom\vendor\vilochane\yii2-barcode-generator\BarcodeGenerator.php(114): barcode\barcode\BarcodeGenerator->setBarCode()
+#3 F:\Projectweb\muagkhoom\vendor\vilochane\yii2-barcode-generator\BarcodeGenerator.php(68): barcode\barcode\BarcodeGenerator->registerAssets()
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Widget.php(102): barcode\barcode\BarcodeGenerator->run()
+#5 F:\Projectweb\muagkhoom\views\products\gbarcode.php(14): yii\base\Widget::widget(Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(326): require('F:\Projectweb\m...')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('gbarcode', Array, Object(app\controllers\ProductsController))
+#10 F:\Projectweb\muagkhoom\controllers\ProductsController.php(471): yii\base\Controller->render('gbarcode')
+#11 [internal function]: app\controllers\ProductsController->actionGbarcode()
+#12 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('gbarcode', Array)
+#15 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/gbarco...', Array)
+#16 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#18 {main}
+2017-02-08 09:46:59 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 81006
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '49629'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486543619.768
+    'REQUEST_TIME' => 1486543619
+]
+2017-02-08 10:36:44 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Application::action' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\di\ServiceLocator.php(73): yii\base\Component->__get('action')
+#1 F:\Projectweb\muagkhoom\views\layouts\main.php(222): yii\di\ServiceLocator->__get('action')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(326): require('F:\Projectweb\m...')
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('??????<img id="...')
+#6 F:\Projectweb\muagkhoom\controllers\ProductsController.php(471): yii\base\Controller->render('gbarcode')
+#7 [internal function]: app\controllers\ProductsController->actionGbarcode()
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('gbarcode', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/gbarco...', Array)
+#12 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#14 {main}
+2017-02-08 10:36:44 [127.0.0.1][-][v9r08l9oqdaaro2j2bk44jbj02][info][application] $_GET = [
+    'r' => 'products/gbarcode'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v9r08l9oqdaaro2j2bk44jbj02'
+    '_csrf' => 'f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"iJempHrRNQtaMMKuOv6UWGCkMzpoat3M\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 81096
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 13
+    'barcode' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=v9r08l9oqdaaro2j2bk44jbj02; _csrf=f0f765e94545bf1de8c52cfa56421e9fb1c2fa6142c4061489a7d070ae2cb4e1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22iJempHrRNQtaMMKuOv6UWGCkMzpoat3M%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '50438'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/gbarcode'
+    'REQUEST_URI' => '/web/index.php?r=products/gbarcode'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486546604.231
+    'REQUEST_TIME' => 1486546604
+]
+2017-02-09 04:47:33 [127.0.0.1][-][5ab3af3ngb5qhgkpfidcuafef3][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: ab' in F:\Projectweb\muagkhoom\views\products\sale.php:40
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\sale.php(40): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\Projectweb\m...', 40, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(326): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('sale', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(59): yii\base\Controller->render('sale', Array)
+#6 [internal function]: app\controllers\ProductsController->actionSale()
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sale', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/sale', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2017-02-09 04:47:33 [127.0.0.1][-][5ab3af3ngb5qhgkpfidcuafef3][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5ab3af3ngb5qhgkpfidcuafef3'
+    '_csrf' => 'b5f5f5602084805e8ff429fef56739fcdf255b809404ef55badaff78811caf1ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"G6XcbcSvEDKSjdBO6o2EPY6dILTykard\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 90507
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=5ab3af3ngb5qhgkpfidcuafef3; _csrf=b5f5f5602084805e8ff429fef56739fcdf255b809404ef55badaff78811caf1ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22G6XcbcSvEDKSjdBO6o2EPY6dILTykard%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '52986'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/sale'
+    'REQUEST_URI' => '/web/index.php?r=products/sale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486612053.312
+    'REQUEST_TIME' => 1486612053
+]
+2017-02-09 05:19:15 [127.0.0.1][-][5ab3af3ngb5qhgkpfidcuafef3][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: height_screen' in F:\Projectweb\muagkhoom\controllers\SiteController.php:83
+Stack trace:
+#0 F:\Projectweb\muagkhoom\controllers\SiteController.php(83): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\Projectweb\m...', 83, Array)
+#1 [internal function]: app\controllers\SiteController->actionLogin()
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#5 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/login', Array)
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#8 {main}
+2017-02-09 05:19:15 [127.0.0.1][-][5ab3af3ngb5qhgkpfidcuafef3][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'bWt4VHpkNHoqXSA3GAdnDCgvMwcQAHY1WwRKESo9Ah4kJywtEQVGHg=='
+    'hsc' => '657'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'da123'
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5ab3af3ngb5qhgkpfidcuafef3'
+    '_csrf' => 'b5f5f5602084805e8ff429fef56739fcdf255b809404ef55badaff78811caf1ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"G6XcbcSvEDKSjdBO6o2EPY6dILTykard\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'timeout' => 90579
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => 'PHPSESSID=5ab3af3ngb5qhgkpfidcuafef3; _csrf=b5f5f5602084805e8ff429fef56739fcdf255b809404ef55badaff78811caf1ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22G6XcbcSvEDKSjdBO6o2EPY6dILTykard%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '136'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '53283'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486613955.438
+    'REQUEST_TIME' => 1486613955
+]
+2017-02-09 05:27:08 [127.0.0.1][-][5ab3af3ngb5qhgkpfidcuafef3][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in F:\Projectweb\muagkhoom\views\products\sale.php:35
+Stack trace:
+#0 F:\Projectweb\muagkhoom\views\products\sale.php(35): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'F:\Projectweb\m...', 35, Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(326): require('F:\Projectweb\m...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('F:\Projectweb\m...', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('F:\Projectweb\m...', Array, Object(app\controllers\ProductsController))
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('sale', Array, Object(app\controllers\ProductsController))
+#5 F:\Projectweb\muagkhoom\controllers\ProductsController.php(59): yii\base\Controller->render('sale', Array)
+#6 [internal function]: app\controllers\ProductsController->actionSale()
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sale', Array)
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/sale', Array)
+#11 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2017-02-09 05:27:07 [127.0.0.1][-][5ab3af3ngb5qhgkpfidcuafef3][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '5ab3af3ngb5qhgkpfidcuafef3'
+    '_csrf' => 'b5f5f5602084805e8ff429fef56739fcdf255b809404ef55badaff78811caf1ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"G6XcbcSvEDKSjdBO6o2EPY6dILTykard\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 90587
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => []
+        [yii\base\Model:_validators] => ArrayObject#2
+        (
+            [0] => yii\validators\RequiredValidator#3
+            (
+                [skipOnEmpty] => false
+                [requiredValue] => null
+                [strict] => false
+                [message] => '{attribute} cannot be blank.'
+                [attributes] => [
+                    0 => 'first_name'
+                    1 => 'username'
+                    2 => 'password'
+                    3 => 'user_type'
+                    4 => 'date'
+                ]
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [1] => yii\validators\NumberValidator#4
+            (
+                [integerOnly] => true
+                [max] => null
+                [min] => null
+                [tooBig] => null
+                [tooSmall] => null
+                [integerPattern] => '/^\\s*[+-]?\\d+\\s*$/'
+                [numberPattern] => '/^\\s*[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?\\s*$/'
+                [attributes] => [
+                    0 => 'status'
+                ]
+                [message] => '{attribute} must be an integer.'
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [2] => yii\validators\StringValidator#5
+            (
+                [length] => null
+                [max] => null
+                [min] => null
+                [message] => '{attribute} must be a string.'
+                [tooShort] => null
+                [tooLong] => null
+                [notEqual] => null
+                [encoding] => 'UTF-8'
+                [attributes] => [
+                    0 => 'user_type'
+                ]
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [3] => yii\validators\SafeValidator#6
+            (
+                [attributes] => [
+                    0 => 'date'
+                ]
+                [message] => null
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [4] => yii\validators\StringValidator#7
+            (
+                [length] => null
+                [max] => 45
+                [min] => null
+                [message] => '{attribute} must be a string.'
+                [tooShort] => null
+                [tooLong] => '{attribute} should contain at most {max, number} {max, plural, one{character} other{characters}}.'
+                [notEqual] => null
+                [encoding] => 'UTF-8'
+                [attributes] => [
+                    0 => 'photo'
+                ]
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [5] => yii\validators\StringValidator#8
+            (
+                [length] => null
+                [max] => 255
+                [min] => null
+                [message] => '{attribute} must be a string.'
+                [tooShort] => null
+                [tooLong] => '{attribute} should contain at most {max, number} {max, plural, one{character} other{characters}}.'
+                [notEqual] => null
+                [encoding] => 'UTF-8'
+                [attributes] => [
+                    0 => 'first_name'
+                    1 => 'last_name'
+                    2 => 'username'
+                    3 => 'password'
+                ]
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [6] => yii\validators\StringValidator#9
+            (
+                [length] => null
+                [max] => 10
+                [min] => null
+                [message] => '{attribute} must be a string.'
+                [tooShort] => null
+                [tooLong] => '{attribute} should contain at most {max, number} {max, plural, one{character} other{characters}}.'
+                [notEqual] => null
+                [encoding] => 'UTF-8'
+                [attributes] => [
+                    0 => 'height_screen'
+                ]
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+            [7] => yii\validators\RangeValidator#10
+            (
+                [range] => [
+                    0 => 'Admin'
+                    1 => 'User'
+                    2 => 'POS'
+                ]
+                [strict] => false
+                [not] => false
+                [allowArray] => false
+                [attributes] => [
+                    0 => 'user_type'
+                ]
+                [message] => '{attribute} is invalid.'
+                [on] => []
+                [except] => []
+                [skipOnError] => true
+                [skipOnEmpty] => true
+                [enableClientValidation] => true
+                [isEmpty] => null
+                [when] => null
+                [whenClient] => null
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => null
+            )
+        )
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'muagkhoom'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://muagkhoom/web/index.php?r=products%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=5ab3af3ngb5qhgkpfidcuafef3; _csrf=b5f5f5602084805e8ff429fef56739fcdf255b809404ef55badaff78811caf1ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22G6XcbcSvEDKSjdBO6o2EPY6dILTykard%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at muagkhoom Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => 'muagkhoom'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '53351'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/sale'
+    'REQUEST_URI' => '/web/index.php?r=products/sale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486614427.787
+    'REQUEST_TIME' => 1486614427
+]
+2017-02-09 05:34:42 [192.168.10.109][-][p1bsos5lsf8gha3bf9g11pmfv2][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'order clause'' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all('<span class="ke...')
+#4 F:\Projectweb\muagkhoom\controllers\ProductsController.php(466): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\ProductsController->actionRepsaleornot()
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'order clause'
+The SQL being executed was: SELECT * FROM `products` ORDER BY `code`' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Schema.php:631
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all('<span class="ke...')
+#4 F:\Projectweb\muagkhoom\controllers\ProductsController.php(466): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\ProductsController->actionRepsaleornot()
+#6 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'code' in 'order clause'
+)
+
+2017-02-09 05:34:42 [192.168.10.109][-][p1bsos5lsf8gha3bf9g11pmfv2][info][application] $_GET = [
+    'r' => 'products/repsaleornot'
+]
+
+$_COOKIE = [
+    'session_id' => 'ce8c72ed0eef46d9742205308e0ee6d41f14b669'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.10.120'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 5.1.1; SM-G531H Build/LMY48B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,lo;q=0.6'
+    'HTTP_COOKIE' => 'session_id=ce8c72ed0eef46d9742205308e0ee6d41f14b669'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.10.120 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.10.120'
+    'SERVER_ADDR' => '192.168.10.120'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.10.109'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '35387'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/repsaleornot'
+    'REQUEST_URI' => '/web/index.php?r=products/repsaleornot'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486614882.655
+    'REQUEST_TIME' => 1486614882
+]
+2017-02-09 07:25:26 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: products/search1' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('search1', Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/search...', Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-02-09 07:25:25 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][info][application] $_GET = [
+    'r' => 'products/search1'
+    'searchtxt' => 'dsd'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '6krtol4jv4hvikj72th2thccd2'
+    '_csrf' => 'fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 90785
+    'height_screen' => 658
+    'pro_id' => '5'
+    'qt' => 17
+    'barcode' => [
+        0 => '4700122680666'
+        1 => '2471201171871'
+        2 => '9592880249026'
+        3 => '8308775634768'
+        4 => '2927629394533'
+    ]
+    'totalprice' => '37000'
+    'payprice' => '40000'
+    'paystill' => 0
+    'paychange' => 3000
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.2; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'QThkMGdpZVkXDw1/EiZQPQlhPlchHCw.N1MAQF44HzsTajZgUQ1RPQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://192.168.100.248/web/index.php?r=products/sale'
+    'HTTP_COOKIE' => 'PHPSESSID=6krtol4jv4hvikj72th2thccd2; _csrf=fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.64'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '56728'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/search1&searchtxt=dsd'
+    'REQUEST_URI' => '/web/index.php?r=products/search1&searchtxt=dsd'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486621525.864
+    'REQUEST_TIME' => 1486621525
+]
+2017-02-09 07:25:37 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: products/search1' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('search1', Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/search...', Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-02-09 07:25:37 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][info][application] $_GET = [
+    'r' => 'products/search1'
+    'searchtxt' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '6krtol4jv4hvikj72th2thccd2'
+    '_csrf' => 'fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 90785
+    'height_screen' => 658
+    'pro_id' => '5'
+    'qt' => 17
+    'barcode' => [
+        0 => '4700122680666'
+        1 => '2471201171871'
+        2 => '9592880249026'
+        3 => '8308775634768'
+        4 => '2927629394533'
+    ]
+    'totalprice' => '37000'
+    'payprice' => '40000'
+    'paystill' => 0
+    'paychange' => 3000
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.2; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'QThkMGdpZVkXDw1/EiZQPQlhPlchHCw.N1MAQF44HzsTajZgUQ1RPQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://192.168.100.248/web/index.php?r=products/sale'
+    'HTTP_COOKIE' => 'PHPSESSID=6krtol4jv4hvikj72th2thccd2; _csrf=fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.64'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '56729'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/search1&searchtxt='
+    'REQUEST_URI' => '/web/index.php?r=products/search1&searchtxt='
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486621537.094
+    'REQUEST_TIME' => 1486621537
+]
+2017-02-09 09:51:12 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: products/search1' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('search1', Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/search...', Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-02-09 09:51:12 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][info][application] $_GET = [
+    'r' => 'products/search1'
+    'searchtxt' => '2'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mu0ri6kv28t79gk4a5d6aia7i2'
+    '_csrf' => '899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9YYTypQsAST5Sl0suywlDzNXLgyvDzjy\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 91011
+    'height_screen' => 526
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 10
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'NnZBSEIucXgPLxgcO14gC3clFX0RQkELQw82JAZUPyB6ETg.BlQbAQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://192.168.100.248/web/index.php?r=products/sale'
+    'HTTP_COOKIE' => 'PHPSESSID=mu0ri6kv28t79gk4a5d6aia7i2; _csrf=899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229YYTypQsAST5Sl0suywlDzNXLgyvDzjy%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.248'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '54708'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/search1&searchtxt=2'
+    'REQUEST_URI' => '/web/index.php?r=products/search1&searchtxt=2'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486630272.001
+    'REQUEST_TIME' => 1486630272
+]
+2017-02-09 09:51:21 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: products/search1' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('search1', Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/search...', Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-02-09 09:51:21 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][info][application] $_GET = [
+    'r' => 'products/search1'
+    'searchtxt' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mu0ri6kv28t79gk4a5d6aia7i2'
+    '_csrf' => '899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9YYTypQsAST5Sl0suywlDzNXLgyvDzjy\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 91011
+    'height_screen' => 526
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 10
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'NnZBSEIucXgPLxgcO14gC3clFX0RQkELQw82JAZUPyB6ETg.BlQbAQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://192.168.100.248/web/index.php?r=products/sale'
+    'HTTP_COOKIE' => 'PHPSESSID=mu0ri6kv28t79gk4a5d6aia7i2; _csrf=899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229YYTypQsAST5Sl0suywlDzNXLgyvDzjy%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.248'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '54709'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/search1&searchtxt=1'
+    'REQUEST_URI' => '/web/index.php?r=products/search1&searchtxt=1'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486630280.999
+    'REQUEST_TIME' => 1486630280
+]
+2017-02-09 09:58:28 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Missing required parameters: id' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php:93
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(49): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sale', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/sale', Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2017-02-09 09:58:28 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mu0ri6kv28t79gk4a5d6aia7i2'
+    '_csrf' => '899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9YYTypQsAST5Sl0suywlDzNXLgyvDzjy\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 91018
+    'height_screen' => 526
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 10
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=mu0ri6kv28t79gk4a5d6aia7i2; _csrf=899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229YYTypQsAST5Sl0suywlDzNXLgyvDzjy%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.248'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '54733'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/sale'
+    'REQUEST_URI' => '/web/index.php?r=products/sale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486630708.839
+    'REQUEST_TIME' => 1486630708
+]
+2017-02-09 09:58:32 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Missing required parameters: id' in F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Controller.php:93
+Stack trace:
+#0 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\InlineAction.php(49): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#2 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('sale', Array)
+#3 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('products/sale', Array)
+#4 F:\Projectweb\muagkhoom\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 F:\Projectweb\muagkhoom\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2017-02-09 09:58:31 [192.168.100.248][-][mu0ri6kv28t79gk4a5d6aia7i2][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mu0ri6kv28t79gk4a5d6aia7i2'
+    '_csrf' => '899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9YYTypQsAST5Sl0suywlDzNXLgyvDzjy\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 91018
+    'height_screen' => 526
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'pro_id' => '3'
+    'qt' => 10
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=mu0ri6kv28t79gk4a5d6aia7i2; _csrf=899a745911190a286585a4777ec183851f447fabc46f4e5800f1af03e2cf419ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229YYTypQsAST5Sl0suywlDzNXLgyvDzjy%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.248'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '54735'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/sale'
+    'REQUEST_URI' => '/web/index.php?r=products/sale'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486630711.962
+    'REQUEST_TIME' => 1486630711
+]
+2017-02-09 10:56:57 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected end of file' in F:\Projectweb\muagkhoom\views\products\_form.php:44
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-09 10:56:57 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][info][application] $_GET = [
+    'r' => 'products/update'
+    'id' => '3'
+    '_pjax' => '#w1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '6krtol4jv4hvikj72th2thccd2'
+    '_csrf' => 'fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 91116
+    'height_screen' => 658
+    'pro_id' => '3'
+    'qt' => 11
+    'barcode' => [
+        0 => '4700122680666'
+        1 => '2471201171871'
+        2 => '9592880249026'
+        3 => '8308775634768'
+        4 => '2927629394533'
+    ]
+    'totalprice' => '37000'
+    'payprice' => '40000'
+    'paystill' => 0
+    'paychange' => 3000
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.2; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'OVZYYkt4UkFvYTEtPjdnJXEPAgUNDRsmTz08EnIpKCNrBAoyfRxmJQ=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#w1'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://192.168.100.248/web/index.php?r=products%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=6krtol4jv4hvikj72th2thccd2; _csrf=fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.64'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '62463'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fupdate&id=3&_pjax=%23w1'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fupdate&id=3&_pjax=%23w1'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486634217.18
+    'REQUEST_TIME' => 1486634217
+]
+2017-02-09 10:56:57 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected end of file' in F:\Projectweb\muagkhoom\views\products\_form.php:44
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-09 10:56:57 [192.168.100.64][-][6krtol4jv4hvikj72th2thccd2][info][application] $_GET = [
+    'r' => 'products/update'
+    'id' => '3'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '6krtol4jv4hvikj72th2thccd2'
+    '_csrf' => 'fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'timeout' => 91116
+    'height_screen' => 658
+    'pro_id' => '3'
+    'qt' => 11
+    'barcode' => [
+        0 => '4700122680666'
+        1 => '2471201171871'
+        2 => '9592880249026'
+        3 => '8308775634768'
+        4 => '2927629394533'
+    ]
+    'totalprice' => '37000'
+    'payprice' => '40000'
+    'paystill' => 0
+    'paychange' => 3000
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'photo' => '2017020113025354.jpg'
+            'first_name' => 'Daxiong'
+            'last_name' => 'SONGYANGCHENG'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2017-02-01'
+            'height_screen' => '526px'
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '192.168.100.248'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.2; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://192.168.100.248/web/index.php?r=products%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=6krtol4jv4hvikj72th2thccd2; _csrf=fb75847991a4cdda0672ffabf7902d7d7ed3a5fac4135ff9dba8803023243e04a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V7iOuO5dHYZgFuIgvkdp9QzbRRRP6d4d%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\mysql\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\da xiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\da xiong\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 192.168.100.248 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9'
+    'SERVER_NAME' => '192.168.100.248'
+    'SERVER_ADDR' => '192.168.100.248'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '192.168.100.64'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/muagkhoom'
+    'SERVER_ADMIN' => 'webmaster@example.com'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/muagkhoom/web/index.php'
+    'REMOTE_PORT' => '62464'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products%2Fupdate&id=3'
+    'REQUEST_URI' => '/web/index.php?r=products%2Fupdate&id=3'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486634217.579
+    'REQUEST_TIME' => 1486634217
+]

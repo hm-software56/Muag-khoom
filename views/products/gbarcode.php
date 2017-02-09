@@ -1,16 +1,33 @@
-<div class="row">
+<?php
+echo \yii2assets\printthis\PrintThis::widget([
+    'htmlOptions' => [
+        'id' => 'print',
+        'btnClass' => 'btn bg-red',
+        'btnId' => 'btnPrintThis',
+        'btnText' => 'ພີມ​ບາ​ໂຄດ',
+        'btnIcon' => 'glyphicon glyphicon-print'
+    ],
+    'options' => [
+        'debug' => false,
+        'importCSS' => true,
+        'importStyle' => false,
+        'loadCSS' => "path/to/my.css",
+        'pageTitle' => "",
+        'removeInline' => true,
+        'printDelay' => 333,
+        'header' => null,
+        'formValues' => true,
+    ]
+]);
+?>
+<hr/>
+<div  id="print"  align="center">
     <?php
-    for ($i = 0; $i <= 100; $i++) {
-        echo \barcode\barcode\BarcodeGenerator::widget(
-                [
-                    'elementId' => 'bar' . $i,
-                    'value' => rand(100, 999) . rand(100, 999) . rand(1000, 9999) . rand(100, 999),
-                    'type' => 'ean13', /* ean8, ean13, upc, std25, int25, code11, code39, code93, code128, codabar, msi, datamatrix */
-                ]
-        );
+    for ($i = 0; $i <= 50; $i++) {
         ?>
-        <div class="col-md-2" style="padding-bottom: 15px"><div id="bar<?= $i ?>"></div></div>
-            <?php
-        }
-        ?>
+        <img id="barcode<?= $i ?>">
+
+        <?php
+    }
+    ?>
 </div>

@@ -40,7 +40,7 @@ use yii\web\UrlManager;
             ', 'autofocus' => 'autofocus', 'placeholder' => 'ລະ​ຫັດ​ບາ​ໂຄດ', 'id' => 'search', 'class' => 'form-control']);
     ?>
 </div>
-<div class="row table-responsive" style="height: 450px;">
+<div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
     <table class="table table-striped" >
         <?php
         // print_r(\Yii::$app->session['product']);
