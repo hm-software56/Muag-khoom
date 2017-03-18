@@ -15,11 +15,11 @@ foreach ($model as $model) {
     <div class="col-md-2 col-sm-3">
         <div class="row">
             <div class="col-md-12" align="center">
-                <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />
+               <!-- <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />-->
                 <?php
-                /* echo yii\helpers\Html::a('<img src="' . Yii::$app->urlManager->baseUrl . '/images/thume/' . $model->image . '" class="thumbnail img-responsive" />', '#', [
-                  'title' => Yii::t('yii', 'Close'),
-                  'onclick' => "
+                echo yii\helpers\Html::a('<img src="' . Yii::$app->urlManager->baseUrl . '/images/thume/' . $model->image . '" class="thumbnail img-responsive" />', '#', [
+                    'title' => Yii::t('yii', 'Close'),
+                    'onclick' => "
                   $.ajax({
                   type     :'POST',
                   cache    : false,
@@ -28,7 +28,7 @@ foreach ($model as $model) {
                   $('#output').html(response);
                   }
                   });return false;",
-                  ]); */
+                ]);
                 ?>
                 <?= $model->name ?>
                 <br/>
