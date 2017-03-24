@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-6 col-sm-6">
         <div class="row">
             <div class="col-md-12">
-                <b>ປ້ອນ​ລະ​ຫັດ​ບາ​ໂຄດຂອງ​ແຕ່​ລະ​ຈຳ​ນວນສີ້ນ​ຄ້າ</b>
+                <b>ປ້ອນ​ລະ​ຫັດ​ບາ​ໂຄດຂອງ​ແຕ່​ລະ​ຈຳ​ນວນສີ້ນ​ຄ້າ <?= Html::a('<span class="glyphicon glyphicon-barcode"></span>', ['products/gbcode', 'id' => $_GET['id']]) ?></b>
             </div>
         </div>
         <div class="row">

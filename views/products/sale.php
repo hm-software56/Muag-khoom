@@ -27,9 +27,9 @@
                 $form = yii\widgets\ActiveForm::begin();
                 $search = new \app\models\ProductsSearch;
                 echo $form->field($search, 'name')->textInput([
-                    'onchange' => '
-                $.post( "index.php?r=products/search1&searchtxt="+$(this).val(), function( data ) {
-                $( "#output" ).html( data );
+                    'oninput' => '
+                $.post( "index.php?r=products/searchpd&searchtxt="+$(this).val(), function( data ) {
+                $( "#proct" ).html( data );
                 });
                 ', 'placeholder' => 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ', 'id' => 'search'])->label(false);
                 yii\widgets\ActiveForm::end();

@@ -73,22 +73,22 @@ use yii\web\UrlManager;
                         <td>
                             <div id="qtd">
                                 <?php
-                                if ($order_p['qautity'] > 1) {
-                                    echo yii\helpers\Html::a($order_p['qautity'], '#', [
-                                        'onclick' => "
-                        $.ajax({
-                       type     :'POST',
-                       cache    : false,
-                       url  : 'index.php?r=products/chageqautity&id=" . $product->id . "',
-                       success  : function(response) {
-                           $('#qtd').html(response);
-                           document.getElementById('qtd').focus();
-                       }
-                       });return false;",
-                                    ]);
-                                } else {
-                                    echo $order_p['qautity'];
-                                }
+                                /*   if ($order_p['qautity'] > 1) {
+                                  echo yii\helpers\Html::a($order_p['qautity'], '#', [
+                                  'onclick' => "
+                                  $.ajax({
+                                  type     :'POST',
+                                  cache    : false,
+                                  url  : 'index.php?r=products/chageqautity&id=" . $product->id . "',
+                                  success  : function(response) {
+                                  $('#qtd').html(response);
+                                  document.getElementById('qtd').focus();
+                                  }
+                                  });return false;",
+                                  ]);
+                                  } else { */
+                                echo $order_p['qautity'];
+                                // }
                                 ?>
                             </div>
                         </td>
@@ -104,6 +104,35 @@ use yii\web\UrlManager;
             <td colspan="3" align="right"><b>ລວມ​ຈຳ​ນວນ​ເງ​ີນ</b></td>
             <td align="right">​<b><?= number_format($total_prince, 2) ?></b></td>
         </tr>
+        <?php
+        if ($total_prince != 0) {
+            ?>
+            <tr>
+                <td colspan="3" align="right"><b>ສ່ວນຫລຸດ</b></td>
+                <td align="right" id="dsc">​<b>
+                        <?php
+                        if (\Yii::$app->session['discount'] == 0) {
+                            \Yii::$app->session['discount'] = 0;
+                        }
+                        echo yii\helpers\Html::a(number_format(\Yii::$app->session['discount'], 2), '#', [
+                            'onclick' => "
+                                  $.ajax({
+                                  type     :'POST',
+                                  cache    : false,
+                                  url  : 'index.php?r=products/discount',
+                                  success  : function(response) {
+                                  $('#dsc').html(response);
+                                  document.getElementById('dsc').focus();
+                                  }
+                                  });return false;",
+                        ]);
+                        ?>
+                    </b>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
     </table>
 </div>
 

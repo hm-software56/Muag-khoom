@@ -49,10 +49,11 @@ class ProductsController extends Controller {
 
     public function actionSale() {
         $this->layout = "main_pos";
-        if (!empty(Yii::$app->session['cormfirm'])) {
+        if (!empty(Yii::$app->session['cormfirm'])) {  /// after done payment clear old order then older new
             unset(Yii::$app->session['product']);
             unset(\Yii::$app->session['cormfirm']);
             unset(\Yii::$app->session['notinbarcode']);
+            unset(\Yii::$app->session['discount']);
         }
 
         if (isset($_GET['cid'])) {
@@ -73,6 +74,13 @@ class ProductsController extends Controller {
     }
 
     public function actionOrder($id) {
+
+        if (!empty(Yii::$app->session['cormfirm'])) { /// after done payment clear old order then older new
+            unset(Yii::$app->session['product']);
+            unset(\Yii::$app->session['cormfirm']);
+            unset(\Yii::$app->session['notinbarcode']);
+            unset(\Yii::$app->session['discount']);
+        }
 
         if (!empty(\Yii::$app->session['notinbarcode'])) {
             $bd = \app\models\Barcode::find()->where(['products_id' => $id, 'status' => 1])->andWhere(['not in', 'barcode', \Yii::$app->session['notinbarcode']])->one();
@@ -138,6 +146,7 @@ class ProductsController extends Controller {
         unset(Yii::$app->session['product']);
         unset(\Yii::$app->session['cormfirm']);
         unset(\Yii::$app->session['notinbarcode']);
+        unset(\Yii::$app->session['discount']);
         return $this->renderAjax('order');
     }
 
@@ -213,7 +222,7 @@ class ProductsController extends Controller {
 
     public function actionPay() {
         if (isset($_GET['totalprice'])) {
-            \Yii::$app->session['totalprice'] = $_GET['totalprice'];
+            \Yii::$app->session['totalprice'] = $_GET['totalprice'] - \Yii::$app->session['discount'];
             unset(\Yii::$app->session['payprice']);
             unset(\Yii::$app->session['paystill']);
             unset(\Yii::$app->session['paychange']);
@@ -250,6 +259,12 @@ class ProductsController extends Controller {
             $invioce->date = date('Y-m-d');
             $invioce->save();
 
+            if (\Yii::$app->session['discount'] != 0) {
+                $discount = new \app\models\Discount();
+                $discount->discount = \Yii::$app->session['discount'];
+                $discount->invoice_id = $invioce->id;
+                $discount->save();
+            }
             foreach (\Yii::$app->session['product'] as $order_p) {
                 if (!in_array(key($order_p), $pro_id)) {
                     $product = \app\models\Products::find()->where(['id' => key($order_p)])->one();
@@ -530,6 +545,43 @@ class ProductsController extends Controller {
 
     public function actionGbarcode() {
         return $this->render('gbarcode');
+    }
+
+    public function actionSearchpd() {
+        if (isset($_GET['searchtxt']) && !empty($_GET['searchtxt'])) {
+            $model = Products::find()->where("name like '%" . $_GET['searchtxt'] . "%' ")->all();
+        } else {
+            $model = Products::find()->orderBy('id ASC')->all();
+        }
+        return $this->renderAjax('pos_pro', ['model' => $model]);
+    }
+
+    public function actionGbcode($id) {
+        $product = Products::find()->where(['id' => $id])->one();
+        $barcode = \app\models\Barcode::find()->where(['products_id' => $id, 'status' => 1])->all();
+        $count = $product->qautity - count($barcode);
+        if ($count > 0) {
+            for ($i = 1; $i <= $count; $i++) {
+                $bcode = new \app\models\Barcode();
+                $number = rand(000000000, 999999999);
+                $number1 = rand(999, 222);
+                $v = $number1 . str_pad($number, 9, '0', STR_PAD_LEFT);
+                $bcode->products_id = $id;
+                $bcode->status = 1;
+                $bcode->barcode = $v;
+                $bcode->save();
+            }
+        }
+        return $this->redirect(['products/view', 'id' => $id]);
+    }
+
+    public function actionDiscount() {
+        if (isset($_GET['dsc'])) {
+            \Yii::$app->session['discount'] = $_GET['dsc'];
+            return $this->renderAjax('discount', ['discount' => $_GET['dsc']]);
+        } else {
+            return $this->renderAjax('discount');
+        }
     }
 
 }

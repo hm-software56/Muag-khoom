@@ -58,8 +58,12 @@ $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
                 <td align="right">​<b><?= number_format($total_prince, 2) ?> ກີບ</b></td>
             </tr>
             <tr>
+                <td colspan="2" align="right">ຈຳ​ນວນ​ເງ​ີນສ່ວນຫຼຸດ</td>
+                <td align="right">​<b><?= number_format(\Yii::$app->session['discount'], 2) ?></b></td>
+            </tr>
+            <tr>
                 <td colspan="2" align="right">ລວມ​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ</td>
-                <td align="right">​<b><?= number_format($total_prince + \Yii::$app->session['paychange'], 2) ?> ກີບ</b></td>
+                <td align="right">​<b><?= number_format(($total_prince + \Yii::$app->session['paychange']) - \Yii::$app->session['discount'], 2) ?></b></td>
             </tr>
             <tr>
                 <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຄ້າງ</td>

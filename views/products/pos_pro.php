@@ -6,6 +6,9 @@ use lo\widgets\SlimScroll;
 SlimScroll::widget([
     'options' => [
         'height' => \Yii::$app->session['height_screen'] . 'px',
+        // 'alwaysVisible' => true,
+        // "distance" => '20px',
+        "wheelStep" => 100,
     ]
 ]);
 ?>

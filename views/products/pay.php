@@ -7,6 +7,16 @@ $form = yii\widgets\ActiveForm::begin();
 <div class="row table-responsive" style="height: 450px;">
     <table class="table table-striped " >
         <tr>
+            <td align="right">ລວມ​ຈ​ຳ​ນວນ​ເງ​ີນ​ທັງ​ໝົດ:</td>
+            <td><b><?= number_format(Yii::$app->session['totalprice'] + \Yii::$app->session['discount'], 2) ?> ກີບ</b></td>
+
+        </tr>
+        <tr>
+            <td align="right">ຈ​ຳ​ນວນ​ເງ​ີນ​ສ່ວນຫຼຸດ:</td>
+            <td><b style="color:#FF9233"><?= number_format(\Yii::$app->session['discount'], 2) ?> ກີບ</b></td>
+
+        </tr>
+        <tr>
             <td align="right">ລວມ​ຈ​ຳ​ນວນ​ເງ​ີນ​ຕ້ອງ​ຈ່າຍ:</td>
             <td><b><?= number_format(Yii::$app->session['totalprice'], 2) ?> ກີບ</b></td>
 
