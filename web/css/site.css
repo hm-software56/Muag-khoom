@@ -3,6 +3,11 @@ body {
     height: 100%;
     background: #fff !important;
 }
+
+.table > tbody > tr > td {
+   vertical-align: middle!important;
+}
+
 .alert {
     padding: 5px !important;
     margin-bottom:0px !important;

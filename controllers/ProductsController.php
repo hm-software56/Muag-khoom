@@ -523,17 +523,18 @@ class ProductsController extends Controller {
 
     public function actionRepaortsale() {
 
-        if (isset($_POST['date_sale']) && !empty($_POST['date_sale'])) {
-            $model = \app\models\Sale::find()->where(['date' => $_POST['date_sale']])->orderBy('products_id ASC')->all();
-        } else {
-            $model = \app\models\Sale::find()->orderBy('products_id ASC')->all();
-        }
-        return $this->render('reportsale', ['model' => $model]);
+        /* if (isset($_POST['date_sale']) && !empty($_POST['date_sale'])) {
+          $model = \app\models\Sale::find()->where(['date' => $_POST['date_sale']])->orderBy('products_id ASC')->all();
+          } else {
+          $model = \app\models\Sale::find()->orderBy('products_id ASC')->all();
+          } */
+        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+        return $this->render('reportsale', ['invoices' => $invoices]);
     }
 
     public function actionProduct() {
 
-        $model = Products::find()->orderBy('code ASC')->all();
+        $model = Products::find()->where(['not in', 'qautity', [0]])->all();
         return $this->render('product', ['model' => $model]);
     }
 

@@ -10,7 +10,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ລະ​ຫັດ</th>
+                    <th>ລ/ດ</th>
                     <th>ຮູບພາບ</th>
                     <th>ຊື່​ສີ້ນ​ຄ້າ</th>
                     <th>ຈຳ​ນວນ</th>
@@ -22,12 +22,14 @@
             <tbody>
                 <?php
                 $total = 0;
+                $i = 0;
                 foreach ($model as $model) {
                     $total+=$model->pricesale * $model->qautity;
+                    $i++;
                     ?>
                     <tr>
-                        <td><?= $model->code ?></td>
-                        <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="150"/></a></td>
+                        <td><?= $i++ ?></td>
+                        <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="50"/></a></td>
                         <td><?= $model->name ?></td>
                         <td><?= $model->qautity ?></td>
                         <td><?= number_format($model->pricesale, 2) ?></td>
