@@ -30,6 +30,15 @@ use yii\web\UrlManager;
     ?>
 </div>
 <div class="row" style="padding-left: 2px; padding-right: 2px; padding-bottom: 5px;">
+    <script>
+        function clickAndDisable(link) {
+            // disable subsequent clicks
+            link.onclick = function (event) {
+                event.preventDefault();
+            }
+        }
+    </script>
+
     <?php
     echo Html::textInput('name', '', [
         'onchange' => '

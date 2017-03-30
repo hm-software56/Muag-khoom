@@ -13,8 +13,10 @@ use Yii;
  * @property string $barcode
  * @property string $status
  * @property integer $products_id
+ * @property integer $invoice_id
  *
  * @property \app\models\Products $products
+ * @property \app\models\Invoice $invoice
  * @property string $aliasModel
  */
 abstract class Barcode extends \yii\db\ActiveRecord
@@ -39,9 +41,10 @@ abstract class Barcode extends \yii\db\ActiveRecord
         return [
             [['barcode', 'products_id'], 'required'],
             [['status'], 'number'],
-            [['products_id'], 'integer'],
+            [['products_id', 'invoice_id'], 'integer'],
             [['barcode'], 'string', 'max' => 45],
-            [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']]
+            [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']],
+            [['invoice_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Invoice::className(), 'targetAttribute' => ['invoice_id' => 'id']]
         ];
     }
 
@@ -55,6 +58,7 @@ abstract class Barcode extends \yii\db\ActiveRecord
             'barcode' => 'Barcode',
             'status' => 'Status',
             'products_id' => 'Products ID',
+            'invoice_id' => 'Invoice ID',
         ];
     }
 
@@ -64,6 +68,14 @@ abstract class Barcode extends \yii\db\ActiveRecord
     public function getProducts()
     {
         return $this->hasOne(\app\models\Products::className(), ['id' => 'products_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getInvoice()
+    {
+        return $this->hasOne(\app\models\Invoice::className(), ['id' => 'invoice_id']);
     }
 
 

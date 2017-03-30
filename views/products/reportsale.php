@@ -4,36 +4,22 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap\Modal;
-
-if (Yii::$app->session->hasFlash('su')) {
-    echo \kartik\alert\Alert::widget([
-        'type' => \kartik\alert\Alert::TYPE_SUCCESS,
-        'title' => Yii::$app->session->getFlash('action'),
-        'icon' => 'glyphicon glyphicon-ok-sign',
-        'body' => Yii::$app->session->getFlash('su'),
-        'showSeparator' => false,
-        'delay' => 2000
-    ]);
-}
 ?>
 <?php
-Modal::begin(['clientOptions' => ['keyboard' => false], 'options' => ['id' => 'detail-modal',]])
+Modal::begin([
+    'id' => 'detail-modal',
+    'size' => 'modal-lg',
+]);
 ?>
-<div id='modalContent'></div>
-<?php yii\bootstrap\Modal::end() ?>
-<div class="row">
-    <div class="col-md-12 ">
+<div id="modalContent"></div>
+<?php
+Modal::end();
+?>
+<div class="row" >
+    <div class="col-md-12 " id="output">
         <div class="line_bottom">
             <div class="row">
                 <div class="col-xs-12">ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ</div>
-                <?php $form = ActiveForm::begin(); ?>
-                <div class="col-xs-8">
-                    <?= yii\jui\DatePicker::widget(['name' => 'date_sale', 'value' => @$_POST['date_sale'], 'dateFormat' => 'yyyy-MM-dd', 'options' => [ 'class' => 'form-control input-sm']]) ?>
-                </div>
-                <div class="col-xs-4">
-                    <button type="submit" class="btn bg-aqua btn-sm"><span class="glyphicon glyphicon-search"></span> ຄົ້ນ​ຫາ</button>
-                </div>
-                <?php ActiveForm::end(); ?>
             </div>
 
         </div>
@@ -41,17 +27,42 @@ Modal::begin(['clientOptions' => ['keyboard' => false], 'options' => ['id' => 'd
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>ລະ​ຫັດບີນ</th>
+                        <th>
+                            <?php
+                            echo yii\helpers\Html::textInput('invoice_code', $invoice_code, [
+                                'onchange' => '
+                                    $.post( "index.php?r=products/repaortsale&invoice_code="+$(this).val(), function( data ) {
+                                      $( "#output" ).html( data );
+                                    });
+                                ', 'placeholder' => 'ລະ​ຫັດບີນ', 'id' => 'search', 'class' => 'form-control']);
+                            ?>
+                        </th>
                         <th>ຮູບພາບ</th>
                         <th>ຊື່​ສີ້ນ​ຄ້າ</th>
                         <th>ຈຳ​ນວນ</th>
                         <th>ລາ​ຄາ</th>
                         <th>ລວມ</th>
                         <th>ສ່ວນຫຼຸດ</th>
-                        <th>ວັນ​ທີ</th>
+                        <th>
+                            <?=
+                            yii\jui\DatePicker::widget(['name' => 'date', 'value' => $date,
+                                'dateFormat' => 'yyyy-MM-dd',
+                                'options' => [
+                                    'onchange' => '
+                                    $.post( "index.php?r=products/repaortsale&date="+$(this).val(), function( data ) {
+                                      $( "#output" ).html( data );
+                                    });
+                                ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',
+                                ]
+                            ])
+                            ?>
+
+                        </th>
                     </tr>
+
                 </thead>
                 <tbody>
+
                     <?php
                     $invoice_id = [];
                     $total = 0;
@@ -70,29 +81,30 @@ Modal::begin(['clientOptions' => ['keyboard' => false], 'options' => ['id' => 'd
                                     ?>
                                     <td rowspan="<?= count($models) ?>">
                                         <?= $invoice->code ?>
-                                        <?php
-                                        /* echo yii\helpers\Html::a($model->products->id, '#', [
 
-                                          'onclick' => "$('#detail-modal').modal('show');
-                                          $.ajax({
-                                          type: 'GET',
-                                          cache: false,
-                                          url: '" . Yii::$app->urlManager->createUrl(['products/cancle', 'id' => $model->products_id]) . "',
-                                          success: function(response) {
-                                          $('#detail-modal .modal-body').html(response);
-                                          },
-                                          });
-                                          return false;
-                                          ",
-                                          ]); */
-                                        ?>
                                     </td>
                                     <?php
                                 }
                                 ?>
                                 <td><a title="<?= $model->products->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->products->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->products->image ?>" class="img-rounded img-thumbnail img-responsive" width="50"/></a></td>
                                 <td><?= $model->products->name ?></td>
-                                <td><?= $model->qautity ?></td>
+                                <td>
+                                    <?php
+                                    echo yii\helpers\Html::a($model->qautity, '#', [
+
+                                        'onclick' => "$('#detail-modal').modal('show');
+                                      $.ajax({
+                                      type: 'GET',
+                                      cache: false,
+                                      url: '" . Yii::$app->urlManager->createUrl(['products/cancle', 'id' => $model->products_id, 'invoice_id' => $model->invoice_id]) . "',
+                                      success: function(response) {
+                                      $('#detail-modal .modal-body').html(response);
+                                      },
+                                      });
+                                      return false;
+                                      ",
+                                    ]);
+                                    ?></td>
                                 <td><?= number_format($model->price / $model->qautity, 2) ?></td>
                                 <td><?= number_format($model->price, 2) ?></td>
                                 <?php

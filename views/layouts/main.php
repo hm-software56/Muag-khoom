@@ -217,21 +217,26 @@ AppAsset::register($this);
             jQuery(function ($) {
                 $('#money_dao').autoNumeric('init', {aSign: ' ກີບ', pSign: 's'});
             });
+
+            $('#detail-modal').on('hidden.bs.modal', function () {
+                location.reload();
+            })
+
         </script>
 
         <script>
 <?php
 if (Yii::$app->controller->action->id == 'gbarcode') {
-    for ($i = 0; $i <= 50; $i++) {
-        $number = rand(000000000, 999999999);
-        $number1 = rand(999, 222);
-        $v = $number1 . str_pad($number, 9, '0', STR_PAD_LEFT);
+    $barcodes = \app\models\Barcode::find()->where(['status' => 1])->all();
+    $i = 0;
+    foreach ($barcodes as $barcode) {
+        $i++;
         ?>
-                    JsBarcode("#barcode<?= $i ?>", "<?= $v ?>", {
+                    JsBarcode("#barcode<?= $i ?>", "<?= $barcode->barcode ?>", {
                         format: "EAN13",
                         displayValue: true,
                         fontSize: 18,
-                        width: 1.5,
+                        width: 1.8,
                         height: 30,
                         lineColor: "#000",
                     });

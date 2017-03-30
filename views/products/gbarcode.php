@@ -23,7 +23,10 @@ echo \yii2assets\printthis\PrintThis::widget([
 <hr/>
 <div  id="print"  align="center">
     <?php
-    for ($i = 0; $i <= 50; $i++) {
+    $barcodes = \app\models\Barcode::find()->where(['status' => 1])->all();
+    $i = 0;
+    foreach ($barcodes as $barcode) {
+        $i++;
         ?>
         <img id="barcode<?= $i ?>">
 

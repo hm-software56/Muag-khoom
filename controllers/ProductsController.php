@@ -284,6 +284,7 @@ class ProductsController extends Controller {
                 }
                 $barcode = \app\models\Barcode::find()->where(['barcode' => $order_p[key($order_p)], 'products_id' => key($order_p)])->one();
                 $barcode->status = 0;
+                $barcode->invoice_id = $invioce->id;
                 $barcode->save();
             }
         }
@@ -338,24 +339,29 @@ class ProductsController extends Controller {
         ]);
     }
 
-    public function actionCancle($id) {
+    public function actionCancle($id, $invoice_id) {
 
 // $model = new \app\models\Sale;
-        $product = Products::find()->where(['id' => $id])->one();
+        $product_sale = \app\models\Sale::find()->where(['products_id' => $id, 'invoice_id' => $invoice_id])->one();
 
-        if (isset($_POST['qtt'])) {
-            for ($i = 1; $i <= $_POST['qtt']; $i++) {
-                $model = \app\models\Sale::find()->where(['products_id' => $id])->orderBy('id DESC')->one();
-                $model->delete();
+        if (isset($_GET['barcode'])) {
+            $product_sale->price = $product_sale->price - ($product_sale->price / $product_sale->qautity);
+            $product_sale->qautity = $product_sale->qautity - 1;
+            if ($product_sale->qautity == 0) {
+                $product_sale->delete();
+            } else {
+                $product_sale->save();
             }
-            $qtt = $product->qautity + $_POST['qtt'];
-            Products::updateAll(['qautity' => $qtt], ['id' => $id]);
+            $qtt = $product_sale->products->qautity + 1;
+
+            Products::updateAll(['qautity' => $qtt], ['id' => $product_sale->products_id]);
+            \app\models\Barcode::updateAll(['status' => 1, 'invoice_id' => NULL], ['barcode' => $_GET['barcode']]);
+
             \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ຢັ້ງ​ຢືນ​ການ​ລືບ​ອອກສຳ​ເລັດ​ແລ້ວ..........'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-            $this->redirect(['products/repaortsale']);
         }
         return $this->renderAjax('cancle', [
-                    'product' => $product
+                    'product_sale' => $product_sale
         ]);
     }
 
@@ -522,14 +528,24 @@ class ProductsController extends Controller {
     }
 
     public function actionRepaortsale() {
+        if (isset($_GET['invoice_code']) || isset($_GET['date'])) {
+            if (isset($_GET['invoice_code'])) {
+                $invoices = \app\models\Invoice::find()->where(['code' => $_GET['invoice_code']])->orderBy('id DESC')->all();
+                if (empty($invoices) && empty($_GET['invoice_code'])) {
+                    $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                }
+            } elseif (isset($_GET['date'])) {
+                $invoices = \app\models\Invoice::find()->where(['date' => $_GET['date']])->orderBy('id DESC')->all();
+                if (empty($invoices) && empty($_GET['date'])) {
+                    $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                }
+            }
 
-        /* if (isset($_POST['date_sale']) && !empty($_POST['date_sale'])) {
-          $model = \app\models\Sale::find()->where(['date' => $_POST['date_sale']])->orderBy('products_id ASC')->all();
-          } else {
-          $model = \app\models\Sale::find()->orderBy('products_id ASC')->all();
-          } */
-        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
-        return $this->render('reportsale', ['invoices' => $invoices]);
+            return $this->renderAjax('reportsale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
+        } else {
+            $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+            return $this->render('reportsale', ['invoices' => $invoices, 'invoice_code' => "", 'date' => ""]);
+        }
     }
 
     public function actionProduct() {

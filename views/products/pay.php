@@ -77,18 +77,23 @@ $form = yii\widgets\ActiveForm::begin();
         </tr>
     </table>
     <div id="sh" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "block" : "none" ?>">
+
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-ok-circle"></span> ຢັ້ງ​ຢື້ນ​ຈ່າຍ​ເງີນ', '#', [
             'onclick' => "
                         $.ajax({
-                       type     :'POST',
-                       cache    : false,
-                       url  : 'index.php?r=products/ordercomfirm',
-                       success  : function(response) {
+                       type:'POST',
+                       cach: false,
+                       url: 'index.php?r=products/ordercomfirm',
+                       'beforeSend': function(){
+                                        $('#send').remove();
+                                    },
+                       success: function(response) {
                            $('#output').html(response);
                        }
                        });return false;",
-            'class' => "btn btn-large bg-green"
+            'class' => "btn btn-large bg-green",
+            'id' => 'send'
         ]);
         ?>
     </div>
