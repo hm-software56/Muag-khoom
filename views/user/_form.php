@@ -33,7 +33,7 @@ use yii\helpers\Url;
         ?>
         <?= $form->field($model, 'status')->dropDownList([ '1' => 'ເປິດ', '​0' => 'ປິດ',], ['prompt' => ''])->label('ສະ​ຖາ​ນະ') ?>
 
-        <?= $form->field($model, 'user_type')->dropDownList([ 'Admin' => 'ຜູ້​ຄຸ້ມລະ​ບົບ', 'User' => '​ຜູ້​ໃຊ້​ລະ​ບົບ', 'pos' => 'ຜູ້​ຂາຍ​ໜ້າ​ຮ້ານ'], ['prompt' => ''])->label('ສິດ​ຜູ້​ໃຊ້ລະ​ບົບ') ?>
+        <?= $form->field($model, 'user_type')->dropDownList([ 'Admin' => 'ຜູ້​ຄຸ້ມລະ​ບົບ', 'User' => '​ຜູ້​ໃຊ້​ລະ​ບົບ', 'POS' => 'ຜູ້​ຂາຍ​ໜ້າ​ຮ້ານ'], ['prompt' => ''])->label('ສິດ​ຜູ້​ໃຊ້ລະ​ບົບ') ?>
 
         <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d')])->label(false) ?>
         <?php

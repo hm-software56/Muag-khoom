@@ -103,6 +103,14 @@ if (Yii::$app->session->hasFlash('su')) {
                 // 'image',
                 ['class' => 'yii\grid\ActionColumn',
                     'template' => '{view} {update} {delete}',
+                    'visibleButtons' => [
+                        'update' => function ($model, $key, $index) {
+                            return (\Yii::$app->session['user']->user_type == "Admin") ? true : false;
+                        },
+                        'delete' => function ($model, $key, $index) {
+                            return (\Yii::$app->session['user']->user_type == "Admin") ? true : false;
+                        },
+                    ],
                     'buttons' => [
                         'view' => function ($url, $model) {
                             return Html::a(

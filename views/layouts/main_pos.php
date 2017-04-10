@@ -34,7 +34,7 @@ AppAsset::register($this);
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <span class="logo-mini"><b>ລ</b>ກງ</span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ເກັບ​ກຳ​ສີ້ນ​ຄ້າ</span>
+                        <span class="logo-lg">ຮ້ານ​ຂາຍ​ເຄ​ື່ອງ (HMS)</span>
                     </a>
                     <?php
                 } else {
@@ -71,11 +71,26 @@ AppAsset::register($this);
                                         <span class="glyphicon glyphicon-shopping-car t"></span>ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)
                                     </a>
                                 </li>
-                                <li class="dropdown user user-menu">
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/index">
-                                        <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
-                                    </a>
-                                </li>
+                                <?php
+                                if (Yii::$app->session['user']->user_type == "POS") {
+                                    ?>
+                                    <li class="dropdown user user-menu">
+                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
+                                            <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
+                                        </a>
+                                    </li>
+
+                                    <?php
+                                } else {
+                                    ?>
+                                    <li class="dropdown user user-menu">
+                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/index">
+                                            <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
+                                        </a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
                                 <li class="dropdown user user-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= Yii::$app->session['user']->photo ?>" class="user-image" alt="User Image">

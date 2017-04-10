@@ -34,7 +34,7 @@ AppAsset::register($this);
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <span class="logo-mini"><b>ລ</b>ກງ</span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ລະ​ບົບຂາຍສີ້ນ​ຄ້າ</span>
+                        <span class="logo-lg">ຮ້ານ​ຂາຍ​ເຄ​ື່ອງ (HMS)</span>
                     </a>
                     <?php
                 } else {
@@ -43,7 +43,7 @@ AppAsset::register($this);
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <span class="logo-mini"><b>ລ</b>ກງ</span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ລະ​ບົບເກັບ​ກຳ​ ແລະ​ ຂາຍສີ້ນ​ຄ້າ</span>
+                        <span class="logo-lg">ຮ້ານ​ຂາຍ​ເຄ​ື່ອງ (HMS)</span>
                     </a>
                     <?php
                 }
@@ -129,7 +129,7 @@ AppAsset::register($this);
                             <li class="header">ເມ​ນູ​ຫຼັກ</li>
 
                             <?php
-                            if (Yii::$app->session['user']->user_type == "Admin") {
+                            if (Yii::$app->session['user']->user_type == "Admin" || Yii::$app->session['user']->user_type == "User") {
                                 ?>
                                 <li>
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products">
@@ -154,34 +154,70 @@ AppAsset::register($this);
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
                                                 <i class="fa fa-ra"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
                                         </li>
-                                        <li>
+                                        <!--<li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot">
                                                 <i class="fa fa-ra"></i>ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ ແລະ ຍັງ​ເຫຼືອ</a>
-                                        </li>
+                                        </li> -->
 
                                     </ul>
                                 </li>
+                                <?php
+                                if (Yii::$app->session['user']->user_type == "Admin") {
+                                    ?>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-gears"></i> <span>ຕັ້​ງ​ຄ່າ</span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/gbarcode">
+                                                    <i class="fa fa-barcode"></i> <span>ລະ​ຫັດ​ບາ​ໂຄດ</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=shop-profile/update&id=1">
+                                                    <i class="fa fa-user"></i> <span>ຂໍ້​ມູນ​ຮ້ານ</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user">
+                                                    <i class="fa fa-user"></i> <span>ຜ​ູ້​ໃຊ໊ລ​ະ​ບົບ</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                                <?php
+                            }
+                            ?>
+                            <?php
+                            if (Yii::$app->session['user']->user_type == "POS") {
+                                ?>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-gears"></i> <span>ຕັ້​ງ​ຄ່າ</span>
+                                        <i class="fa fa-signal"></i> <span>ລາຍ​ງານ​</span>
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/gbarcode">
-                                                <i class="fa fa-barcode"></i> <span>ລະ​ຫັດ​ບາ​ໂຄດ</span>
-                                            </a>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
+                                                <i class="fa fa-sellsy"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ</a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=shop-profile/update&id=1">
-                                                <i class="fa fa-user"></i> <span>ຂໍ້​ມູນ​ຮ້ານ</span>
-                                            </a>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
+                                                <i class="fa fa-ra"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
                                         </li>
+                                        <!--<li>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot">
+                                                <i class="fa fa-ra"></i>ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ ແລະ ຍັງ​ເຫຼືອ</a>
+                                        </li> -->
+
                                     </ul>
                                 </li>
                                 <?php
                             }
                             ?>
-
                         </ul>
                     </section>
                     <!-- /.sidebar -->

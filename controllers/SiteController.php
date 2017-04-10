@@ -55,7 +55,11 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
         // return $this->render('index');
-        return $this->redirect(['products/index']);
+        if (!empty(\Yii::$app->session['user']) && \Yii::$app->session['user']->user_type == "POS") {
+            return $this->redirect(['products/sale']);
+        } else {
+            return $this->redirect(['products/index']);
+        }
     }
 
     public function actionPage() {

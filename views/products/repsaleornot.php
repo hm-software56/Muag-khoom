@@ -76,5 +76,5 @@
             return '<img src="' + $(this).data('img') + '" width="150" />';
         }
     });
-	$("[data-toggle=popover]").popover();
+    $("[data-toggle=popover]").popover();
 </script>

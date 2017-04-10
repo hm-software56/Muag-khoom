@@ -14,7 +14,11 @@ use Yii;
  * @property string $full_name
  * @property string $phone
  * @property string $date
+ * @property integer $user_id
  *
+ * @property \app\models\Barcode[] $barcodes
+ * @property \app\models\Discount[] $discounts
+ * @property \app\models\User $user
  * @property \app\models\Sale[] $sales
  * @property string $aliasModel
  */
@@ -40,8 +44,10 @@ abstract class Invoice extends \yii\db\ActiveRecord
         return [
             [['code', 'date'], 'required'],
             [['date'], 'safe'],
+            [['user_id'], 'integer'],
             [['code', 'phone'], 'string', 'max' => 45],
-            [['full_name'], 'string', 'max' => 255]
+            [['full_name'], 'string', 'max' => 255],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['user_id' => 'id']]
         ];
     }
 
@@ -56,7 +62,32 @@ abstract class Invoice extends \yii\db\ActiveRecord
             'full_name' => 'Full Name',
             'phone' => 'Phone',
             'date' => 'Date',
+            'user_id' => 'User ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBarcodes()
+    {
+        return $this->hasMany(\app\models\Barcode::className(), ['invoice_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDiscounts()
+    {
+        return $this->hasMany(\app\models\Discount::className(), ['invoice_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(\app\models\User::className(), ['id' => 'user_id']);
     }
 
     /**

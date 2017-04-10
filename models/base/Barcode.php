@@ -14,9 +14,11 @@ use Yii;
  * @property string $status
  * @property integer $products_id
  * @property integer $invoice_id
+ * @property integer $user_id
  *
- * @property \app\models\Products $products
  * @property \app\models\Invoice $invoice
+ * @property \app\models\Products $products
+ * @property \app\models\User $user
  * @property string $aliasModel
  */
 abstract class Barcode extends \yii\db\ActiveRecord
@@ -41,10 +43,11 @@ abstract class Barcode extends \yii\db\ActiveRecord
         return [
             [['barcode', 'products_id'], 'required'],
             [['status'], 'number'],
-            [['products_id', 'invoice_id'], 'integer'],
+            [['products_id', 'invoice_id', 'user_id'], 'integer'],
             [['barcode'], 'string', 'max' => 45],
+            [['invoice_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Invoice::className(), 'targetAttribute' => ['invoice_id' => 'id']],
             [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']],
-            [['invoice_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Invoice::className(), 'targetAttribute' => ['invoice_id' => 'id']]
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['user_id' => 'id']]
         ];
     }
 
@@ -59,7 +62,16 @@ abstract class Barcode extends \yii\db\ActiveRecord
             'status' => 'Status',
             'products_id' => 'Products ID',
             'invoice_id' => 'Invoice ID',
+            'user_id' => 'User ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getInvoice()
+    {
+        return $this->hasOne(\app\models\Invoice::className(), ['id' => 'invoice_id']);
     }
 
     /**
@@ -73,9 +85,9 @@ abstract class Barcode extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getInvoice()
+    public function getUser()
     {
-        return $this->hasOne(\app\models\Invoice::className(), ['id' => 'invoice_id']);
+        return $this->hasOne(\app\models\User::className(), ['id' => 'user_id']);
     }
 
 

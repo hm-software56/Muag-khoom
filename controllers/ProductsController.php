@@ -21,10 +21,12 @@ class ProductsController extends Controller {
         if (empty(\Yii::$app->session['user'])) {
             if (Yii::$app->controller->action->id != "login") {
                 $this->redirect(['site/login']);
+                return false;
             }
         } elseif (Yii::$app->session['timeout'] < date('dHi')) {
             unset(\Yii::$app->session['user']);
             $this->redirect(['site/login']);
+            return false;
         } else {
             Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
         }
@@ -257,6 +259,7 @@ class ProductsController extends Controller {
                 $invioce->code = sprintf('%08d', 1);
             }
             $invioce->date = date('Y-m-d');
+            $invioce->user_id = Yii::$app->session['user']->id;
             $invioce->save();
 
             if (\Yii::$app->session['discount'] != 0) {
@@ -285,6 +288,7 @@ class ProductsController extends Controller {
                 $barcode = \app\models\Barcode::find()->where(['barcode' => $order_p[key($order_p)], 'products_id' => key($order_p)])->one();
                 $barcode->status = 0;
                 $barcode->invoice_id = $invioce->id;
+                $barcode->user_id = Yii::$app->session['user']->id;
                 $barcode->save();
             }
         }
@@ -530,20 +534,38 @@ class ProductsController extends Controller {
     public function actionRepaortsale() {
         if (isset($_GET['invoice_code']) || isset($_GET['date'])) {
             if (isset($_GET['invoice_code'])) {
-                $invoices = \app\models\Invoice::find()->where(['code' => $_GET['invoice_code']])->orderBy('id DESC')->all();
-                if (empty($invoices) && empty($_GET['invoice_code'])) {
-                    $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                if (Yii::$app->session['user']->user_type == "POS") {
+                    $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id, 'code' => $_GET['invoice_code']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['invoice_code'])) {
+                        $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+                    }
+                } else {
+                    $invoices = \app\models\Invoice::find()->where(['code' => $_GET['invoice_code']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['invoice_code'])) {
+                        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                    }
                 }
             } elseif (isset($_GET['date'])) {
-                $invoices = \app\models\Invoice::find()->where(['date' => $_GET['date']])->orderBy('id DESC')->all();
-                if (empty($invoices) && empty($_GET['date'])) {
-                    $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                if (Yii::$app->session['user']->user_type == "POS") {
+                    $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id, 'date' => $_GET['date']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['date'])) {
+                        $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+                    }
+                } else {
+                    $invoices = \app\models\Invoice::find()->where(['date' => $_GET['date']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['date'])) {
+                        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                    }
                 }
             }
 
             return $this->renderAjax('reportsale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
         } else {
-            $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+            if (Yii::$app->session['user']->user_type == "POS") {
+                $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+            } else {
+                $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+            }
             return $this->render('reportsale', ['invoices' => $invoices, 'invoice_code' => "", 'date' => ""]);
         }
     }
