@@ -170,6 +170,11 @@ AppAsset::register($this);
                                         </a>
                                         <ul class="treeview-menu">
                                             <li>
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index">
+                                                    <i class="fa fa-sellsy"></i> <span>ປະ​ເພດ​ສີນ​ຄ້າ</span>
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/gbarcode">
                                                     <i class="fa fa-barcode"></i> <span>ລະ​ຫັດ​ບາ​ໂຄດ</span>
                                                 </a>

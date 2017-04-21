@@ -12,10 +12,13 @@ $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="category-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="line_bottom">ແກ້​ໄຂປະ​ເພດ​ສີນ​ຄ້າ</div>
+    <br/>
 
-    <?= $this->render('_form', [
+    <?=
+    $this->render('_form', [
         'model' => $model,
-    ]) ?>
+    ])
+    ?>
 
 </div>

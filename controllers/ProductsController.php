@@ -398,8 +398,8 @@ class ProductsController extends Controller {
             $model->image = UploadedFile::getInstance($model, 'image');
             $photo_name = date('YmdHmsi') . '.' . $model->image->extension;
             $model->image->saveAs(Yii::$app->basePath . '/web/images/' . $photo_name);
-            Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 250, 250)
-                    ->resize(new Box(250, 250))
+            Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 250, 300)
+                    ->resize(new Box(250, 300))
                     ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
             unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
             $model->image = $photo_name;
@@ -431,8 +431,8 @@ class ProductsController extends Controller {
             if (!empty($photo)) {
                 $photo_name = date('YmdHmsi') . '.' . $photo->extension;
                 $photo->saveAs(Yii::$app->basePath . '/web/images/' . $photo_name);
-                Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 150, 150)
-                        ->resize(new Box(150, 150))
+                Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 250, 300)
+                        ->resize(new Box(250, 300))
                         ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
                 unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
                 $model->image = $photo_name;
