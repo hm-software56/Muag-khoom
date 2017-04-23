@@ -76,8 +76,9 @@ $form = yii\widgets\ActiveForm::begin();
 
         </tr>
     </table>
-    <div id="sh" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "block" : "none" ?>">
 
+    <div id="sh" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "block" : "none" ?>">
+        <div id="load" align='right'></div>
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-ok-circle"></span> ຢັ້ງ​ຢື້ນ​ຈ່າຍ​ເງີນ', '#', [
             'onclick' => "
@@ -87,6 +88,7 @@ $form = yii\widgets\ActiveForm::begin();
                        url: 'index.php?r=products/ordercomfirm',
                        'beforeSend': function(){
                                         $('#send').remove();
+                                        $('#load').html('<img src=images/loading.gif width=40 />');
                                     },
                        success: function(response) {
                            $('#output').html(response);
