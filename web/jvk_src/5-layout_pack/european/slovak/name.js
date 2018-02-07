@@ -1,0 +1,1 @@
+["Sk", "Sloven&#x010D;ina"]

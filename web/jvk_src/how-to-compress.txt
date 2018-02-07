@@ -1,0 +1,88 @@
+This file explains how to compress the Virtual Keyboard script with ESC
+(EcmaScript Cruncher, http://www.saltstorm.net/depo/esc/) if you've
+made changes to the original script and want to compress (and obfuscate) it.
+
+The following procedure applies to full script (vkboard.js) and slim
+variant of the script (vkboards.js). For other two variants, steps 3, 4 and 6
+should be omitted.
+
+1. In the archive with the ESC.wsf you'll find the 'bless.map.dynapi' file.
+   Copy it to the same directory where ESC.wsf is; rename it to 'bless.map'
+   and append the following items to the end of the file:
+
+Show
+ShowNumpad
+avail_langs
+Us_normal
+Us_caps
+Us_shift
+Us_alt_gr
+Us_alt_gr_shift
+Ca_normal
+Ca_caps
+Ca_shift
+Ca_alt_gr
+Ru_normal
+Ru_caps
+Ru_shift
+De_normal
+De_caps
+De_shift
+De_alt_gr
+Fr_normal
+Fr_caps
+Fr_shift
+Fr_alt_gr
+Es_normal
+Es_caps
+Es_shift
+Es_alt_gr
+It_normal
+It_caps
+It_shift
+It_alt_gr
+It_alt_gr_shift
+Cz_normal
+Cz_caps
+Cz_shift
+Cz_alt_gr
+El_normal
+El_caps
+El_shift
+El_alt_gr
+He_normal
+He_shift
+He_alt_gr
+Acute
+Breve
+Caron
+Cedilla
+Circumflex
+DialytikaTonos
+DotAbove
+DoubleAcute
+Grave
+Ogonek
+RingAbove
+Tilde
+Umlaut
+
+  Note 1: as you see in the above list, it contains all the bundled
+  layouts. If you don't use any of them, you should omit it; if you
+  use additional layouts, you must add them to the above list.
+
+  Note 2: If you wish to use compressed script with the translator setup
+ (see '3-edit-translator.html'), then you must additionally append
+  this line:
+
+     _refresh_layout
+
+2. Cut legal (disclaimer) part, and save it to another file (e.g. 'legal.txt').
+
+3. Compress 'vkboard.js' to 'vkboardc.js' with level of compression of 4:
+
+     cscript ESC.wsf -l 4 -ow vkboardc.js vkboard.js
+
+4. Restore the disclaimer (from 'legal.txt') at the start of the script.
+   Don't forget to mention changes you've made and the tool you've used
+   for compression.

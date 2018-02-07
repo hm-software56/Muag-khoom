@@ -1,0 +1,153 @@
+Version history:
+
+([+] - new feature, [^] - code optimization or cleanup, [-] - bugfix)
+
+v.2.7 - March 26th, 2008:
+ [-] [full/slim keyboard] fixed bug with vkeyboard collapse when using arrow keys and the numpad;
+ [-] [all variants] fixed issue with eventual missing of clicks (= VKeyboard is now perfectly usable by touch-screen users);
+ [-] [all variants] cleared the copyright issue with a DocumentSelection library by Ilya Lebedev.
+ [^] [all variants] obfuscation procedure was simplified once again.
+
+v.2.6 - July 24th, 2007:
+ [+] [full/slim keyboard] arrow keys can now be shown on vkeyboard creation;
+ [+] [full/slim keyboard] advanced callback function changed to accomodate arrow keys;
+ [^] [all variants] obfuscation procedure was simplified even more.
+
+v.2.5 - July 18th, 2007:
+ [^] [all variants] minor optimizations;
+ [+] [layout pack] dutch, icelandic and portugese layouts added.
+
+v.2.4 - July 12th, 2007:
+ [+] [full keyboard] translator script added, scripts starting from 4th renamed to encompass this new test case;
+ [^] [full keyboard] 3rd input field in '5-test-fly' and '6-test-fly-anonym' was replaced by a TEXTAREA;
+ [-] [full keyboard] advanced callback function fixed once again (we'll get it right, eventually...);
+ [^] [popup keyboard] "popup" variant renamed to "slim", popup sample was dropped due to it's poor usability;
+ [+] [full/slim keyboard] you can now specify the index of the start-up layout;
+ [+] [full/slim keyboard] you can change the layout programmatically with 'SetParameters' function;
+ [+] [all variants] you can now specify if there will be a 1-pixel gap between the keys;
+ [^] [all variants] advanced callback function is now the base for all test cases;
+ [^] [all variants] most test cases now make use of 'backfocus' function to address the 'lost focus' annoyance;
+ [^] [all variants] obfuscation procedure was significantly simplified;
+ [-] [all variants] fixed the use of static 'kbArray' variable (doesn't affect you if you're using 1 vkeyboard per page).
+
+v.2.3 - March 28th, 2007:
+ [^] [all variants] major code cleanup (no evals now!), much cleaner and, generally, faster code;
+ [+] [all variants] "keys" can now flash on click, flash colors are customizable;
+ [+] [all variants] virtual keyboard can now either embed into the page or float over the content;
+ [+] [all variants] more parameters added (5 to constructor, 4 to SetParameters method) to control two above features;
+ [-] [all variants] fixed some key text selection issues;
+ [^] [full keyboard] advanced callback function is now (almost) perfect;
+ [-] [full/popup keyboard] reserved keys fired &nbsp; symbol when pressed, fixed;
+ [+] [layout pack] arabic (470) layout added;
+ [^] [layout pack] all layout files reformatted to be more readable.
+
+v.2.2 - February 14th, 2007:
+ [+] [layout pack] first release of the layout pack;
+ [-] [full keyboard] fixed bugs in advanced callback function that were introduced in the previous release;
+ [^] [full keyboard] Macron diacritic array moved to a separate file;
+ [+] [full/popup keyboard] new parameter added - background color for the inactive keys;
+ [^] [full/popup keyboard] built-in Czech layout now matches one in IBM layout database, older variant moved to the layout pack;
+ [^] [full/popup keyboard] built-in Hebrew layout now matches one in IBM layout database (for normal/caps/shift parts).
+
+v.2.1 - February 6th, 2007:
+ [-] [full/popup keyboard] fixed bug with dead_color parameter not affecting dead keys' color;
+ [+] [full/popup keyboard] Breve, DotAbove, DoubleAcute and Ogonek diacritic arrays added;
+ [-] [full/popup keyboard] Acute, Grave and Tilde diacritic arrays corrected;
+ [-] [ATM-numpad] fixed erroneous sample;
+ [-] [all variants] better advanced callback function:
+                    - fixed bug with improper deletion of multiple characters at once (Mozilla, Opera, Netscape, MS IE);
+                    - fixed bug with improper character replacements (MS IE);
+                    - plays better with INPUT fields of type="text".
+
+v.2.0 - January 12th, 2007:
+ [^] [all variants] code refactored and rewritten in an object-oriented fashion, new API, no global variables exposed;
+ [^] [all variants] massive code optimizations, especially in _refresh_layout and _construct (former ShowVKeyboard) methods;
+ [^] [all variants] usage of the eval function was reduced to the absolute minimum (6 calls in the beginning of _refresh_layout);
+ [+] [all variants] callback function and all visual parameters now can be adjusted at run-time;
+ [^] [all variants] callback function is now stored by reference, not by name;
+ [+] [all variants] callback function now can accept a second parameter;
+ [^] [all variants] as a result of refactoring, script now runs up to 30% faster;
+ [+] [all variants] font size can now be specified with any absolute or relative CSS length unit (experimental plug-in);
+ [-] [all variants] fixed bug when script calculated erroneous padding when changing font size;
+ [-] [all variants] resolved issue with MS IE/Mozilla font scaling;
+ [+] [full/popup keyboard] numpad can now be shown/hidden at run-time;
+ [-] [full/popup keyboard] fixed issues with "Enter" key misalignment and glitches;
+ [-] [full/popup keyboard] fixed bug with numpad keys' misalignment when changing font size;
+ [-] [full/popup keyboard] fixed bug when AltGr didn't shadow when Shift was pressed and _alt_gr_shift array was not defined;
+ [+] [full keyboard] test_any_css, test_change and test_scale samples added;
+ [^] [full keyboard] all samples renamed to form a more consistent test suite;
+ [^] [full keyboard] more comments written in all sample installations;
+ [^] [popup keyboard] popup variant is no longer bound to 2 rows per 5 languages each - adaptive configuration;
+ [+] changelog.txt (version history) and how-to-compress.txt (obfuscation procedure) files are now shipped with the source archive.
+
+v.1.12 - December 22nd, 2006:
+ [-] [full/popup keyboard] fixed an issue with the transparent background of the language drop-down menu;
+ [-] [full/popup keyboard] fixed an issue with the language menu not receiving the same font color as the rest of the keyboard;
+ [-] [full/popup keyboard] fixed an issue with the Russian language designator sometimes shown with odd characters;
+ [^] [numpad/ATM-numpad] optimizations and code size reductions;
+ [+] [all variants] "background color" separated into "keyboard base color" and "keys' background color";
+ [+] [all variants] keyboard font can now be specified;
+ [^] [all variants] further preparations to the next milestone release.
+
+v.1.11 - November 16th, 2006:
+ [+] [full keyboard] test_fly_anonym sample added;
+ [+] [full/popup keyboard] 'new shekel' symbol added to the Hebrew layout;
+ [^] [full/popup keyboard] language names in the language menu were rewritten in the languages they represent.
+
+v.1.10 - October 26th, 2006:
+ [+] popup-tuned variant of the vkeyboard created;
+ [^] [all variants] key parts of the script were rewritten, resulting in smaller and faster code;
+ [-] [all variants] fixed the annoying issue with key text selection when "typing" fast (due to eventual drag-n-drop);
+ [^] [all variants] got rid of all browser detection code;
+ [^] [full keyboard] advanced callback function was rewritten; works ok with MS IE 6, Firefox 1.5, Opera 9 and Netscape 8.1.
+
+v.1.9 - October 16th, 2006:
+ [^] [full keyboard] dead-keys subsystem reworked;
+ [^] [all variants] slightly more compact and clean code.
+
+v.1.8 - October 4th, 2006:
+ [+] numpad-only - 2 variants - scripts are now bundled in the archive;
+ [-] [full keyboard] fixed problem with an improper cursor positioning when used with Hebrew in edit_simple sample;
+ [+] [full keyboard] many corrections to Greek layout; letters with acute, umlaut and Dialytika Tonos accents are now available;
+ [+] [full keyboard] added optional switch to ShowVKeyboard, that allows you not to create the numpad.
+
+v.1.7 - September 14th, 2006:
+ [+] first attempt to write an advanced callback function, which allows (I hope) a natural experience with the TEXTAREA;
+ [+] test1 sample has been split into edit_simple and edit_full.
+
+v.1.6 - August 28th, 2006:
+ [+] keyboard now pops over the page rather than embedding into it;
+ [+] keyboard font size can now be specified, keyboard scales uniformly with font size;
+ [+] keyboard colors can now be customized;
+ [+] Shift and AltGr keys now deactivate after alphanumeric key has been pressed;
+ [-] fixed an obscure language menu bug sometimes occurring in MS IE;
+ [+] compressed version of script is now bundled in the archive;
+ [^] minor code changes and cleanups, too numerous to be listed.
+
+v.1.5 - June 12th, 2006:
+ [-] most layouts revised and fixed;
+ [-] minor language menu issue fixed;
+ [+] pilot implementation of the dead keys subsystem.
+
+v.1.4 - May 16th, 2006:
+ [-] all "box model"-related issues solved.
+
+v.1.3 - May 14th, 2006:
+ [^] third code revision, even more robust and error-proof code;
+ [+] Canadian (multilingual standard) and Hebrew layouts added;
+ [+] "AltGr" key and appropriate layout variants added;
+ [-] German, French, Spanish, and Greek layouts fixed;
+ [-] "Caps Lock" + "Shift" case switching fixed;
+ [-] language menu positioning issue fixed;
+ [^] moved from manual to on-focus switching in the "test2" example.
+
+v.1.2 - April 22nd, 2006:
+ [^] second code revision, much more compact and robust code;
+ [+] Spanish, Italian, and Greek layouts added.
+
+v.1.1 - April 14th, 2006:
+ [^] code refined;
+ [+] Russian, German, French, and Czech layouts added.
+
+v.1.0 - April 10th, 2006:
+ [+] first version, English layout only.

@@ -18,10 +18,11 @@ foreach ($model as $model) {
     <div class="col-md-2 col-sm-3">
         <div class="row">
             <div class="col-md-12" align="center">
+            <div class="col-md-12 aa"><?= $model->qautity ?></div>
                <!-- <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />-->
                 <?php
                 echo yii\helpers\Html::a('<img src="' . Yii::$app->urlManager->baseUrl . '/images/thume/' . $model->image . '" class="thumbnail img-responsive" />', '#', [
-                    'title' => Yii::t('yii', 'Close'),
+                    'title' => Yii::t('yii', 'ເພີ່ມ'),
                     'onclick' => "
                   $.ajax({
                   type     :'POST',

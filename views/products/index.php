@@ -38,7 +38,7 @@ if (Yii::$app->session->hasFlash('su')) {
     </div>
 
     <div class="table-responsive">
-        <?php Pjax::begin(); ?>    <?=
+        <?=
         GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -115,7 +115,7 @@ if (Yii::$app->session->hasFlash('su')) {
                         'view' => function ($url, $model) {
                             return Html::a(
                                             '<span class="glyphicon glyphicon-barcode"></span>', ['products/view', 'id' => $model->id], [
-                                        'class' => 'btn bg-blue btn-xs',
+                                            'class' => 'btn bg-blue btn-xs',
                                             ]
                             );
                         },
@@ -143,6 +143,5 @@ if (Yii::$app->session->hasFlash('su')) {
                     ],
                 ]);
                 ?>
-                <?php Pjax::end(); ?>
     </div>
 </div>

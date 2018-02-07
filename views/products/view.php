@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div id="qtt" style="font-family: 'Saysettha OT'">
+<div class="row" id="qtt" style="font-family: 'Saysettha OT'">
 
     <div class="col-md-6 col-sm-6">
         <div class="row">

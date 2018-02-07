@@ -1,0 +1,147 @@
+<HTML>
+ <HEAD>
+  <SCRIPT type="text/javascript" src="vkboard.js"></SCRIPT>
+  <SCRIPT><!--
+
+   // This example shows the very basic installation
+   // of the Virtual Keyboard.
+   // 
+   // 'keyb_change' and 'keyb_callback' functions
+   // do all the job here.
+
+   var opened = false, vkb = null, text = null;
+
+   function keyb_change()
+   {
+     document.getElementById("switch").innerHTML = (opened ? "Show keyboard" : "Hide keyboard");
+     opened = !opened;
+
+     if(opened && !vkb)
+     {
+       // Note: all parameters, starting with 3rd, in the following
+       // expression are equal to the default parameters for the
+       // VKeyboard object. The only exception is 15th parameter
+       // (flash switch), which is false by default.
+
+       vkb = new VKeyboard("keyboard",    // container's id
+                           keyb_callback, // reference to the callback function
+                           true,          // create the arrow keys or not? (this and the following params are optional)
+                           true,          // create up and down arrow keys? 
+                           false,         // reserved
+                           true,          // create the numpad or not?
+                           "",            // font name ("" == system default)
+                           "14px",        // font size in px
+                           "#000",        // font color
+                           "#F00",        // font color for the dead keys
+                           "#FFF",        // keyboard base background color
+                           "#FFF",        // keys' background color
+                           "#DDD",        // background color of switched/selected item
+                           "#777",        // border color
+                           "#CCC",        // border/font color of "inactive" key (key with no value/disabled)
+                           "#FFF",        // background color of "inactive" key (key with no value/disabled)
+                           "#F77",        // border color of the language selector's cell
+                           true,          // show key flash on click? (false by default)
+                           "#CC3300",     // font color during flash
+                           "#FF9966",     // key background color during flash
+                           "#CC3300",     // key border color during flash
+                           false,         // embed VKeyboard into the page?
+                           true,          // use 1-pixel gap between the keys?
+                           0);            // index(0-based) of the initial layout
+     }
+     else
+       vkb.Show(opened);
+
+     text = document.getElementById("textfield");
+     text.focus();
+
+     if(document.attachEvent)
+       text.attachEvent("onblur", backFocus);
+   }
+
+   function backFocus()
+   {
+     if(opened)
+     {
+       var l = text.value.length;
+
+       setRange(text, l, l);
+
+       text.focus();
+     }
+   }
+
+   // Callback function:
+   function keyb_callback(ch)
+   {
+     var val = text.value;
+
+     switch(ch)
+     {
+       case "BackSpace":
+         var min = (val.charCodeAt(val.length - 1) == 10) ? 2 : 1;
+         text.value = val.substr(0, val.length - min);
+         break;
+
+       case "Enter":
+         text.value += "\n";
+         break;
+
+       default:
+         text.value += ch;
+     }
+   }
+
+   function setRange(ctrl, start, end)
+   {
+     if(ctrl.setSelectionRange) // Standard way (Mozilla, Opera, ...)
+     {
+       ctrl.setSelectionRange(start, end);
+     }
+     else // MS IE
+     {
+       var range;
+
+       try
+       {
+         range = ctrl.createTextRange();
+       }
+       catch(e)
+       {
+         try
+         {
+           range = document.body.createTextRange();
+           range.moveToElementText(ctrl);
+         }
+         catch(e)
+         {
+           range = null;
+         }
+       }
+
+       if(!range) return;
+
+       range.collapse(true);
+       range.moveStart("character", start);
+       range.moveEnd("character", end - start);
+       range.select();
+     }
+   }
+
+ //--></SCRIPT></HEAD>
+
+ <BODY>
+  <P style="font-family:Tahoma;font-size:14px">Virtual keyboard test #1: simple installation.</P>
+
+  <TABLE border="0" width="60%">
+   <TR>
+     <TD width="100px"><TEXTAREA id="textfield" rows="12" cols="50"></TEXTAREA></TD>
+
+     <TD width="10px"></TD><TD><DIV width="50px" align="justify">This page allows you to easily type English, Russian, German, French, Spanish, Italian, Czech, Greek and Hebrew characters without an appropriate keyboard (or without keyboard at all). You can edit your text in the textbox and then copy it to your e-mail application, word processor, etc.<BR><BR>Dead keys appear as characters in <font style="color:#f00">red</font>. Find a diacritic, press a key, and you'll see all available characters with this mark.</DIV></TD>
+   </TR>
+  </TABLE>
+
+  <P><A href="javascript:keyb_change()" onclick="javascript:blur()" id="switch" style="font-family:Tahoma;font-size:14px;text-decoration:none;border-bottom: 1px dashed #0000F0;color:#0000F0">Show keyboard</A></P>
+
+  <DIV id="keyboard"></DIV>
+
+</BODY></HTML>

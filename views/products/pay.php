@@ -54,7 +54,7 @@ $form = yii\widgets\ActiveForm::begin();
                     }
                 </script>
                 <?php
-                echo \yii\helpers\Html::textInput('pice_txt', \Yii::$app->session['payprice'], ['onkeyup' => 'calc()', 'id' => 'textpice', 'onmouseout' => '
+                echo \yii\helpers\Html::textInput('pice_txt', \Yii::$app->session['payprice'], ['autocomplete'=>"off" ,'onkeyup' => 'calc()', 'id' => 'textpice', 'onmouseout' => '
                 $.post( "index.php?r=products/pay&pricetxt="+$(this).val(), function( data ) {
                   $( "#output" ).html( data );
                  // document.getElementById("textpice").focus();

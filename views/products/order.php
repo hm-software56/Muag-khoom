@@ -148,7 +148,7 @@ use yii\web\UrlManager;
 <div class="row" style="border-top: 2px green solid; padding-top: 2px;">
     <div class="col-md-6">
         <?php
-        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-usd"></span> ຈ່າຍ​ເງີນ', '#', [
+        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> ຈ່າຍ​ເງີນ', '#', [
             'onclick' => "
                         $.ajax({
                        type     :'POST',
