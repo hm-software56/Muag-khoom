@@ -59,7 +59,7 @@ class AppAsset extends AssetBundle {
         //  "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"
         //  'barcode/JsBarcode.js',
         //  'barcode/EAN_UPC.js',
-        'JsBarcode/dist/JsBarcode.all.js',
+        'JsBarcode/dist/jsbarcode_3.3.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

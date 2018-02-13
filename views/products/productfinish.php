@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="line_bottom">
+            ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ທີໝົດ​ແລ້ວ
+
+        </div>
+
+    </div>
+    <div class="col-md-12 table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ລ/ດ</th>
+                    <th>ຮູບພາບ</th>
+                    <th>ຊື່​ສີ້ນ​ຄ້າ</th>
+                    <th>ຈຳ​ນວນ</th>
+                    <th>ລາ​ຄາ</th>
+                    <th>ລວມ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $total = 0;
+                $i = 0;
+                foreach ($model as $model) {
+                    $total+=$model->pricesale * $model->qautity;
+                    $i++;
+                    ?>
+                    <tr>
+                        <td><?= $i++ ?></td>
+                        <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="30"/></a></td>
+                        <td><?= $model->name ?></td>
+                        <td><?= $model->qautity ?></td>
+                        <td><?= number_format($model->pricesale, 2) ?></td>
+                        <td><?= number_format($model->pricesale * $model->qautity, 2) ?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+                <tr>
+                    <td colspan="5" align="right">​<b>ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ</b></td>
+                    <td><b><?= number_format($total, 2) ?><b/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="<?= Yii::$app->urlManager->baseUrl ?>/js/jquery1.8.min.js"></script>
+<script src="<?= Yii::$app->urlManager->baseUrl ?>/js/bootstrap2.2.1.min.js"></script>
+<script>
+    // Add custom JS here
+    $('a[rel=popover]').popover({
+        html: true,
+        trigger: 'hover',
+        placement: 'right',
+        content: function () {
+            return '<img src="' + $(this).data('img') + '" width="150" />';
+        }
+    });
+</script>

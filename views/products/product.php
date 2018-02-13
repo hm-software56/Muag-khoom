@@ -16,7 +16,6 @@
                     <th>ຈຳ​ນວນ</th>
                     <th>ລາ​ຄາ</th>
                     <th>ລວມ</th>
-                    <th>ວັນ​ທີ</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,20 +28,18 @@
                     ?>
                     <tr>
                         <td><?= $i++ ?></td>
-                        <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="50"/></a></td>
+                        <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="30"/></a></td>
                         <td><?= $model->name ?></td>
                         <td><?= $model->qautity ?></td>
                         <td><?= number_format($model->pricesale, 2) ?></td>
                         <td><?= number_format($model->pricesale * $model->qautity, 2) ?></td>
-                        <td><?= $model->date ?></td>
                     </tr>
                     <?php
                 }
                 ?>
                 <tr>
                     <td colspan="5" align="right">​<b>ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ</b></td>
-                    <td><?= number_format($total, 2) ?></td>
-                    <td></td>
+                    <td><b><?= number_format($total, 2) ?><b/></td>
                 </tr>
             </tbody>
         </table>

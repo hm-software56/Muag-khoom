@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f02024e1537ff9cabd02bab63653ae15",
+    "content-hash": "507364c44fad2c15b28ebe3b98dadc58",
     "packages": [
+        {
+            "name": "2amigos/yii2-chartjs-widget",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-chartjs-widget.git",
+                "reference": "a5246d9bb491ef4ff82915dccc6980ed17ed0873"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-chartjs-widget/zipball/a5246d9bb491ef4ff82915dccc6980ed17ed0873",
+                "reference": "a5246d9bb491ef4ff82915dccc6980ed17ed0873",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/chartjs": "~2.6",
+                "yiisoft/yii2": "~2.0.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\chartjs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ChartJs widget for Yii2.",
+            "homepage": "http://yiiwheels.com/extension/chartjs-widget",
+            "keywords": [
+                "2amigos",
+                "chartjs",
+                "extension",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-07-26T09:24:16+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.7",
@@ -55,6 +113,108 @@
                 "web"
             ],
             "time": "2016-07-25T15:51:55+00:00"
+        },
+        {
+            "name": "bower-asset/c3",
+            "version": "v0.4.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/c3js/c3.git",
+                "reference": "69f975cfcf54626a36566a8b8236f63aec001951"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/c3js/c3/zipball/69f975cfcf54626a36566a8b8236f63aec001951",
+                "reference": "69f975cfcf54626a36566a8b8236f63aec001951",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/d3": "~3.5.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "c3.css",
+                    "c3.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "htdocs",
+                    "spec",
+                    "src/**/*.js",
+                    "package.json",
+                    "component.json",
+                    "Gruntfile.*"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "D3-based reusable chart library",
+            "keywords": [
+                "chart",
+                "d3"
+            ],
+            "time": "2017-09-14T14:36:18+00:00"
+        },
+        {
+            "name": "bower-asset/chartjs",
+            "version": "v2.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chartjs/Chart.js.git",
+                "reference": "0fead21939b92c15093c1b7d5ee2627fb5900fff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chartjs/Chart.js/zipball/0fead21939b92c15093c1b7d5ee2627fb5900fff",
+                "reference": "0fead21939b92c15093c1b7d5ee2627fb5900fff",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./dist/Chart.js",
+                "bower-asset-ignore": [
+                    ".github",
+                    ".codeclimate.yml",
+                    ".gitignore",
+                    ".npmignore",
+                    ".travis.yml",
+                    "scripts"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple HTML5 charts using the canvas element.",
+            "time": "2017-10-28T15:01:52+00:00"
+        },
+        {
+            "name": "bower-asset/d3",
+            "version": "v3.5.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mbostock-bower/d3-bower.git",
+                "reference": "7a826d211d5067867debf9ce24a9987e0cb02b6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mbostock-bower/d3-bower/zipball/7a826d211d5067867debf9ce24a9987e0cb02b6e",
+                "reference": "7a826d211d5067867debf9ce24a9987e0cb02b6e",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "d3.js",
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A JavaScript visualization library for HTML and SVG.",
+            "time": "2016-05-05T00:30:02+00:00"
         },
         {
             "name": "bower-asset/datatables",
@@ -2596,6 +2756,57 @@
                 "yii2"
             ],
             "time": "2016-07-29T07:39:15+00:00"
+        },
+        {
+            "name": "yii2mod/yii2-c3-chart",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2mod/yii2-c3-chart.git",
+                "reference": "75720eb5bca7a64a2c8b81cc2ce2902894e424be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2mod/yii2-c3-chart/zipball/75720eb5bca7a64a2c8b81cc2ce2902894e424be",
+                "reference": "75720eb5bca7a64a2c8b81cc2ce2902894e424be",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/c3": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii2mod\\c3\\chart\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Chepurnoy",
+                    "email": "igorzfort@gmail.com"
+                }
+            ],
+            "description": "Yii2 wrapper for D3-based reusable chart library",
+            "keywords": [
+                "yii2",
+                "yii2 c3 chart",
+                "yii2 c3.js"
+            ],
+            "time": "2017-03-07T16:49:10+00:00"
         },
         {
             "name": "yiisoft/yii2",

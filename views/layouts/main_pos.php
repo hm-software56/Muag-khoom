@@ -28,22 +28,23 @@ AppAsset::register($this);
             <header class="main-header navbar-fixed-top">
                 <!-- Logo -->
                 <?php
+                $profle=\app\models\ShopProfile::find()->one();
                 if (!empty(Yii::$app->session['user'])) {
                     ?>
-                    <a class="logo">
+                    <a class="logo" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class="logo-mini"><b>ລ</b>ກງ</span>
+                        <span class="logo-mini"><?=$profle->shop_name?></span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ຮ້ານ​ຂາຍ​ເຄ​ື່ອງ (HMS)</span>
+                        <span class="logo-lg"><?=$profle->shop_name?></span>
                     </a>
                     <?php
                 } else {
                     ?>
                     <a class="logo">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class="logo-mini"><b>ລ</b>ກງ</span>
+                        <span class="logo-mini"><?=$profle->shop_name?></span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ເກັບ​ກຳ​ສີ້ນ​ຄ້າ</span>
+                        <span class="logo-lg"><?=$profle->shop_name?></span>
                     </a>
                     <?php
                 }
@@ -75,7 +76,7 @@ AppAsset::register($this);
                                 if (Yii::$app->session['user']->user_type == "POS") {
                                     ?>
                                     <li class="dropdown user user-menu">
-                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
+                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord">
                                             <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
                                         </a>
                                     </li>
@@ -84,7 +85,7 @@ AppAsset::register($this);
                                 } else {
                                     ?>
                                     <li class="dropdown user user-menu">
-                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/index">
+                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord">
                                             <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
                                         </a>
                                     </li>

@@ -7,6 +7,7 @@ use yii\helpers\Html;
 //use yii\bootstrap\NavBar;
 //use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\bootstrap\ActiveForm;
 
 AppAsset::register($this);
 ?>
@@ -28,22 +29,21 @@ AppAsset::register($this);
             <header class="main-header navbar-fixed-top">
                 <!-- Logo -->
                 <?php
+                $profle=\app\models\ShopProfile::find()->one();
                 if (!empty(Yii::$app->session['user'])) {
                     ?>
-                    <a class="logo">
-                        <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class="logo-mini"><b>ລ</b>ກງ</span>
+                    <a class="logo" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
+                         <span class="logo-mini"><?=$profle->shop_name?></span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ຮ້ານ​ຂາຍ​ເຄ​ື່ອງ (HMS)</span>
+                        <span class="logo-lg"><?=$profle->shop_name?></span>
                     </a>
                     <?php
                 } else {
                     ?>
                     <a class="logo">
-                        <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class="logo-mini"><b>ລ</b>ກງ</span>
+                        <span class="logo-mini"><?=$profle->shop_name?></span>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">ຮ້ານ​ຂາຍ​ເຄ​ື່ອງ (HMS)</span>
+                        <span class="logo-lg"><?=$profle->shop_name?></span>
                     </a>
                     <?php
                 }
@@ -138,21 +138,25 @@ AppAsset::register($this);
                                 </li>
                                 <li>
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
-                                        <i class="fa fa-th"></i> <span>​ຂາຍ​ສີ້ນ​ຄ້າ</span>
+                                        <i class="fa fa-shopping-cart "></i> <span>​ຂາຍ​ສີ້ນ​ຄ້າ</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-signal"></i> <span>ລາຍ​ງານ​</span>
+                                        <i class="fa fa-bar-chart"></i> <span>ລາຍ​ງານ​</span>
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
-                                                <i class="fa fa-sellsy"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ</a>
+                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າທີ່​ຍັງ​ເຫຼືອ</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish">
+                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ</a>
                                         </li>
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
-                                                <i class="fa fa-ra"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
+                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
                                         </li>
                                         <!--<li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot">
@@ -202,21 +206,21 @@ AppAsset::register($this);
                                 ?>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-signal"></i> <span>ລາຍ​ງານ​</span>
+                                        <i class="fa fa-bar-chart"></i> <span>ລາຍ​ງານ​</span>
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
-                                                <i class="fa fa-sellsy"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ</a>
+                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish">
+                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ</a>
                                         </li>
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
-                                                <i class="fa fa-ra"></i>ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
+                                                <i class="fa fa-bar-chart"></i>ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
                                         </li>
-                                        <!--<li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot">
-                                                <i class="fa fa-ra"></i>ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ ແລະ ຍັງ​ເຫຼືອ</a>
-                                        </li> -->
 
                                     </ul>
                                 </li>
@@ -243,6 +247,56 @@ AppAsset::register($this);
                 <footer class="main-footer">
                     <div class="pull-right">
                         Version 1.2
+
+                        <?php
+                             $atkey=\app\models\ShopProfile::find()->one();
+                            $key=$atkey->key_active;
+                            $key_acitvated=substr($key,25,2).substr($key,17,-8)."-".substr($key,6,-19)."-".substr($key,0,-25);
+                            if(empty($atkey->key_active) || date('Y-m-d',strtotime(Yii::$app->params['alert_date']))>$key_acitvated)
+                            {
+                        ?>
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_key"><b><?=Yii::t('app','Activate key')?></b></button>
+                        <?php
+                            } 
+                        ?>
+
+                        <div id="modal_key" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                            <?php $form = ActiveForm::begin(['action' =>['site/key']]); ?>
+                            <?php
+                                if (Yii::$app->session->hasFlash('success_key')) {
+                            ?>
+                                <h2 style="color:green"><?=Yii::$app->session->getFlash('success_key')?></h2>
+                            <?php
+                                }else{
+                            ?>
+                                    <?php
+                                        echo Html::textInput('key', '', ['placeholder' => Yii::t('app','Key'), 'class' => 'form-control']);
+                                    ?>
+                                    <?php
+                                        if (Yii::$app->session->hasFlash('error_key')) {
+                                        ?>
+                                        <h5 style="color:red"><?=Yii::$app->session->getFlash('error_key')?></h5>
+                                        <?php
+                                        }
+                                    ?>
+                               <div class="modal-footer">
+                                    <button type="submit" class="btn btn-default"><?=Yii::t('app','Send')?></button>
+                                </div>
+                            <?php
+                                }
+                            ?>
+                             </div>
+                            </div>
+                             <?php ActiveForm::end(); ?>
+
+                        </div>
+                    </div>
                     </div>
                     ໂທ: 020 55045770
                 </footer>
@@ -266,27 +320,40 @@ AppAsset::register($this);
         </script>
 
         <script>
-<?php
-if (Yii::$app->controller->action->id == 'gbarcode') {
-    $barcodes = \app\models\Barcode::find()->where(['status' => 1])->all();
-    $i = 0;
-    foreach ($barcodes as $barcode) {
-        $i++;
-        ?>
-                    JsBarcode("#barcode<?= $i ?>", "<?= $barcode->barcode ?>", {
-                        format: "EAN13",
-                        displayValue: true,
-                        fontSize: 18,
-                        width: 1.8,
-                        height: 30,
-                        lineColor: "#000",
-                    });
-        <?php
-    }
-}
-?>
+            <?php
+            if (Yii::$app->controller->action->id == 'gbarcode') {
+                $barcodes = \app\models\Barcode::find()->where(['status'=>1])->orderBy('id DESC')->all();
+                $i = 0;
+                foreach ($barcodes as $barcode) {
+                    $i++;
+                    ?>
+                                JsBarcode("#barcode<?= $i ?>", "<?= $barcode->barcode ?>", {
+                                    format: "EAN13",
+                                    displayValue: true,
+                                    fontSize: 18,
+                                    width: 1.5,
+                                    height: 30,
+                                    lineColor: "#000",
+                                });
+                    <?php
+                }
+            }
+            ?>
+
+           
 
         </script>
+        <?php
+            if (Yii::$app->session->hasFlash('success_key') || Yii::$app->session->hasFlash('error_key')) {
+        ?>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modal_key").modal('show');
+            });
+        </script>
+        <?php
+            }
+        ?>
 
     </body>
 </html>

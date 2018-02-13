@@ -11,22 +11,22 @@
         $total_prince = 0;
         $pro_id = [];
         if (!empty(\Yii::$app->session['product'])) {
-            foreach (\Yii::$app->session['product'] as $order_p) {
-                if (!in_array(key($order_p), $pro_id)) {
-                    $pro_id[] = key($order_p);
-                    $product = \app\models\Products::find()->where(['id' => key($order_p)])->one();
+            foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
+                if (!in_array($order_p, $pro_id)) {
+                    $pro_id[] = $order_p;
+                    $product = \app\models\Products::find()->where(['id' =>$order_p])->one();
                     ?>
                     <tr>
                         <td><?= $product->name ?></td>
                         <td>
                             <?php
-                            echo $order_p['qautity'];
+                            echo $qautity;
                             ?>
                         </td>
-                        <td align="right"><?= number_format($product->pricesale * $order_p['qautity'], 2) ?></td>
+                        <td align="right"><?= number_format($product->pricesale * $qautity, 2) ?></td>
                     </tr>
                     <?php
-                    $total_prince+=$product->pricesale * $order_p['qautity'];
+                    $total_prince+=$product->pricesale * $qautity;
                 }
             }
         }

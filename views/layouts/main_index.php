@@ -27,7 +27,7 @@ AppAsset::register($this);
 
             <header class="main-header navbar-fixed-top" >
                 <!-- Logo -->
-                <a class="logo" href="index.php?r=site/index">
+                <a class="logo" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>A</b>LT</span>
                     <!-- logo for regular state and mobile devices -->

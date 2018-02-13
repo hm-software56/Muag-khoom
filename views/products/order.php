@@ -4,25 +4,25 @@ use yii\helpers\Html;
 use yii\web\UrlManager;
 ?>
 
-<div class="row">
+<div class=" row errors" align="right" style="width:100%">
     <?php
-    if (Yii::$app->session->hasFlash('su')) {
+    if (Yii::$app->session->hasFlash('success')) {
         echo kartik\alert\Alert::widget([
             'type' => kartik\alert\Alert::TYPE_SUCCESS,
             'title' => Yii::$app->session->getFlash('action'),
             'icon' => 'glyphicon glyphicon-ok-sign',
-            'body' => Yii::$app->session->getFlash('su'),
+            'body' => Yii::$app->session->getFlash('success'),
             'showSeparator' => false,
             'delay' => 500
         ]);
     }
 
-    if (Yii::$app->session->hasFlash('error')) {
+    if (Yii::$app->session->hasFlash('errors')) {
         echo kartik\alert\Alert::widget([
             'type' => kartik\alert\Alert::TYPE_DANGER,
             'title' => Yii::$app->session->getFlash('action'),
-            'icon' => 'glyphicon glyphicon-ok-sign',
-            'body' => Yii::$app->session->getFlash('error'),
+            'icon' => 'glyphicon glyphicon-alert',
+            'body' => Yii::$app->session->getFlash('errors'),
             'showSeparator' => false,
             'delay' => 500
         ]);
@@ -55,13 +55,32 @@ use yii\web\UrlManager;
         // print_r(\Yii::$app->session['product']);
         $total_prince = 0;
         $pro_id = [];
+        //unset(\Yii::$app->session['product']);
+        //unset(\Yii::$app->session['product_id']);
         if (!empty(\Yii::$app->session['product'])) {
-            foreach (\Yii::$app->session['product'] as $order_p) {
-                if (!in_array(key($order_p), $pro_id)) {
-                    $pro_id[] = key($order_p);
-                    $product = \app\models\Products::find()->where(['id' => key($order_p)])->one();
+            
+          //  print_r(\Yii::$app->session['product']);exit;
+            foreach (\Yii::$app->session['product'] as $order_p=>$quatity) {
+                    $product = \app\models\Products::find()->where(['id' =>$order_p])->one();
                     ?>
-                    <tr>
+                    <?php
+                    if($product->id==Yii::$app->session->getFlash('su'))
+                    {
+                        ?>
+                        <tr style="background:#b2ebb7">
+                    <?php
+                    } elseif($product->id==Yii::$app->session->getFlash('error'))
+                    {
+                        ?>
+                        <tr style="background:#f78c8c">
+                    <?php
+                    }else{
+                        ?>
+                        <tr>
+                        <?php
+                    }
+                    ?>
+                    
                         <td>
                             <?php
                             echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove" style="color: red;"></span>', '#', [
@@ -80,33 +99,31 @@ use yii\web\UrlManager;
                         </td>
                         <td><?= $product->name ?></td>
                         <td>
-                            <div id="qtd">
+                            <div id="qtd<?=$product->id?>" align="right" style="width:50px;">
                                 <?php
-                                /*   if ($order_p['qautity'] > 1) {
-                                  echo yii\helpers\Html::a($order_p['qautity'], '#', [
+                                   if ($quatity>0) {
+                                  echo yii\helpers\Html::a($quatity, '#', [
+                                  'class'=>'btn btn-link',
                                   'onclick' => "
                                   $.ajax({
                                   type     :'POST',
                                   cache    : false,
-                                  url  : 'index.php?r=products/chageqautity&id=" . $product->id . "',
+                                  url  : 'index.php?r=products/chageqautity&id=" . $product->id . "&qautity_old=".$quatity."',
                                   success  : function(response) {
-                                  $('#qtd').html(response);
-                                  document.getElementById('qtd').focus();
+                                  $('#qtd".$product->id."').html(response);
+                                  document.getElementById('qtdf".$product->id."').focus();
                                   }
                                   });return false;",
-                                  ]);
-                                  } else { */
-                                echo $order_p['qautity'];
-                                // }
+                                ]);
+                                  }
                                 ?>
                             </div>
                         </td>
-                        <td align="right"><?= number_format($product->pricesale * $order_p['qautity'], 2) ?></td>
+                        <td align="right"><?= number_format($product->pricesale * $quatity, 2) ?></td>
                     </tr>
                     <?php
-                    $total_prince+=$product->pricesale * $order_p['qautity'];
+                    $total_prince+=$product->pricesale * $quatity;
                 }
-            }
         }
         ?>
         <tr>
@@ -118,7 +135,7 @@ use yii\web\UrlManager;
             ?>
             <tr>
                 <td colspan="3" align="right"><b>ສ່ວນຫລຸດ</b></td>
-                <td align="right" id="dsc">​<b>
+                <td align="right" style="width:100px;" id="dsc">​<b>
                         <?php
                         if (\Yii::$app->session['discount'] == 0) {
                             \Yii::$app->session['discount'] = 0;
@@ -145,7 +162,7 @@ use yii\web\UrlManager;
     </table>
 </div>
 
-<div class="row" style="border-top: 2px green solid; padding-top: 2px;">
+<div class="row lin_pos_b" >
     <div class="col-md-6">
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> ຈ່າຍ​ເງີນ', '#', [

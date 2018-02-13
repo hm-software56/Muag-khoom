@@ -76,68 +76,51 @@ class ProductsController extends Controller {
     }
 
     public function actionOrder($id) {
-
         if (!empty(Yii::$app->session['cormfirm'])) { /// after done payment clear old order then older new
             unset(Yii::$app->session['product']);
             unset(\Yii::$app->session['cormfirm']);
             unset(\Yii::$app->session['notinbarcode']);
             unset(\Yii::$app->session['discount']);
+            unset(Yii::$app->session['product_id']);
         }
 
-        if (!empty(\Yii::$app->session['notinbarcode'])) {
-            $bd = \app\models\Barcode::find()->where(['products_id' => $id, 'status' => 1])->andWhere(['not in', 'barcode', \Yii::$app->session['notinbarcode']])->one();
-        } else {
-            $bd = \app\models\Barcode::find()->where(['products_id' => $id, 'status' => 1])->one();
-        }
-        if (!empty(\Yii::$app->session['notinbarcode'])) {
-            \Yii::$app->session['notinbarcode'] = array_merge(\Yii::$app->session['notinbarcode'], [$bd->barcode]);
-        } else {
-            \Yii::$app->session['notinbarcode'] = [$bd->barcode];
-        }
-
-        $searchtxt = $bd->barcode;
-
-        $model = Products::find()->joinWith('barcodes', true)->where(['barcode.barcode' => $searchtxt, 'status' => 1])->one();
+        $model = Products::find()->where('id='.$id.' and qautity>0')->one();
         if (!empty($model)) {
             if (!empty(\Yii::$app->session['product'])) {
                 $array = [];
-                $qt = 0;
-                foreach (\Yii::$app->session['product'] as $order_p) {
-                    $key_barcode[] = $order_p[key($order_p)];
-                    if ($model->id == key($order_p)) {
-                        if (!in_array($searchtxt, \Yii::$app->session['barcode'])) {
-                            if ($qt > 0) {
-                                $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $qt];
-                            } else {
-                                $qt = $order_p['qautity'] + 1;
-                                $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity'] + 1];
-                            }
-                        } else {
-                            $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity']];
+                if(!in_array($id, \Yii::$app->session['product_id']))
+                {
+                    $array[$model->id]=1;
+                    \Yii::$app->session['product_id']=array_merge(array($model->id),\Yii::$app->session['product_id']);
+                    \Yii::$app->getSession()->setFlash('su',$model->id);
+                    \Yii::$app->getSession()->setFlash('success','ເພີ່ມ​ສີ​ນ​ຄ້າ​ແລ້ວ.......');
+                        
+                }
+                foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
+                    if($order_p==$model->id)
+                    {
+                        if($qautity>=$model->qautity)
+                        {
+                            $array[$order_p]=$qautity;
+                            \Yii::$app->getSession()->setFlash('error', $order_p);
+                            \Yii::$app->getSession()->setFlash('errors', 'ຈຳ​ນວນ​ສີນ​ຄ້າ​ໝົດ.......');
+                        }else{
+                            $array[$order_p]=$qautity+1;
+                            \Yii::$app->getSession()->setFlash('su',$order_p);
+                            \Yii::$app->getSession()->setFlash('success','ເພີ່ມ​ສີ​ນ​ຄ້າ​ແລ້ວ.......');
                         }
-                    } else {
-                        $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity']];
-                    }
-                }
-
-                if (!in_array($searchtxt, $key_barcode)) {
-                    if ($qt > 0) {
-                        $array[] = [$model->id => $searchtxt, 'qautity' => $qt];
-                    } else {
-                        $array[] = [$model->id => $searchtxt, 'qautity' => 1];
-                    }
-                    \Yii::$app->session['barcode'] = array_merge(\Yii::$app->session['barcode'], [$searchtxt]);
-                }
-
-                Yii::$app->session['product'] = $array;
+                    }else{
+                        $array[$order_p]=$qautity;
+                    }    
+                } 
+                Yii::$app->session['product'] =$array;
             } else {
-                \Yii::$app->session['product'] = [[$model->id => $searchtxt, 'qautity' => 1]];
-                \Yii::$app->session['barcode'] = [$searchtxt];
+                \Yii::$app->session['product'] = [$model->id =>1];
+                \Yii::$app->session['product_id'] = [$model->id];
             }
-            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ເພີ່ມ​ສີນ​ຄ້າ​ແລ້ວ​....'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
         } else {
-            \Yii::$app->getSession()->setFlash('error', \Yii::t('app', 'ສີນ​ຄ້ານີ້​ບໍ່​ມີ​ໃນ​ລະ​ບົບ ຫຼື່​ ຖືກ​ຂາຍ​ແລ້ວ...'));
+            \Yii::$app->getSession()->setFlash('errors', \Yii::t('app', 'ຈ​ຳ​ນວນ​ສີນ​ຄ້າ​ໝົດ...'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
         }
         return $this->renderAjax('order', [
@@ -146,6 +129,7 @@ class ProductsController extends Controller {
 
     public function actionOrdercancle() {
         unset(Yii::$app->session['product']);
+        unset(Yii::$app->session['product_id']);
         unset(\Yii::$app->session['cormfirm']);
         unset(\Yii::$app->session['notinbarcode']);
         unset(\Yii::$app->session['discount']);
@@ -156,69 +140,52 @@ class ProductsController extends Controller {
 
         if (!empty(\Yii::$app->session['product'])) {
             $array = [];
-            $key_barcode = [];
-            foreach (\Yii::$app->session['product'] as $order_p) {
-                if ($id != key($order_p)) {
-                    $key_barcode[] = $order_p[key($order_p)];
-                    $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity']];
-                } else {
-                    $barcode = NULL;
-                    foreach (\Yii::$app->session['notinbarcode'] as $notinbarcode) {
-                        if ($notinbarcode != $order_p[key($order_p)]) {
-                            $barcode[] = $notinbarcode;
-                        }
-                    }
-                    \Yii::$app->session['notinbarcode'] = $barcode;
-                }
-            }
-            \Yii::$app->session['barcode'] = $key_barcode;
+            $product_id = [];
+            foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
+                    if($order_p!=$id)
+                    {
+                        $array[$order_p]=$qautity;
+                        $product_id[]=$order_p;
+                    }    
+            } 
+            \Yii::$app->session['product_id'] = $product_id;
             Yii::$app->session['product'] = $array;
         }
         return $this->renderAjax('order');
     }
 
-    public function actionChageqautity($id = NULL, $barcode = NULL) {
-        /* if (!empty(\Yii::$app->session['product'])) {
-          $array = [];
-          foreach (\Yii::$app->session['product'] as $order_p) {
-          if ($order_p['id'] == $id) {
-          $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity'] - 1];
-          } else {
-          $array[] = ['id' => $order_p['id'], 'qautity' => $order_p['qautity']];
-          }
-          }
-          Yii::$app->session['product'] = $array;
-          } */
-        if (!empty($barcode)) {
+    public function actionChageqautity($id = NULL, $qautity_new = NULL) {
+
+        if (!empty($id)&& !empty($qautity_new)) {
             if (!empty(\Yii::$app->session['product'])) {
                 $array = [];
-                $key_barcode = [];
-                $pro_id = NULL;
-                $qautity = 0;
-                foreach (\Yii::$app->session['product'] as $order_p) {
-                    if ($barcode == $order_p[key($order_p)]) {
-                        $qautity = $order_p['qautity'] - 1;
-                        $pro_id = key($order_p);
-                    }
-                }
-                foreach (\Yii::$app->session['product'] as $order_p) {
-                    if ($barcode != $order_p[key($order_p)]) {
-                        $key_barcode[] = $order_p[key($order_p)];
-                        if (key($order_p) == $pro_id) {
-                            $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $qautity];
-                        } else {
-                            $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity']];
+                $product_id=[];
+                foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
+                    if ($order_p == $id) {
+                        $model = Products::find()->where('id='.$order_p.' and qautity>='.$qautity_new.'')->one();
+                        if(!empty($model))
+                        {
+                            $array[$order_p]=$qautity_new;
+                            \Yii::$app->getSession()->setFlash('su',$order_p);
+                            \Yii::$app->getSession()->setFlash('success','ເພີ່ມ​ສີ​ນ​ຄ້າ​ແລ້ວ.......');
+                        }else{
+                            $array[$order_p]=$qautity;
+                            \Yii::$app->getSession()->setFlash('error',$order_p);
+                            \Yii::$app->getSession()->setFlash('errors', 'ຈຳ​ນວນ​ສີນ​ຄ້າ​ບໍ່​ພໍ.......');
                         }
+                        $product_id[]=$order_p;
+                    } else {
+                        $array[$order_p]=$qautity;
+                        $product_id[]=$order_p;
                     }
                 }
-                \Yii::$app->session['barcode'] = $key_barcode;
-                Yii::$app->session['product'] = $array;
+                \Yii::$app->session['product'] = $array;
+                \Yii::$app->session['product_id'] = $product_id;
             }
             return $this->renderAjax('order', [
             ]);
         } else {
-            return $this->renderAjax('changeqautity', [
-            ]);
+            return $this->renderAjax('changeqautity', ['product_id'=>$id,'qautity_old'=>$_GET['qautity_old']]);
         }
     }
 
@@ -268,75 +235,68 @@ class ProductsController extends Controller {
                 $discount->invoice_id = $invioce->id;
                 $discount->save();
             }
-            foreach (\Yii::$app->session['product'] as $order_p) {
-                if (!in_array(key($order_p), $pro_id)) {
-                    $product = \app\models\Products::find()->where(['id' => key($order_p)])->one();
-                    $pro_id[] = key($order_p);
+            foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
+                if (!in_array($order_p, $pro_id)) {
+                    $product = \app\models\Products::find()->where(['id' =>$order_p])->one();
+                    $pro_id[] = $order_p;
                     $sale = new \app\models\Sale();
                     $sale->user_id = \Yii::$app->session['user']->id;
-                    $sale->products_id = key($order_p);
-                    $sale->qautity = $order_p['qautity'];
+                    $sale->products_id = $order_p;
+                    $sale->qautity =$qautity;
                     $sale->date = date('Y-m-d');
-                    $sale->price = $product->pricesale * $order_p['qautity'];
+                    $sale->price = $product->pricesale * $qautity;
                     $sale->invoice_id = $invioce->id;
                     $sale->save();
-                    $product->qautity = $product->qautity - $order_p['qautity'];
+                    $product->qautity = $product->qautity - $qautity;
                     $product->pricesale = number_format($product->pricesale, 2);
                     $product->pricebuy = number_format($product->pricebuy, 2);
                     $product->save();
                 }
-                $barcode = \app\models\Barcode::find()->where(['barcode' => $order_p[key($order_p)], 'products_id' => key($order_p)])->one();
-                $barcode->status = 0;
-                $barcode->invoice_id = $invioce->id;
-                $barcode->user_id = Yii::$app->session['user']->id;
-                $barcode->save();
             }
         }
         return $this->renderAjax('comfirm', ['invoice' => $invioce]);
     }
 
     public function actionSearch($searchtxt) {
-        $model = Products::find()->joinWith('barcodes', true)->where(['barcode.barcode' => $searchtxt, 'status' => 1])->one();
+        $model = Products::find()->joinWith('barcodes', true)->where('products.qautity>0 and barcode.barcode="'.$searchtxt.'" and barcode.status=1')->one();
         if (!empty($model)) {
             if (!empty(\Yii::$app->session['product'])) {
                 $array = [];
-                $qt = 0;
-                foreach (\Yii::$app->session['product'] as $order_p) {
-                    $key_barcode[] = $order_p[key($order_p)];
-                    if ($model->id == key($order_p)) {
-                        if (!in_array($searchtxt, \Yii::$app->session['barcode'])) {
-                            if ($qt > 0) {
-                                $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $qt];
-                            } else {
-                                $qt = $order_p['qautity'] + 1;
-                                $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity'] + 1];
-                            }
-                        } else {
-                            $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity']];
+                if(!in_array($model->id, \Yii::$app->session['product_id']))
+                {
+                    $array[$model->id]=1;
+                    \Yii::$app->session['product_id']=array_merge(array($model->id),\Yii::$app->session['product_id']);
+                    \Yii::$app->getSession()->setFlash('su',$model->id);
+                    \Yii::$app->getSession()->setFlash('success','ເພີ່ມ​ສີ​ນ​ຄ້າ​ແລ້ວ.......');
+                }
+                foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
+                    if($order_p==$model->id)
+                    {
+                        if($qautity>$model->qautity)
+                        {
+                            $array[$order_p]=$qautity;
+                            \Yii::$app->getSession()->setFlash('error', $order_p);
+                            \Yii::$app->getSession()->setFlash('errors', 'ຈຳ​ນວນ​ສີນ​ຄ້າໝົດ​ແລ້ວ.......');
+                        }else{
+                            $array[$order_p]=$qautity+1;
+                            \Yii::$app->getSession()->setFlash('su',$order_p);
+                            \Yii::$app->getSession()->setFlash('success','ເພີ່ມ​ສີ​ນ​ຄ້າ​ແລ້ວ.......');
                         }
-                    } else {
-                        $array[] = [key($order_p) => $order_p[key($order_p)], 'qautity' => $order_p['qautity']];
-                    }
-                }
-
-                if (!in_array($searchtxt, $key_barcode)) {
-                    if ($qt > 0) {
-                        $array[] = [$model->id => $searchtxt, 'qautity' => $qt];
-                    } else {
-                        $array[] = [$model->id => $searchtxt, 'qautity' => 1];
-                    }
-                    \Yii::$app->session['barcode'] = array_merge(\Yii::$app->session['barcode'], [$searchtxt]);
-                }
-
-                Yii::$app->session['product'] = $array;
+                    }else{
+                        $array[$order_p]=$qautity;
+                    }    
+                } 
+                Yii::$app->session['product'] =$array;
             } else {
-                \Yii::$app->session['product'] = [[$model->id => $searchtxt, 'qautity' => 1]];
-                \Yii::$app->session['barcode'] = [$searchtxt];
+                \Yii::$app->session['product'] = [$model->id =>1];
+                \Yii::$app->session['product_id'] = [$model->id];
+
+                \Yii::$app->getSession()->setFlash('su',$order_p);
+                \Yii::$app->getSession()->setFlash('success','ເພີ່ມ​ສີ​ນ​ຄ້າ​ແລ້ວ.......');
             }
-            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ເພີ່ມ​ສີນ​ຄ້າ​ແລ້ວ​....'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
         } else {
-            \Yii::$app->getSession()->setFlash('error', \Yii::t('app', 'ສີນ​ຄ້ານີ້​ບໍ່​ມີ​ໃນ​ລະ​ບົບ ຫຼື່​ ຖືກ​ຂາຍ​ແລ້ວ...'));
+            \Yii::$app->getSession()->setFlash('errors', \Yii::t('app', 'ສີນ​ຄ້ານີ້​ບໍ່​ມີ​ໃນ​ລະ​ບົບ ຫຼື່​ ຈຳ​ນວນ​ສີນ​ຄ້າໝົດ​ແລ້ວ...'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
         }
         return $this->renderAjax('order', [
@@ -571,9 +531,13 @@ class ProductsController extends Controller {
     }
 
     public function actionProduct() {
-
         $model = Products::find()->where(['not in', 'qautity', [0]])->all();
         return $this->render('product', ['model' => $model]);
+    }
+
+    public function actionProductfinish() {
+        $model = Products::find()->where(['in', 'qautity', [0]])->all();
+        return $this->render('productfinish', ['model' => $model]);
     }
 
     public function actionRepsaleornot() {
@@ -621,6 +585,11 @@ class ProductsController extends Controller {
         } else {
             return $this->renderAjax('discount');
         }
+    }
+
+    public function actionDashbord()
+    {
+        return $this->render('dashbord');
     }
 
 }

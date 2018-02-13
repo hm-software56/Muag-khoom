@@ -27,7 +27,9 @@
         "schmunk42/yii2-giiant": "@stable",
         "yiisoft/yii2-imagine": "*",
         "vilochane/yii2-barcode-generator": "dev-master",
-        "kartik-v/yii2-mpdf": "*"
+        "kartik-v/yii2-mpdf": "*",
+        "2amigos/yii2-chartjs-widget": "~2.0",
+        "yii2mod/yii2-c3-chart": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

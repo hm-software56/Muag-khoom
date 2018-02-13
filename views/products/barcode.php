@@ -26,7 +26,7 @@ if (Yii::$app->session->hasFlash('error')) {
         <th>ລຳ​ດັບ</th>
         <th>​<div class="col-md-5 col-sm-5">ລະ​ຫັດ​ບາ​ໂຄດ</div>
     <div class="col-md-7 col-sm-7"><?php
-        if (\Yii::$app->session['qt'] > count($models)) {
+        if (count($models)<1) {
             echo yii\helpers\Html::textInput('barcode', '', [
                 'onchange' => '
                 $.post( "index.php?r=products/setbarcode&pro_id=' . \Yii::$app->session['pro_id'] . '&barcode="+$(this).val(), function( data ) {
@@ -45,9 +45,11 @@ $i = 0;
 foreach ($models as $model) {
     $i++;
     ?>
+    
     <tr>
         <td><?= $i ?></td>
-        <td><?= $model->barcode ?></td>
+        <td>
+        <img id="barcode<?= $i ?>"></div><?= $model->barcode ?></td>
 
         <td>
             <?php

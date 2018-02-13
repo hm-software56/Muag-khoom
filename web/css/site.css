@@ -155,9 +155,28 @@ a.desc:after {
 }
 .aa{
     position:absolute !important;
-    z-index: 9999;
     padding-top: 5px;
     padding-right: 35px !important;
     text-align: right !important;
     color:red;
+}
+
+.errors {
+    position: absolute !important;
+}
+.lin_pos{
+    border-top: 2px solid #3c8dbc;
+    border-radius: 2px;
+    padding-top:2px !important;
+}
+.lin_pos_h{
+    border-left: 2px #3c8dbc solid;
+    padding-top: 0px;
+}
+.lin_pos_b{
+    border-top: 2px #3c8dbc solid;
+    padding-top: 2px;
+}
+.btn-box-tool {
+     color: #FFF !important;
 }

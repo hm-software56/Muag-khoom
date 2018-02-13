@@ -33,7 +33,6 @@ if (Yii::$app->session->hasFlash('reg')) {
 ?>
 
 <?php
-if (!isset($_GET['reg'])) {
     $form = ActiveForm::begin([
                 'id' => 'login-form',
                 'options' => ['class' => 'form-horizontal', 'autocomplete' => "off"],
@@ -62,9 +61,18 @@ if (!isset($_GET['reg'])) {
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <div class="col-xs-2">
+                <div class="col-xs-8">
+                <?php 
+                $atkey=\app\models\ShopProfile::find()->one();
+                $key=$atkey->key_active;
+                $key_acitvated=substr($key,25,2).substr($key,17,-8)."-".substr($key,6,-19)."-".substr($key,0,-25);
+                if(date('Y-m-d',strtotime(Yii::$app->params['alert_date']))>$key_acitvated)
+                {
+                    echo "<span style='color:red'>".Yii::t('app','​ໝົດອາ​ຍຸ​ການ​ນຳ​ໃຊ້ວັນ​ທີ: ').$key_acitvated."</span>";
+                }
+                ?>
                 </div>
-                <div class="col-xs-10" style="padding-right: 0px;" align="right">
+                <div class="col-xs-4" style="padding-right: 0px;" align="right">
                     <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-lock" ></span> ເຂົ້າ​ລະ​ບົບ</button>
                 </div>
             </div>
@@ -72,31 +80,4 @@ if (!isset($_GET['reg'])) {
     </div>
     <?php
     ActiveForm::end();
-} else {
-    $model = $login;
-    ?>
-    <div class="user-form">
-
-        <?php $form = ActiveForm::begin(['action' => ['site/reg'], 'id' => 'forum_post', 'method' => 'post',]); ?>
-
-        <?= $form->field($model, 'first_name')->textInput(['maxlength' => true])->label('ຊື່') ?>
-
-        <?= $form->field($model, 'last_name')->textInput(['maxlength' => true])->label('ນາມ​ສະ​ກຸນ') ?>
-        <?php
-        echo $form->field($model, 'username')->textInput(['maxlength' => true])->label('ຊື່​ເຂົ້າ​ລະ​ບົບ');
-        ?>
-        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true])->label('ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ') ?>
-        <?= $form->field($model, 'status')->hiddenInput(['value' => "1"])->label(false) ?>
-        <?= $form->field($model, 'user_type')->hiddenInput(['value' => "User"])->label(false) ?>
-        <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d')])->label(false) ?>
-        <?= $form->field($model, 'user_role_id')->hiddenInput(['value' => 2])->label(false) ?>
-        <div class="form-group">
-            <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span> ລົງ​ທະ​ບຽນ' : '<span class="fa fa-save"></span> ບັນ​ທືກ', ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
-        </div>
-
-        <?php ActiveForm::end(); ?>
-
-    </div>
-    <?php
-}
 ?>

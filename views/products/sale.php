@@ -1,3 +1,6 @@
+<?php
+    $this->title=Yii::t("app",'POS');
+?>
 <div class="row">
     <div class="col-md-3 col-sm-4">
         <div class="row">
@@ -7,8 +10,8 @@
         </div>
     </div>
 
-    <div class="col-md-9 col-sm-8" style="border-left: 3px green solid; padding-top: 0px;">
-        <div class="row">
+    <div class="col-md-9 col-sm-8 lin_pos_h">
+        <div class="row lin_pos">
             <div class="col-md-8 col-sm-8">
                 <?php
                 $form = yii\widgets\ActiveForm::begin();

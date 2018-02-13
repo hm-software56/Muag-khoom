@@ -1,11 +1,11 @@
 <?php
 
-echo yii\helpers\Html::textInput('barcode', '', [
+echo yii\helpers\Html::textInput('qautity_new', $qautity_old, ['oninput'=>"this.value=this.value.replace(/[^\d]/,'')",
     'onchange' => '
-                $.post( "index.php?r=products/chageqautity&barcode="+$(this).val(), function( data ) {
+                $.post( "index.php?r=products/chageqautity&id='.$product_id.'&qautity_new="+$(this).val(), function( data ) {
                   $( "#output" ).html( data );
-                  document.getElementById("qtd").focus();
+                  document.getElementById("search").focus(); 
 
                 });
-            ', 'autofocus' => 'autofocus', 'placeholder' => 'ລະ​ຫັດ​ບາ​ໂຄດ', 'id' => 'search', 'class' => 'form-control']);
+            ', 'autofocus' => 'autofocus','onfocus'=>"var temp_value=this.value; this.value=''; this.value=temp_value", 'placeholder' => '', 'id' => 'qtdf'.$product_id.'', 'style' => 'width:40px']);
 ?>
