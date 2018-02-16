@@ -276,7 +276,7 @@ AppAsset::register($this);
                                 }else{
                             ?>
                                     <?php
-                                        echo Html::textInput('key', '', ['placeholder' => Yii::t('app','Key'), 'class' => 'form-control']);
+                                        echo Html::textInput('key', '', ['autocomplete' => "off",'placeholder' => Yii::t('app','Key'), 'class' => 'form-control']);
                                     ?>
                                     <?php
                                         if (Yii::$app->session->hasFlash('error_key')) {
@@ -286,7 +286,7 @@ AppAsset::register($this);
                                         }
                                     ?>
                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-default"><?=Yii::t('app','Send')?></button>
+                                    <button type="submit" class="btn btn-primary"><?=Yii::t('app','Activate')?></button>
                                 </div>
                             <?php
                                 }

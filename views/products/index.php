@@ -56,10 +56,10 @@ if (Yii::$app->session->hasFlash('su')) {
             },
                 ],
                 [
-                    'filter' => false,
+                    //'filter' => false,
                     'attribute' => 'name',
                     'format' => 'html',
-                    'contentOptions' => ['style' => 'min-width: 50px;'],
+                    'contentOptions' => ['style' => 'width: 250px;'],
                     'value' => function ($data) {
                 return $data->name;
             },
@@ -67,11 +67,23 @@ if (Yii::$app->session->hasFlash('su')) {
                 [
                     'filter' => false,
                     'attribute' => 'qautity',
-                    'format' => 'html',
-                    'contentOptions' => ['style' => 'min-width: 50px;'],
+                    'format' => 'raw',
+                    'contentOptions' => ['style' => 'width:80px;'],
                     'value' => function ($data) {
-                return $data->qautity;
-            },
+                        return "<div id=qt".$data->id.">".Html::a($data->qautity, '#', [
+                                'onclick' => "
+                                $.ajax({
+                                type:'POST',
+                                cache: false,
+                                url:'index.php?r=products/qautityupdateindex&idp=" . $data->id . "&qautity=" . $data->qautity . "',
+                                success:function(response) {
+                                    $('#qt". $data->id ."').html(response);
+                                    document.getElementById('search').focus();
+                                }
+                                });return false;",
+                                        'class' => "btn btn-sm bg-link",
+                                ])."</div>";
+                    },
                 ],
                 [
                     'filter' => false,

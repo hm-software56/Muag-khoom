@@ -22,7 +22,7 @@ foreach ($model as $model) {
                <!-- <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />-->
                 <?php
                 echo yii\helpers\Html::a('<img src="' . Yii::$app->urlManager->baseUrl . '/images/thume/' . $model->image . '" class="thumbnail img-responsive" />', '#', [
-                    'title' => Yii::t('yii', 'ເພີ່ມ'),
+                    'title' => Yii::t('yii', 'ຂາຍ'),
                     'onclick' => "
                   $.ajax({
                   type     :'POST',
@@ -30,6 +30,7 @@ foreach ($model as $model) {
                   url  : 'index.php?r=products/order&id=" . $model->id . "',
                   success  : function(response) {
                   $('#output').html(response);
+                   document.getElementById('search').focus();
                   }
                   });return false;",
                 ]);

@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\imagine\Image;
 use Imagine\Image\Box;
+use yii\helpers\Html;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -41,7 +42,7 @@ class ProductsController extends Controller {
 
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination = ['defaultPageSize' => 50000];
+        $dataProvider->pagination = ['defaultPageSize' => 20];
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
@@ -455,6 +456,8 @@ class ProductsController extends Controller {
             }
             $barcode1 = \app\models\Barcode::find()->where(['products_id' => $id, 'status' => 1])->orderBy('id DESC')->all();
             \Yii::$app->session['qt'] = $product->qautity;
+            
+           // return $product->qautity;
             return $this->renderAjax('view', [
                         'model' => $product,
                         'barcode' => $barcode1
@@ -464,6 +467,39 @@ class ProductsController extends Controller {
         return $this->renderAjax('qautityupdate', ['qautity' => $qautity, 'id' => $idp]);
     }
 
+    public function actionQautityupdateindex($id = null, $qautity, $idp = null)
+    {
+        if (!empty($id)) {
+            $product = \app\models\Products::find()->where(['id' => $id])->one();
+            if ((int)$qautity >0) {
+                $product->qautity = (int)$qautity;
+                $product->pricesale = number_format($product->pricesale, 2);
+                $product->pricebuy = number_format($product->pricebuy, 2);
+                $product->user_id = Yii::$app->session['user']->id;
+                $product->save();
+                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ແກ້​ໄຂ​ຈຳ​ນວນ​ສີນ​ຄ້າ​ແລ້​ວ'));
+                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+            } else {
+                \Yii::$app->getSession()->setFlash('error', \Yii::t('app', 'ບໍ່​ສາ​ມາດ​ແກ້​ໄຂ​ຈຳ​ນວນ​ສີ້ນ​ຄ້າ​ໄດ້​....'));
+                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+            }
+            return "<div id=qt" . $product->id . ">" . Html::a($product->qautity, '#', [
+                'onclick' => "
+                                $.ajax({
+                                type:'POST',
+                                cache: false,
+                                url:'index.php?r=products/qautityupdateindex&idp=" . $product->id . "&qautity=" . $product->qautity . "',
+                                success:function(response) {
+                                    $('#qt" . $product->id . "').html(response);
+                                    document.getElementById('search').focus();
+                                }
+                                });return false;",
+                'class' => "btn btn-sm bg-link",
+            ]) . "</div>";
+        }
+
+        return $this->renderAjax('qautityupdateindex', ['qautity' => $qautity, 'id' => $idp]);
+    }
     /**
      * Deletes an existing Products model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

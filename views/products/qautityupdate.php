@@ -3,7 +3,7 @@
 echo yii\helpers\Html::textInput('barcode', $qautity, [
     'onchange' => '
                 $.post( "index.php?r=products/qautityupdate&id=' . $id . '&qautity="+$(this).val(), function( data ) {
-                  $( "#qtt" ).html( data );
+                  $( "#qt'. $id .'" ).html( data );
                   document.getElementById("search").focus();
 
                 });
