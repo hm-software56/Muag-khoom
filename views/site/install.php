@@ -56,7 +56,7 @@ if (Yii::$app->session['step'] ==1)
 {
 ?>
     <img src="images/step3.jpg">
-    <h5><?=Yii::t('app', 'ກົດ <a href="'.Yii::$app->urlManager->baseUrl.'/index.php?r=site/keygenerate">Generate</a> ເພື່ອ​ເອົາລາຍ​ເຊັນ Key')?></h5>
+    <h5><?=Yii::t('app', 'ກົດ')?><a href="'.Yii::$app->urlManager->baseUrl.'/index.php?r=site/keygenerate"><?= Yii::t('app', 'Generate') ?></a> <?= Yii::t('app', 'ເພື່ອ​ເອົາລາຍ​ເຊັນ Key') ?></h5>
     <div class="row">
         <div class="col-md-4">
             <input autocomplete='off' value='<?= @Yii::$app->session['keys'] ?>' type="text" class="form-control" name="key" placeholder="linces key" required>

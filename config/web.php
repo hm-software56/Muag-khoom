@@ -5,6 +5,7 @@ use kartik\mpdf\Pdf;
 $params = require(__DIR__ . '/params.php');
 
 $config = [
+    'language' => 'lo',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],

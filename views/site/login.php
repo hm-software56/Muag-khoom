@@ -7,7 +7,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use kartik\alert\Alert;
-
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 if (Yii::$app->session->hasFlash('su')) {
@@ -46,7 +45,7 @@ if (Yii::$app->session->hasFlash('reg')) {
     <script>
         document.getElementById('height_screen').value = window.innerHeight;
     </script>
-    <div class="login-box " style="margin-top: 0px;" >
+    <div class="login-box "  style="margin-top: 0px;" >
         <div class="login-box-body">
             <div class="form-group has-feedback">
                 <div class="line_bottom"><?= Yii::t('app', 'ປ້ອນຊື່ເຂົ້າ​ລະ​ບົບ ແລະ ລະ​ຫັດ​ຜ່ານ')?></div>
