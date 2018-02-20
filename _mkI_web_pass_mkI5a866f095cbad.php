@@ -1,2 +1,0 @@
-<?php //!!
-$wpass='daxiong'; ?>

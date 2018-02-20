@@ -16,6 +16,12 @@ class SiteController extends Controller {
             if (Yii::$app->controller->action->id != "login") {
                 if (Yii::$app->controller->action->id == "key") {
                    // return $this->render('');
+                }
+                else if (Yii::$app->controller->action->id == "install") {
+                    $this->layout="main_1";
+                    
+                        return $this->render('install');
+                    
                 } else {
                     $this->redirect(['site/login']);
                 }
@@ -72,6 +78,12 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionLogin() {
+        if(isset($_GET['true']))
+        {
+            unset(Yii::$app->session['key']);
+            unset(Yii::$app->session['keys']);
+            unset(Yii::$app->session['step']);
+        }
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -183,8 +195,124 @@ class SiteController extends Controller {
 
     public function actionKeygenerate()
     {
-        $key_generate=date('dism').rand(1,1000000000).date('yhis').substr(date('2019'),0,2); 
-        echo $key;
+        $try_m= 'last day of 5 month'; /// try to use 5 moth
+        $key_generate = date('dis'). date('m', strtotime("" . $try_m . "")) . rand(1, 1000000000) . date('y', strtotime("" . $try_m . "")) .date('his') . substr(date('Y', strtotime("" . $try_m . "")), 0, 2);
+       // $key_generate=date('dism').rand(1,1000000000).date('yhis').substr(date('Y'),0,2);
+        Yii::$app->session['key']= $key_generate;
+        Yii::$app->session['keys'] =base64_encode($key_generate);
+        return $this->redirect(['site/install']);
+    }
+
+    public function actionInstall($step=null)
+    {
+        Yii::$app->session['host']='';
+        Yii::$app->session['username']='';
+        Yii::$app->session['password'] = '';
+        Yii::$app->session['database'] = '';
+        if(isset($_POST['host']) && isset($_POST['username']) && isset($_POST['password']))
+        {
+            $host= $_POST['host'];
+            $user= $_POST['username'];
+            $pass= $_POST['password'];
+            $db = $_POST['database'];
+
+            Yii::$app->session['host'] = $host;
+            Yii::$app->session['username'] =$user;
+            Yii::$app->session['password'] =$pass;
+            Yii::$app->session['database'] =$db;
+            
+            // connection hosting 
+            $link = @mysqli_connect($host, $user, $pass);
+            if (!$link) {
+                    \Yii::$app->getSession()->setFlash('error',Yii::t('app','ຂໍ້​ມູນ​ບໍ່​ຖືກ​ຕ້ອງ. ທ່ານກວດ​ Host name, Username ແລະ  Password ເຂົ້າ Database ໃຫ້​ຖືກ​ຕ້ອງ'));
+            }else{
+                if(isset($_POST['database']))
+                {
+                        // create Database 
+                        $sql_database = 'CREATE DATABASE '.$db.' DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ';
+                        if (mysqli_query($link, $sql_database)) {
+                            
+                            // Add host, username, passwprd, database name in file db.php
+                            $file = Yii::$app->basePath . '/config/db.php';
+                            $f = fopen($file, "w");
+                            $database_inf = "<?php
+                                return [
+                                    'class' => 'yii\db\Connection',
+                                    'dsn' => 'mysql:host=".$host.";dbname=".$db."',
+                                    'username' => '".$user."',
+                                    'password' => '".$pass."',
+                                    'charset' => 'utf8',
+                                ];
+                                ?>";
+                            if (fwrite($f, $database_inf) > 0) {
+                                fclose($f);
+                                $file_index = Yii::$app->basePath . '/index.php';
+                                $f_index = fopen($file_index, "w");
+                                $index = "<?php
+                                    header('location:web/index.php?r=site/login');
+                                    ?>";
+                                if (fwrite($f_index, $index) > 0) {
+                                    fclose($f_index);
+                                    Yii::$app->session['step'] = 2;
+                                }
+                            }
+
+                        } else {
+                            \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'Database ນີ້​ມີ​ແລ້ວ​ທ່ານ​ຕ້ອງ​ປ່ຽນ​ຊື່ database ໃໝ່'));
+                        }
+                }
+                
+            }
+        }else {
+            // unset(Yii::$app->session['step']);exit;
+                if (Yii::$app->session['step'] == 2) {
+                    if(isset($_POST['data']) && $_POST ['data']=='0')
+                    {
+                        \Yii::$app->db->createCommand(file_get_contents(Yii::$app->basePath . '/database/db_demo.sql'))->execute();
+                        $profile=\app\models\ShopProfile::find()->one();
+                        $profile->key_active=\Yii::$app->session['key'];
+                        $profile->save();
+                        \Yii::$app->session['step']=3;
+                        unset(Yii::$app->session['key']);
+                        //return $this->redirect(['site/login']);
+                    }
+                    if (isset($_POST['data']) && $_POST['data'] == '1') {
+                        \Yii::$app->db->createCommand(file_get_contents(Yii::$app->basePath . '/database/db_blank.sql'))->execute();
+                        $profile = \app\models\ShopProfile::find()->one();
+                        $profile->key_active = \Yii::$app->session['key'];
+                        $profile->save();
+                        \Yii::$app->session['step'] = 3;
+                        unset(Yii::$app->session['key']);
+                        //return $this->redirect(['site/login']);
+                    }
+                }
+            if (Yii::$app->session['step'] ==3) {
+                if (isset($_POST['user_admin']) && isset($_POST['password_admin'])) {
+                    $user=new \app\models\User();
+                    $user->photo="user_photo.png";
+                    $user->first_name="Adminstrator";
+                    $user->last_name="Adminstrator";
+                    $user->username=$_POST['user_admin'];
+                    $user->password=$_POST['password_admin'];
+                    $user->status=1;
+                    $user->user_type='Admin';
+                    $user->date=date('Y-m-d');
+                    $user->save();
+                    \Yii::$app->session['step'] =4;
+                }
+            }
+        }
+        if(empty(Yii::$app->session['step']))
+        {
+            if(isset($_POST['next']))
+            {
+                Yii::$app->session['step'] = 1;
+            }
+           
+            unset(Yii::$app->session['key']);
+        }
+        return $this->render('install');
+       
     }
 
 }
