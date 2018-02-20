@@ -135,55 +135,6 @@ class SiteController extends Controller {
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return string
-     */
-    public function actionContact() {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-                    'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout() {
-        return $this->render('about');
-    }
-
-    public function actionReg() {
-        $model = new \app\models\User();
-        if ($model->load(Yii::$app->request->post())) {
-            $model->photo = 'prof.png';
-            if ($model->save()) {
-                \Yii::$app->getSession()->setFlash('reg', \Yii::t('app', 'ທ່ານ​ລົງ​ທະ​ບຽນ​ສຳ​ເລັດ​ແລ້ວ​ລໍ​ຖ້າປະ​ມານ 30 ວິ​ນາ​ທີ​........'));
-                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-                return $this->redirect(['login']);
-            } else {
-                return $this->render('form', [
-                            'model' => $model,
-                ]);
-            }
-        } else {
-            return $this->render('form', [
-                        'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionCompare() {
-        return $this->render('compare');
-    }
     public function actionKey()
     {
        if(isset($_POST['key'])&&$_POST['key'])

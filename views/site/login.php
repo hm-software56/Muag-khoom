@@ -45,7 +45,16 @@ if (Yii::$app->session->hasFlash('reg')) {
     <script>
         document.getElementById('height_screen').value = window.innerHeight;
     </script>
-    <div class="login-box "  style="margin-top: 0px;" >
+    <?php
+    if(!empty(\Yii::$app->session['height_screen']))
+    {
+        $n= Yii::$app->session['height_screen'] - 75;
+        $height='height:'.$n.'px';
+    }else{
+        $height=null;
+    }
+    ?>
+    <div class="login-box "  style="margin-top: 0px; <?=$height ?> " >
         <div class="login-box-body">
             <div class="form-group has-feedback">
                 <div class="line_bottom"><?= Yii::t('app', 'ປ້ອນຊື່ເຂົ້າ​ລະ​ບົບ ແລະ ລະ​ຫັດ​ຜ່ານ')?></div>
