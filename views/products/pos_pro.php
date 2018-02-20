@@ -37,7 +37,7 @@ foreach ($model as $model) {
                 ?>
                 <?= $model->name ?>
                 <br/>
-                <span class="text-red"><?= number_format($model->pricesale, 2) ?></span> ກີບ<br/><br/>
+                <span class="text-red"><?= number_format($model->pricesale, 2) ?></span> <?= Yii::t('app','ກີບ')?><br/><br/>
             </div>
         </div>
     </div>

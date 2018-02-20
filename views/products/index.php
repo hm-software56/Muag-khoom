@@ -32,7 +32,7 @@ if (Yii::$app->session->hasFlash('su')) {
         </div>
         <div class="col-md-4 col-xs-4 col-sm-4">
             <p align='right'>
-                <?= Html::a('<span class="fa fa-plus-circle"></span> ປ້ອນ​ສີ້​ນຄ້າ', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+                <?= Html::a('<span class="fa fa-plus-circle"></span> '. Yii::t('app', 'ປ້ອນ​ສີ້​ນຄ້າ'), ['create'], ['class' => 'btn btn-success btn-sm']) ?>
             </p>
         </div>
     </div>
@@ -48,7 +48,7 @@ if (Yii::$app->session->hasFlash('su')) {
                 [
                     'attribute' => 'image',
                     'filter' => false,
-                    'label' => 'ຮູບ',
+                    'label' => Yii::t('app', 'ຮູບ'),
                     'format' => 'html',
                     'contentOptions' => ['style' => 'min-width: 50px;'],
                     'value' => function ($data) {

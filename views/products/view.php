@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-6 col-sm-6">
         <div class="row">
             <div class="col-md-12">
-                <b>ລາຍ​ລະ​ອຽດສີ້ນ​ຄ້າ</b>
+                <b><?= Yii::t('app','ລາຍ​ລະ​ອຽດສີ້ນ​ຄ້າ')?></b>
             </div>
         </div>
         <div class="products-view">
@@ -71,15 +71,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     </td>
                 </tr>
                 <tr>
-                    <td>​ລາ​ຄາ​ຊື້</td>
-                    <td><?= number_format($model->pricebuy, 2) ?> ກີບ</td>
+                    <td>​<?= Yii::t('app', 'ລາ​ຄາ​ຊື້')?></td>
+                    <td><?= number_format($model->pricebuy, 2) ?> <?= Yii::t('app', 'ກີບ')?></td>
                 </tr>
                 <tr>
-                    <td>​ລາ​ຄາ​ຂາຍ</td>
-                    <td><?= number_format($model->pricesale, 2) ?> ​ກີບ</td>
+                    <td>​<?= Yii::t('app', 'ລາ​ຄາ​ຂາຍ')?></td>
+                    <td><?= number_format($model->pricesale, 2) ?> <?= Yii::t('app', '​ກີບ')?></td>
                 </tr>
                 <tr>
-                    <td>​ຮູບ​ພາບ</td>
+                    <td><?= Yii::t('app', '​ຮູບ​ພາບ')?></td>
                     <td><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" width="100" class="thumbnail"></td>
                 </tr>
             </table>
@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-6 col-sm-6">
         <div class="row">
             <div class="col-md-12">
-                <b>ປ້ອນ​ລະ​ຫັດ​ບາ​ໂຄດຂອງ​ສີນ​ຄ້າ <?php // Html::a('<span class="glyphicon glyphicon-barcode"></span>', ['products/gbcode', 'id' => $_GET['id']]) ?></b>
+                <b><?= Yii::t('app', 'ປ້ອນ​ລະ​ຫັດ​ບາ​ໂຄດຂອງ​ສີນ​ຄ້າ')?> <?php // Html::a('<span class="glyphicon glyphicon-barcode"></span>', ['products/gbcode', 'id' => $_GET['id']]) ?></b>
             </div>
         </div>
         <div class="row">

@@ -68,7 +68,7 @@ AppAsset::register($this);
                                 ?>
                                 <li class="dropdown user user-menu">
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
-                                        <span class="glyphicon glyphicon-shopping-cart"></span>ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><?=Yii::t('app', 'ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)')?>
                                     </a>
                                 </li>
                                 <li class="dropdown user user-menu">
@@ -121,42 +121,42 @@ AppAsset::register($this);
                             </div>
                             <div class="pull-left info" >
                                 <p><?= Yii::$app->session['user']->first_name ?></p>
-                                <a href="#"><i class="fa fa-circle text-success"></i>ກຳ​ລັງ​ໃຊ້​ງານ</a>
+                                <a href="#"><i class="fa fa-circle text-success"></i><?= Yii::t('app', 'ກຳ​ລັງ​ໃຊ້​ງານ')?></a>
                             </div>
                         </div>
                         <!-- sidebar menu: : style can be found in sidebar.less -->
                         <ul class="sidebar-menu">
-                            <li class="header">ເມ​ນູ​ຫຼັກ</li>
+                            <li class="header"><?= Yii::t('app', 'ເມ​ນູ​ຫຼັກ')?></li>
 
                             <?php
                             if (Yii::$app->session['user']->user_type == "Admin" || Yii::$app->session['user']->user_type == "User") {
                                 ?>
                                 <li>
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products">
-                                        <i class="fa fa-th"></i> <span>ຈັດ​ການ​ສີ້ນ​ຄ້າ​ເຂົ້າ</span>
+                                        <i class="fa fa-th"></i> <span><?= Yii::t('app', 'ຈັດ​ການ​ສີ້ນ​ຄ້າ​ເຂົ້າ')?></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
-                                        <i class="fa fa-shopping-cart "></i> <span>​ຂາຍ​ສີ້ນ​ຄ້າ</span>
+                                        <i class="fa fa-shopping-cart "></i> <span><?= Yii::t('app', '​ຂາຍ​ສີ້ນ​ຄ້າ')?></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-bar-chart"></i> <span>ລາຍ​ງານ​</span>
+                                        <i class="fa fa-bar-chart"></i> <span><?= Yii::t('app', 'ລາຍ​ງານ​')?></span>
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
-                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າທີ່​ຍັງ​ເຫຼືອ</a>
+                                                <i class="fa fa-bar-chart"></i><?= Yii::t('app', '​ສີ້ນ​ຄ້າທີ່​ຍັງ​ເຫຼືອ')?></a>
                                         </li>
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish">
-                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ</a>
+                                                <i class="fa fa-bar-chart"></i>​<?= Yii::t('app', 'ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ')?></a>
                                         </li>
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
-                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
+                                                <i class="fa fa-bar-chart"></i><?= Yii::t('app', '​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ')?></a>
                                         </li>
                                         <!--<li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot">
@@ -170,27 +170,27 @@ AppAsset::register($this);
                                     ?>
                                     <li>
                                         <a href="#">
-                                            <i class="fa fa-gears"></i> <span>ຕັ້​ງ​ຄ່າ</span>
+                                            <i class="fa fa-gears"></i> <span><?= Yii::t('app', 'ຕັ້​ງ​ຄ່າ')?></span>
                                         </a>
                                         <ul class="treeview-menu">
                                             <li>
                                                 <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index">
-                                                    <i class="fa fa-sellsy"></i> <span>ປະ​ເພດ​ສີນ​ຄ້າ</span>
+                                                    <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', 'ປະ​ເພດ​ສີນ​ຄ້າ')?></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/gbarcode">
-                                                    <i class="fa fa-barcode"></i> <span>ລະ​ຫັດ​ບາ​ໂຄດ</span>
+                                                    <i class="fa fa-barcode"></i> <span><?= Yii::t('app', 'ລະ​ຫັດ​ບາ​ໂຄດ')?></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=shop-profile/update&id=1">
-                                                    <i class="fa fa-user"></i> <span>ຂໍ້​ມູນ​ຮ້ານ</span>
+                                                    <i class="fa fa-user"></i> <span><?= Yii::t('app', 'ຂໍ້​ມູນ​ຮ້ານ')?></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user">
-                                                    <i class="fa fa-user"></i> <span>ຜ​ູ້​ໃຊ໊ລ​ະ​ບົບ</span>
+                                                    <i class="fa fa-user"></i> <span><?= Yii::t('app', 'ຜ​ູ້​ໃຊ໊ລ​ະ​ບົບ')?></span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -206,20 +206,20 @@ AppAsset::register($this);
                                 ?>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-bar-chart"></i> <span>ລາຍ​ງານ​</span>
+                                        <i class="fa fa-bar-chart"></i> <span><?= Yii::t('app', 'ລາຍ​ງານ')?>​</span>
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
-                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ</a>
+                                                <i class="fa fa-bar-chart"></i>​<?= Yii::t('app', 'ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ')?></a>
                                         </li>
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish">
-                                                <i class="fa fa-bar-chart"></i>​ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ</a>
+                                                <i class="fa fa-bar-chart"></i>​<?= Yii::t('app', 'ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ')?></a>
                                         </li>
                                         <li>
                                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
-                                                <i class="fa fa-bar-chart"></i>ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ</a>
+                                                <i class="fa fa-bar-chart"></i><?= Yii::t('app', 'ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ')?></a>
                                         </li>
 
                                     </ul>

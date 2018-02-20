@@ -49,15 +49,15 @@ if (Yii::$app->session->hasFlash('reg')) {
     <div class="login-box " style="margin-top: 0px;" >
         <div class="login-box-body">
             <div class="form-group has-feedback">
-                <div class="line_bottom">ປ້ອນຊື່ເຂົ້າ​ລະ​ບົບ ແລະ ລະ​ຫັດ​ຜ່ານ</div>
+                <div class="line_bottom"><?= Yii::t('app', 'ປ້ອນຊື່ເຂົ້າ​ລະ​ບົບ ແລະ ລະ​ຫັດ​ຜ່ານ')?></div>
 
             </div>
             <div class="form-group has-feedback">
-                <input type="text" name="LoginForm[username]" class="form-control" placeholder="ຊື່​ເຂົ້າ​ລະ​ບົບ" value="<?= $model->username ?>" required >
+                <input type="text" name="LoginForm[username]" class="form-control" placeholder="<?= Yii::t('app', 'ຊື່​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->username ?>" required >
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="LoginForm[password]" class="form-control" placeholder="ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ" value="<?= $model->password ?>" required >
+                <input type="password" name="LoginForm[password]" class="form-control" placeholder="<?= Yii::t('app', 'ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->password ?>" required >
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -73,7 +73,7 @@ if (Yii::$app->session->hasFlash('reg')) {
                 ?>
                 </div>
                 <div class="col-xs-4" style="padding-right: 0px;" align="right">
-                    <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-lock" ></span> ເຂົ້າ​ລະ​ບົບ</button>
+                    <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-lock" ></span><?= Yii::t('app','ເຂົ້າ​ລະ​ບົບ')?></button>
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ use yii\web\UrlManager;
                   $( "#output" ).html( data );
                   document.getElementById("search").focus();
                 });
-            ', 'autofocus' => 'autofocus', 'placeholder' => 'ລະ​ຫັດ​ບາ​ໂຄດ', 'id' => 'search', 'class' => 'form-control']);
+            ', 'autofocus' => 'autofocus', 'placeholder' => Yii::t('app', 'ລະ​ຫັດ​ບາ​ໂຄດ'), 'id' => 'search', 'class' => 'form-control']);
     ?>
 </div>
 <div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
@@ -127,14 +127,14 @@ use yii\web\UrlManager;
         }
         ?>
         <tr>
-            <td colspan="3" align="right"><b>ລວມ​ຈຳ​ນວນ​ເງ​ີນ</b></td>
+            <td colspan="3" align="right"><b><?=Yii::t('app','ລວມ​ຈຳ​ນວນ​ເງ​ີນ')?></b></td>
             <td align="right">​<b><?= number_format($total_prince, 2) ?></b></td>
         </tr>
         <?php
         if ($total_prince != 0) {
             ?>
             <tr>
-                <td colspan="3" align="right"><b>ສ່ວນຫລຸດ</b></td>
+                <td colspan="3" align="right"><b><?=Yii::t('app','ສ່ວນຫລຸດ')?></b></td>
                 <td align="right" style="width:100px;" id="dsc">​<b>
                         <?php
                         if (\Yii::$app->session['discount'] == 0) {
@@ -165,7 +165,7 @@ use yii\web\UrlManager;
 <div class="row lin_pos_b" >
     <div class="col-md-6">
         <?php
-        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> ຈ່າຍ​ເງີນ', '#', [
+        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> '. Yii::t('app', 'ຈ່າຍ​ເງີນ'), '#', [
             'onclick' => "
                         $.ajax({
                        type     :'POST',
@@ -181,7 +181,7 @@ use yii\web\UrlManager;
     </div>
     <div class="col-md-6" align="right">
         <?php
-        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove-circle"></span> ຍົກ​ເລີກ', '#', [
+        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove-circle"></span> '. Yii::t('app', 'ຍົກ​ເລີກ'), '#', [
             'onclick' => "
                         $.ajax({
                        type     :'POST',

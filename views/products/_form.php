@@ -21,9 +21,9 @@ use yii\widgets\ActiveForm;
     }
     ?>
     <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d')])->label(FALSE) ?>
-    <?= $form->field($model, 'pricebuy')->textInput(['data-a-sign' => 'ກີບ', 'data-a-dec' => ".", 'data-a-sep' => ",", 'id' => "money_dao"]) ?>
+    <?= $form->field($model, 'pricebuy')->textInput(['data-a-sign' => Yii::t('app','ກີບ'), 'data-a-dec' => ".", 'data-a-sep' => ",", 'id' => "money_dao"]) ?>
 
-    <?= $form->field($model, 'pricesale')->textInput(['data-a-sign' => 'ກີບ', 'data-a-dec' => ".", 'data-a-sep' => ",", 'id' => "money"]) ?>
+    <?= $form->field($model, 'pricesale')->textInput(['data-a-sign' => Yii::t('app', 'ກີບ'), 'data-a-dec' => ".", 'data-a-sep' => ",", 'id' => "money"]) ?>
 
 
     <?= $form->field($model, 'image')->fileInput(['maxlength' => true]) ?>
@@ -37,7 +37,7 @@ use yii\widgets\ActiveForm;
     }
     ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span> ບັນ​ທືກ' : '<span class="fa fa-save"></span> ບັນ​ທືກ', ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span>'. Yii::t('app', 'ບັນ​ທືກ') : '<span class="fa fa-save"></span> '. Yii::t('app', 'ບັນ​ທືກ'), ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

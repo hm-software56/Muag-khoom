@@ -34,7 +34,7 @@
                 $.post( "index.php?r=products/searchpd&searchtxt="+$(this).val(), function( data ) {
                 $( "#proct" ).html( data );
                 });
-                ', 'placeholder' => 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ', 'id' => 'search'])->label(false);
+                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ'), 'id' => 'search'])->label(false);
                 yii\widgets\ActiveForm::end();
                 ?>
             </div>

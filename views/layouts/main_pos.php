@@ -69,7 +69,7 @@ AppAsset::register($this);
                                 ?>
                                 <li class="dropdown user user-menu">
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
-                                        <span class="glyphicon glyphicon-shopping-car t"></span>ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)
+                                        <span class="glyphicon glyphicon-shopping-car t"></span><?= Yii::t('app', 'ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)')?>
                                     </a>
                                 </li>
                                 <?php
@@ -77,7 +77,7 @@ AppAsset::register($this);
                                     ?>
                                     <li class="dropdown user user-menu">
                                         <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord">
-                                            <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
+                                            <span class="glyphicon glyphicon-home"></span><?= Yii::t('app', 'ໜ້າຫຼັກ')?>
                                         </a>
                                     </li>
 
@@ -86,7 +86,7 @@ AppAsset::register($this);
                                     ?>
                                     <li class="dropdown user user-menu">
                                         <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord">
-                                            <span class="glyphicon glyphicon-home"></span>ໜ້າຫຼັກ
+                                            <span class="glyphicon glyphicon-home"></span><?= Yii::t('app', 'ໜ້າຫຼັກ')?>
                                         </a>
                                     </li>
                                     <?php

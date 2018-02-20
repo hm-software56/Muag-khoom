@@ -7,27 +7,27 @@ $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
             <td>
                 <b><?= $profile->shop_name ?></b><br/>
 
-                ເບີ​ໂທ: <?= $profile->telephone . " , " . $profile->phone_number ?> <br/>
-                ອີ​ເມວ: <?= $profile->email ?> <br/>
-                ທີ່​ຢູ່: <?= $profile->adress ?> <br/>
+                <?= Yii::t('app', 'ເບີ​ໂທ')?>: <?= $profile->telephone . " , " . $profile->phone_number ?> <br/>
+                <?= Yii::t('app', 'ອີ​ເມວ')?>: <?= $profile->email ?> <br/>
+                <?= Yii::t('app', 'ທີ່​ຢູ່')?>: <?= $profile->adress ?> <br/>
             </td>
             <td align="right">
-                ເລກ​ທີ່: <?= $invoice->code ?><br/>
+                <?= Yii::t('app', 'ເລກ​ທີ່')?>: <?= $invoice->code ?><br/>
                 <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $profile->logo ?>" class="img-responsive" width="100">
             </td>
         </tr>
     </table>
     <table class="table">
         <tr>
-            <td>ຊື່​ລູ​ກ​ຄ້າ: XXXXXXXXXXXX</td>
-            <td align="right">ເບີ​ໂທ: 020 55045770</td>
-            <td align="right">ວັ​ນ​ທີ: <?= $invoice->date ?></td>
+            <td><?= Yii::t('app', 'ຊື່​ລູ​ກ​ຄ້າ')?>:................</td>
+            <td align="right"><?= Yii::t('app', 'ເບີ​ໂທ')?>:...............</td>
+            <td align="right"><?=Yii::t('app', 'ວັ​ນ​ທີ')?>: <?= $invoice->date ?></td>
         </tr>
         <table class="table table-striped" >
             <tr>
-                <th>ລາຍ​ການ</th>
+                <th><?= Yii::t('app', 'ລາຍ​ການ')?></th>
                 <th>ຈຳ​ນວນ</th>
-                <td align="right"><b>ລາ​ຄາ</b></td>
+                <td align="right"><b><?= Yii::t('app', 'ລາ​ຄາ')?></b></td>
             </tr>
             <?php
             $total_prince = 0;
@@ -54,24 +54,24 @@ $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
             }
             ?>
             <tr>
-                <td colspan="2" align="right">ລວມ​ຈຳ​ນວນ​ເງ​ີນ</td>
-                <td align="right">​<b><?= number_format($total_prince, 2) ?> ກີບ</b></td>
+                <td colspan="2" align="right"><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງ​ີນ')?></td>
+                <td align="right">​<b><?= number_format($total_prince, 2) ?> <?= Yii::t('app', 'ກີບ')?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">ຈຳ​ນວນ​ເງ​ີນສ່ວນຫຼຸດ</td>
+                <td colspan="2" align="right"><?= Yii::t('app', 'ຈຳ​ນວນ​ເງ​ີນສ່ວນຫຼຸດ')?></td>
                 <td align="right">​<b><?= number_format(\Yii::$app->session['discount'], 2) ?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">ລວມ​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ</td>
+                <td colspan="2" align="right"><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')?></td>
                 <td align="right">​<b><?= number_format(($total_prince + \Yii::$app->session['paychange']) - \Yii::$app->session['discount'], 2) ?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຄ້າງ</td>
-                <td align="right">​<b><?= number_format(\Yii::$app->session['paystill'], 2) ?> ກີບ</b></td>
+                <td colspan="2" align="right"><?= Yii::t('app', 'ຈ​ຳ​ນວນ​​ເງີນຄ້າງ')?></td>
+                <td align="right">​<b><?= number_format(\Yii::$app->session['paystill'], 2) ?> <?= Yii::t('app', 'ກີບ')?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຖອນ</td>
-                <td align="right">​<b><?= number_format(\Yii::$app->session['paychange'], 2) ?> ກີບ</b></td>
+                <td colspan="2" align="right"><?= Yii::t('app', 'ຈ​ຳ​ນວນ​​ເງີນຖອນ')?></td>
+                <td align="right">​<b><?= number_format(\Yii::$app->session['paychange'], 2) ?> <?= Yii::t('app','ກີບ')?></b></td>
             </tr>
         </table>
 </div>

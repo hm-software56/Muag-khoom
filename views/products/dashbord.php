@@ -160,10 +160,10 @@
                             'x' => 'x',
                             'columns' => [
                                 ['x', ''.$d4.'' , ''.$d3.'', ''.$d2.'' , ''.$d1.'' , ''.$d.''],
-                                ['ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')', (int)$rd4, (int)$rd3, (int)$rd2, (int)$rd1, (int)$rd],
+                                [''.Yii::t('app','ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').'('.$sum.')', (int)$rd4, (int)$rd3, (int)$rd2, (int)$rd1, (int)$rd],
                             ],
                             'colors' => [
-                                'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')' => '#e4122b',
+                                ''. Yii::t('app','ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').' ('.$sum.')' => '#e4122b',
                             ],
                             'type'=>'area-spline',
                         ],
@@ -174,7 +174,7 @@
                             ],
                             'y' => [
                                 'label' => [
-                                    'text' => 'ຈຳ​ນວນ​ເງີນ',
+                                    'text' => Yii::t('app', 'ຈຳ​ນວນ​ເງີນ'),
                                     'position' => 'outer-top'
                                 ],
                                 'min' => 0,
@@ -260,11 +260,10 @@
                     'data' => [
                             'x' => 'x',
                             'columns' => [
-                                ['x', 'ອາ​ທິດ4 ('.$w3_first.' - '.$w3_last.')', 'ອາ​ທິດ3 ('.$w2_first.' - '.$w2_last.')', 'ອາ​ທິດ2 ('.$w1_first.' - '.$w1_last.')', 'ອາ​ທິດ1 ('.$w_first.' - '.$w_last.')'],
+                                ['x', Yii::t('app', 'ອາ​ທິດ4'), Yii::t('app', 'ອາ​ທິດ3') , Yii::t('app', 'ອາ​ທິດ2'), Yii::t('app', 'ອາ​ທິດ1')],
                                 ['ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')', (int)$w3, (int)$w2, (int)$w1, (int)$w],
                             ],
-                            'colors' => [
-                                'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')' => '#06067c',
+                            'colors' => [''. Yii::t('app','ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').' ('.$sum.')' => '#06067c',
                             ],
                             'type'=>'area-spline',
                         ],
@@ -275,7 +274,7 @@
                             ],
                             'y' => [
                                 'label' => [
-                                    'text' => 'ຈຳ​ນວນ​ເງີນ',
+                                    'text' => Yii::t('app','ຈຳ​ນວນ​ເງີນ'),
                                     'position' => 'outer-top'
                                 ],
                                 'min' => 0,
@@ -363,10 +362,12 @@
                             'x' => 'x',
                             'columns' => [
                                 ['x', date('Y-m',strtotime($m3_last)), date('Y-m',strtotime($m2_last)), date('Y-m',strtotime($m1_last)), date('Y-m',strtotime($m_last))],
-                                ['ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')', (int)$m3, (int)$m2, (int)$m1, (int)$m],
+                                [''.Yii::t('app','ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').' ('.$sum.')', (int)$m3, (int)$m2, (int)$m1, (int)$m],
                             ],
                             'colors' => [
-                                'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')' => '#066334',
+                                ''. Yii::t(
+                                    'app',
+                                    'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').' ('.$sum.')' => '#066334',
                             ],
                             'type'=>'area-spline',
                         ],
@@ -377,7 +378,9 @@
                             ],
                             'y' => [
                                 'label' => [
-                                    'text' => 'ຈຳ​ນວນ​ເງີນ',
+                                    'text' => Yii::t(
+                                        'app',
+                                        'ຈຳ​ນວນ​ເງີນ'),
                                     'position' => 'outer-top'
                                 ],
                                 'min' => 0,
@@ -464,10 +467,12 @@
                             'x' => 'x',
                             'columns' => [
                                 ['x', ''.date("Y",strtotime("-3 year")).'', ''.date("Y",strtotime("-2 year")).'', ''.date("Y",strtotime("-1 year")).'', ''.date("Y",strtotime("this year")).''],
-                                ['ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')', (int)$y3, (int)$y2, (int)$y1, (int)$y],
+                                [''. Yii::t('app', 'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').' ('.$sum.')', (int)$y3, (int)$y2, (int)$y1, (int)$y],
                             ],
                             'colors' => [
-                                'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ ('.$sum.')' => '#d7a306',
+                                ''. Yii::t(
+                                    'app',
+                                    'ສີນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ').' ('.$sum.')' => '#d7a306',
                             ],
                             'type'=>'area-spline',
                         ],
@@ -478,7 +483,7 @@
                             ],
                             'y' => [
                                 'label' => [
-                                    'text' => 'ຈຳ​ນວນ​ເງີນ',
+                                    'text' => Yii::t('app', 'ຈຳ​ນວນ​ເງີນ'),
                                     'position' => 'outer-top'
                                 ],
                                 'min' => 0,

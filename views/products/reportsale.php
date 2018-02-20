@@ -19,7 +19,7 @@ Modal::end();
     <div class="col-md-12 " id="output">
         <div class="line_bottom">
             <div class="row">
-                <div class="col-xs-12">ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ</div>
+                <div class="col-xs-12"><?=Yii::t('app', 'ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ')?></div>
             </div>
 
         </div>
@@ -34,15 +34,15 @@ Modal::end();
                                     $.post( "index.php?r=products/repaortsale&invoice_code="+$(this).val(), function( data ) {
                                       $( "#output" ).html( data );
                                     });
-                                ', 'placeholder' => 'ລະ​ຫັດບີນ', 'id' => 'search', 'class' => 'form-control']);
+                                ', 'placeholder' => Yii::t('app', 'ລະ​ຫັດບີນ'), 'id' => 'search', 'class' => 'form-control']);
                             ?>
                         </th>
-                        <th>ຮູບພາບ</th>
-                        <th>ຊື່​ສີ້ນ​ຄ້າ</th>
-                        <th>ຈຳ​ນວນ</th>
-                        <th>ລາ​ຄາ</th>
-                        <th>ລວມ</th>
-                        <th>ສ່ວນຫຼຸດ</th>
+                        <th><?=Yii::t('app', 'ຮູບພາບ')?></th>
+                        <th><?=Yii::t('app', 'ຊື່​ສີ້ນ​ຄ້າ')?></th>
+                        <th><?=Yii::t('app', 'ຈຳ​ນວນ')?></th>
+                        <th><?=Yii::t('app', 'ລາ​ຄາ')?></th>
+                        <th><?=Yii::t('app', 'ລວມ')?></th>
+                        <th><?=Yii::t('app', 'ສ່ວນຫຼຸດ')?></th>
                         <th>
                             <?=
                             yii\jui\DatePicker::widget(['name' => 'date', 'value' => $date,
@@ -138,12 +138,12 @@ Modal::end();
                     }
                     ?>
                     <tr>
-                        <td colspan="5" align="right">​<b>ລວມ​ຈຳ​ນວນ​ເງີນ​</b></td>
+                        <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນ')?>​</b></td>
                         <td class="bg-blue"><b><?= number_format($total, 2) ?></b></td>
                         <td colspan="2" class="bg-yellow"><b><?= number_format($total_discount, 2) ?></b></td>
                     </tr>
                     <tr >
-                        <td colspan="5" align="right">​<b>ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ</b></td>
+                        <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ')?></b></td>
                         <td colspan="3" class="bg-green"><b><?= number_format($total - $total_discount, 2) ?></b></td>
                     </tr>
                 </tbody>

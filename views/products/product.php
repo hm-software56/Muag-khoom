@@ -10,12 +10,12 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ລ/ດ</th>
-                    <th>ຮູບພາບ</th>
-                    <th>ຊື່​ສີ້ນ​ຄ້າ</th>
-                    <th>ຈຳ​ນວນ</th>
-                    <th>ລາ​ຄາ</th>
-                    <th>ລວມ</th>
+                    <th><?= Yii::t('app', 'ລ/ດ')?></th>
+                    <th><?= Yii::t('app', 'ຮູບພາບ')?></th>
+                    <th><?= Yii::t('app', 'ຊື່​ສີ້ນ​ຄ້າ')?></th>
+                    <th><?= Yii::t('app', 'ຈຳ​ນວນ')?></th>
+                    <th><?= Yii::t('app', 'ລາ​ຄາ')?></th>
+                    <th><?= Yii::t('app', 'ລວມ')?></th>
                 </tr>
             </thead>
             <tbody>
@@ -38,7 +38,7 @@
                 }
                 ?>
                 <tr>
-                    <td colspan="5" align="right">​<b>ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ</b></td>
+                    <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ')?></b></td>
                     <td><b><?= number_format($total, 2) ?><b/></td>
                 </tr>
             </tbody>
