@@ -40,6 +40,8 @@ use yii\web\UrlManager;
     </script>
 
     <?php
+    if(\Yii::$app->session['height_screen']>Yii::$app->params['height_disable']) ///size  400 not show for mobile
+    {
     echo Html::textInput('name', '', [
         'onchange' => '
                 $.post( "index.php?r=products/search&searchtxt="+$(this).val(), function( data ) {
@@ -47,9 +49,22 @@ use yii\web\UrlManager;
                   document.getElementById("search").focus();
                 });
             ', 'autofocus' => 'autofocus', 'placeholder' => Yii::t('app', 'ລະ​ຫັດ​ບາ​ໂຄດ'), 'id' => 'search', 'class' => 'form-control']);
+    }
     ?>
 </div>
-<div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+    <?php
+    if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+    {
+        ?>
+        <div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+    <?php
+    }else{ /// for mobile
+        ?>
+        <div class="row table-responsive">
+    <?php
+    }
+    ?>
+
     <table class="table table-striped" >
         <?php
         // print_r(\Yii::$app->session['product']);
@@ -163,10 +178,12 @@ use yii\web\UrlManager;
 </div>
 
 <div class="row lin_pos_b" >
-    <div class="col-md-6">
+    <div class="col-md-6  col-xs-6">
         <?php
-        echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> '. Yii::t('app', 'ຈ່າຍ​ເງີນ'), '#', [
-            'onclick' => "
+        if(!empty(\Yii::$app->session['product']))
+        {
+            echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> ' . Yii::t('app', 'ຈ່າຍ​ເງີນ'), '#', [
+                'onclick' => "
                         $.ajax({
                        type     :'POST',
                        cache    : false,
@@ -175,11 +192,17 @@ use yii\web\UrlManager;
                            $('#output').html(response);
                        }
                        });return false;",
-            'class' => "btn btn-large bg-green"
-        ]);
+                'class' => "btn btn-large bg-green"
+            ]);
+        }else{
+            echo yii\helpers\Html::a('<span class="glyphicon glyphicon-hand-right"></span> ' . Yii::t('app', 'ຈ່າຍ​ເງີນ'), '#', [
+                'class' => "btn btn-large bg-gray"
+            ]);
+        }
+        
         ?>
     </div>
-    <div class="col-md-6" align="right">
+    <div class="col-md-6 col-xs-6" align="right">
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove-circle"></span> '. Yii::t('app', 'ຍົກ​ເລີກ'), '#', [
             'onclick' => "

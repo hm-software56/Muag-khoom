@@ -15,7 +15,7 @@ SlimScroll::widget([
 <?php
 foreach ($model as $model) {
     ?>
-    <div class="col-md-2 col-sm-3">
+    <div class="col-md-2 col-sm-3 col-xs-6">
         <div class="row">
             <div class="col-md-12" align="center">
             <div class="col-md-12 aa"><?= $model->qautity ?></div>

@@ -247,12 +247,9 @@ AppAsset::register($this);
                 <footer class="main-footer">
                     <div class="pull-right">
                         Version 1.2
-
                         <?php
-                             $atkey=\app\models\ShopProfile::find()->one();
-                            $key=$atkey->key_active;
-                            $key_acitvated=substr($key,25,2).substr($key,17,-8)."-".substr($key,6,-19)."-".substr($key,0,-25);
-                            if(empty($atkey->key_active) || date('Y-m-d',strtotime(Yii::$app->params['alert_date']))>$key_acitvated)
+                        $key_acitvated=\Yii::$app->session['key_acitvated'];
+                            if(empty($key_acitvated) || date('Y-m-d',strtotime(Yii::$app->params['alert_date']))>$key_acitvated)
                             {
                         ?>
                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_key"><b><?=Yii::t('app','Activate key')?></b></button>

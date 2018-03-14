@@ -12,7 +12,7 @@
 
     <div class="col-md-9 col-sm-8 lin_pos_h">
         <div class="row lin_pos">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-8 col-sm-8 col-xs-6">
                 <?php
                 $form = yii\widgets\ActiveForm::begin();
                 $search = new \app\models\Category();
@@ -21,21 +21,23 @@
                 $.post( "index.php?r=products/sale&cid="+$(this).val(), function( data ) {
                 $( "#proct" ).html( data );
                 });
-                ', 'prompt' => '', 'id' => 'search'])->label(false);
+                ', 'prompt' => Yii::t('app','ຄົ້ນ​ຫາຕາມ​ປະ​ເພດ'), 'id' => 'search'])->label(false);
                 yii\widgets\ActiveForm::end();
                 ?>
             </div>
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-4 col-sm-4 col-xs-6">
                 <?php
-                $form = yii\widgets\ActiveForm::begin();
-                $search = new \app\models\ProductsSearch;
-                echo $form->field($search, 'name')->textInput([
-                    'oninput' => '
+                    $form = yii\widgets\ActiveForm::begin();
+                    $search = new \app\models\ProductsSearch;
+                    echo $form->field($search, 'name')->textInput([
+                        'oninput' => '
                 $.post( "index.php?r=products/searchpd&searchtxt="+$(this).val(), function( data ) {
                 $( "#proct" ).html( data );
                 });
-                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ'), 'id' => 'search'])->label(false);
-                yii\widgets\ActiveForm::end();
+                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ'), 'id' => 'search'
+                    ])->label(false);
+                    yii\widgets\ActiveForm::end();
+                
                 ?>
             </div>
         </div>

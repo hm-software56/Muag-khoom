@@ -1,6 +1,19 @@
 <?= $this->render('invoice', ['invoice' => $invoice]);
 ?>
-<div class="row table-responsive" style="height: 450px;">
+<?php
+if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+{
+    ?>
+        <div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+    <?php
+
+} else { /// for mobile
+    ?>
+        <div class="row table-responsive">
+    <?php
+
+}
+?>
     <table class="table table-striped" >
         <tr>
             <th>ລາຍ​ການ</th>
@@ -55,7 +68,7 @@
     </table>
 </div>
 <div class="row" style="border-top: 2px green solid; padding-top: 2px;">
-    <div class="col-md-6 ">
+    <div class="col-md-6 col-xs-6">
         <?php
         echo \yii2assets\printthis\PrintThis::widget([
             'htmlOptions' => [
@@ -79,7 +92,7 @@
         ]);
         ?>
     </div>
-    <div class="col-md-6 " align="right">
+    <div class="col-md-6 col-xs-6 " align="right">
         <?php
         echo yii\helpers\Html::a('ສັ່ງ​ຊື້​ຕໍ່ <span class="glyphicon glyphicon-forward"></span>', '#', [
             'onclick' => "

@@ -4,7 +4,20 @@ use kartik\money\MaskMoney;
 
 $form = yii\widgets\ActiveForm::begin();
 ?>
-<div class="row table-responsive" style="height: 450px;">
+<?php
+if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+{
+    ?>
+        <div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+    <?php
+
+} else { /// for mobile
+    ?>
+        <div class="row table-responsive">
+    <?php
+
+}
+?>
     <table class="table table-striped " >
         <tr>
             <td align="right"><?=Yii::t('app','ລວມ​ຈ​ຳ​ນວນ​ເງ​ີນ​ທັງ​ໝົດ')?>:</td>
@@ -107,7 +120,7 @@ $form = yii\widgets\ActiveForm::begin();
 yii\widgets\ActiveForm::end();
 ?>
 <div class="row" style="border-top: 2px green solid; padding-top: 2px;">
-    <div class="col-md-6">
+    <div class="col-md-6 col-xs-6">
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-backward"></span> '. Yii::t('app', 'ກັບ​ຄ​ືນ'), '#', [
             'onclick' => "
@@ -124,7 +137,7 @@ yii\widgets\ActiveForm::end();
         ]);
         ?>
     </div>
-    <div class="col-md-6 " align="right">
+    <div class="col-md-6 col-xs-6" align="right">
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove-circle"></span> '. Yii::t('app', 'ຍົກ​ເລີກ'), '#', [
             'onclick' => "
