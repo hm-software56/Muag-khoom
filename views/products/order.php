@@ -104,6 +104,9 @@ use yii\web\UrlManager;
                        type     :'POST',
                        cache    : false,
                        url  : 'index.php?r=products/orderdelete&id=" . $product->id . "',
+                       'beforeSend': function(){
+                        $('#load').html('<img src=images/loading.gif width=40 />');
+                        },
                        success  : function(response) {
                            $('#output').html(response);
                            document.getElementById('search').focus();
@@ -175,8 +178,8 @@ use yii\web\UrlManager;
         }
         ?>
     </table>
+    <div id="load" align='right'></div>
 </div>
-
 <div class="row lin_pos_b" >
     <div class="col-md-6  col-xs-6">
         <?php
@@ -188,6 +191,9 @@ use yii\web\UrlManager;
                        type     :'POST',
                        cache    : false,
                        url  : 'index.php?r=products/pay&totalprice=" . $total_prince . "',
+                       'beforeSend': function(){
+                        $('#load').html('<img src=images/loading.gif width=40 />');
+                        },
                        success  : function(response) {
                            $('#output').html(response);
                        }
@@ -210,6 +216,10 @@ use yii\web\UrlManager;
                        type     :'POST',
                        cache    : false,
                        url  : 'index.php?r=products/ordercancle',
+                       'beforeSend': function(){
+                            $('#load').html('<img src=images/loading.gif width=40 />');
+                        },
+
                        success  : function(response) {
                            $('#output').html(response);
                            document.getElementById('search').focus();

@@ -89,9 +89,8 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
 
         </tr>
     </table>
-
     <div id="sh" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "block" : "none" ?>">
-        <div id="load" align='right'></div>
+        
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-ok-circle"></span> '.Yii::t('app', 'ຢັ້ງ​ຢື້ນ​ຈ່າຍ​ເງີນ'), '#', [
             'onclick' => "
@@ -103,8 +102,8 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
                                         $('#send').remove();
                                         $('#load').html('<img src=images/loading.gif width=40 />');
                                     },
-                       success: function(response) {
-                           $('#output').html(response);
+                        success: function(response) {
+                            $('#output').html(response);
                        }
                        });return false;",
             'class' => "btn btn-large bg-green",
@@ -115,6 +114,7 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
     <div id="sh_l" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "none" : "block" ?>">
         <a href="#" class="btn btn-large bg-yellow"><span class="glyphicon glyphicon-alert"></span> <?= Yii::t('app', 'ຢັ້ງ​ຢື້ນ​ຈ່າຍ​ເງີນ')?></a>
     </div>
+    <div id="load" align='right'></div>
 </div>
 <?php
 yii\widgets\ActiveForm::end();
@@ -128,6 +128,9 @@ yii\widgets\ActiveForm::end();
                        type     :'POST',
                        cache    : false,
                        url  : 'index.php?r=products/search&searchtxt=NULL',
+                       'beforeSend': function(){
+                            $('#load').html('<img src=images/loading.gif width=40 />');
+                        },
                        success  : function(response) {
                            $('#output').html(response);
                            document.getElementById('search').focus();
@@ -145,6 +148,9 @@ yii\widgets\ActiveForm::end();
                        type     :'POST',
                        cache    : false,
                        url  : 'index.php?r=products/ordercancle',
+                       'beforeSend': function(){
+                            $('#load').html('<img src=images/loading.gif width=40 />');
+                        },
                        success  : function(response) {
                            $('#output').html(response);
                            document.getElementById('search').focus();

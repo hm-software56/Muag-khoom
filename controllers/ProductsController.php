@@ -297,8 +297,11 @@ class ProductsController extends Controller {
             }
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
         } else {
-            \Yii::$app->getSession()->setFlash('errors', \Yii::t('app', 'ສີນ​ຄ້ານີ້​ບໍ່​ມີ​ໃນ​ລະ​ບົບ ຫຼື່​ ຈຳ​ນວນ​ສີນ​ຄ້າໝົດ​ແລ້ວ...'));
-            \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+            if($searchtxt!="nextorder") // "nextorder" get form comfirm payment 
+            {
+                \Yii::$app->getSession()->setFlash('errors', \Yii::t('app', 'ສີນ​ຄ້ານີ້​ບໍ່​ມີ​ໃນ​ລະ​ບົບ ຫຼື່​ ຈຳ​ນວນ​ສີນ​ຄ້າໝົດ​ແລ້ວ...'));
+                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+            }
         }
         return $this->renderAjax('order', [
         ]);
@@ -625,7 +628,7 @@ class ProductsController extends Controller {
 
     public function actionDashbord()
     {
-        return $this->render('dashbord');
+        return $this->rende('dashbord');
     }
-
+    
 }

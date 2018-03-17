@@ -18,7 +18,7 @@ foreach ($model as $model) {
     <div class="col-md-2 col-sm-3 col-xs-6">
         <div class="row">
             <div class="col-md-12" align="center">
-            <div class="col-md-12 aa"><?= $model->qautity ?></div>
+            <div class="col-md-12 aa"><span style='background:#003300; padding-left:5px; padding-right:5px;border-radius:2px;'><?= $model->qautity ?></span></div>
                <!-- <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />-->
                 <?php
                 echo yii\helpers\Html::a('<img src="' . Yii::$app->urlManager->baseUrl . '/images/thume/' . $model->image . '" class="thumbnail img-responsive" />', '#', [
@@ -28,6 +28,10 @@ foreach ($model as $model) {
                   type     :'POST',
                   cache    : false,
                   url  : 'index.php?r=products/order&id=" . $model->id . "',
+                  'beforeSend': function(){
+                        $('#send').remove();
+                        $('#load').html('<img src=images/loading.gif width=40 />');
+                    },
                   success  : function(response) {
                   $('#output').html(response);
                    document.getElementById('search').focus();

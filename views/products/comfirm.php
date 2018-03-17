@@ -1,5 +1,10 @@
-<?= $this->render('invoice', ['invoice' => $invoice]);
+
+<?php
+
+use yii\helpers\Html;
+use yii\web\UrlManager;
 ?>
+<?= $this->render('invoice', ['invoice' => $invoice]);?>
 <?php
 if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
 {
@@ -66,7 +71,9 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
             <td align="right">​<b><?= number_format(\Yii::$app->session['paychange'], 2) ?></b></td>
         </tr>
     </table>
+    <div id="load" align='right'></div>
 </div>
+
 <div class="row" style="border-top: 2px green solid; padding-top: 2px;">
     <div class="col-md-6 col-xs-6">
         <?php
@@ -99,14 +106,32 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
                         $.ajax({
                        type     :'POST',
                        cache    : false,
-                       url  : 'index.php?r=products/ordercancle',
+                       url  : 'index.php?r=products/sale&cid=',
+                       'beforeSend': function(){
+                            $('#load').html('<img src=images/loading.gif width=40 />');
+                        },
                        success  : function(response) {
-                           $('#output').html(response);
+                           $('#proct').html(response);
+                           document.getElementById('panel').style.display ='block';
                            document.getElementById('search').focus();
                        }
                        });return false;",
             'class' => "btn btn-large bg-green"
         ]);
+        
+    
         ?>
     </div>
+    <span id='panel'  style="display:none">
+        <?php
+        echo Html::textInput('name', 'nextorder', [
+            'onfocus' => '
+                $.post( "index.php?r=products/search&searchtxt="+$(this).val(), function( data ) {
+                  $( "#output" ).html( data );
+                  document.getElementById("search").focus();
+                });
+            ', 'autofocus' => 'autofocus', 'id' => 'search', 'style'=>"height:0px"
+        ]);
+        ?>
+    </span>
 </div>
