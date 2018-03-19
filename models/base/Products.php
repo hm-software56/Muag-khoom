@@ -18,6 +18,7 @@ use Yii;
  * @property string $image
  * @property integer $category_id
  * @property integer $user_id
+ * @property integer $status
  *
  * @property \app\models\Barcode[] $barcodes
  * @property \app\models\Category $category
@@ -51,6 +52,7 @@ abstract class Products extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 255],
             [['pricesale', 'pricebuy'], 'string', 'max' => 40],
             [['image'], 'string', 'max' => 45],
+            [['status'], 'string', 'max' => 1],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Category::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['user_id' => 'id']]
         ];
@@ -71,6 +73,7 @@ abstract class Products extends \yii\db\ActiveRecord
             'image' => 'Image',
             'category_id' => 'Category ID',
             'user_id' => 'User ID',
+            'status' => 'Status',
         ];
     }
 

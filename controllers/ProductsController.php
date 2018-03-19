@@ -61,15 +61,15 @@ class ProductsController extends Controller {
 
         if (isset($_GET['cid'])) {
             if (!empty($_GET['cid'])) {
-                $model = Products::find()->where(['category_id' => $_GET['cid']])->orderBy('id ASC')->all();
+                $model = Products::find()->where(['status'=>'1','category_id' => $_GET['cid']])->orderBy('id ASC')->all();
             } else {
-                $model = Products::find()->orderBy('id ASC')->all();
+                $model = Products::find()->where(['status' => '1'])->orderBy('id ASC')->all();
             }
             return $this->renderAjax('pos_pro', [
                         'model' => $model,
             ]);
         } else {
-            $model = Products::find()->orderBy('id ASC')->all();
+            $model = Products::find()->where(['status' => '1'])->orderBy('id ASC')->all();
             return $this->render('sale', [
                         'model' => $model,
             ]);
@@ -499,9 +499,60 @@ class ProductsController extends Controller {
                                 });return false;",
                 'class' => "btn btn-sm bg-link",
             ]) . "</div>";
+        }elseif(isset($_GET['1i']))
+        {
+            $invoice=\app\models\Invoice::find()->where(['id'=>$_GET['inv_id'], 'products_id' =>$idp])->one();
+            $old_qautity= $invoice->qautity;
+
+            $invoice->qautity= $qautity;
+            $invoice->save();
+
+            $product=Products::find()->where(['id'=>$idp])->one();
+            if($qautity> $old_qautity)
+            {
+                $product->qautity = $product->qautity - $qautity;
+            }else{
+                $product->qautity = $product->qautity + $qautity;
+            }
+            $product->save();
+            return "ssss";
         }
 
         return $this->renderAjax('qautityupdateindex', ['qautity' => $qautity, 'id' => $idp]);
+    }
+
+    public function actionQautitycancle($idp= null, $qautity, $i = null,$inv_id=NULL,$true=null)
+    {
+        if (!empty($true)) {
+            $sale = \app\models\Sale::find()->where(['invoice_id' => $_GET['inv_id'], 'products_id' => $idp])->one();
+            $old_qautity = $sale->qautity;
+
+            $sale->qautity = $qautity;
+            $sale->price=$sale->price* $sale->qautity;
+            $sale->save();
+
+            $product = Products::find()->where(['id' => $idp])->one();
+            if ($qautity > $old_qautity) {
+                $product->qautity = $product->qautity - $qautity;
+            } else {
+                $product->qautity = $product->qautity + $qautity;
+            }
+            $product->save();
+
+            return "<div id=qt".$i.">" . Html::a($sale->qautity, '#', [
+                'onclick' => "
+                                $.ajax({
+                                type:'POST',
+                                cache: false,
+                                url  : 'index.php?r=products/qautityupdateindex&idp=" . $product->id . "&qautity=" . $sale->qautity . "&i=" . $i . "&inv_id=" . $sale->invoice_id . "',
+                                success:function(response) {
+                                    $('#qt".$i."').html(response);
+                                }
+                                });return false;",
+                'class' => "btn btn-sm bg-link",
+            ]) . "</div>";
+        } 
+        return $this->renderAjax('qautitycancle', ['qautity' => $qautity, 'idp' => $idp,'inv_id' => $_GET['inv_id'], 'i' => $_GET['i']]);
     }
     /**
      * Deletes an existing Products model.
@@ -510,7 +561,10 @@ class ProductsController extends Controller {
      * @return mixed
      */
     public function actionDelete($id) {
-        $this->findModel($id)->delete();
+        $model=Products::find()->where(['id'=>$id])->one();
+        $model->status='0';
+        $model->save();
+        //$this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -569,13 +623,52 @@ class ProductsController extends Controller {
         }
     }
 
+    public function actionCanclesale() {
+        if (isset($_GET['invoice_code']) || isset($_GET['date'])) {
+            if (isset($_GET['invoice_code'])) {
+                if (Yii::$app->session['user']->user_type == "POS") {
+                    $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id, 'code' => $_GET['invoice_code']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['invoice_code'])) {
+                        $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+                    }
+                } else {
+                    $invoices = \app\models\Invoice::find()->where(['code' => $_GET['invoice_code']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['invoice_code'])) {
+                        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                    }
+                }
+            } elseif (isset($_GET['date'])) {
+                if (Yii::$app->session['user']->user_type == "POS") {
+                    $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id, 'date' => $_GET['date']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['date'])) {
+                        $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+                    }
+                } else {
+                    $invoices = \app\models\Invoice::find()->where(['date' => $_GET['date']])->orderBy('id DESC')->all();
+                    if (empty($invoices) && empty($_GET['date'])) {
+                        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                    }
+                }
+            }
+
+            return $this->renderAjax('canclesale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
+        } else {
+            if (Yii::$app->session['user']->user_type == "POS") {
+                $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+            } else {
+                $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+            }
+            return $this->render('canclesale', ['invoices' => $invoices, 'invoice_code' => "", 'date' => ""]);
+        }
+    }
+
     public function actionProduct() {
-        $model = Products::find()->where(['not in', 'qautity', [0]])->all();
+        $model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status'=>'1'])->all();
         return $this->render('product', ['model' => $model]);
     }
 
     public function actionProductfinish() {
-        $model = Products::find()->where(['in', 'qautity', [0]])->all();
+        $model = Products::find()->where(['in', 'qautity', [0]])->andwhere(['status'=>'1'])->all();
         return $this->render('productfinish', ['model' => $model]);
     }
 
@@ -628,7 +721,7 @@ class ProductsController extends Controller {
 
     public function actionDashbord()
     {
-        return $this->rende('dashbord');
+        return $this->render('dashbord');
     }
     
 }

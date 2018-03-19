@@ -69,8 +69,8 @@ AppAsset::register($this);
                             if (!empty(Yii::$app->session['user'])) {
                                 ?>
                                 <li class="dropdown user user-menu">
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
-                                        <span class="glyphicon glyphicon-shopping-car t"></span><?= Yii::t('app', 'ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)')?>
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/canclesale">
+                                        <span class="fa fa-trash"></span><?= Yii::t('app', 'ຍົກ​ເລີ​ກ​ສີ້ນ​ຄ້າ​ທີ​ຂາຍ')?>
                                     </a>
                                 </li>
                                 <?php

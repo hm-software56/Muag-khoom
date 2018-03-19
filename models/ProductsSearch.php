@@ -64,6 +64,7 @@ class ProductsSearch extends Products
             'date' => $this->date,
             'category_id' => $this->category_id,
             'user_id' => $this->user_id,
+            'status'=>'1',
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
