@@ -40,7 +40,7 @@ use yii\web\UrlManager;
     </script>
 
     <?php
-    if(\Yii::$app->session['height_screen']>Yii::$app->params['height_disable']) ///size  400 not show for mobile
+    if(\Yii::$app->session['width_screen']> Yii::$app->params['width_disable'] and \Yii::$app->session['height_screen']>Yii::$app->params['height_disable']) ///size  400 not show for mobile
     {
     echo Html::textInput('name', '', [
         'onchange' => '
@@ -53,7 +53,7 @@ use yii\web\UrlManager;
     ?>
 </div>
     <?php
-    if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+    if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and \Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
     {
         ?>
         <div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
@@ -67,7 +67,7 @@ use yii\web\UrlManager;
 
     <table class="table table-striped" >
         <?php
-        // print_r(\Yii::$app->session['product']);
+        //print_r(\Yii::$app->session['product']);
         $total_prince = 0;
         $pro_id = [];
         //unset(\Yii::$app->session['product']);

@@ -41,8 +41,10 @@ if (Yii::$app->session->hasFlash('reg')) {
     ]);
     ?>
     <input type="hidden" id="height_screen" name="hsc">
+    <input type="hidden" id="width_screen" name="wsc">
     <script>
         document.getElementById('height_screen').value = window.innerHeight;
+        document.getElementById('width_screen').value = window.innerWidth;
     </script>
     <?php
     if(!empty(\Yii::$app->session['height_screen']))
@@ -80,7 +82,7 @@ if (Yii::$app->session->hasFlash('reg')) {
                 ?>
                 </div>
                 <div class="col-xs-4" style="padding-right: 0px;" align="right">
-                    <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-lock" ></span><?= Yii::t('app','ເຂົ້າ​ລະ​ບົບ')?></button>
+                    <button type="submit" class="btn btn-primary btn-sm" onclick="onclick_loadimg()"><span class="fa fa-lock" ></span> <?= Yii::t('app','ເຂົ້າ​ລະ​ບົບ')?></button>
                 </div>
             </div>
         </div>

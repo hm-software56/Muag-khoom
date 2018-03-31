@@ -1,13 +1,47 @@
-CREATE TABLE barcode (
-  id int(11) NOT NULL,
-  barcode varchar(45) NOT NULL,
-  status decimal(10,0) NOT NULL DEFAULT '1',
-  products_id int(11) NOT NULL,
-  invoice_id int(11) DEFAULT NULL,
-  user_id int(11) DEFAULT NULL
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 20, 2018 at 05:28 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pos_demo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barcode`
+--
+
+CREATE TABLE `barcode` (
+  `id` int(11) NOT NULL,
+  `barcode` varchar(45) NOT NULL,
+  `status` decimal(10,0) NOT NULL DEFAULT '1',
+  `products_id` int(11) NOT NULL,
+  `invoice_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO barcode (id, barcode, status, products_id, invoice_id, user_id) VALUES
+--
+-- Dumping data for table `barcode`
+--
+
+INSERT INTO `barcode` (`id`, `barcode`, `status`, `products_id`, `invoice_id`, `user_id`) VALUES
 (3, '9126273636751', '1', 1, NULL, NULL),
 (4, '6759771992277', '1', 2, NULL, NULL),
 (5, '7803523462415', '1', 3, NULL, NULL),
@@ -20,40 +54,70 @@ INSERT INTO barcode (id, barcode, status, products_id, invoice_id, user_id) VALU
 (12, '4159836005416', '1', 10, NULL, NULL),
 (13, '3581963379695', '1', 11, NULL, NULL);
 
-CREATE TABLE category (
-  id int(11) NOT NULL,
-  name varchar(255) NOT NULL,
-  date date NOT NULL
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO category (id, name, date) VALUES
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `date`) VALUES
 (1, 'ເຄື່ອງດື່ມ', '2017-04-21'),
 (2, 'ເຂົ້າ​ໝົມ', '2017-04-21'),
 (3, '​ສະ​ບູ', '2017-04-21'),
 (4, '​ເຄື່ອງ​ກີນ', '2017-04-21');
 
-CREATE TABLE discount (
-  id int(11) NOT NULL,
-  discount int(100) NOT NULL,
-  invoice_id int(11) NOT NULL
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `discount`
+--
+
+CREATE TABLE `discount` (
+  `id` int(11) NOT NULL,
+  `discount` int(100) NOT NULL,
+  `invoice_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO discount (id, discount, invoice_id) VALUES
+--
+-- Dumping data for table `discount`
+--
+
+INSERT INTO `discount` (`id`, `discount`, `invoice_id`) VALUES
 (1, 17000, 12),
 (2, 8000, 15),
 (3, 20000, 16),
 (4, 82000, 18);
 
-CREATE TABLE invoice (
-  id int(11) NOT NULL,
-  code varchar(45) NOT NULL,
-  full_name varchar(255) DEFAULT NULL,
-  phone varchar(45) DEFAULT NULL,
-  date date NOT NULL,
-  user_id int(11) DEFAULT NULL
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `id` int(11) NOT NULL,
+  `code` varchar(45) NOT NULL,
+  `full_name` varchar(255) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `date` date NOT NULL,
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO invoice (id, code, full_name, phone, date, user_id) VALUES
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `code`, `full_name`, `phone`, `date`, `user_id`) VALUES
 (3, '00000001', NULL, NULL, '2018-02-09', 1),
 (4, '00000002', NULL, NULL, '2018-02-09', 1),
 (5, '00000003', NULL, NULL, '2018-02-09', 1),
@@ -72,48 +136,69 @@ INSERT INTO invoice (id, code, full_name, phone, date, user_id) VALUES
 (18, '00000016', NULL, NULL, '2018-02-16', 1),
 (19, '00000017', NULL, NULL, '2018-02-16', 1);
 
-CREATE TABLE products (
-  id int(11) NOT NULL,
-  name varchar(255) NOT NULL,
-  qautity int(11) NOT NULL,
-  date date DEFAULT NULL,
-  pricesale varchar(40) NOT NULL,
-  pricebuy varchar(40) NOT NULL,
-  image varchar(45) DEFAULT NULL,
-  category_id int(11) NOT NULL,
-  user_id int(11) NOT NULL
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `qautity` int(11) NOT NULL,
+  `date` date DEFAULT NULL,
+  `pricesale` varchar(40) NOT NULL,
+  `pricebuy` varchar(40) NOT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `category_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO products (id, name, qautity, date, pricesale, pricebuy, image, category_id, user_id) VALUES
-(1, 'Beer lao ແກ້ວ​ໃຫຍ່', 23, '2017-04-21', '10000', '8000', '2017042108045841.jpg', 1, 3),
-(2, 'Beer lao ແກ້ວໜ້ອຍ', 37, '2017-04-21', '7000', '6000', '2017042108043942.jpg', 1, 3),
-(3, 'Beer ດຳແກ້ວໜ້ອຍ', 20, '2017-04-21', '9000', '6000', '2017042108043944.png', 1, 1),
-(4, 'TUBORG', 300, '2017-04-21', '9000', '6000', '2017042108043946.jpg', 1, 1),
-(5, 'ໂສ​ດາ​ລາວ', 45, '2018-02-07', '4000', '3000', '2017042108043548.png', 1, 1),
-(6, 'ເປບ​ຊີ​ຕ​ຸກ', 45, '2017-04-21', '5000', '3000', '2017042108041450.jpeg', 1, 1),
-(7, 'Beer namkong', 45, '2017-04-21', '8000', '6000', '2017042108043451.jpg', 1, 1),
-(8, 'Beer ປ່ອງ​ກາງ', 55, '2017-04-21', '5000', '3000', '2017042108041354.jpg', 1, 1),
-(9, 'ນ່ຳ​ດີ້ມ​ຫົວ​ເສືອ​ກາງ', 20, '2017-04-21', '3000', '2000', '2017042108041157.gif', 1, 1),
-(10, 'Supermarket Wine', 300, '2017-04-21', '400000', '200000', '2017042109045205.jpg', 1, 3),
-(11, 'Vine Wine', 101, '2017-04-21', '600000', '400000', '2017042109044307.jpg', 1, 1),
-(12, 'ເຂົ້າ​ຫນົມ​ອົມ', 20, '2017-04-21', '30000', '15000', '2017042110041046.jpg', 2, 1),
-(13, 'ກະ​ແລມ', 103, '2017-04-21', '7000', '5000', '2017042110042850.jpg', 2, 1),
-(14, 'ເຂົ້າ​ຫນົມ​ Chocole', 20, '2017-04-21', '15000', '1000', '2017042110041254.jpg', 2, 1),
-(15, 'ເຂົ້າ​ຫນົມ​ Nuggets', 30, '2017-04-21', '1000', '500', '2017042110040356.jpg', 2, 1),
-(16, 'ເບຍ​ລັງໜຶ່ງ', 45, '2018-02-16', '95000', '90000', '2018021605020728.jpg', 1, 1),
-(17, 'ນ້ຳ​ດື່ມ​ຫົ​ວ​ເສືອ pack ໜື່ງ', 100, '2018-02-16', '25000', '23000', '2018021605022933.jpg', 1, 1);
+--
+-- Dumping data for table `products`
+--
 
-CREATE TABLE sale (
-  id int(11) NOT NULL,
-  date date NOT NULL,
-  products_id int(11) NOT NULL,
-  qautity int(11) NOT NULL,
-  user_id int(11) NOT NULL,
-  invoice_id int(11) NOT NULL,
-  price int(11) NOT NULL
+INSERT INTO `products` (`id`, `name`, `qautity`, `date`, `pricesale`, `pricebuy`, `image`, `category_id`, `user_id`, `status`) VALUES
+(1, 'Beer lao ແກ້ວ​ໃຫຍ່', 23, '2017-04-21', '10000', '8000', '2017042108045841.jpg', 1, 3, 1),
+(2, 'Beer lao ແກ້ວໜ້ອຍ', 37, '2017-04-21', '7000', '6000', '2017042108043942.jpg', 1, 3, 1),
+(3, 'Beer ດຳແກ້ວໜ້ອຍ', 20, '2017-04-21', '9000', '6000', '2017042108043944.png', 1, 1, 1),
+(4, 'TUBORG', 300, '2017-04-21', '9000', '6000', '2017042108043946.jpg', 1, 1, 1),
+(5, 'ໂສ​ດາ​ລາວ', 45, '2018-02-07', '4000', '3000', '2017042108043548.png', 1, 1, 1),
+(6, 'ເປບ​ຊີ​ຕ​ຸກ', 45, '2017-04-21', '5000', '3000', '2017042108041450.jpeg', 1, 1, 1),
+(7, 'Beer namkong', 45, '2017-04-21', '8000', '6000', '2017042108043451.jpg', 1, 1, 1),
+(8, 'Beer ປ່ອງ​ກາງ', 55, '2017-04-21', '5000', '3000', '2017042108041354.jpg', 1, 1, 1),
+(9, 'ນ່ຳ​ດີ້ມ​ຫົວ​ເສືອ​ກາງ', 20, '2017-04-21', '3000', '2000', '2017042108041157.gif', 1, 1, 1),
+(10, 'Supermarket Wine', 300, '2017-04-21', '400000', '200000', '2017042109045205.jpg', 1, 3, 1),
+(11, 'Vine Wine', 101, '2017-04-21', '600000', '400000', '2017042109044307.jpg', 1, 1, 1),
+(12, 'ເຂົ້າ​ຫນົມ​ອົມ', 20, '2017-04-21', '30000', '15000', '2017042110041046.jpg', 2, 1, 1),
+(13, 'ກະ​ແລມ', 103, '2017-04-21', '7000', '5000', '2017042110042850.jpg', 2, 1, 1),
+(14, 'ເຂົ້າ​ຫນົມ​ Chocole', 20, '2017-04-21', '15000', '1000', '2017042110041254.jpg', 2, 1, 1),
+(15, 'ເຂົ້າ​ຫນົມ​ Nuggets', 30, '2017-04-21', '1000', '500', '2017042110040356.jpg', 2, 1, 1),
+(16, 'ເບຍ​ລັງໜຶ່ງ', 45, '2018-02-16', '95000', '90000', '2018021605020728.jpg', 1, 1, 1),
+(17, 'ນ້ຳ​ດື່ມ​ຫົ​ວ​ເສືອ pack ໜື່ງ', 100, '2018-02-16', '25000', '23000', '2018021605022933.jpg', 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sale`
+--
+
+CREATE TABLE `sale` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `products_id` int(11) NOT NULL,
+  `qautity` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `invoice_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO sale (id, date, products_id, qautity, user_id, invoice_id, price) VALUES
+--
+-- Dumping data for table `sale`
+--
+
+INSERT INTO `sale` (`id`, `date`, `products_id`, `qautity`, `user_id`, `invoice_id`, `price`) VALUES
 (1, '2018-02-09', 6, 2, 1, 3, 10000),
 (2, '2018-02-09', 5, 2, 1, 3, 8000),
 (3, '2018-02-09', 2, 2, 1, 3, 14000),
@@ -174,116 +259,213 @@ INSERT INTO sale (id, date, products_id, qautity, user_id, invoice_id, price) VA
 (58, '2018-02-16', 16, 5, 1, 19, 475000),
 (59, '2018-02-16', 1, 12, 1, 19, 120000);
 
-CREATE TABLE shop_profile (
-  id int(11) NOT NULL,
-  logo varchar(45) DEFAULT NULL,
-  shop_name varchar(255) NOT NULL,
-  telephone varchar(45) DEFAULT NULL,
-  phone_number varchar(45) DEFAULT NULL,
-  email varchar(45) DEFAULT NULL,
-  adress text NOT NULL,
-  key_active varchar(255) DEFAULT NULL
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shop_profile`
+--
+
+CREATE TABLE `shop_profile` (
+  `id` int(11) NOT NULL,
+  `logo` varchar(45) DEFAULT NULL,
+  `shop_name` varchar(255) NOT NULL,
+  `telephone` varchar(45) DEFAULT NULL,
+  `phone_number` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `adress` text NOT NULL,
+  `key_active` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO shop_profile (id, logo, shop_name, telephone, phone_number, email, adress, key_active) VALUES
-(1, '2017042016040619.jpg', 'ຮ້ານ ເຮ​ເອມ​ຊອບ', '020 55045770', '020 55045770', 'daxionginfo@gmail.com', 'Lao', '231653023157970541804165320');
+--
+-- Dumping data for table `shop_profile`
+--
 
-CREATE TABLE user (
-  id int(11) NOT NULL,
-  photo varchar(45) DEFAULT NULL,
-  first_name varchar(255) NOT NULL,
-  last_name varchar(255) DEFAULT NULL,
-  username varchar(255) NOT NULL,
-  password varchar(255) NOT NULL,
-  status tinyint(4) DEFAULT '1',
-  user_type enum('Admin','User','POS') NOT NULL,
-  date date NOT NULL,
-  height_screen varchar(10) DEFAULT NULL
+INSERT INTO `shop_profile` (`id`, `logo`, `shop_name`, `telephone`, `phone_number`, `email`, `adress`, `key_active`) VALUES
+(1, '2017042016040619.jpg', 'ຮ້ານ ເຮ​ເອມ​ຊອບ', '020 55045770', '020 55045770', 'daxionginfo@gmail.com', 'Lao', '202538081412172061805253820');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `photo` varchar(45) DEFAULT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `status` tinyint(4) DEFAULT '1',
+  `user_type` enum('Admin','User','POS') NOT NULL,
+  `date` date NOT NULL,
+  `height_screen` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO user (id, photo, first_name, last_name, username, password, status, user_type, date, height_screen) VALUES
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `photo`, `first_name`, `last_name`, `username`, `password`, `status`, `user_type`, `date`, `height_screen`) VALUES
 (1, '2017042016044316.jpg', 'Daxiong', 'Songyangcheng', 'daxiong', 'da123', 1, 'Admin', '2017-04-20', NULL),
 (2, '2017042109041319.jpg', 'POS', '', 'pos', '123', 1, 'POS', '2017-04-21', NULL),
-(3, '2017042204040547.jpg', 'User', '', 'user', '123', 1, 'User', '2017-04-22', NULL);
+(3, '2017042204040547.jpg', 'User', '', 'user', '123', 1, 'User', '2017-04-22', NULL),
+(4, 'user_photo.png', 'Adminstrator', 'Adminstrator', 'daxiong', 'da123', 1, 'Admin', '2018-03-20', NULL);
 
+--
+-- Indexes for dumped tables
+--
 
-ALTER TABLE barcode
-  ADD PRIMARY KEY (id),
-  ADD KEY fk_barcode_products1_idx (products_id),
-  ADD KEY fk_barcode_invoice1_idx (invoice_id),
-  ADD KEY fk_barcode_user1_idx (user_id);
+--
+-- Indexes for table `barcode`
+--
+ALTER TABLE `barcode`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_barcode_products1_idx` (`products_id`),
+  ADD KEY `fk_barcode_invoice1_idx` (`invoice_id`),
+  ADD KEY `fk_barcode_user1_idx` (`user_id`);
 
-ALTER TABLE category
-  ADD PRIMARY KEY (id);
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
 
-ALTER TABLE discount
-  ADD PRIMARY KEY (id),
-  ADD KEY fk_discount_invoice1_idx (invoice_id);
+--
+-- Indexes for table `discount`
+--
+ALTER TABLE `discount`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_discount_invoice1_idx` (`invoice_id`);
 
-ALTER TABLE invoice
-  ADD PRIMARY KEY (id),
-  ADD KEY fk_invoice_user1_idx (user_id);
+--
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_invoice_user1_idx` (`user_id`);
 
-ALTER TABLE products
-  ADD PRIMARY KEY (id),
-  ADD KEY fk_products_category1_idx (category_id),
-  ADD KEY fk_products_user1_idx (user_id);
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_products_category1_idx` (`category_id`),
+  ADD KEY `fk_products_user1_idx` (`user_id`);
 
-ALTER TABLE sale
-  ADD PRIMARY KEY (id),
-  ADD KEY fk_sale_products_idx (products_id),
-  ADD KEY fk_sale_user1_idx (user_id),
-  ADD KEY fk_sale_invoice1_idx (invoice_id);
+--
+-- Indexes for table `sale`
+--
+ALTER TABLE `sale`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_sale_products_idx` (`products_id`),
+  ADD KEY `fk_sale_user1_idx` (`user_id`),
+  ADD KEY `fk_sale_invoice1_idx` (`invoice_id`);
 
-ALTER TABLE shop_profile
-  ADD PRIMARY KEY (id);
+--
+-- Indexes for table `shop_profile`
+--
+ALTER TABLE `shop_profile`
+  ADD PRIMARY KEY (`id`);
 
-ALTER TABLE user
-  ADD PRIMARY KEY (id);
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
-ALTER TABLE barcode
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `barcode`
+--
+ALTER TABLE `barcode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
-ALTER TABLE category
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
-ALTER TABLE discount
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `discount`
+--
+ALTER TABLE `discount`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
-ALTER TABLE invoice
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
-ALTER TABLE products
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
-ALTER TABLE sale
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+--
+-- AUTO_INCREMENT for table `sale`
+--
+ALTER TABLE `sale`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
-ALTER TABLE shop_profile
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `shop_profile`
+--
+ALTER TABLE `shop_profile`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-ALTER TABLE user
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
+--
+-- Constraints for dumped tables
+--
 
-ALTER TABLE barcode
-  ADD CONSTRAINT fk_barcode_invoice1 FOREIGN KEY (invoice_id) REFERENCES invoice (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT fk_barcode_products1 FOREIGN KEY (products_id) REFERENCES products (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT fk_barcode_user1 FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `barcode`
+--
+ALTER TABLE `barcode`
+  ADD CONSTRAINT `fk_barcode_invoice1` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_barcode_products1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_barcode_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE discount
-  ADD CONSTRAINT fk_discount_invoice1 FOREIGN KEY (invoice_id) REFERENCES invoice (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `discount`
+--
+ALTER TABLE `discount`
+  ADD CONSTRAINT `fk_discount_invoice1` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE invoice
-  ADD CONSTRAINT fk_invoice_user1 FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD CONSTRAINT `fk_invoice_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE products
-  ADD CONSTRAINT fk_products_category1 FOREIGN KEY (category_id) REFERENCES category (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT fk_products_user1 FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `fk_products_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_products_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE sale
-  ADD CONSTRAINT fk_sale_invoice1 FOREIGN KEY (invoice_id) REFERENCES invoice (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT fk_sale_products FOREIGN KEY (products_id) REFERENCES products (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT fk_sale_user1 FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `sale`
+--
+ALTER TABLE `sale`
+  ADD CONSTRAINT `fk_sale_invoice1` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_sale_products` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_sale_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

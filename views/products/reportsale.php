@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap\Modal;
+$this->title=Yii::t('app','Report');
 ?>
 <?php
 Modal::begin([
@@ -22,8 +23,24 @@ Modal::end();
                 <div class="col-xs-12"><?=Yii::t('app', 'ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ທີ່​ຂາຍ​ແລ້ວ')?></div>
             </div>
 
+        </div><br/>
+        <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-calendar"></i>      
+        <?=
+        yii\jui\DatePicker::widget([
+            'name' => 'date', 'value' => $date,
+            'dateFormat' => 'yyyy-MM-dd',
+            'options' => [
+                'onchange' => '
+                                    $.post( "index.php?r=products/repaortsale&date="+$(this).val(), function( data ) {
+                                      $( "#output" ).html( data );
+                                    });
+                                ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',
+            ]
+        ])
+        ?>
         </div>
-        <div class=" table-responsive ">
+        <div class=" table-responsive "> 
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -40,24 +57,10 @@ Modal::end();
                         <th><?=Yii::t('app', 'ຮູບພາບ')?></th>
                         <th><?=Yii::t('app', 'ຊື່​ສີ້ນ​ຄ້າ')?></th>
                         <th><?=Yii::t('app', 'ຈຳ​ນວນ')?></th>
-                        <th><?=Yii::t('app', 'ລາ​ຄາ')?></th>
-                        <th><?=Yii::t('app', 'ລວມ')?></th>
+                        <th><?=Yii::t('app', 'ລາ​ຄາຂາຍ')?></th>
+                        <th><?=Yii::t('app', 'ລວມລາ​ຄາຂາຍ')?></th>
                         <th><?=Yii::t('app', 'ສ່ວນຫຼຸດ')?></th>
-                        <th>
-                            <?=
-                            yii\jui\DatePicker::widget(['name' => 'date', 'value' => $date,
-                                'dateFormat' => 'yyyy-MM-dd',
-                                'options' => [
-                                    'onchange' => '
-                                    $.post( "index.php?r=products/repaortsale&date="+$(this).val(), function( data ) {
-                                      $( "#output" ).html( data );
-                                    });
-                                ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',
-                                ]
-                            ])
-                            ?>
-
-                        </th>
+                        <th><?= Yii::t('app', 'ວັນ​ທີ່') ?></th>
                     </tr>
 
                 </thead>
@@ -67,6 +70,7 @@ Modal::end();
                     $invoice_id = [];
                     $total = 0;
                     $total_discount = 0;
+                    $total_profit=0;
                     foreach ($invoices as $invoice) {
 
                         $models = \app\models\Sale::find()->where(['invoice_id' => $invoice->id])->all();
@@ -74,6 +78,7 @@ Modal::end();
                         foreach ($models as $model) {
 
                             $total+= $model->price;
+                            $total_profit+=$model->profit_price;
                             ?>
                             <tr>
                                 <?php
@@ -90,22 +95,9 @@ Modal::end();
                                 <td><?= $model->products->name ?></td>
                                 <td>
                                     <?php
-                                    echo yii\helpers\Html::a($model->qautity, '#', [
-
-                                        'onclick' => "$('#detail-modal').modal('show');
-                                      $.ajax({
-                                      type: 'GET',
-                                      cache: false,
-                                      url: '" . Yii::$app->urlManager->createUrl(['products/cancle', 'id' => $model->products_id, 'invoice_id' => $model->invoice_id]) . "',
-                                      success: function(response) {
-                                      $('#detail-modal .modal-body').html(response);
-                                      },
-                                      });
-                                      return false;
-                                      ",
-                                    ]);
+                                    echo $model->qautity;
                                     ?></td>
-                                <td><?= number_format($model->price / $model->qautity, 2) ?></td>
+                                <td><?= empty($model->qautity)?"0.00":number_format($model->price / $model->qautity, 2) ?></td>
                                 <td><?= number_format($model->price, 2) ?></td>
                                 <?php
                                 if (!in_array($invoice->id, $invoice_id)) {
@@ -138,13 +130,16 @@ Modal::end();
                     }
                     ?>
                     <tr>
-                        <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນ')?>​</b></td>
+                        <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນທີ່​ຂາຍ')?>​</b></td>
                         <td class="bg-blue"><b><?= number_format($total, 2) ?></b></td>
-                        <td colspan="2" class="bg-yellow"><b><?= number_format($total_discount, 2) ?></b></td>
+                        <td align="right"><b><b><?= Yii::t('app', 'ສ່ວນຫຼຸດ') ?></b></td>
+                        <td  class="bg-yellow"><?= number_format($total_discount, 2) ?></b></td>
                     </tr>
                     <tr >
-                        <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ')?></b></td>
-                        <td colspan="3" class="bg-green"><b><?= number_format($total - $total_discount, 2) ?></b></td>
+                        <td colspan="5" align="right">​<b><?= Yii::t('app', 'ຕົ້ນທຶນ')?></b></td>
+                        <td  class="bg-red"><b><?= number_format($total -$total_profit, 2) ?></b></td>
+                        <td align="right"><b><b><?= Yii::t('app', 'ກຳ​ໄລ') ?></b></td>
+                        <td  class="bg-green"><b><?= number_format($total_profit- $total_discount, 2) ?></b></td>
                     </tr>
                 </tbody>
             </table>

@@ -96,7 +96,7 @@ use yii\bootstrap\Modal;
                                     ?>
                                 </div>   
                                 </td>
-                                <td><?= number_format($model->price / $model->qautity, 2) ?></td>
+                                <td><?=empty($model->qautity)?"0.00":number_format($model->price / $model->qautity, 2) ?></td>
                                 <td><?= number_format($model->price, 2) ?></td>
                                 <?php
                                 if (!in_array($invoice->id, $invoice_id)) {

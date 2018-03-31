@@ -24,13 +24,14 @@ class ProductsController extends Controller {
                 $this->redirect(['site/login']);
                 return false;
             }
-        } elseif (Yii::$app->session['timeout'] < date('dHi')) {
+        } 
+        /*elseif (Yii::$app->session['timeout'] < date('dHi')) {
             unset(\Yii::$app->session['user']);
             $this->redirect(['site/login']);
             return false;
         } else {
             Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
-        }
+        }*/
         return parent::beforeAction($action);
     }
 
@@ -61,15 +62,15 @@ class ProductsController extends Controller {
 
         if (isset($_GET['cid'])) {
             if (!empty($_GET['cid'])) {
-                $model = Products::find()->where(['status'=>'1','category_id' => $_GET['cid']])->orderBy('id ASC')->all();
+                $model = Products::find()->where(['status'=>1,'category_id' => $_GET['cid']])->orderBy('id ASC')->all();
             } else {
-                $model = Products::find()->where(['status' => '1'])->orderBy('id ASC')->all();
+                $model = Products::find()->where(['status' =>1])->orderBy('id ASC')->all();
             }
             return $this->renderAjax('pos_pro', [
                         'model' => $model,
             ]);
         } else {
-            $model = Products::find()->where(['status' => '1'])->orderBy('id ASC')->all();
+            $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->all();
             return $this->render('sale', [
                         'model' => $model,
             ]);
@@ -246,6 +247,7 @@ class ProductsController extends Controller {
                     $sale->qautity =$qautity;
                     $sale->date = date('Y-m-d');
                     $sale->price = $product->pricesale * $qautity;
+                    $sale->profit_price = ($product->pricesale - $product->pricebuy) * $qautity;
                     $sale->invoice_id = $invioce->id;
                     $sale->save();
                     $product->qautity = $product->qautity - $qautity;
@@ -355,6 +357,9 @@ class ProductsController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
+        ini_set('memory_limit', '96M');
+        ini_set('post_max_size', '64M');
+        ini_set('upload_max_filesize', '64M');
 
         $model = new Products();
 
@@ -386,7 +391,9 @@ class ProductsController extends Controller {
      * @return mixed
      */
     public function actionUpdate($id) {
-
+        ini_set('memory_limit', '96M');
+        ini_set('post_max_size', '64M');
+        ini_set('upload_max_filesize', '64M');
         $model = $this->findModel($id);
         $photo_old = $model->image;
 
@@ -526,19 +533,20 @@ class ProductsController extends Controller {
         if (!empty($true)) {
             $sale = \app\models\Sale::find()->where(['invoice_id' => $_GET['inv_id'], 'products_id' => $idp])->one();
             $old_qautity = $sale->qautity;
-
             $sale->qautity = $qautity;
-            $sale->price=$sale->price* $sale->qautity;
+            $sale->price = ($sale->price / $old_qautity) * $qautity;
+            $sale->profit_price = ($sale->profit_price / $old_qautity) * $qautity;
             $sale->save();
-
+            
             $product = Products::find()->where(['id' => $idp])->one();
             if ($qautity > $old_qautity) {
-                $product->qautity = $product->qautity - $qautity;
+                $product->qautity = $product->qautity - ($qautity- $old_qautity);
             } else {
-                $product->qautity = $product->qautity + $qautity;
+                $product->qautity = $product->qautity + ($old_qautity-$qautity);
             }
-            $product->save();
-
+            Yii::$app->db->createCommand()
+                ->update('products', ['qautity' =>$product->qautity], ['id'=>$idp])
+                ->execute();
             return "<div id=qt".$i.">" . Html::a($sale->qautity, '#', [
                 'onclick' => "
                                 $.ajax({
@@ -663,12 +671,12 @@ class ProductsController extends Controller {
     }
 
     public function actionProduct() {
-        $model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status'=>'1'])->all();
+        $model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status'=>1])->all();
         return $this->render('product', ['model' => $model]);
     }
 
     public function actionProductfinish() {
-        $model = Products::find()->where(['in', 'qautity', [0]])->andwhere(['status'=>'1'])->all();
+        $model = Products::find()->where(['in', 'qautity', [0]])->andwhere(['status'=>1])->all();
         return $this->render('productfinish', ['model' => $model]);
     }
 
@@ -684,9 +692,9 @@ class ProductsController extends Controller {
 
     public function actionSearchpd() {
         if (isset($_GET['searchtxt']) && !empty($_GET['searchtxt'])) {
-            $model = Products::find()->where("name like '%" . $_GET['searchtxt'] . "%' ")->all();
+            $model = Products::find()->where("name like '%" . $_GET['searchtxt'] . "%' and status=1")->all();
         } else {
-            $model = Products::find()->orderBy('id ASC')->all();
+            $model = Products::find()->where(['status'=>1])->orderBy('id ASC')->all();
         }
         return $this->renderAjax('pos_pro', ['model' => $model]);
     }

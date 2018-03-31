@@ -21,9 +21,12 @@ class Products extends BaseProducts {
 
     public function rules() {
         return ArrayHelper::merge(
-                        parent::rules(), [
-                    [['pricesale', 'pricebuy'], 'string', 'max' => 255],
-                        ]
+                         [
+							[['pricesale', 'pricebuy'], 'string', 'max' => 255],
+							[['image'], 'string', 'max' => 255],
+							['image', 'file', 'extensions' => ['png', 'jpg', 'gif'], 'maxSize' => 1024 * 1024 * 4],
+							
+                        ],parent::rules()
         );
     }
 

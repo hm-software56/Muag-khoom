@@ -14,8 +14,11 @@ use Yii;
  * @property integer $products_id
  * @property integer $qautity
  * @property integer $user_id
+ * @property integer $invoice_id
  * @property integer $price
+ * @property integer $profit_price
  *
+ * @property \app\models\Invoice $invoice
  * @property \app\models\Products $products
  * @property \app\models\User $user
  * @property string $aliasModel
@@ -40,9 +43,10 @@ abstract class Sale extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'products_id', 'qautity', 'user_id', 'price'], 'required'],
+            [['date', 'products_id', 'qautity', 'user_id', 'invoice_id', 'price'], 'required'],
             [['date'], 'safe'],
-            [['products_id', 'qautity', 'user_id', 'price'], 'integer'],
+            [['products_id', 'qautity', 'user_id', 'invoice_id', 'price', 'profit_price'], 'integer'],
+            [['invoice_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Invoice::className(), 'targetAttribute' => ['invoice_id' => 'id']],
             [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['user_id' => 'id']]
         ];
@@ -59,8 +63,18 @@ abstract class Sale extends \yii\db\ActiveRecord
             'products_id' => 'Products ID',
             'qautity' => 'Qautity',
             'user_id' => 'User ID',
+            'invoice_id' => 'Invoice ID',
             'price' => 'Price',
+            'profit_price' => 'Profit Price',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getInvoice()
+    {
+        return $this->hasOne(\app\models\Invoice::className(), ['id' => 'invoice_id']);
     }
 
     /**

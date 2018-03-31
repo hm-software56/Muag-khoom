@@ -7,7 +7,22 @@ body {
 .table > tbody > tr > td {
    vertical-align: middle!important;
 }
+#text-medel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#loader {
+	position: fixed;
+	left: 45%;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	/*background: url('http://dev.cyberia.la/testda/money/web/images/ajax-loader.gif') 50% 50% no-repeat ;*/
+    /*text-align: center;*/
 
+}
 .alert {
     padding: 5px !important;
     margin-bottom:0px !important;
@@ -31,8 +46,14 @@ body {
     border: 1px solid #ddd;
     background: #fff;
 }
+.col-md-12-mobile{
+    padding-right: 0px !important;
+}
     .content {
     margin-top: 100px !important;
+}
+#hdm {
+    margin-top: 50px !important
 }
 .pagination {
     display: inline-block;
@@ -179,4 +200,38 @@ a.desc:after {
 }
 .btn-box-tool {
      color: #FFF !important;
+}
+
+/* enable absolute positioning */
+
+.inner-addon {
+    position: relative;
+}
+
+/* style glyph */
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align glyph */
+
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+/* add padding  */
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
 }

@@ -60,6 +60,7 @@ class AppAsset extends AssetBundle {
         //  'barcode/JsBarcode.js',
         //  'barcode/EAN_UPC.js',
         'JsBarcode/dist/jsbarcode_3.3.js',
+		'js/block.submit.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

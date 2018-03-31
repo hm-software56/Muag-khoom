@@ -19,11 +19,14 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <link rel="shortcut icon" href="<?=Yii::$app->urlManager->baseUrl?>/icon.ico" />
+        <link rel="shortcut icon" href="<?=Yii::$app->urlManager->baseUrl?>/icon1.ico" />
         <?php $this->head() ?>
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
+        <div id = "loader">
+            <span id="text-medel"><img   src = "<?= Yii::$app->urlManager->baseUrl ?>/images/loading.gif" style="width:50px"></span>
+        </div>
         <?php $this->beginBody() ?>
         <div class="wrapper">
 
@@ -68,7 +71,7 @@ AppAsset::register($this);
                             if (!empty(Yii::$app->session['user'])) {
                                 ?>
                                 <li class="dropdown user user-menu">
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale" onclick="onclick_loadimg()">
                                         <span class="glyphicon glyphicon-shopping-cart"></span><?=Yii::t('app', 'ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)')?>
                                     </a>
                                 </li>

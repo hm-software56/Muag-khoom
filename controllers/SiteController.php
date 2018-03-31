@@ -26,12 +26,12 @@ class SiteController extends Controller {
                     $this->redirect(['site/login']);
                 }
             }
-        } elseif (Yii::$app->session['timeout'] < date('dHi')) {
+        }/* elseif (Yii::$app->session['timeout'] < date('dHi')) {
             unset(\Yii::$app->session['user']);
             $this->redirect(['site/login']);
         } else {
             Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
-        }
+        }*/
 
         if (Yii::$app->controller->action->id == "index") {
             $this->layout = 'main_index'; //your layout name site index
@@ -112,6 +112,7 @@ class SiteController extends Controller {
                 \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
                 \Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
                 \Yii::$app->session['height_screen'] = ($_POST['hsc'] - 133);
+                \Yii::$app->session['width_screen'] = ($_POST['wsc']);
                 // $user->height_screen = ($_POST['hsc'] - 131);
                 //$user->save();
                 return $this->redirect(['site/index']);

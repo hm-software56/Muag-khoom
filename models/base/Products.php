@@ -47,12 +47,11 @@ abstract class Products extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'qautity', 'pricesale', 'pricebuy', 'category_id', 'user_id'], 'required'],
-            [['qautity', 'category_id', 'user_id'], 'integer'],
+            [['qautity', 'category_id', 'user_id', 'status'], 'integer'],
             [['date'], 'safe'],
             [['name'], 'string', 'max' => 255],
             [['pricesale', 'pricebuy'], 'string', 'max' => 40],
             [['image'], 'string', 'max' => 45],
-            [['status'], 'string', 'max' => 1],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Category::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['user_id' => 'id']]
         ];

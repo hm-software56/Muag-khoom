@@ -23,6 +23,13 @@ AppAsset::register($this);
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
+    <?= Yii::$app->urlManager->baseUrl ?>
+    <?php
+        exit;
+    ?>
+	<div id = "loader">
+            <span id="text-medel"><img   src = "<?= Yii::$app->urlManager->baseUrl ?>/web/images/loading.gif" style="width:50px"></span>
+        </div>
         <?php $this->beginBody() ?>
         <div class="wrapper">
 

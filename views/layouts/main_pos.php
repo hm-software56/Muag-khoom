@@ -18,11 +18,14 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <link rel="shortcut icon" href="<?=Yii::$app->urlManager->baseUrl?>/icon.ico" />
+        <link rel="shortcut icon" href="<?=Yii::$app->urlManager->baseUrl?>/icon1.ico" />
         <?php $this->head() ?>
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
+	<div id = "loader">
+            <span id="text-medel"><img   src = "<?= Yii::$app->urlManager->baseUrl ?>/images/loading.gif" style="width:50px"></span>
+        </div>
         <?php $this->beginBody() ?>
         <div class="wrapper">
 
@@ -32,7 +35,7 @@ AppAsset::register($this);
                 $profle=\app\models\ShopProfile::find()->one();
                 if (!empty(Yii::$app->session['user'])) {
                     ?>
-                    <a class="logo" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
+                    <a class="logo hidden-xs" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <span class="logo-mini"><?=$profle->shop_name?></span>
                         <!-- logo for regular state and mobile devices -->
@@ -56,7 +59,7 @@ AppAsset::register($this);
                     <?php
                     if (!empty(Yii::$app->session['user'])) {
                         ?>
-                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <a href="#" class="sidebar-toggle hidden-xs" data-toggle="offcanvas" role="button">
                             <span class="sr-only">Toggle navigation</span>
                         </a>
                         <?php
@@ -69,7 +72,7 @@ AppAsset::register($this);
                             if (!empty(Yii::$app->session['user'])) {
                                 ?>
                                 <li class="dropdown user user-menu">
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/canclesale">
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/canclesale" onclick="onclick_loadimg()">
                                         <span class="fa fa-trash"></span><?= Yii::t('app', 'ຍົກ​ເລີ​ກ​ສີ້ນ​ຄ້າ​ທີ​ຂາຍ')?>
                                     </a>
                                 </li>
@@ -77,7 +80,7 @@ AppAsset::register($this);
                                 if (Yii::$app->session['user']->user_type == "POS") {
                                     ?>
                                     <li class="dropdown user user-menu">
-                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord">
+                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord" onclick="onclick_loadimg()">
                                             <span class="glyphicon glyphicon-home"></span><?= Yii::t('app', 'ໜ້າຫຼັກ')?>
                                         </a>
                                     </li>
@@ -129,7 +132,7 @@ AppAsset::register($this);
                     </div>
                 </nav>
             </header>
-            <section class="content" style="background: #fff" >
+            <section class="content" id="hdm" style="background: #fff" >
 
                 <?= $content ?>
 

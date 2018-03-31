@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-3 col-sm-4">
         <div class="row">
-            <div class="col-md-12"  id="output" >
+            <div class="col-md-12 col-md-12-mobile"  id="output" >
                 <?= $this->render('order') ?>
             </div>
         </div>
@@ -26,19 +26,22 @@
                 ?>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6">
+                <div class="inner-addon left-addon">
+                <i class="glyphicon glyphicon-search"></i>     
                 <?php
                     $form = yii\widgets\ActiveForm::begin();
                     $search = new \app\models\ProductsSearch;
                     echo $form->field($search, 'name')->textInput([
                         'oninput' => '
-                $.post( "index.php?r=products/searchpd&searchtxt="+$(this).val(), function( data ) {
-                $( "#proct" ).html( data );
-                });
-                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ ລະ​ຫັດ​ບາ​ໂຄດ, ຊື່​ສ​ີ້ນ​ຄ່າ'), 'id' => 'search'
+                        $.post( "index.php?r=products/searchpd&searchtxt="+$(this).val(), function( data ) {
+                        $( "#proct" ).html( data );
+                        });
+                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ'), 'id' => 'search'
                     ])->label(false);
                     yii\widgets\ActiveForm::end();
                 
                 ?>
+                </div>
             </div>
         </div>
         <div class="row" id="proct" >

@@ -67,12 +67,14 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
                     }
                 </script>
                 <?php
-                echo \yii\helpers\Html::textInput('pice_txt', \Yii::$app->session['payprice'], ['autocomplete'=>"off" ,'onkeyup' => 'calc()', 'id' => 'textpice', 'onmouseout' => '
+                /// 1. ----have 3 step open  ---- if want to put price disable this line and change onfocus to onkeyup
+                \Yii::$app->session['payprice']= Yii::$app->session['totalprice']; 
+                echo \yii\helpers\Html::textInput('pice_txt', \Yii::$app->session['payprice'], ['autocomplete'=>"off" , 'onfocus' => 'calc()', 'id' => 'textpice', 'onmouseout' => '
                 $.post( "index.php?r=products/pay&pricetxt="+$(this).val(), function( data ) {
                   $( "#output" ).html( data );
-                 // document.getElementById("textpice").focus();
+                  //document.getElementById("textpice").focus();
                 });
-            ', 'class' => 'form-control input-sm'
+            ', 'class' => 'form-control input-sm','readonly'=>true
                 ]);
                 ?>
             </td>
@@ -89,7 +91,8 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
 
         </tr>
     </table>
-    <div id="sh" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "block" : "none" ?>">
+    <!-- /// 2. if want to put price enable change block to none -->
+    <div id="sh1" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "block" : "block" ?>">
         
         <?php
         echo yii\helpers\Html::a('<span class="glyphicon glyphicon-ok-circle"></span> '.Yii::t('app', 'ຢັ້ງ​ຢື້ນ​ຈ່າຍ​ເງີນ'), '#', [
@@ -111,9 +114,11 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
         ]);
         ?>
     </div>
-    <div id="sh_l" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "none" : "block" ?>">
+    <!--  ///// 3. if want to put price enable this comment 
+        <div id="sh_l" class="col-md-12" align="right" style="display: <?= (isset(Yii::$app->session['paystill']) && Yii::$app->session['paystill'] == 0) ? "none" : "block" ?>">
         <a href="#" class="btn btn-large bg-yellow"><span class="glyphicon glyphicon-alert"></span> <?= Yii::t('app', 'ຢັ້ງ​ຢື້ນ​ຈ່າຍ​ເງີນ')?></a>
-    </div>
+    </div> 
+    -->
     <div id="load" align='right'></div>
 </div>
 <?php

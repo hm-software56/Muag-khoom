@@ -5,6 +5,7 @@
     <?php
         $d= date("Y-m-d", strtotime('this day')); 
         $sum_day= Yii::$app->getDb()->createCommand("select sum(price) from sale where date='".$d."'")->queryScalar();
+        $sumprofit_price_day = Yii::$app->getDb()->createCommand("select sum(profit_price) from sale where date='" . $d . "'")->queryScalar();
         
         $invoices_days = Yii::$app->getDb()->createCommand("select DISTINCT invoice_id from sale where date='" . $d . "'")->queryAll();
         $sum_discount_day=0;
@@ -15,10 +16,17 @@
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
         <span class="info-box-icon bg-red"><i class="fa fa-calendar"></i></span>
-        <div class="info-box-content">
-            <span class="info-box-number"><?=Yii::t('app','​​​ຍອດ​ຂາຍມື້ນີ້')?></span>
-            <span class="info-box-text"><?=number_format((int)$sum_day-$sum_discount_day,2)?><small></small></span>
-        </div>
+            <div class="info-box-content">
+                <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍມື້ນີ້')?></b></span>
+                <span class="info-box-text"><?=number_format((int)$sum_day-$sum_discount_day,2)?><small></small></span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <span class="progress-description">
+                    <span style="color:red"><?= number_format((int)$sum_day-(int)$sumprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
+					<span style="color:green"><?= number_format((int)$sumprofit_price_day - $sum_discount_day, 2) ?> ກ​ລ</span>
+                </span>
+            </div>
         </div>
     </div>
 
@@ -26,7 +34,7 @@
         $w_first= date("Y-m-d", strtotime('monday this week '));  
         $w_last=date("Y-m-d", strtotime('sunday this week '));
         $sum_w= Yii::$app->getDb()->createCommand("select sum(price) from sale where date>='".$w_first."' and date<='".$w_last."' ")->queryScalar();
-
+        $wprofit_price_day = Yii::$app->getDb()->createCommand("select sum(profit_price) from sale where date>='" . $w_first . "' and date<='" . $w_last . "' ")->queryScalar();
         $invoices_ws = Yii::$app->getDb()->createCommand("select DISTINCT invoice_id from sale where date>='" . $w_first . "' and date<='" . $w_last . "' ")->queryAll();
         $sum_discount_w = 0;
         foreach ($invoices_ws as $invoices_w) {
@@ -35,11 +43,19 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-green-active"><i class="fa fa-calendar"></i></span>
-        <div class="info-box-content">
-            <span class="info-box-number"><?=Yii::t('app','​​​ຍອດ​ຂາຍທິດນີ້')?></span>
-            <span class="info-box-text"><?=number_format((int)$sum_w-$sum_discount_w,2)?><small></small></span>
-        </div>
+            <span class="info-box-icon bg-green-active"><i class="fa fa-calendar"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍທິດນີ້')?></b></span>
+                <span class="info-box-text"><?=number_format((int)$sum_w-$sum_discount_w,2)?><small></small></span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <span class="progress-description">
+					<span style="color:red"><?= number_format((int)$sum_w-(int)$wprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
+					<span style="color:green"><?= number_format((int)$wprofit_price_day - $sum_discount_w, 2) ?> ກ​ລ</span>
+                </span>
+            </div>
+
         </div>
     </div>
 
@@ -47,7 +63,7 @@
         $m_first=date('Y-m-d', strtotime("first day of this month"));
         $m_last=date('Y-m-d', strtotime("last day of this month"));
         $sum_m= Yii::$app->getDb()->createCommand("select sum(price) from sale where date>='".$m_first."' and date<='".$m_last."' ")->queryScalar();
-
+        $mprofit_price_day = Yii::$app->getDb()->createCommand("select sum(profit_price) from sale where date>='" . $m_first . "' and date<='" . $m_last . "' ")->queryScalar();
         $invoices_ms = Yii::$app->getDb()->createCommand("select DISTINCT invoice_id from sale where date>='" . $m_first . "' and date<='" . $m_last . "' ")->queryAll();
         $sum_discount_m = 0;
         foreach ($invoices_ms as $invoices_m) {
@@ -57,10 +73,19 @@
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
         <span class="info-box-icon bg-light-blue-active"><i class="fa fa-calendar"></i></span>
-        <div class="info-box-content">
-            <span class="info-box-number"><?=Yii::t('app','​​​ຍອດ​ຂາຍເດືອນນີ້')?></span>
-            <span class="info-box-text"><?=number_format((int)$sum_m-$sum_discount_m,2)?><small></small></span>
-        </div>
+            <div class="info-box-content">
+                <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍເດືອນນີ້')?></b></span>
+                <span class="info-box-text"><?=number_format((int)$sum_m-$sum_discount_m,2)?><small></small></span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <span class="progress-description">
+					<span class="progress-description">
+					<span style="color:red"><?= number_format((int)$sum_m-(int)$mprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
+					<span style="color:green"><?= number_format((int)$mprofit_price_day - $sum_discount_m, 2) ?> ກ​ລ</span>
+                </span>
+                </span>
+            </div>
         </div>
     </div>
 
@@ -68,7 +93,7 @@
         $y_first=date("Y-m-d",strtotime("this year January 1st"));
         $y_last=date("Y-m-d",strtotime("this year December 31st"));
         $sum_y= Yii::$app->getDb()->createCommand("select sum(price) from sale where date>='".$y_first."' and date<='".$y_last."' ")->queryScalar();
-
+        $yprofit_price_day = Yii::$app->getDb()->createCommand("select sum(profit_price) from sale where date>='" . $y_first . "' and date<='" . $y_last . "' ")->queryScalar();
         $invoices_ys = Yii::$app->getDb()->createCommand("select DISTINCT invoice_id from sale where date>='" . $y_first . "' and date<='" . $y_last . "' ")->queryAll();
         $sum_discount_y = 0;
         foreach ($invoices_ys as $invoices_y) {
@@ -78,10 +103,17 @@
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
         <span class="info-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
-        <div class="info-box-content">
-            <span class="info-box-number"><?=Yii::t('app','​​​ຍອດ​ຂາຍປີນີ້')?></span>
-            <span class="info-box-text"><?=number_format((int)$sum_y-$sum_discount_y,2)?><small></small></span>
-        </div>
+            <div class="info-box-content">
+                <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍປີນີ້')?></b></span>
+                <span class="info-box-text"><?=number_format((int)$sum_y-$sum_discount_y,2)?><small></small></span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <span class="progress-description">
+					<span style="color:red"><?= number_format((int)$sum_y-(int)$yprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
+					<span style="color:green"><?= number_format((int)$yprofit_price_day - $sum_discount_y, 2) ?> ກ​ລ</span>
+                </span>
+            </div>
         </div>
     </div>
 </div>
