@@ -24,22 +24,57 @@ Modal::end();
             </div>
 
         </div><br/>
-        <div class="inner-addon left-addon">
-        <i class="glyphicon glyphicon-calendar"></i>      
-        <?=
-        yii\jui\DatePicker::widget([
-            'name' => 'date', 'value' => $date,
-            'dateFormat' => 'yyyy-MM-dd',
-            'options' => [
-                'onchange' => '
-                                    $.post( "index.php?r=products/repaortsale&date="+$(this).val(), function( data ) {
-                                      $( "#output" ).html( data );
-                                    });
-                                ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',
-            ]
-        ])
-        ?>
-        </div>
+        <table >
+            <tr>
+                <td>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-calendar"></i>      
+                        <?=
+                        yii\jui\DatePicker::widget([
+                            'name' => 'date', 'value' => Yii::$app->session['date'],
+                            'dateFormat' => 'yyyy-MM-dd',
+                            'clientOptions' => [
+                                'changeMonth' => true,
+                                'changeYear' => true,
+                            ],
+                            'options' => [
+                                
+                                'onchange' => '
+                                                    $.post( "index.php?r=products/repaortsale&date="+$(this).val(), function( data ) {
+                                                    $( "#output" ).html( data );
+                                                    });
+                                                ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',
+                            ]
+                        ])
+                        ?>
+                    </div>
+                </td>
+                <td><div style="padding:10px;">ຫາ</div></td>
+                <td>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-calendar"></i>      
+                        <?=
+                        yii\jui\DatePicker::widget([
+                            'name' => 'date_to', 'value' => Yii::$app->session['date_to'],
+                            'dateFormat' => 'yyyy-MM-dd',
+                            'clientOptions' => [
+                                'changeMonth' => true,
+                                'changeYear' => true,
+                            ],
+                            'options' => [
+                                'onchange' => '
+                                                    $.post( "index.php?r=products/repaortsale&date_to="+$(this).val(), function( data ) {
+                                                    $( "#output" ).html( data );
+                                                    });
+                                                ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',
+                            ]
+                        ])
+                        ?>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
         <div class=" table-responsive "> 
             <table class="table table-bordered table-striped">
                 <thead>

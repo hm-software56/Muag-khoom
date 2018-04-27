@@ -235,3 +235,6 @@ a.desc:after {
 .right-addon input {
     padding-right: 30px;
 }
+.main-header .navbar .nav>li>a>.label {
+    right: 50px !important;
+}
