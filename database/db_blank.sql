@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2018 at 05:28 AM
+-- Generation Time: Apr 27, 2018 at 04:07 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pos_blank`
+-- Database: `ddddssss`
 --
 
 -- --------------------------------------------------------
@@ -108,7 +108,8 @@ CREATE TABLE `sale` (
   `qautity` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `invoice_id` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `price` int(11) NOT NULL,
+  `profit_price` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -125,15 +126,31 @@ CREATE TABLE `shop_profile` (
   `phone_number` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `adress` text NOT NULL,
-  `key_active` varchar(255) DEFAULT NULL
+  `key_active` varchar(255) DEFAULT NULL,
+  `alert` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `shop_profile`
 --
 
-INSERT INTO `shop_profile` (`id`, `logo`, `shop_name`, `telephone`, `phone_number`, `email`, `adress`, `key_active`) VALUES
-(1, '2017042016040619.jpg', 'ຮ້ານ ເຮ​ເອມ​ຊອບ', '020 55045770', '020 55045770', 'daxionginfo@gmail.com', 'Lao', '175313076774795881812531320');
+INSERT INTO `shop_profile` (`id`, `logo`, `shop_name`, `telephone`, `phone_number`, `email`, `adress`, `key_active`, `alert`) VALUES
+(1, '2017042016040619.jpg', 'ຮ້ານ ໄອຊອບ', '020 55045770', '020 55045770', 'daxionginfo@gmail.com', 'Lao', '175313076774795881812531320', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `still_pay`
+--
+
+CREATE TABLE `still_pay` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `details` text NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -153,13 +170,6 @@ CREATE TABLE `user` (
   `date` date NOT NULL,
   `height_screen` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `photo`, `first_name`, `last_name`, `username`, `password`, `status`, `user_type`, `date`, `height_screen`) VALUES
-(5, 'user_photo.png', 'Adminstrator', 'Adminstrator', 'daxiong', 'da123', 1, 'Admin', '2018-03-20', NULL);
 
 --
 -- Indexes for dumped tables
@@ -218,6 +228,12 @@ ALTER TABLE `shop_profile`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `still_pay`
+--
+ALTER TABLE `still_pay`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -249,13 +265,13 @@ ALTER TABLE `discount`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sale`
@@ -270,10 +286,16 @@ ALTER TABLE `shop_profile`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `still_pay`
+--
+ALTER TABLE `still_pay`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
