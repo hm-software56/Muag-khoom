@@ -5,21 +5,20 @@ Yii 2 Point of Sale (POS)
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.4.0.
+The minimum requirement by this project template that your Web server supports PHP 7.1.0.
 
 
 INSTALLATION
 ------------
 
 ### Install
-
-Download Zip file and unzip than copy project to www or html folder 
-after that import database 
-
-You can then access the application through the following URL:
+1. Download XAMPP OR APSERV  https://www.apachefriends.org/download.html 
+2. After downloaded and install XAPP  
+3. Download Zip file and unzip than copy project to www or html folder 
+4. Run  access the application through the following URL:
 
 ~~~
-http://localhost/pos/web/
+http://localhost/pos/web/index.php?r=site/install
 ~~~
 
 
