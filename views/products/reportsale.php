@@ -170,12 +170,18 @@ Modal::end();
                         <td align="right"><b><b><?= Yii::t('app', 'ສ່ວນຫຼຸດ') ?></b></td>
                         <td  class="bg-yellow"><?= number_format($total_discount, 2) ?></b></td>
                     </tr>
+                    <?php
+                    if (Yii::$app->session['user']->user_type != "POS") {
+                    ?>
                     <tr >
                         <td colspan="5" align="right">​<b><?= Yii::t('app', 'ຕົ້ນທຶນ')?></b></td>
                         <td  class="bg-red"><b><?= number_format($total -$total_profit, 2) ?></b></td>
                         <td align="right"><b><b><?= Yii::t('app', 'ກຳ​ໄລ') ?></b></td>
                         <td  class="bg-green"><b><?= number_format($total_profit- $total_discount, 2) ?></b></td>
                     </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

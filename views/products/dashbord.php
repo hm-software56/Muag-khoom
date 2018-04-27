@@ -15,10 +15,15 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-calendar"></i></span>
-            <div class="info-box-content">
+        <span class="info-box-icon bg-red"><i class="fa fa-line-chart"></i></span>
+            <div class="info-box-content"  style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍມື້ນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_day-$sum_discount_day,2)?><small></small></span>
+                
+                <?php
+                if(Yii::$app->session['user']->user_type != "POS")
+                {
+                ?>
                 <div class="progress">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
@@ -26,6 +31,9 @@
                     <span style="color:red"><?= number_format((int)$sum_day-(int)$sumprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
 					<span style="color:green"><?= number_format((int)$sumprofit_price_day - $sum_discount_day, 2) ?> ກ​ລ</span>
                 </span>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -43,10 +51,14 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-            <span class="info-box-icon bg-green-active"><i class="fa fa-calendar"></i></span>
-            <div class="info-box-content">
+            <span class="info-box-icon bg-green-active"><i class="fa fa-pie-chart"></i></span>
+            <div class="info-box-content" style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍທິດນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_w-$sum_discount_w,2)?><small></small></span>
+                
+                <?php
+                if (Yii::$app->session['user']->user_type != "POS") {
+                    ?>
                 <div class="progress">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
@@ -54,6 +66,9 @@
 					<span style="color:red"><?= number_format((int)$sum_w-(int)$wprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
 					<span style="color:green"><?= number_format((int)$wprofit_price_day - $sum_discount_w, 2) ?> ກ​ລ</span>
                 </span>
+                <?php
+                }
+                ?>
             </div>
 
         </div>
@@ -72,19 +87,24 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-light-blue-active"><i class="fa fa-calendar"></i></span>
-            <div class="info-box-content">
+        <span class="info-box-icon bg-light-blue-active"><i class="fa fa-area-chart"></i></span>
+            <div class="info-box-content" style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍເດືອນນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_m-$sum_discount_m,2)?><small></small></span>
+                
+                <?php
+                if (Yii::$app->session['user']->user_type != "POS") {
+                    ?>
                 <div class="progress">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
-                <span class="progress-description">
-					<span class="progress-description">
+				<span class="progress-description">
 					<span style="color:red"><?= number_format((int)$sum_m-(int)$mprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
 					<span style="color:green"><?= number_format((int)$mprofit_price_day - $sum_discount_m, 2) ?> ກ​ລ</span>
                 </span>
-                </span>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -102,10 +122,14 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
-            <div class="info-box-content">
+        <span class="info-box-icon bg-aqua"><i class="fa fa-bar-chart"></i></span>
+            <div class="info-box-content" style="<?=(Yii::$app->session['user']->user_type == "POS")?'padding-top:20px;':''?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍປີນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_y-$sum_discount_y,2)?><small></small></span>
+                
+                <?php
+                if (Yii::$app->session['user']->user_type != "POS") {
+                    ?>
                 <div class="progress">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
@@ -113,6 +137,9 @@
 					<span style="color:red"><?= number_format((int)$sum_y-(int)$yprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
 					<span style="color:green"><?= number_format((int)$yprofit_price_day - $sum_discount_y, 2) ?> ກ​ລ</span>
                 </span>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

@@ -23,6 +23,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'adress')->textarea(['rows' => 6])->label('ທີ່​ຢູ່') ?>
 
+    <?= $form->field($model, 'alert')->textInput(['maxlength' => true])->label('ແຈ້ງ​ເຕຶອນ​ສີນ​ຄ້າ​ໄກ້​ໜົດ') ?>
+
     <div class="form-group">
         <?= Html::submitButton('ບັນ​ທ​ືກ', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

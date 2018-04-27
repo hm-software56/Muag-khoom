@@ -676,11 +676,11 @@ class ProductsController extends Controller {
             return $this->renderAjax('canclesale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
         } else {
             if (Yii::$app->session['user']->user_type == "POS") {
-                $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+                $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id,'date'=>date('Y-m-d')])->orderBy('id DESC')->all();
             } else {
-                $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                $invoices = \app\models\Invoice::find()->where(['date' => date('Y-m-d')])->orderBy('id DESC')->all();
             }
-            return $this->render('canclesale', ['invoices' => $invoices, 'invoice_code' => "", 'date' => ""]);
+            return $this->render('canclesale', ['invoices' => $invoices, 'invoice_code' => "", 'date' =>date('Y-m-d')]);
         }
     }
 
@@ -690,7 +690,8 @@ class ProductsController extends Controller {
     }
 
     public function actionProductfinish() {
-        $model = Products::find()->where(['in', 'qautity', [0]])->andwhere(['status'=>1])->all();
+        $profle = \app\models\ShopProfile::find()->one();
+        $model = Products::find()->where('qautity<='. $profle ->alert.'')->andwhere(['status'=>1])->all();
         return $this->render('productfinish', ['model' => $model]);
     }
 

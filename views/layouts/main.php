@@ -69,10 +69,19 @@ AppAsset::register($this);
                         <ul class="nav navbar-nav">
                             <?php
                             if (!empty(Yii::$app->session['user'])) {
+                                $prd=\app\models\Products::find()->where('status=1 and qautity<='. $profle->alert.'')->count();
                                 ?>
+                                <li class="dropdown messages-menu">
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish" onclick="onclick_loadimg()">
+                                        <span class="label label-danger" style="right: 80px !important; "><?= ($prd > 0) ? $prd : '' ?></span>
+                                        <i class="fa fa-bullhorn"></i>
+                                        <?= Yii::t('app', 'ສີນ​ຄ້າ​ໝົດ') ?>
+                                        
+                                    </a>
+                                </li>
                                 <li class="dropdown user user-menu">
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale" onclick="onclick_loadimg()">
-                                        <span class="glyphicon glyphicon-shopping-cart"></span><?=Yii::t('app', 'ຂາຍ​ສີ້ນ​ຄ້າໜ້າ​ຮ້ານ (POS)')?>
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><?=Yii::t('app', 'ຂາຍ​ໜ້າ​ຮ້ານ(POS)')?>
                                     </a>
                                 </li>
                                 <li class="dropdown user user-menu">

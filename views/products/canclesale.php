@@ -38,7 +38,7 @@ use yii\bootstrap\Modal;
                                 'dateFormat' => 'yyyy-MM-dd',
                                 'options' => [
                                     'onchange' => '
-                                    $.post( "index.php?r=products/repaortsale&date="+$(this).val(), function( data ) {
+                                    $.post( "index.php?r=products/canclesale&date="+$(this).val(), function( data ) {
                                       $( "#output" ).html( data );
                                     });
                                 ', 'placeholder' => 'ວັນ​ທີ', 'class' => 'form-control',

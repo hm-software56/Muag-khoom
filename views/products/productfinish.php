@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Html;
+?>
 <div class="row">
     <div class="col-md-12 ">
         <div class="line_bottom">
@@ -30,7 +33,19 @@
                         <td><?= $i++ ?></td>
                         <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="30"/></a></td>
                         <td><?= $model->name ?></td>
-                        <td><?= $model->qautity ?></td>
+                        <td><?="<div id=qt" . $model->id . ">" . Html::a($model->qautity, '#', [
+                                'onclick' => "
+                                $.ajax({
+                                type:'POST',
+                                cache: false,
+                                url:'index.php?r=products/qautityupdateindex&idp=" . $model->id . "&qautity=" . $model->qautity . "',
+                                success:function(response) {
+                                    $('#qt" . $model->id . "').html(response);
+                                    document.getElementById('search').focus();
+                                }
+                                });return false;",
+                                'class' => "btn btn-sm bg-link",
+                            ]) . "</div>" ?></td>
                         <td><?= number_format($model->pricesale, 2) ?></td>
                         <td><?= number_format($model->pricesale * $model->qautity, 2) ?></td>
                     </tr>

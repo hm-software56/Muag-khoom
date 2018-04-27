@@ -17,6 +17,7 @@ use Yii;
  * @property string $email
  * @property string $adress
  * @property string $key_active
+ * @property integer $alert
  * @property string $aliasModel
  */
 abstract class ShopProfile extends \yii\db\ActiveRecord
@@ -41,6 +42,7 @@ abstract class ShopProfile extends \yii\db\ActiveRecord
         return [
             [['shop_name', 'adress'], 'required'],
             [['adress'], 'string'],
+            [['alert'], 'integer'],
             [['logo', 'telephone', 'phone_number', 'email'], 'string', 'max' => 45],
             [['shop_name', 'key_active'], 'string', 'max' => 255]
         ];
@@ -60,6 +62,7 @@ abstract class ShopProfile extends \yii\db\ActiveRecord
             'email' => 'Email',
             'adress' => 'Adress',
             'key_active' => 'Key Active',
+            'alert' => 'Alert',
         ];
     }
 

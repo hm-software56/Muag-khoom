@@ -25,12 +25,10 @@ class UserController extends Controller {
             if (Yii::$app->controller->action->id != "login") {
                 $this->redirect(['site/login']);
             }
-        } elseif (Yii::$app->session['timeout'] < date('dHi')) {
+        } elseif (\Yii::$app->session['date_login'] < date('Ymd')) {
             unset(\Yii::$app->session['user']);
             $this->redirect(['site/login']);
-        } else {
-            Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
-        }
+        } 
         return parent::beforeAction($action);
     }
 
