@@ -8,6 +8,7 @@ use app\models\StillPaySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Custommer;
 
 /**
  * StillPayController implements the CRUD actions for StillPay model.
@@ -37,7 +38,6 @@ class StillPayController extends Controller
     {
         $searchModel = new StillPaySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -67,7 +67,12 @@ class StillPayController extends Controller
         $model = new StillPay();
         $model->date=date('Y-m-d H:i:s');
         $model->status='1';
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            if(empty($model->name))
+            {
+                $model->name="1";
+            }
+            $model->save();
             return $this->redirect(['index']);
         }
         return $this->render('create', [
@@ -75,6 +80,20 @@ class StillPayController extends Controller
         ]);
     }
 
+    public function actionCreatecus()
+    {
+        if(isset($_POST['name']))
+        {
+            $cus=new Custommer();
+            $cus->status='1';
+            $cus->name=$_POST['name'];
+            if($cus->save())
+            {
+                return $this->redirect(['create']);
+            }
+            print_r($cus->getErrors());
+        }
+    }
     public function actionPaid($id)
     {
         $model = $this->findModel($id);
@@ -115,7 +134,7 @@ class StillPayController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+       // return "sss";
     }
 
     /**

@@ -550,7 +550,7 @@ class ProductsController extends Controller {
                                 $.ajax({
                                 type:'POST',
                                 cache: false,
-                                url  : 'index.php?r=products/qautityupdateindex&idp=" . $product->id . "&qautity=" . $sale->qautity . "&i=" . $i . "&inv_id=" . $sale->invoice_id . "',
+                                url  : 'index.php?r=products/qautitycancle&idp=" . $product->id . "&qautity=" . $sale->qautity . "&i=" . $i . "&inv_id=" . $sale->invoice_id . "',
                                 success:function(response) {
                                     $('#qt".$i."').html(response);
                                 }
@@ -559,6 +559,30 @@ class ProductsController extends Controller {
             ]) . "</div>";
         } 
         return $this->renderAjax('qautitycancle', ['qautity' => $qautity, 'idp' => $idp,'inv_id' => $_GET['inv_id'], 'i' => $_GET['i']]);
+    }
+
+    public function actionChangediscount($dc,$dc_id)
+    {
+        if(isset($_GET['true']))
+        {
+            $dc_id=(int)$dc_id;
+            Yii::$app->db->createCommand()
+                ->update('discount', ['discount' => $dc], ['id' => $dc_id])
+                ->execute();
+            return "<div id=dc" . $dc_id . ">" . Html::a(number_format((int)$dc,2), '#', [
+                'onclick' => "
+                            $.ajax({
+                            type:'POST',
+                            cache: false,
+                            url: 'index.php?r=products/changediscount&dc=" . $dc . "&dc_id=" . $dc_id . "',
+                            success:function(response) {
+                                $('#dc".$dc_id."').html(response);
+                            }
+                            });return false;",
+                'class' => "btn btn-sm bg-link",
+            ]) . "</div>";
+        }
+        return $this->renderAjax('changediscount', ['dc' => $dc, 'dc_id' =>$dc_id, ]);
     }
     /**
      * Deletes an existing Products model.
@@ -634,12 +658,14 @@ class ProductsController extends Controller {
 
             return $this->renderAjax('reportsale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
         } else {
-            Yii::$app->session['date']=null;
-            Yii::$app->session['date_to']=null;
+            Yii::$app->session['date']=date('Y-m-d');
+            Yii::$app->session['date_to']=date('Y-m-d');
             if (Yii::$app->session['user']->user_type == "POS") {
-                $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
+                $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->andWhere('date>="' . Yii::$app->session['date'] . '" and date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                //$invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
             } else {
-                $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                //$invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
+                $invoices = \app\models\Invoice::find()->where('date>="'. Yii::$app->session['date'] .'" and date<="'. Yii::$app->session['date_to'] .'"')->orderBy('id DESC')->all();
             }
             return $this->render('reportsale', ['invoices' => $invoices, 'invoice_code' => "", 'date' => ""]);
         }

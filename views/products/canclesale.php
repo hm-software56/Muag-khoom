@@ -106,7 +106,24 @@ use yii\bootstrap\Modal;
                                         $discount = \app\models\Discount::find()->where(['invoice_id' => $invoice->id])->one();
                                         if (!empty($discount)) {
                                             $total_discount+=$discount->discount;
-                                            echo number_format($discount->discount, 2);
+                                            //echo number_format($discount->discount, 2);
+                                        ?>
+                                        <div id="dc<?= $discount->id ?>">
+                                            <?php
+                                            echo yii\helpers\Html::a(number_format($discount->discount, 2), '#', [
+                                                'onclick' => "
+                                                    $.ajax({
+                                                    type     :'POST',
+                                                    cache    : false,
+                                                    url  : 'index.php?r=products/changediscount&dc=" . $discount->discount . "&dc_id=" . $discount->id . "',
+                                                    success  : function(response) {
+                                                        $('#dc" . $discount->id . "').html(response);
+                                                    }
+                                                    });return false;",
+                                                'class' => "btn btn-sm bg-link"
+                                            ]);
+                                            ?>
+                                        <?php
                                         }
                                         ?>
                                     </td>

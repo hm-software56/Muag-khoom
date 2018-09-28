@@ -15,6 +15,9 @@ use Yii;
  * @property string $price
  * @property string $date
  * @property integer $status
+ * @property integer $custommer_id
+ *
+ * @property \app\models\Custommer $custommer
  * @property string $aliasModel
  */
 abstract class StillPay extends \yii\db\ActiveRecord
@@ -37,11 +40,13 @@ abstract class StillPay extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'details', 'price', 'date'], 'required'],
+            [['details', 'price', 'date', 'custommer_id'], 'required'],
             [['details'], 'string'],
             [['date'], 'safe'],
+            [['custommer_id'], 'integer'],
             [['name', 'price'], 'string', 'max' => 255],
-            [['status'], 'string', 'max' => 1]
+            [['status'], 'string', 'max' => 1],
+            [['custommer_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Custommer::className(), 'targetAttribute' => ['custommer_id' => 'id']]
         ];
     }
 
@@ -52,12 +57,21 @@ abstract class StillPay extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'ຊື່​ຜູ້​ຄ້າງ',
-            'details' => '​ລາຍ​ລະ​ອຽດ',
-            'price' => '​ຈ​ຳ​ນວນ​ເງີນ',
-            'date' => '​ວັນ​ທີ',
+            'name' => 'Name',
+            'details' => 'Details',
+            'price' => 'Price',
+            'date' => 'Date',
             'status' => 'Status',
+            'custommer_id' => 'Custommer ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCustommer()
+    {
+        return $this->hasOne(\app\models\Custommer::className(), ['id' => 'custommer_id']);
     }
 
 

@@ -34,8 +34,19 @@ public function behaviors()
 
     public static function details($id){
         $stillpay=\app\models\StillPay::find()->where(['id'=>$id])->one();
-        $detais="<div style='color:red;'>".$stillpay->name."</div>";
+        if ($stillpay->custommer_id !=0) {
+            if($stillpay->name!=1)
+            {
+                $detais="<div style='color:red;'>".$stillpay->custommer->name." <b>(".$stillpay->name.")</b></div>";
+            }else{
+                $detais="<div style='color:red;'>".$stillpay->custommer->name."</div>";
+            }
+           
+        }else{
+            $detais="<div style='color:red;'>".$stillpay->name."</div>";
+        }
         $detais.= "<div>" . $stillpay->details . "</div>";
+		$detais.= "<div style='color:green;'>" . number_format($stillpay->price,2) . " ກີບ</div>";
         $detais .= "<div>" . $stillpay->date . "</div>";
         return $detais;
     }

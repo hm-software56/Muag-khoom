@@ -3,7 +3,9 @@ body {
     height: 100%;
     background: #fff !important;
 }
-
+.main-sidebar, .left-side{
+     z-index: 810 !important; 
+}
 .table > tbody > tr > td {
    vertical-align: middle!important;
 }
@@ -235,6 +237,10 @@ a.desc:after {
 .right-addon input {
     padding-right: 30px;
 }
+
 .main-header .navbar .nav>li>a>.label {
     right: 50px !important;
+}
+.main-sidebar, .left-side {
+    position: fixed !important;
 }

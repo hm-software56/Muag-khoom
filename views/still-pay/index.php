@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use kartik\select2\Select2;
+use app\models\StillPay;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\StillPaySearch */
@@ -24,41 +27,61 @@ $this->params['breadcrumbs'][] = $this->title;
             </p>
         </div>
     </div>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'summary' => "",
-        'columns' => [
-            [
-                'filter' => false,
-                'attribute' => 'details',
-                'format' => 'html',
-                'value' => function ($data) {
-                    return \app\models\StillPay::details($data->id);
-                },
-            ],
-            
-           // 'date',
-            //'status',
-
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'template' => '{update}',
-                'buttons' => [
-                    'update' => function ($url, $model) {
-                        return Html::a(
-                            '<span class=" fa fa-thumbs-up"></span> ຈ່າຍ',
-                            ['still-pay/paid', 'id' => $model->id],
-                            [
-                                'class' => 'btn btn-danger btn-sm',
-                                'onclick' => "onclick_loadimg()",
-                            ]
-                        );
-                    },
+<table class="table table-condensed table-bordered">
+    <tr>
+        <th colspan='2'>
+        <?php $form = ActiveForm::begin(['action'=>'index.php?r=still-pay/index','method'=>'get']); ?>
+        <?php
+            echo $form->field($searchModel, 'name')->widget(Select2::classname(), [
+                'data' =>yii\helpers\ArrayHelper::map(\app\models\Custommer::find()->all(), 'id', 'name'),
+                'options' => ['placeholder' => '===== ​ເລືອກ====',
+                'onchange' => "this.form.submit()",
                 ],
-                'contentOptions' => ['align' => 'right', 'style' => 'width: 5px'],
-            ],
-        ],
-    ]); ?>
+                'pluginOptions' => [
+                    'allowClear' => true,
+                    'multiple' => true
+                ],
+            ])->label('ລາຍ​ລະ​ອຽດ');
+        ?>
+        <?php ActiveForm::end(); ?>
+        </th>
+    <tr>
+    <span id="search">
+    <?php
+    $sum=0;
+    foreach ($dataProvider->models as $model) {
+        $sum+=$model->price;
+        ?>
+    <tr id="del<?=$model->id?>">
+        <td>
+        <?=StillPay::details($model->id)?>
+        </td>
+        <td style="width:50px;">
+        <?php
+            echo yii\helpers\Html::a('<span class=" fa fa-thumbs-up"></span> ຈ່າຍ', '#', [
+            'class'=>'btn btn-danger btn-sm',
+            'onclick' => "
+            $.ajax({
+            type     :'POST',
+            cache    : false,
+            url  : 'index.php?r=still-pay/delete&id=" . $model->id ."',
+            success  : function(response) {
+            $('#del".$model->id."').html(response);
+            }
+            });return false;",
+            ]);
+        ?>
+        </td>
+    </tr>
+    <?php
+    }
+    ?>
+    </span>
+    <tr>
+        <td colspan="2" style="background-color:red; color:white">
+        <b>ລວມ​ທັງ​ໝົດ: <?=number_format($sum,2)?> ກີບ</b>
+        </td>
+    </tr>
+</table>
+    
 </div>

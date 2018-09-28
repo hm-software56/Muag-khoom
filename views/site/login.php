@@ -29,7 +29,6 @@ if (Yii::$app->session->hasFlash('reg')) {
     ]);
 }
 ?>
-
 <?php
     $form = ActiveForm::begin([
                 'id' => 'login-form',

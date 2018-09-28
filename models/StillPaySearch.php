@@ -63,11 +63,13 @@ class StillPaySearch extends StillPay
             'date' => $this->date,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'details', $this->details])
+        $query->andFilterWhere(['like', 'details', $this->details])
             ->andFilterWhere(['like', 'price', $this->price])
             ->andFilterWhere(['like', 'status', '1']);
-
+        if(!empty($this->name))
+        {
+            $query->andFilterWhere(['IN', 'custommer_id', $this->name]);
+        }
         return $dataProvider;
     }
 }
