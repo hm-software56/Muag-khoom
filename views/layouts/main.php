@@ -146,9 +146,22 @@ AppAsset::register($this);
                                 ?>
                                 <li>
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products">
-                                        <i class="fa fa-th"></i> <span><?= Yii::t('app', 'ຈັດ​ການ​ສີ້ນ​ຄ້າ​ເຂົ້າ')?></span>
+                                        <i class="fa fa-th"></i> <span><?= Yii::t('app', 'ຈັດ​ການ​ສີ້ນ​ຄ້າ​')?></span>
                                     </a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products">
+                                                <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ສີນ​ຄ້າ')?></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=purchase">
+                                                <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ຈັດ​ຊື້ສີນ​ຄ້າ')?></span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                
                                 <li>
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
                                         <i class="fa fa-shopping-cart "></i> <span><?= Yii::t('app', '​ຂາຍ​ສີ້ນ​ຄ້າ')?></span>
@@ -189,6 +202,11 @@ AppAsset::register($this);
                                             <li>
                                                 <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index">
                                                     <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', 'ປະ​ເພດ​ສີນ​ຄ້າ')?></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=currency/index">
+                                                    <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', 'ສະ​ກຸນ​ເງີນ')?></span>
                                                 </a>
                                             </li>
                                             <li>

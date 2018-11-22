@@ -12,7 +12,10 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property string $date
+ * @property integer $category_id
  *
+ * @property \app\models\Category $category
+ * @property \app\models\Category[] $categories
  * @property \app\models\Products[] $products
  * @property string $aliasModel
  */
@@ -29,7 +32,6 @@ abstract class Category extends \yii\db\ActiveRecord
         return 'category';
     }
 
-
     /**
      * @inheritdoc
      */
@@ -38,7 +40,9 @@ abstract class Category extends \yii\db\ActiveRecord
         return [
             [['name', 'date'], 'required'],
             [['date'], 'safe'],
-            [['name'], 'string', 'max' => 255]
+            [['category_id'], 'integer'],
+            [['name'], 'string', 'max' => 255],
+            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Category::className(), 'targetAttribute' => ['category_id' => 'id']]
         ];
     }
 
@@ -48,10 +52,27 @@ abstract class Category extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'date' => 'Date',
+            'id' => Yii::t('models', 'ID'),
+            'name' => Yii::t('models', 'Name'),
+            'date' => Yii::t('models', 'Date'),
+            'category_id' => Yii::t('models', 'Category ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategory()
+    {
+        return $this->hasOne(\app\models\Category::className(), ['id' => 'category_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategories()
+    {
+        return $this->hasMany(\app\models\Category::className(), ['category_id' => 'id']);
     }
 
     /**

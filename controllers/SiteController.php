@@ -157,11 +157,12 @@ class SiteController extends Controller {
 
     public function actionKeygenerate()
     {
-        $try_m= 'last day of 5 month'; /// try to use 5 moth
+        $try_m= 'last day of 2 month'; /// try to use 5 moth
         $key_generate = date('dis'). date('m', strtotime("" . $try_m . "")) . mt_rand(100000000, 999999999) . date('y', strtotime("" . $try_m . "")) .date('his') . substr(date('Y', strtotime("" . $try_m . "")), 0, 2);
         Yii::$app->session['key']= $key_generate;
         Yii::$app->session['keys'] =base64_encode($key_generate);
-        return $this->redirect(['site/install']);
+       // return $this->redirect(['site/install']);
+	   echo $key_generate;
     }
 
     public function actionInstall($step=null)

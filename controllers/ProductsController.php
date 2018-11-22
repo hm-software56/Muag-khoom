@@ -12,6 +12,7 @@ use yii\web\UploadedFile;
 use yii\imagine\Image;
 use Imagine\Image\Box;
 use yii\helpers\Html;
+use app\models\Currency;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -51,6 +52,7 @@ class ProductsController extends Controller {
 
     public function actionSale() {
         $this->layout = "main_pos";
+        Yii::$app->session['currency']=Currency::find()->where(['base_currency'=>1])->one();
         if (!empty(Yii::$app->session['cormfirm'])) {  /// after done payment clear old order then older new
             unset(Yii::$app->session['product']);
             unset(\Yii::$app->session['cormfirm']);
@@ -193,19 +195,78 @@ class ProductsController extends Controller {
         if (isset($_GET['totalprice'])) {
             \Yii::$app->session['totalprice'] = $_GET['totalprice'] - \Yii::$app->session['discount'];
             unset(\Yii::$app->session['payprice']);
+            unset(\Yii::$app->session['paypriceth']);
+            unset(\Yii::$app->session['paypriceusd']);
             unset(\Yii::$app->session['paystill']);
             unset(\Yii::$app->session['paychange']);
+
+            \Yii::$app->session['payprice_lak_exh']=0;
+            \Yii::$app->session['payprice_th_exh']=0;
+            \Yii::$app->session['payprice_usd_exh']=0;
         }
 
-        if (isset($_GET['pricetxt'])) {
-            \Yii::$app->session['payprice'] = $_GET['pricetxt'];
-            if (\Yii::$app->session['totalprice'] - $_GET['pricetxt'] > 0) {
-                \Yii::$app->session['paystill'] = \Yii::$app->session['totalprice'] - $_GET['pricetxt'];
+        if (isset($_GET['pricelak'])) {
+            \Yii::$app->session['payprice'] = (float)$_GET['pricelak'];
+            $currency=Currency::find()->where(['id'=>1])->one(); /// KIP
+
+            $vl=(float)$_GET['pricelak'];
+            $ra=$currency->rate;
+            $str = $currency->code;
+            eval("\$str = \"$str\";");
+            $exh=eval("return $str;");
+            \Yii::$app->session['payprice_lak_exh']=$exh;
+            $total_usd_th_lak=\Yii::$app->session['payprice_lak_exh']+\Yii::$app->session['payprice_th_exh']+\Yii::$app->session['payprice_usd_exh'];
+            if (\Yii::$app->session['totalprice'] - $total_usd_th_lak > 0) {
+                \Yii::$app->session['paystill'] = \Yii::$app->session['totalprice'] - $total_usd_th_lak;
             } else {
                 \Yii::$app->session['paystill'] = 0;
             }
-            if (($_GET['pricetxt'] - \Yii::$app->session['totalprice']) > 0) {
-                \Yii::$app->session['paychange'] = $_GET['pricetxt'] - \Yii::$app->session['totalprice'];
+            if (($total_usd_th_lak- \Yii::$app->session['totalprice']) > 0) {
+                \Yii::$app->session['paychange'] =$total_usd_th_lak - \Yii::$app->session['totalprice'];
+            } else {
+                \Yii::$app->session['paychange'] = 0;
+            }
+        }
+
+        if (isset($_GET['priceth'])) {
+            \Yii::$app->session['paypriceth'] = (float)$_GET['priceth'];
+            $currency=Currency::find()->where(['id'=>3])->one(); /// BATH
+            $vl=(float)$_GET['priceth'];
+            $ra=$currency->rate;
+            $str = $currency->code;
+            eval("\$str = \"$str\";");
+            $exh=eval("return $str;");
+            \Yii::$app->session['payprice_th_exh']=$exh;
+            $total_usd_th_lak=\Yii::$app->session['payprice_lak_exh']+\Yii::$app->session['payprice_th_exh']+\Yii::$app->session['payprice_usd_exh'];
+            if (\Yii::$app->session['totalprice'] - $total_usd_th_lak > 0) {
+                \Yii::$app->session['paystill'] = \Yii::$app->session['totalprice'] - $total_usd_th_lak;
+            } else {
+                \Yii::$app->session['paystill'] = 0;
+            }
+            if (($total_usd_th_lak- \Yii::$app->session['totalprice']) > 0) {
+                \Yii::$app->session['paychange'] =$total_usd_th_lak - \Yii::$app->session['totalprice'];
+            } else {
+                \Yii::$app->session['paychange'] = 0;
+            }
+        }
+
+        if (isset($_GET['priceusd'])) {
+            \Yii::$app->session['paypriceusd'] = (float)$_GET['priceusd'];
+            $currency=Currency::find()->where(['id'=>2])->one(); /// BATH
+            $vl=(float)$_GET['priceusd'];
+            $ra=$currency->rate;
+            $str = $currency->code;
+            eval("\$str = \"$str\";");
+            $exh=eval("return $str;");
+            \Yii::$app->session['payprice_usd_exh']=$exh;
+            $total_usd_th_lak=\Yii::$app->session['payprice_lak_exh']+\Yii::$app->session['payprice_th_exh']+\Yii::$app->session['payprice_usd_exh'];
+            if (\Yii::$app->session['totalprice'] - $total_usd_th_lak > 0) {
+                \Yii::$app->session['paystill'] = \Yii::$app->session['totalprice'] - $total_usd_th_lak;
+            } else {
+                \Yii::$app->session['paystill'] = 0;
+            }
+            if (($total_usd_th_lak- \Yii::$app->session['totalprice']) > 0) {
+                \Yii::$app->session['paychange'] =$total_usd_th_lak - \Yii::$app->session['totalprice'];
             } else {
                 \Yii::$app->session['paychange'] = 0;
             }
@@ -247,7 +308,10 @@ class ProductsController extends Controller {
                     $sale->price = $product->pricesale * $qautity;
                     $sale->profit_price = ($product->pricesale - $product->pricebuy) * $qautity;
                     $sale->invoice_id = $invioce->id;
-                    $sale->save();
+                    if($sale->save())
+                    {
+                        
+                    }
                     $product->qautity = $product->qautity - $qautity;
                     $product->pricesale = number_format($product->pricesale, 2);
                     $product->pricebuy = number_format($product->pricebuy, 2);

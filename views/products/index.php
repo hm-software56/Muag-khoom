@@ -59,7 +59,7 @@ if (Yii::$app->session->hasFlash('su')) {
                     //'filter' => false,
                     'attribute' => 'name',
                     'format' => 'html',
-                    'contentOptions' => ['style' => 'width: 250px;'],
+                    'contentOptions' => ['style' => 'width: 650px;'],
                     'value' => function ($data) {
                 return $data->name;
             },

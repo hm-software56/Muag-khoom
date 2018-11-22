@@ -32,10 +32,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 'name',
+                [
+                    //'filter' => false,
+                    'attribute' => 'category_id',
+                    'label'=>Yii::t('models','Parent'),
+                    'format' => 'html',
+                    'contentOptions' => ['style' => 'width: 250px;'],
+                    'value' => function ($data) {
+                        return $data->category->name;
+                    },
+                ],
                 //  'date',
                 ['class' => 'yii\grid\ActionColumn',
-                    'template' => '{update} {delete}',
+                    'template' => '{sub} {update} {delete}',
                     'buttons' => [
+                        'sub' => function ($url, $model) {
+                            return Html::a(
+                                            '<span class="glyphicon glyphicon-plus"></span>', ['category/addsub', 'id' => $model->id], [
+                                        'class' => 'btn btn-primary btn-xs',
+                                            ]
+                            );
+                        },
                         'update' => function ($url, $model) {
                             return Html::a(
                                             '<span class="glyphicon glyphicon-edit"></span>', ['category/update', 'id' => $model->id], [

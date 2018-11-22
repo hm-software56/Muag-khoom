@@ -69,6 +69,17 @@ class CategoryController extends Controller {
             ]);
         }
     }
+    public function actionAddsub($id) {
+        $model = new Category();
+        $model->category_id=$id;
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        }
+    }
 
     /**
      * Updates an existing Category model.
