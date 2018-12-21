@@ -13,6 +13,7 @@ use Yii;
  * @property string $date
  * @property string $pricebuy
  * @property integer $qautity
+ * @property integer $qtt_saled
  * @property string $date_exp
  * @property integer $products_id
  * @property integer $purchase_id
@@ -42,10 +43,9 @@ abstract class PurchaseItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['date', 'date_exp'], 'safe'],
             [['pricebuy', 'qautity', 'products_id', 'purchase_id'], 'required'],
-            [['qautity', 'products_id', 'purchase_id'], 'integer'],
-            [['date_exp'], 'safe'],
-            [['date'], 'string', 'max' => 45],
+            [['qautity', 'qtt_saled', 'products_id', 'purchase_id'], 'integer'],
             [['pricebuy'], 'string', 'max' => 255],
             [['purchase_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Purchase::className(), 'targetAttribute' => ['purchase_id' => 'id']],
             [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']]
@@ -62,6 +62,7 @@ abstract class PurchaseItem extends \yii\db\ActiveRecord
             'date' => Yii::t('models', 'Date'),
             'pricebuy' => Yii::t('models', 'Pricebuy'),
             'qautity' => Yii::t('models', 'Qautity'),
+            'qtt_saled' => Yii::t('models', 'Qtt Saled'),
             'date_exp' => Yii::t('models', 'Date Exp'),
             'products_id' => Yii::t('models', 'Products ID'),
             'purchase_id' => Yii::t('models', 'Purchase ID'),

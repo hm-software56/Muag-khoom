@@ -19,7 +19,7 @@ class ProductsSearch extends Products
     {
         return [
             [['id', 'qautity', 'category_id', 'user_id'], 'integer'],
-            [['name', 'date', 'pricesale', 'pricebuy', 'image'], 'safe'],
+            [['name', 'date', 'pricesale', 'image'], 'safe'],
         ];
     }
 
@@ -68,11 +68,20 @@ class ProductsSearch extends Products
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'pricesale', $this->pricesale])
-            ->andFilterWhere(['like', 'pricebuy', $this->pricebuy])
-            ->andFilterWhere(['like', 'image', $this->image])
-            ->orderBy('id DESC');
-
+            ->andFilterWhere(['like', 'pricesale', $this->pricesale]);
+            if(empty($_GET['sort'])){
+                $query->orderBy('id DESC');
+            }
+        if(!empty($this->image))
+        {
+            $categary=Category::find()->select('id')->where(['like','name',$this->image])->asArray()->all();
+            $id=[];
+            foreach($categary as $categary)
+            {
+                $id[]=$categary['id'];
+            }
+            $query->andFilterWhere(['in', 'category_id', $id]);
+        }    
         return $dataProvider;
     }
 }

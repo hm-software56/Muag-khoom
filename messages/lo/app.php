@@ -34,6 +34,7 @@ return [
     'OS' => '',
     'Off' => '',
     'On' => '',
+    'Category Name'=>'ໝວດ​ສີນ​ຄ້າ',
     'Open PDO MySQL extension' => '',
     'Open PDO extension' => '',
     'Open file extension' => '',

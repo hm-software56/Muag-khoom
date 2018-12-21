@@ -15,12 +15,14 @@ use Yii;
  * @property integer $qautity
  * @property integer $user_id
  * @property integer $invoice_id
- * @property integer $price
- * @property integer $profit_price
+ * @property string $price
+ * @property string $profit_price
  *
  * @property \app\models\Invoice $invoice
  * @property \app\models\Products $products
  * @property \app\models\User $user
+ * @property \app\models\SaleHasPurchase[] $saleHasPurchases
+ * @property \app\models\PurchaseItem[] $purchaseItems
  * @property string $aliasModel
  */
 abstract class Sale extends \yii\db\ActiveRecord
@@ -36,7 +38,6 @@ abstract class Sale extends \yii\db\ActiveRecord
         return 'sale';
     }
 
-
     /**
      * @inheritdoc
      */
@@ -45,7 +46,8 @@ abstract class Sale extends \yii\db\ActiveRecord
         return [
             [['date', 'products_id', 'qautity', 'user_id', 'invoice_id', 'price'], 'required'],
             [['date'], 'safe'],
-            [['products_id', 'qautity', 'user_id', 'invoice_id', 'price', 'profit_price'], 'integer'],
+            [['products_id', 'qautity', 'user_id', 'invoice_id'], 'integer'],
+            [['price', 'profit_price'], 'string', 'max' => 255],
             [['invoice_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Invoice::className(), 'targetAttribute' => ['invoice_id' => 'id']],
             [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['user_id' => 'id']]
@@ -58,14 +60,14 @@ abstract class Sale extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'date' => 'Date',
-            'products_id' => 'Products ID',
-            'qautity' => 'Qautity',
-            'user_id' => 'User ID',
-            'invoice_id' => 'Invoice ID',
-            'price' => 'Price',
-            'profit_price' => 'Profit Price',
+            'id' => Yii::t('models', 'ID'),
+            'date' => Yii::t('models', 'Date'),
+            'products_id' => Yii::t('models', 'Products ID'),
+            'qautity' => Yii::t('models', 'Qautity'),
+            'user_id' => Yii::t('models', 'User ID'),
+            'invoice_id' => Yii::t('models', 'Invoice ID'),
+            'price' => Yii::t('models', 'Price'),
+            'profit_price' => Yii::t('models', 'Profit Price'),
         ];
     }
 
@@ -91,6 +93,22 @@ abstract class Sale extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(\app\models\User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSaleHasPurchases()
+    {
+        return $this->hasMany(\app\models\SaleHasPurchase::className(), ['sale_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPurchaseItems()
+    {
+        return $this->hasMany(\app\models\PurchaseItem::className(), ['id' => 'purchase_item_id'])->viaTable('sale_has_purchase', ['sale_id' => 'id']);
     }
 
 

@@ -159,6 +159,11 @@ AppAsset::register($this);
                                                 <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ຈັດ​ຊື້ສີນ​ຄ້າ')?></span>
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/checkpd">
+                                                <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ກວດ​ເບີ່ງສີນ​ຄ້າ')?></span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 
@@ -333,9 +338,12 @@ AppAsset::register($this);
             ?>
         </div>
         <?php $this->endBody() ?>
+        <?php
+            $currency=\app\models\Currency::find()->where(['base_currency'=>1])->one();
+        ?>
         <script>
             jQuery(function ($) {
-                $('#money').autoNumeric('init', {aSign: ' ກີບ', pSign: 's'});
+                $('#money').autoNumeric('init', {aSign:' <?=$currency->name?>', pSign: 's'});
             });
             jQuery(function ($) {
                 $('#money_dao').autoNumeric('init', {aSign: ' ກີບ', pSign: 's'});

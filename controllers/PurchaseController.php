@@ -262,7 +262,6 @@ class PurchaseController extends Controller
                 $qtt=$product->qautity+$purchase_item->qautity;
                 $product->qautity=$qtt;
                 $product->pricesale=number_format($product->pricesale,2);
-                $product->pricebuy=number_format($product->	pricebuy,2);
                 $product->update();
             }
         }

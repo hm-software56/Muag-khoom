@@ -3,24 +3,18 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
 use app\models\Currency;
-$currency=Currency::find()->where(['id'=>1])->one();
-//echo $currency->code; $vl*$ra
-$a=7200-100;
-echo round(1569601.6, 0); 
+use app\models\PurchaseItem;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Purchase */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="purchase-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'detail')->textarea(['rows' => 2]) ?>
+    <?= $form->field($model, 'detail')->textarea(['rows' => 2])->label(Yii::t('models','​ລາຍ​ລະ​ອຽດ'))?>
     <div class="row">
         <div class="col-md-6">
-            <?= $form->field($model, 'currency_id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Currency::find()->orderBy('base_currency DESC')->all(), 'id', 'name'), ['class' => 'form-control']) ?>
+            <?= $form->field($model, 'currency_id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Currency::find()->orderBy('base_currency DESC')->all(), 'id', 'name'), ['class' => 'form-control'])->label(Yii::t('models','ເລືອກ​ສະ​ກຸນ​ເງີນ')) ?>
     
         </div>
         <div class="col-md-6">
@@ -32,7 +26,7 @@ echo round(1569601.6, 0);
                     'changeYear'=> true
                 ],
                 'options' => ['class' => 'form-control']
-                ]) ?>
+                ])->label(Yii::t('models','ວັນ​ທີ່'))?>
         </div>
     </div>
 

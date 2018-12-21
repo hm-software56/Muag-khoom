@@ -32,10 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <table class="table table-bordered" >
         <tr>
             <td style="width:150px;"><b><?=Yii::t('app','​ວັນ​ທີ່')?></b></td>
-            <td><?=$model->date?></td>
+            <td><?=date('Y-m-d',strtotime($model->date))?></td>
         </tr>
         <tr>
-            <td><b><?=Yii::t('app','ລາ​ລ​ລະ​ອຽດ')?></b></td>
+            <td><b><?=Yii::t('app','ລາ​ຍ​ລະ​ອຽດ')?></b></td>
             <td><?=$model->detail?></td>
         </tr>
         <tr>

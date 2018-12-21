@@ -1,4 +1,6 @@
 <?php
+
+use kartik\select2\Select2;
     $this->title=Yii::t("app",'POS');
 ?>
 <div class="row">
@@ -16,12 +18,26 @@
                 <?php
                 $form = yii\widgets\ActiveForm::begin();
                 $search = new \app\models\Category();
-                echo $form->field($search, 'id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Category::find()->all(), 'id', 'name'), [
+               /* echo $form->field($search, 'id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Category::find()->all(), 'id', 'name'), [
                     'onchange' => '
                 $.post( "index.php?r=products/sale&cid="+$(this).val(), function( data ) {
                 $( "#proct" ).html( data );
                 });
-                ', 'prompt' => Yii::t('app','ຄົ້ນ​ຫາຕາມ​ປະ​ເພດ'), 'id' => 'search'])->label(false);
+                ', 'prompt' => Yii::t('app','ຄົ້ນ​ຫາຕາມ​ປະ​ເພດ'), 'id' => 'search'])->label(false);*/
+
+                echo $form->field($search, 'id')->widget(Select2::classname(), [
+                    'data' => yii\helpers\ArrayHelper::map(\app\models\Category::getList(), 'id', 'name'),
+                    'options' => [
+                        'placeholder' => Yii::t('app','ຄົ້ນ​ຫາຕາມ​ປະ​ເພດ'),
+                        'onchange' => '
+                        $.post( "index.php?r=products/sale&cid="+$(this).val(), function( data ) {
+                        $( "#proct" ).html( data );
+                        });', 
+                    ],
+                    'pluginOptions' => [
+                        'allowClear' => true,
+                    ],
+                ])->label(false);
                 yii\widgets\ActiveForm::end();
                 ?>
             </div>

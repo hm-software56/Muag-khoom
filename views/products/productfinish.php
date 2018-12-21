@@ -33,7 +33,9 @@ use yii\helpers\Html;
                         <td><?= $i++ ?></td>
                         <td><a title="<?= $model->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-rounded img-thumbnail img-responsive" width="30"/></a></td>
                         <td><?= $model->name ?></td>
-                        <td><?="<div id=qt" . $model->id . ">" . Html::a($model->qautity, '#', [
+                        <td><?php
+                        echo $model->qautity;
+                        /*echo "<div id=qt" . $model->id . ">" . Html::a($model->qautity, '#', [
                                 'onclick' => "
                                 $.ajax({
                                 type:'POST',
@@ -45,7 +47,8 @@ use yii\helpers\Html;
                                 }
                                 });return false;",
                                 'class' => "btn btn-sm bg-link",
-                            ]) . "</div>" ?></td>
+                            ]) . "</div>" ;*/
+                            ?></td>
                         <td><?= number_format($model->pricesale, 2) ?></td>
                         <td><?= number_format($model->pricesale * $model->qautity, 2) ?></td>
                     </tr>

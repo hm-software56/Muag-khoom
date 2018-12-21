@@ -114,6 +114,7 @@ class SiteController extends Controller {
                 \Yii::$app->session['date_login'] =date('Ymd');
                 // $user->height_screen = ($_POST['hsc'] - 131);
                 //$user->save();
+                Yii::$app->session['currency']=\app\models\Currency::find()->where(['base_currency'=>1])->one();
                 return $this->redirect(['site/index']);
             } else {
                 \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານ​ປ້ອນ​ຊື່ຫຼື​ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ​ບໍ່ຖືກ'));

@@ -22,7 +22,7 @@ class Products extends BaseProducts {
     public function rules() {
         return ArrayHelper::merge(
                          [
-							[['pricesale', 'pricebuy'], 'string', 'max' => 255],
+							[['pricesale'], 'string', 'max' => 255],
 							[['image'], 'string', 'max' => 255],
 							['image', 'file', 'extensions' => ['png', 'jpg', 'gif'], 'maxSize' => 1024 * 1024 * 4],
 							
@@ -48,8 +48,17 @@ class Products extends BaseProducts {
 
     public function beforeSave($insert) {
         $this->pricesale = substr(preg_replace('/\D/', '', $this->pricesale), 0, -2);
-        $this->pricebuy = substr(preg_replace('/\D/', '', $this->pricebuy), 0, -2);
         return parent::beforeSave($insert);
     }
 
+    public function exchage($id,$pricebuy)
+    {
+        $currency=Currency::find()->where(['id'=>$id])->one();
+        $vl=$pricebuy;
+        $ra=$currency->rate;
+        $str = $currency->code;
+        eval("\$str = \"$str\";");
+        $exh=eval("return $str;");
+        return $exh;
+    }
 }

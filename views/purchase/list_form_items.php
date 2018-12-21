@@ -24,16 +24,17 @@ use yii\helpers\Html;
                             'data' => $product_arr,
                             'options' => [
                                 'placeholder' =>Yii::t('app','​ເລືອກ​ສີ້ນ​ຄ້າ....'),
-                                'multiple' => false
+                                'multiple' => false,
+                                'autocomplete'=>"off"
                             ],
                         ]);
                     ?>
                     </td>
                     <td>
-                        <input data-rule-required=true data-msg-required="Your message"  type="text" name="PurchaseItem['qauntity'][]" id="qtt" class="form-control money_format" data-v-min="0" data-v-max="999999">
+                        <input data-rule-required=true data-msg-required="Your message"  type="text" name="PurchaseItem['qauntity'][]" id="qtt" class="form-control money_format" data-v-min="0" data-v-max="999999" autocomplete="off">
                     </td>
                     <td>
-                         <input type="text" id="price" class="form-control money_format" name="PurchaseItem['price'][]" >
+                         <input type="text" id="price" class="form-control money_format" name="PurchaseItem['price'][]" autocomplete="off">
                     </td>
                     <td>
                     </td>

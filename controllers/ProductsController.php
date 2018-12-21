@@ -13,6 +13,9 @@ use yii\imagine\Image;
 use Imagine\Image\Box;
 use yii\helpers\Html;
 use app\models\Currency;
+use app\models\PurchaseItem;
+use app\models\SaleHasPurchase;
+use app\models\LostProduct;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -296,6 +299,14 @@ class ProductsController extends Controller {
                 $discount->invoice_id = $invioce->id;
                 $discount->save();
             }
+            /*=== Save multi currency ==*/
+            $pay_multi_currency=new \app\models\PayMultiCurency;
+            $pay_multi_currency->invoice_id=$invioce->id;
+            $pay_multi_currency->amount_kip="".\Yii::$app->session['payprice']."";
+            $pay_multi_currency->amount_th="".\Yii::$app->session['paypriceth']."";
+            $pay_multi_currency->amount_usd="".\Yii::$app->session['paypriceusd']."";
+            $pay_multi_currency->save();
+
             foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
                 if (!in_array($order_p, $pro_id)) {
                     $product = \app\models\Products::find()->where(['id' =>$order_p])->one();
@@ -305,16 +316,55 @@ class ProductsController extends Controller {
                     $sale->products_id = $order_p;
                     $sale->qautity =$qautity;
                     $sale->date = date('Y-m-d');
-                    $sale->price = $product->pricesale * $qautity;
-                    $sale->profit_price = ($product->pricesale - $product->pricebuy) * $qautity;
+                    $sale->price =''.$product->pricesale * $qautity.'';
+                    $sale->profit_price ='0';
                     $sale->invoice_id = $invioce->id;
                     if($sale->save())
                     {
-                        
+                        $purchaseitems=PurchaseItem::find()->where('qautity>0')->andwhere(['products_id'=>$sale->products_id])->orderBy('id ASC')->all();
+                        $qtt_same=0;
+                        foreach($purchaseitems as $purchaseitem)
+                        {
+                            if($purchaseitem->qautity>=$qautity && $qautity!=0){
+                                $item=PurchaseItem::find()->where(['id'=>$purchaseitem->id])->one();
+                                $item->qautity=$purchaseitem->qautity-$qautity;
+                                $item->qtt_saled=$qautity;
+                                if($item->save()){
+                                    $ext=Products::exchage($purchaseitem->purchase->currency_id,$item->pricebuy);
+                                    $sale->profit_price = ''.(($product->pricesale - $ext) * $item->qtt_saled)+$sale->profit_price.'';
+                                    $sale->save();
+
+                                    $sale_has_purchase=new SaleHasPurchase();
+                                    $sale_has_purchase->purchase_item_id=$item->id;
+                                    $sale_has_purchase->sale_id=$sale->id;
+                                    $sale_has_purchase->qautity=$item->qtt_saled;
+                                    $sale_has_purchase->pricebuy=$item->pricebuy;
+                                    $sale_has_purchase->save();
+                                    $qautity=0;
+                                }
+                            }elseif($purchaseitem->qautity<$qautity && $qautity!=0)
+                            {
+                                $item=PurchaseItem::find()->where(['id'=>$purchaseitem->id])->one();
+                                $item->qautity=0;
+                                $item->qtt_saled=$purchaseitem->qautity;
+                                if($item->save()){
+                                    $ext=Products::exchage($purchaseitem->purchase->currency_id,$item->pricebuy);
+                                    $sale->profit_price = ''.(($product->pricesale -$ext) * $item->qtt_saled)+$sale->profit_price.'';
+                                    $sale->save();
+
+                                    $sale_has_purchase=new SaleHasPurchase();
+                                    $sale_has_purchase->purchase_item_id=$item->id;
+                                    $sale_has_purchase->sale_id=$sale->id;
+                                    $sale_has_purchase->qautity=$item->qtt_saled;
+                                    $sale_has_purchase->pricebuy=$item->pricebuy;
+                                    $sale_has_purchase->save();
+                                    $qautity=$qautity-$purchaseitem->qautity;
+                                }
+                            }
+                        }
                     }
-                    $product->qautity = $product->qautity - $qautity;
+                    $product->qautity = $product->qautity - $sale->qautity;
                     $product->pricesale = number_format($product->pricesale, 2);
-                    $product->pricebuy = number_format($product->pricebuy, 2);
                     $product->save();
                 }
             }
@@ -424,7 +474,7 @@ class ProductsController extends Controller {
         ini_set('upload_max_filesize', '64M');
 
         $model = new Products();
-
+        $model->qautity=0;
         if ($model->load(Yii::$app->request->post())) {
             $model->image = UploadedFile::getInstance($model, 'image');
             $photo_name = date('YmdHmsi') . '.' . $model->image->extension;
@@ -543,18 +593,48 @@ class ProductsController extends Controller {
     {
         if (!empty($id)) {
             $product = \app\models\Products::find()->where(['id' => $id])->one();
-            if ((int)$qautity >0) {
+            if ((int)$qautity >=0 && $qautity<=$product->qautity) {
+                $qtt_dedute=$product->qautity-$qautity;
+
                 $product->qautity = (int)$qautity;
                 $product->pricesale = number_format($product->pricesale, 2);
-                $product->pricebuy = number_format($product->pricebuy, 2);
                 $product->user_id = Yii::$app->session['user']->id;
+                $purchaseitems=PurchaseItem::find()->where(['products_id'=>$product->id])->andWhere('qautity>0')->orderBy('id ASC')->all();
+                
+                foreach($purchaseitems as $purchaseitem)
+                {
+                    if($qtt_dedute>$purchaseitem->qautity)
+                    {
+                        $qtt_deduct_each_item=$purchaseitem->qautity;
+                        $qtt_dedute=$qtt_dedute-$purchaseitem->qautity;
+                        $purchaseitem->qtt_saled=$purchaseitem->qautity+$purchaseitem->qtt_saled;
+                        $purchaseitem->qautity=0;
+                        if($purchaseitem->save()){
+                            $lostproduct=new LostProduct;
+                            $lostproduct->qautity=$qtt_deduct_each_item;
+                            $lostproduct->date=date('Y-m-d');
+                            $lostproduct->pricebuy=$purchaseitem->pricebuy;
+                            $lostproduct->purchase_item_id=$purchaseitem->id;
+                            $lostproduct->save();
+                        }
+                    }else{
+                        $purchaseitem->qtt_saled=$qtt_dedute+$purchaseitem->qtt_saled;
+                        $purchaseitem->qautity=$purchaseitem->qautity-$qtt_dedute;
+                        if($purchaseitem->save()){
+                            $lostproduct=new LostProduct;
+                            $lostproduct->qautity=$qtt_dedute;
+                            $lostproduct->date=date('Y-m-d');
+                            $lostproduct->pricebuy=$purchaseitem->pricebuy;
+                            $lostproduct->purchase_item_id=$purchaseitem->id;
+                            if ($lostproduct->qautity!=0) {
+                                $lostproduct->save();
+                            }
+                        }
+                        $qtt_dedute=0;
+                    }
+                }
                 $product->save();
-                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ແກ້​ໄຂ​ຈຳ​ນວນ​ສີນ​ຄ້າ​ແລ້​ວ'));
-                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-            } else {
-                \Yii::$app->getSession()->setFlash('error', \Yii::t('app', 'ບໍ່​ສາ​ມາດ​ແກ້​ໄຂ​ຈຳ​ນວນ​ສີ້ນ​ຄ້າ​ໄດ້​....'));
-                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-            }
+            } 
             return "<div id=qt" . $product->id . ">" . Html::a($product->qautity, '#', [
                 'onclick' => "
                                 $.ajax({
@@ -568,7 +648,8 @@ class ProductsController extends Controller {
                                 });return false;",
                 'class' => "btn btn-sm bg-link",
             ]) . "</div>";
-        }elseif(isset($_GET['1i']))
+        }
+        /*elseif(isset($_GET['1i']))
         {
             $invoice=\app\models\Invoice::find()->where(['id'=>$_GET['inv_id'], 'products_id' =>$idp])->one();
             $old_qautity= $invoice->qautity;
@@ -585,7 +666,7 @@ class ProductsController extends Controller {
             }
             $product->save();
             return "ssss";
-        }
+        }*/
 
         return $this->renderAjax('qautityupdateindex', ['qautity' => $qautity, 'id' => $idp]);
     }
@@ -596,8 +677,8 @@ class ProductsController extends Controller {
             $sale = \app\models\Sale::find()->where(['invoice_id' => $_GET['inv_id'], 'products_id' => $idp])->one();
             $old_qautity = $sale->qautity;
             $sale->qautity = $qautity;
-            $sale->price = ($sale->price / $old_qautity) * $qautity;
-            $sale->profit_price = ($sale->profit_price / $old_qautity) * $qautity;
+            $sale->price =''.($sale->price / $old_qautity) * $qautity.'';
+            $sale->profit_price = ''.($sale->profit_price / $old_qautity) * $qautity.'';
             $sale->save();
             
             $product = Products::find()->where(['id' => $idp])->one();
@@ -606,9 +687,38 @@ class ProductsController extends Controller {
             } else {
                 $product->qautity = $product->qautity + ($old_qautity-$qautity);
             }
+            
             Yii::$app->db->createCommand()
                 ->update('products', ['qautity' =>$product->qautity], ['id'=>$idp])
                 ->execute();
+                
+            $salepurchase=SaleHasPurchase::find()->where(['sale_id'=>$sale->id])->andWhere('qautity>0')->orderBy('purchase_item_id DESC')->all();
+            $dedute=$old_qautity-$qautity;
+            $pqtt=$old_qautity-$qautity;
+            foreach($salepurchase as $shp)
+            {
+                if($pqtt>$shp->qautity){
+                    $pqtt=$pqtt-$shp->qautity;
+                    $shp->qautity=0;
+                    if($shp->save()){
+                        $purchaseitem=PurchaseItem::find()->where(['id'=>$shp->purchase_item_id])->one();
+                        $qtt=$purchaseitem->qtt_saled-$shp->qautity;
+                        $purchaseitem->qautity=$purchaseitem->qautity+$qtt;
+                        $purchaseitem->qtt_saled=$purchaseitem->qtt_saled-$qtt;
+                        $purchaseitem->save();
+                    }
+                }else{
+                    $shp->qautity=$shp->qautity-$pqtt;
+                    if($shp->save()){
+                        $purchaseitem=PurchaseItem::find()->where(['id'=>$shp->purchase_item_id])->one();
+                        $qtt=$purchaseitem->qtt_saled-$shp->qautity;
+                        $purchaseitem->qautity=$purchaseitem->qautity+$qtt;
+                        $purchaseitem->qtt_saled=$purchaseitem->qtt_saled-$qtt;
+                        $purchaseitem->save();
+                    }
+                    $pqtt=0;
+                }
+            }
             return "<div id=qt".$i.">" . Html::a($sale->qautity, '#', [
                 'onclick' => "
                                 $.ajax({
@@ -835,6 +945,16 @@ class ProductsController extends Controller {
     public function actionDashbord()
     {
         return $this->render('dashbord');
+    }
+
+    public function actionCheckpd(){
+        $searchModel = new ProductsSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize =1000;
+        return $this->render('checkpd', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+        ]);
     }
     
 }

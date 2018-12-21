@@ -69,7 +69,7 @@ if (Yii::$app->session->hasFlash('su')) {
                     'attribute' => 'qautity',
                     'format' => 'raw',
                     'contentOptions' => ['style' => 'width:80px;'],
-                    'value' => function ($data) {
+                    /*'value' => function ($data) {
                         return "<div id=qt".$data->id.">".Html::a($data->qautity, '#', [
                                 'onclick' => "
                                 $.ajax({
@@ -83,16 +83,7 @@ if (Yii::$app->session->hasFlash('su')) {
                                 });return false;",
                                         'class' => "btn btn-sm bg-link",
                                 ])."</div>";
-                    },
-                ],
-                [
-                    'filter' => false,
-                    'attribute' => 'pricebuy',
-                    'format' => 'html',
-                    'contentOptions' => ['style' => 'min-width: 50px;'],
-                    'value' => function ($data) {
-                return number_format($data->pricebuy, 2);
-            },
+                    },*/
                 ],
                 [
                     'filter' => false,
@@ -100,10 +91,10 @@ if (Yii::$app->session->hasFlash('su')) {
                     'format' => 'html',
                     'contentOptions' => ['style' => 'min-width: 50px;'],
                     'value' => function ($data) {
-                return number_format($data->pricesale, 2);
+                return number_format($data->pricesale, 2)." ".Yii::$app->session['currency']->name;
             },
                 ],
-                [
+               /* [
                     'filter' => false,
                     'attribute' => 'user_id',
                     'format' => 'html',
@@ -111,7 +102,7 @@ if (Yii::$app->session->hasFlash('su')) {
                     'value' => function ($data) {
                 return $data->user->first_name;
             },
-                ],
+                ],*/
                 // 'image',
                 ['class' => 'yii\grid\ActionColumn',
                     'template' => '{view} {update} {delete}',

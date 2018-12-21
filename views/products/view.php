@@ -53,7 +53,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <td>
                         <div id="qt">
                             <?php
-                            echo yii\helpers\Html::a($model->qautity, '#', [
+                            echo $model->qautity;
+                            /*echo yii\helpers\Html::a($model->qautity, '#', [
                                 'onclick' => "
                         $.ajax({
                        type     :'POST',
@@ -65,15 +66,12 @@ $this->params['breadcrumbs'][] = $this->title;
                        }
                        });return false;",
                                 'class' => "btn btn-sm bg-green"
-                            ]);
+                            ]);*/
                             ?>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>​<?= Yii::t('app', 'ລາ​ຄາ​ຊື້')?></td>
-                    <td><?= number_format($model->pricebuy, 2) ?> <?= Yii::t('app', 'ກີບ')?></td>
-                </tr>
+                
                 <tr>
                     <td>​<?= Yii::t('app', 'ລາ​ຄາ​ຂາຍ')?></td>
                     <td><?= number_format($model->pricesale, 2) ?> <?= Yii::t('app', '​ກີບ')?></td>
