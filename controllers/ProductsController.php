@@ -209,10 +209,10 @@ class ProductsController extends Controller {
         }
 
         if (isset($_GET['pricelak'])) {
-            \Yii::$app->session['payprice'] = (float)$_GET['pricelak'];
+            \Yii::$app->session['payprice'] = (float)str_replace(",", "", $_GET['pricelak']);
             $currency=Currency::find()->where(['id'=>1])->one(); /// KIP
 
-            $vl=(float)$_GET['pricelak'];
+            $vl=\Yii::$app->session['payprice'];
             $ra=$currency->rate;
             $str = $currency->code;
             eval("\$str = \"$str\";");
@@ -232,9 +232,9 @@ class ProductsController extends Controller {
         }
 
         if (isset($_GET['priceth'])) {
-            \Yii::$app->session['paypriceth'] = (float)$_GET['priceth'];
+            \Yii::$app->session['paypriceth'] = (float)str_replace(",", "", $_GET['priceth']);
             $currency=Currency::find()->where(['id'=>3])->one(); /// BATH
-            $vl=(float)$_GET['priceth'];
+            $vl=\Yii::$app->session['paypriceth'];
             $ra=$currency->rate;
             $str = $currency->code;
             eval("\$str = \"$str\";");
@@ -254,9 +254,9 @@ class ProductsController extends Controller {
         }
 
         if (isset($_GET['priceusd'])) {
-            \Yii::$app->session['paypriceusd'] = (float)$_GET['priceusd'];
+            \Yii::$app->session['paypriceusd'] = (float)str_replace(",", "", $_GET['priceusd']);
             $currency=Currency::find()->where(['id'=>2])->one(); /// BATH
-            $vl=(float)$_GET['priceusd'];
+            $vl=\Yii::$app->session['paypriceusd'];
             $ra=$currency->rate;
             $str = $currency->code;
             eval("\$str = \"$str\";");
@@ -933,10 +933,10 @@ class ProductsController extends Controller {
         return $this->redirect(['products/view', 'id' => $id]);
     }
 
-    public function actionDiscount() {
+    public function actionDiscount() { ///dd
         if (isset($_GET['dsc'])) {
-            \Yii::$app->session['discount'] = $_GET['dsc'];
-            return $this->renderAjax('discount', ['discount' => $_GET['dsc']]);
+            \Yii::$app->session['discount'] = (float)str_replace(",", "", $_GET['dsc']);
+            return $this->renderAjax('discount', ['discount' => \Yii::$app->session['discount']]);
         } else {
             return $this->renderAjax('discount');
         }

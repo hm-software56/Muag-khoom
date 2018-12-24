@@ -60,15 +60,35 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
         </tr>
         <tr>
             <td colspan="2" align="right">ລວມ​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ</td>
-            <td align="right">​<b><?= number_format(($total_prince + \Yii::$app->session['paychange']) - \Yii::$app->session['discount'], 2) ?></b></td>
+            <td align="right">​<b><?= number_format($total_prince- \Yii::$app->session['discount'], 2) ?></b></td>
         </tr>
-        <tr>
+        <!--<tr>
             <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຄ້າງ</td>
             <td align="right">​<b><?= number_format(\Yii::$app->session['paystill'], 2) ?></b></td>
-        </tr>
+        </tr>-->
         <tr>
             <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຖອນ</td>
-            <td align="right">​<b><?= number_format(\Yii::$app->session['paychange'], 2) ?></b></td>
+            <td align="right">​<b>
+            <?php
+                if (\Yii::$app->session['paychange']>0) {
+                    $return_pay=\Yii::$app->session['paychange']+(Yii::$app->session['currency']->round_exch);
+                }else{
+                    $return_pay=\Yii::$app->session['paychange'];
+                }
+                if(Yii::$app->session['currency']->id==1) /// 1 is id table currency Kip
+                {
+                    echo  number_format(round($return_pay,-3), 2) ;
+                }
+                if(Yii::$app->session['currency']->id==2) /// 1 is id table currency USD
+                {
+                    echo  number_format(round($return_pay,1), 2) ;
+                }
+                if(Yii::$app->session['currency']->id==3) /// 1 is id table currency Bath
+                {
+                    echo  number_format((int)round($return_pay,0), 2) ;
+                }
+                ?>
+                </b></td>
         </tr>
     </table>
     <div id="load" align='right'></div>

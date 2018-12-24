@@ -22,6 +22,6 @@ if (isset($discount)) {
                   document.getElementById("search").focus();
 
                 });
-            ', 'autofocus' => 'autofocus', 'placeholder' => 'ສ່ວນຫຼຸດ', 'id' => 'search', 'class' => 'form-control']);
+            ', 'autofocus' => 'autofocus', 'placeholder' => 'ສ່ວນຫຼຸດ', 'id' => 'search', 'class' => 'form-control money_format']);
 }
 ?>

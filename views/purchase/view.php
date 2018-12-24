@@ -69,9 +69,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tr id="list_pt<?=$key?>">
                     <td><?=$i?></td>
                     <td><?=$model_item->products->name ?></td>
-                    <td align="right"><?=$model_item->qautity?> </td>
+                    <td align="right"><?=$model_item->qautity+$model_item->qtt_saled?> </td>
                     <td align="right"><?=number_format($model_item->pricebuy,2)?> <?=$model->currency->name?></td>
-                    <td align="right"><?=number_format($model_item->qautity*$model_item->pricebuy,2)?> <?=$model->currency->name?></td>
+                    <td align="right"><?=number_format(($model_item->qautity+$model_item->qtt_saled)*$model_item->pricebuy,2)?> <?=$model->currency->name?></td>
                 </tr>
                 <?php
                         }
