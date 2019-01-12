@@ -21,7 +21,27 @@ AppAsset::register($this);
         <title><?= Html::encode($this->title) ?></title>
         <link rel="shortcut icon" href="<?=Yii::$app->urlManager->baseUrl?>/icon1.ico" />
         <?php $this->head() ?>
-
+		<style>
+		<?php
+		if(!empty(Yii::$app->session['mobile']))
+		{
+		?>
+		.main-header .logo {
+			height:75px !important;
+		}
+		.skin-blue .main-header .logo {
+		 padding-top:  25px!important;
+		}
+		.content {
+			margin-top: 125px !important;
+		}
+		.main-sidebar,.left-side {
+			padding-top: 125px;
+		}
+		<?php
+		}
+		?>
+		</style>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div id = "loader">
@@ -358,20 +378,38 @@ AppAsset::register($this);
         <script>
             <?php
             if (Yii::$app->controller->action->id == 'gbarcode') {
-                $barcodes = \app\models\Barcode::find()->where(['status'=>1])->orderBy('id DESC')->all();
+                if(!empty(Yii::$app->session['prdbc']))
+                {
+                    $products = \app\models\Products::find()->where(['id'=>Yii::$app->session['prdbc']])->all();
+                }else{
+                    $products = \app\models\Products::find()->all();
+                }
                 $i = 0;
-                foreach ($barcodes as $barcode) {
+                foreach ($products as $product) {
+                    $c=date('sdmY').random_int(11,99);
+                    $barcode=\app\models\Barcode::find()->where(['products_id'=>$product->id])->one();
+                    if(empty($barcode))
+                    {
+                        $barcode=new \app\models\Barcode();
+                        $barcode->barcode=$c;
+                        $barcode->status=1;
+                        $barcode->products_id=$product->id;
+                        $barcode->save();
+                    }
                     $i++;
-                    ?>
-                                JsBarcode("#barcode<?= $i ?>", "<?= $barcode->barcode ?>", {
-                                    format: "EAN13",
-                                    displayValue: true,
-                                    fontSize: 18,
-                                    width: 1.5,
-                                    height: 30,
-                                    lineColor: "#000",
-                                });
+                    for ($a=1; $a<=Yii::$app->session['nbbc'];$a++) {
+                        ?>
+                        JsBarcode("#barcode<?= $i.$a ?>", "<?=$barcode->barcode?>", {
+                            format: "EAN13",
+                            displayValue: true,
+                            fontSize: 18,
+                            width: 2,
+                            height: 70,
+                            lineColor: "#000",
+                            
+                        });
                     <?php
+                    }
                 }
             }
             ?>

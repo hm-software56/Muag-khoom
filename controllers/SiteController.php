@@ -59,6 +59,10 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
         // return $this->render('index');
+		if(isset($_GET['mobile']))
+		{
+			Yii::$app->session['mobile']=true;
+		}
         if (!empty(\Yii::$app->session['user']) && \Yii::$app->session['user']->user_type == "POS") {
             return $this->redirect(['products/sale']);
         } else {
@@ -76,6 +80,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionLogin() {
+		
         $atkey = \app\models\ShopProfile::find()->one();
         $key = $atkey->key_active;
         $key_acitvated = substr($key, 25, 2) . substr($key, 17, -8) . "-" . substr($key, 6, -19) . "-" . substr($key, 0, -25);
@@ -135,7 +140,12 @@ class SiteController extends Controller {
     public function actionLogout() {
         unset(\Yii::$app->session['user']);
         unset(\Yii::$app->session['date_login']);
-        return $this->goHome();
+		if(Yii::$app->session['mobile'])
+		{
+			return $this->redirect(['/site/index','mobile'=>Yii::$app->session['mobile']]);
+		}else{
+			return $this->goHome();
+		}
     }
 
     public function actionKey()

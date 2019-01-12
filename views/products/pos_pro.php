@@ -2,10 +2,11 @@
 
 use lo\widgets\SlimScroll;
 ?>
-<?=
-SlimScroll::widget([
+<?php
+echo SlimScroll::widget([
     'options' => [
         'height' => \Yii::$app->session['height_screen'] . 'px',
+	   
         // 'alwaysVisible' => true,
         // "distance" => '20px',
         "wheelStep" => 100,
@@ -48,4 +49,4 @@ foreach ($model as $model) {
     <?php
 }
 ?>
-<?= SlimScroll::end(); ?>
+<?php  echo SlimScroll::end(); ?>

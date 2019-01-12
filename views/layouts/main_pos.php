@@ -20,7 +20,21 @@ AppAsset::register($this);
         <title><?= Html::encode($this->title) ?></title>
         <link rel="shortcut icon" href="<?=Yii::$app->urlManager->baseUrl?>/icon1.ico" />
         <?php $this->head() ?>
-
+		<style>
+			<?php
+			if(!empty(Yii::$app->session['mobile']))
+			{
+			?>
+			.skin-blue .main-header .navbar {
+			   padding-top:  25px!important;
+			}
+			.content {
+				margin-top: 125px !important;
+			}
+			<?php
+			}
+			?>
+		</style>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
 	<div id = "loader">

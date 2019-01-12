@@ -244,3 +244,13 @@ a.desc:after {
 .main-sidebar, .left-side {
     position: fixed !important;
 }
+/*.skin-blue .main-header .navbar {
+   // top: 20px!important;
+   padding-top:  25px!important;
+}
+.main-header .logo {
+	height:75px !important;
+}
+.skin-blue .main-header .logo {
+ padding-top:  25px!important;
+}*/

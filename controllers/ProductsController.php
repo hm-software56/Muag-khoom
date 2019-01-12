@@ -16,7 +16,7 @@ use app\models\Currency;
 use app\models\PurchaseItem;
 use app\models\SaleHasPurchase;
 use app\models\LostProduct;
-
+use kartik\mpdf\Pdf;
 /**
  * ProductsController implements the CRUD actions for Products model.
  */
@@ -373,6 +373,7 @@ class ProductsController extends Controller {
     }
 
     public function actionSearch($searchtxt) {
+        $searchtxt=substr($searchtxt,0,-1);
         $model = Products::find()->joinWith('barcodes', true)->where('products.qautity>0 and barcode.barcode="'.$searchtxt.'" and barcode.status=1')->one();
         if (!empty($model)) {
             if (!empty(\Yii::$app->session['product'])) {
@@ -387,7 +388,7 @@ class ProductsController extends Controller {
                 foreach (\Yii::$app->session['product'] as $order_p=>$qautity) {
                     if($order_p==$model->id)
                     {
-                        if($qautity>$model->qautity)
+                        if($qautity>=$model->qautity)
                         {
                             $array[$order_p]=$qautity;
                             \Yii::$app->getSession()->setFlash('error', $order_p);
@@ -535,11 +536,15 @@ class ProductsController extends Controller {
     }
 
     public function actionSetbarcode($barcode, $pro_id) {
+        if (!isset($_GET['del']))
+        {
+        $barcode=substr($barcode, 0, -1);
+        }
         $model_check = \app\models\Barcode::find()->where(['barcode' => $barcode])->one();
         if (empty($model_check)) {
             $newbarcode = new \app\models\Barcode();
             $newbarcode->products_id = $pro_id;
-            $newbarcode->barcode = $barcode;
+            $newbarcode->barcode = $barcode; /// with generate barcode is com auto
             $newbarcode->save();
             \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ຖືກ​ເກັບ​ໄວ້​ໃນ​ລະ​ບົບ​ແລ້ວ'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
@@ -902,9 +907,52 @@ class ProductsController extends Controller {
     }
 
     public function actionGbarcode() {
+        if(isset($_POST['number']))
+        {
+            Yii::$app->session['prdbc']=$_POST['product_id'];
+            Yii::$app->session['nbbc']=$_POST['number'];
+        }
         return $this->render('gbarcode');
     }
 
+    public function actionBcodepdf()
+    {
+        //echo $_POST['text'];
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            // A4 paper format
+          //  'format' => [60, 30],//กำหนดขนาด
+            'marginLeft' => false,
+            'marginRight' => false,
+            'marginTop' => 10,
+            'marginBottom' => false,
+            'marginHeader' => false,
+            'marginFooter' => false,
+    
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $_POST['text'],
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@app/web/css/kv-mpdf-bootstrap.css',
+            // any css to be embedded if required
+            'cssInline' => 'body{font-size:11px;text-align:center;}',
+            // set mPDF properties on the fly
+            'options' => ['title' => 'Print Sticker', ],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader'=>false,
+                'SetFooter'=>false,
+            ]
+        ]);
+    
+        // return the pdf output as per the destination setting
+        return $pdf->render();
+    }
     public function actionSearchpd() {
         if (isset($_GET['searchtxt']) && !empty($_GET['searchtxt'])) {
             $model = Products::find()->where("name like '%" . $_GET['searchtxt'] . "%' and status=1")->all();
