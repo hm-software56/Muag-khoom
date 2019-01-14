@@ -20,7 +20,7 @@ $this->registerJs($script);
             <label><?=Yii::t('app','ສີນ​ຄ້າ')?></label>
             <?php
                 $products=Products::find()->where(['status'=>1])->all();
-                $product_arr[]='All';
+                $product_arr[]=Yii::t('app','ສີນ​ຄ້າ​ທັງ​ໝົດ');
                 foreach ($products as $product) {
                     $product_arr[$product->id]=$product->name;
                 }
@@ -49,7 +49,7 @@ $this->registerJs($script);
     <div class="col-md-2" align="right" style="padding-top:25px">
         <?php $form = ActiveForm::begin(['action'=>['products/bcodepdf']]); ?>
         <input id="hiddeninput" name="text" type="hidden"/>
-        <button class="btn btn-danger" type="submit" id="save"><span class="glyphicon glyphicon-print"></span> <?=Yii::t('app','ພີມ​ບາ​ໂຄດ')?></button>
+        <button class="btn btn-danger" type="submit" id="save"  formtarget="_blank"><span class="glyphicon glyphicon-print"></span> <?=Yii::t('app','ພີມ​ບາ​ໂຄດ')?></button>
         <?php ActiveForm::end(); ?>
     </div>
 </div>
@@ -58,21 +58,41 @@ $this->registerJs($script);
     <?php
     if(!empty(Yii::$app->session['prdbc']))
     {
-        $barcodes = \app\models\Products::find()->where(['id'=>Yii::$app->session['prdbc']])->all();
+        $products = \app\models\Products::find()->where(['id'=>Yii::$app->session['prdbc']])->all();
     }else{
-        $barcodes = \app\models\Products::find()->all();
+        $products = \app\models\Products::find()->all();
     }
     $i = 0;
-    foreach ($barcodes as $barcode) {
+    foreach ($products as $product) {
+        $c=date('sdmY').random_int(11,99);
+        $barcode=\app\models\Barcode::find()->where(['products_id'=>$product->id])->one();
+        if(empty($barcode))
+        {
+            $barcode=new \app\models\Barcode();
+            $barcode->barcode=$c;
+            $barcode->status=1;
+            $barcode->products_id=$product->id;
+            $barcode->save();
+        }
         $i++;
         for ($a=1; $a<=Yii::$app->session['nbbc'];$a++) {
             ?>
-            <div class="col-md-3" style="padding-bottom: 25px;width:25%; float: left;">
-                <strong><?=$barcode->name?></strong><br />
-                <img id="barcode<?= $i.$a ?>">
+            <div class="col-md-3" style="padding-bottom: 28px;width:25%; float: left;">
+                <strong><?=$product->name?></strong><br />
+                <svg class="barcode<?= $i.$a ?>"
+                jsbarcode-format="EAN13"
+                jsbarcode-height='30'
+                jsbarcode-width='2.0'
+                jsbarcode-value="<?=$barcode->barcode?>"
+                jsbarcode-textmargin="0"
+                jsbarcode-fontoptions="bold">
+                </svg>
                 <br />
-                <?=number_format($barcode->pricesale, 2)?> ​ກີບ
+                <span style="color:red;"><?=number_format($product->pricesale, 2)?> ​ກີບ</span>
             </div>
+            <script>
+                JsBarcode(".barcode<?= $i.$a ?>").init();
+            </script>
         <?php
         }
     }

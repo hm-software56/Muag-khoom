@@ -917,7 +917,12 @@ class ProductsController extends Controller {
 
     public function actionBcodepdf()
     {
-        //echo $_POST['text'];
+        ini_set("pcre.backtrack_limit", "15000000"); /// larg post size
+        ini_set('memory_limit', '-1');
+        ini_set('max_execution_time', 300); //300 seconds = 5 minutes
+        if (isset($_POST['text'])) {
+            Yii::$app->session['pdfbc']=$_POST['text'];
+        }
         $pdf = new Pdf([
             // set to use core fonts only
             'mode' => Pdf::MODE_UTF8,
@@ -935,7 +940,7 @@ class ProductsController extends Controller {
             // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
             // your html content input
-            'content' => $_POST['text'],
+            'content' => Yii::$app->session['pdfbc'],
             // format content from your own css file if needed or use the
             // enhanced bootstrap css built by Krajee for mPDF formatting
             'cssFile' => '@app/web/css/kv-mpdf-bootstrap.css',

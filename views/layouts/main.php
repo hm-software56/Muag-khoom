@@ -9,6 +9,7 @@ use yii\helpers\Html;
 use app\assets\AppAsset;
 use yii\bootstrap\ActiveForm;
 
+use yii\widgets\Breadcrumbs;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -293,6 +294,10 @@ AppAsset::register($this);
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper" style="background: #fff">
                 <section class="content" >
+                <?=Breadcrumbs::widget([
+            'homeLink' => ['label' =>Yii::t('app','ໜ້າຫຼັກ'),'url'=>['products/dashbord']],
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+])?>
                     <?= $content ?>
                 </section>
             </div>
@@ -386,35 +391,15 @@ AppAsset::register($this);
                 }
                 $i = 0;
                 foreach ($products as $product) {
-                    $c=date('sdmY').random_int(11,99);
-                    $barcode=\app\models\Barcode::find()->where(['products_id'=>$product->id])->one();
-                    if(empty($barcode))
-                    {
-                        $barcode=new \app\models\Barcode();
-                        $barcode->barcode=$c;
-                        $barcode->status=1;
-                        $barcode->products_id=$product->id;
-                        $barcode->save();
-                    }
                     $i++;
                     for ($a=1; $a<=Yii::$app->session['nbbc'];$a++) {
                         ?>
-                        JsBarcode("#barcode<?= $i.$a ?>", "<?=$barcode->barcode?>", {
-                            format: "EAN13",
-                            displayValue: true,
-                            fontSize: 18,
-                            width: 2,
-                            height: 70,
-                            lineColor: "#000",
-                            
-                        });
+                        JsBarcode(".barcode<?= $i.$a ?>").init();
                     <?php
                     }
                 }
             }
             ?>
-
-           
 
         </script>
         <?php

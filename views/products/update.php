@@ -6,13 +6,13 @@ use yii\helpers\Html;
 /* @var $model app\models\Products */
 
 $this->title = 'Update Products: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app','​ສີ​ນ​ຄ້າ'), 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = Yii::t('app','ແກ້​ໄຂ');
 ?>
 <div class="products-update">
 
-    <div class="line_bottom">ແກ້​ໄຂສີ້ນ​ຄ້າ</div>
+    <div class="line_bottom"><?=Yii::t('app','ແກ້​ໄຂສີ້ນ​ຄ້າ')?></div>
 
     <?=
     $this->render('_form', [

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Products */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' =>Yii::t('app','​ສີ​ນ​ຄ້າ'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -45,11 +45,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ?>
             <table class="table table-striped">
                 <tr>
-                    <td>ຊື່​ສີ້ນ​ຄ້າ</td>
+                    <td><?=Yii::t('app','ຊື່​ສີ້ນ​ຄ້າ')?></td>
                     <td>​<?= $model->name ?></td>
                 </tr>
                 <tr>
-                    <td>ຈຳ​ນວນ​ສີ້​ນ​ຄ້າ</td>
+                    <td><?=Yii::t('app','ຈຳ​ນວນ​ສີ້​ນ​ຄ້າ')?></td>
                     <td>
                         <div id="qt">
                             <?php

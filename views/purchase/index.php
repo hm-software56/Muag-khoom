@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\PurchaseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('models', 'Purchases');
+$this->title = Yii::t('models', 'ຈັດ​ຊື້');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="purchase-index">
@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
+            'summary'=>'',
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 'detail:ntext',

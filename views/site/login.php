@@ -76,7 +76,7 @@ if (Yii::$app->session->hasFlash('reg')) {
                 $key_acitvated=substr($key,25,2).substr($key,17,-8)."-".substr($key,6,-19)."-".substr($key,0,-25);
                 if(date('Y-m-d',strtotime(Yii::$app->params['alert_date']))>$key_acitvated)
                 {
-                    echo "<span style='color:red'>".Yii::t('app','​ໝົດອາ​ຍຸ​ການ​ນຳ​ໃຊ້ວັນ​ທີ: ').$key_acitvated."</span>";
+                    echo "<span style='color:red'>".Yii::t('app','​ໝົດອາ​ຍຸ​ນຳ​ໃຊ້ວັນ​ທີ: ').$key_acitvated."</span>";
                 }
                 ?>
                 </div>

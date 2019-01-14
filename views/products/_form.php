@@ -41,7 +41,7 @@ use kartik\select2\Select2;
     }
     ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span>'. Yii::t('app', 'ບັນ​ທືກ') : '<span class="fa fa-save"></span> '. Yii::t('app', 'ບັນ​ທືກ'), ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span> '. Yii::t('app', 'ບັນ​ທືກ') : '<span class="fa fa-save"></span> '. Yii::t('app', 'ບັນ​ທືກ'), ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

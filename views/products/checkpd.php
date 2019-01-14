@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\PaymentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title=Yii::t("app",'ຈັດ​ການ​ສີນ​ຄ້າ');
+$this->title=Yii::t("app",'ກວດ​ສີ​ນ​ຄ້າ');
 $this->params['breadcrumbs'][] = $this->title;
 if (Yii::$app->session->hasFlash('su')) {
     echo Alert::widget([
