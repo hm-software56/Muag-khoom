@@ -74,9 +74,10 @@ use yii\helpers\Html;
                 <?php endif; ?>
 
                 <?php
+                
+                    $tatol=0;
                     if (!empty(Yii::$app->session['model_items'])) {
                         $i=0;
-                        $tatol=0;
                         $count=count(Yii::$app->session['model_items']);
                         foreach (Yii::$app->session['model_items'] as $key=>$model) {
                             $i++;
