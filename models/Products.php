@@ -51,7 +51,7 @@ class Products extends BaseProducts {
         return parent::beforeSave($insert);
     }
 
-    public function exchage($id,$pricebuy)
+    public static function exchage($id,$pricebuy)
     {
         $currency=Currency::find()->where(['id'=>$id])->one();
         $vl=$pricebuy;

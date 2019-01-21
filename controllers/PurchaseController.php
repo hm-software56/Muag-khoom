@@ -31,7 +31,17 @@ class PurchaseController extends Controller
             ],
         ];
     }
-
+    public function beforeAction($action) {
+        if (empty(\Yii::$app->session['user'])) {
+            if (Yii::$app->controller->action->id != "login") {
+                $this->redirect(['site/login']);
+            }
+        } elseif (\Yii::$app->session['date_login'] < date('Ymd')) {
+            unset(\Yii::$app->session['user']);
+            $this->redirect(['site/login']);
+        } 
+        return parent::beforeAction($action);
+    }
     /**
      * Lists all Purchase models.
      * @return mixed
