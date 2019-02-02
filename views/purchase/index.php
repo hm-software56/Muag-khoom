@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'date',
                     'label'=>Yii::t('models','ວັນ​ທີ່'),
                     'format' => 'html',
-                    'contentOptions' => ['style' => 'width: 250px;'],
+                    'contentOptions' => ['style' => 'width: 250px;white-space:nowrap;'],
                     'value' => function ($data) {
                         return date('Y-m-d',strtotime($data->date));
                     },
@@ -107,7 +107,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         );
                     },
                         ],
-                        'contentOptions' => ['align' => 'right', 'style' => 'min-width: 75px'],
+                        'contentOptions' => ['align' => 'right', 'style' => 'min-width: 75px;white-space:nowrap;'],
                     ],
                 ],
             ]); ?>

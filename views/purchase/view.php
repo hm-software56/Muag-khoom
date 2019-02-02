@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="contacts">
+        <div class="contacts table-responsive">
             <label><?=Yii::t('app','ລາຍ​ການສີ້ນ​ຄ້າ')?></label>
             <table class="table tab-content">
                 <tr style="background:#eff5f5">

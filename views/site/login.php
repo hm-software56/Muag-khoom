@@ -6,8 +6,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use kartik\alert\Alert;
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->title = 'Login';
+//$this->params['breadcrumbs'][] = $this->title;
 if (Yii::$app->session->hasFlash('su')) {
     echo Alert::widget([
         'type' => Alert::TYPE_DANGER,
@@ -81,9 +81,10 @@ if (Yii::$app->session->hasFlash('reg')) {
                 ?>
                 </div>
                 <div class="col-xs-4" style="padding-right: 0px;" align="right">
-                    <button type="submit" class="btn btn-primary btn-sm" onclick="onclick_loadimg()"><span class="fa fa-lock" ></span> <?= Yii::t('app','ເຂົ້າ​ລະ​ບົບ')?></button>
+                    <button type="submit" class="btn btn-primary" onclick="onclick_loadimg()"><span class="fa fa-lock" ></span> <?= Yii::t('app','ເຂົ້າ​ລະ​ບົບ')?></button>
                 </div>
             </div>
+            <div class="text-red" >Login: <b>user</b> || Password:<b>12345</b></div>
         </div>
     </div>
     <?php

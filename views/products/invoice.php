@@ -1,8 +1,10 @@
 <?php
 $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
+$multi_currency_pay = app\models\PayMultiCurency::find()->where(['invoice_id' => $invoice->id])->one();
 ?>
-<div class="table-responsive" style="display: none" id="print">
-    <table class="table">
+<div  style="display: none">
+<div class="table-responsive" id="print" >
+    <table class="table" style="font-size:9px !important;">
         <tr>
             <td>
                 <b><?= $profile->shop_name ?></b><br/>
@@ -17,13 +19,13 @@ $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
             </td>
         </tr>
     </table>
-    <table class="table">
+    <table class="table" style="font-size:9px !important;">
         <tr>
             <td><?= Yii::t('app', 'ຊື່​ລູ​ກ​ຄ້າ')?>:................</td>
             <td align="right"><?= Yii::t('app', 'ເບີ​ໂທ')?>:...............</td>
             <td align="right"><?=Yii::t('app', 'ວັ​ນ​ທີ')?>: <?= $invoice->date ?></td>
         </tr>
-        <table class="table table-striped" >
+        <table class="table table-striped" style="font-size:9px !important;" >
             <tr>
                 <th><?= Yii::t('app', 'ລາຍ​ການ')?></th>
                 <th>ຈຳ​ນວນ</th>
@@ -59,19 +61,24 @@ $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
             </tr>
             <tr>
                 <td colspan="2" align="right"><?= Yii::t('app', 'ຈຳ​ນວນ​ເງ​ີນສ່ວນຫຼຸດ')?></td>
-                <td align="right">​<b><?= number_format(\Yii::$app->session['discount'], 2) ?></b></td>
+                <td align="right">​<b><?= number_format(\Yii::$app->session['discount'], 2) ?> <?= Yii::t('app', 'ກີບ')?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right"><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')?></td>
-                <td align="right">​<b><?= number_format(($total_prince + \Yii::$app->session['paychange']) - \Yii::$app->session['discount'], 2) ?></b></td>
+                <td colspan="2" align="right"><?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')."(".Yii::t('app', 'LAK').")"?></td>
+                <td align="right">​<b><?= number_format($multi_currency_pay->amount_kip, 2) ?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right"><?= Yii::t('app', 'ຈ​ຳ​ນວນ​​ເງີນຄ້າງ')?></td>
-                <td align="right">​<b><?= number_format(\Yii::$app->session['paystill'], 2) ?> <?= Yii::t('app', 'ກີບ')?></b></td>
+                <td colspan="2" align="right"><?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')."(".Yii::t('app', 'TH').")"?></td>
+                <td align="right">​<b><?= number_format($multi_currency_pay->amount_th, 2) ?></b></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')."(".Yii::t('app', 'USD').")"?></td>
+                <td align="right">​<b><?= number_format($multi_currency_pay->amount_usd, 2) ?></b></td>
             </tr>
             <tr>
                 <td colspan="2" align="right"><?= Yii::t('app', 'ຈ​ຳ​ນວນ​​ເງີນຖອນ')?></td>
                 <td align="right">​<b><?= number_format(\Yii::$app->session['paychange'], 2) ?> <?= Yii::t('app','ກີບ')?></b></td>
             </tr>
         </table>
+</div>
 </div>

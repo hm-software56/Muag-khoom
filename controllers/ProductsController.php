@@ -373,6 +373,8 @@ class ProductsController extends Controller {
     }
 
     public function actionSearch($searchtxt) {
+        
+        $order_p=0;
         $searchtxt=substr($searchtxt,0,-1);
         $model = Products::find()->joinWith('barcodes', true)->where('products.qautity>0 and barcode.barcode="'.$searchtxt.'" and barcode.status=1')->one();
         if (!empty($model)) {
@@ -1008,6 +1010,11 @@ class ProductsController extends Controller {
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionTest()
+    {
+        return $this->render('invoice', ['invoice' => $invoice]);
     }
     
 }

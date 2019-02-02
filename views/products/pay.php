@@ -69,8 +69,8 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
                 <?php
                 /// 1. ----have 3 step open  ---- if want to put price disable this line and change onfocus to onkeyup
                 if (empty(\Yii::$app->session['payprice'])) {
-                    \Yii::$app->session['payprice']= Yii::$app->session['totalprice'];
-                    Yii::$app->session['paystill']=0;
+                  //  \Yii::$app->session['payprice']= Yii::$app->session['totalprice'];
+                   // Yii::$app->session['paystill']=0;
                 }
                 echo \yii\helpers\Html::textInput('pice_lak', number_format(\Yii::$app->session['payprice'],2), ['autocomplete'=>"off" , 'onfocus' => 'calc()1', 'id' => 'textpice', 'onmouseout' => '
                 $.post( "index.php?r=products/pay&pricelak="+$(this).val(), function( data ) {

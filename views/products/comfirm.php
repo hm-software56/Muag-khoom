@@ -3,6 +3,7 @@
 
 use yii\helpers\Html;
 use yii\web\UrlManager;
+$multi_currency_pay = app\models\PayMultiCurency::find()->where(['invoice_id' => $invoice->id])->one();
 ?>
 <?= $this->render('invoice', ['invoice' => $invoice]);?>
 <?php
@@ -59,13 +60,17 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
             <td align="right">​<b><?= number_format(\Yii::$app->session['discount'], 2) ?></b></td>
         </tr>
         <tr>
-            <td colspan="2" align="right">ລວມ​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ</td>
-            <td align="right">​<b><?= number_format($total_prince- \Yii::$app->session['discount'], 2) ?></b></td>
-        </tr>
-        <!--<tr>
-            <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຄ້າງ</td>
-            <td align="right">​<b><?= number_format(\Yii::$app->session['paystill'], 2) ?></b></td>
-        </tr>-->
+                <td colspan="2" align="right"><?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')."(".Yii::t('app', 'LAK').")"?></td>
+                <td align="right">​<b><?= number_format($multi_currency_pay->amount_kip, 2) ?></b></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')."(".Yii::t('app', 'TH').")"?></td>
+                <td align="right">​<b><?= number_format($multi_currency_pay->amount_th, 2) ?></b></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ')."(".Yii::t('app', 'USD').")"?></td>
+                <td align="right">​<b><?= number_format($multi_currency_pay->amount_usd, 2) ?></b></td>
+            </tr>
         <tr>
             <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຖອນ</td>
             <td align="right">​<b>
@@ -107,12 +112,12 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
             ],
             'options' => [
                 'debug' => false,
-                'importCSS' => true,
-                'importStyle' => false,
-                'loadCSS' => "path/to/my.css",
-                'pageTitle' => "",
-                'removeInline' => true,
-                'printDelay' => 333,
+                //'importCSS' => true,
+               // 'importStyle' => false,
+               // 'loadCSS' => "path/to/my.css",
+               // 'pageTitle' => "",
+              //  'removeInline' => true,
+              //  'printDelay' => 333,
                 'header' => null,
                 'formValues' => true,
             ]

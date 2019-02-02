@@ -39,7 +39,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format' => 'html',
                     'contentOptions' => ['style' => 'width: 250px;'],
                     'value' => function ($data) {
+                        if(!empty($data->category_id))
+                        {
                         return $data->category->name;
+                        }else{
+                            return null;
+                        }
                     },
                 ],
                 //  'date',

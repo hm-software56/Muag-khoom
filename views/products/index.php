@@ -59,7 +59,7 @@ if (Yii::$app->session->hasFlash('su')) {
                     //'filter' => false,
                     'attribute' => 'name',
                     'format' => 'html',
-                    'contentOptions' => ['style' => 'width: 650px;'],
+                    'contentOptions' => ['style' => 'width: 650px;white-space:nowrap;'],
                     'value' => function ($data) {
                 return $data->name;
             },
@@ -89,7 +89,7 @@ if (Yii::$app->session->hasFlash('su')) {
                     'filter' => false,
                     'attribute' => 'pricesale',
                     'format' => 'html',
-                    'contentOptions' => ['style' => 'min-width: 50px;'],
+                    'contentOptions' => ['style' => 'white-space:nowrap;'],
                     'value' => function ($data) {
                 return number_format($data->pricesale, 2)." ".Yii::$app->session['currency']->name;
             },
@@ -141,7 +141,7 @@ if (Yii::$app->session->hasFlash('su')) {
                             );
                         },
                             ],
-                            'contentOptions' => ['align' => 'right', 'style' => 'min-width: 75px'],
+                            'contentOptions' => ['align' => 'right', 'style' => 'white-space:nowrap;'],
                         ],
                     ],
                 ]);

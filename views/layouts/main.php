@@ -124,10 +124,10 @@ AppAsset::register($this);
                                         <!-- Menu Footer-->
                                         <li class="user-footer bg-blue">
                                             <div class="pull-left">
-                                                <a  href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user/update&prof=true&id=<?= Yii::$app->session['user']->id ?>" class="btn bg-green btn-sm"><span class="fa fa-cogs"></span></a>
+                                                <a  onclick="onclick_loadimg()" href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user/update&prof=true&id=<?= Yii::$app->session['user']->id ?>" class="btn bg-green btn-sm"><span class="fa fa-cogs"></span></a>
                                             </div>
                                             <div class="pull-right">
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=site/logout" class="btn bg-red btn-sm"><span class="fa fa-power-off"></span></a>
+                                                <a onclick="onclick_loadimg()" href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=site/logout" class="btn bg-red btn-sm"><span class="fa fa-power-off"></span></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -171,17 +171,17 @@ AppAsset::register($this);
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products" onclick="onclick_loadimg()" >
                                                 <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ສີນ​ຄ້າ')?></span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=purchase">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=purchase" onclick="onclick_loadimg()">
                                                 <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ຈັດ​ຊື້ສີນ​ຄ້າ')?></span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/checkpd">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/checkpd" onclick="onclick_loadimg()">
                                                 <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', '​ກວດ​ເບີ່ງສີນ​ຄ້າ')?></span>
                                             </a>
                                         </li>
@@ -189,7 +189,7 @@ AppAsset::register($this);
                                 </li>
                                 
                                 <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale">
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale" onclick="onclick_loadimg()" >
                                         <i class="fa fa-shopping-cart "></i> <span><?= Yii::t('app', '​ຂາຍ​ສີ້ນ​ຄ້າ')?></span>
                                     </a>
                                 </li>
@@ -199,19 +199,19 @@ AppAsset::register($this);
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product" onclick="onclick_loadimg()">
                                                 <i class="fa fa-bar-chart"></i><?= Yii::t('app', '​ສີ້ນ​ຄ້າທີ່​ຍັງ​ເຫຼືອ')?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish" onclick="onclick_loadimg()">
                                                 <i class="fa fa-bar-chart"></i>​<?= Yii::t('app', 'ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ')?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale" onclick="onclick_loadimg()">
                                                 <i class="fa fa-bar-chart"></i><?= Yii::t('app', '​ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ')?></a>
                                         </li>
                                         <!--<li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repsaleornot" onclick="onclick_loadimg()">
                                                 <i class="fa fa-ra"></i>ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ ແລະ ຍັງ​ເຫຼືອ</a>
                                         </li> -->
 
@@ -226,27 +226,27 @@ AppAsset::register($this);
                                         </a>
                                         <ul class="treeview-menu">
                                             <li>
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index">
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index" onclick="onclick_loadimg()">
                                                     <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', 'ປະ​ເພດ​ສີນ​ຄ້າ')?></span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=currency/index">
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=currency/index" onclick="onclick_loadimg()">
                                                     <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', 'ສະ​ກຸນ​ເງີນ')?></span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/gbarcode">
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/gbarcode" onclick="onclick_loadimg()">
                                                     <i class="fa fa-barcode"></i> <span><?= Yii::t('app', 'ລະ​ຫັດ​ບາ​ໂຄດ')?></span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=shop-profile/update&id=1">
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=shop-profile/update&id=1" onclick="onclick_loadimg()">
                                                     <i class="fa fa-user"></i> <span><?= Yii::t('app', 'ຂໍ້​ມູນ​ຮ້ານ')?></span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user">
+                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user" onclick="onclick_loadimg()">
                                                     <i class="fa fa-user"></i> <span><?= Yii::t('app', 'ຜ​ູ້​ໃຊ໊ລ​ະ​ບົບ')?></span>
                                                 </a>
                                             </li>
@@ -267,15 +267,15 @@ AppAsset::register($this);
                                     </a>
                                     <ul class="treeview-menu">
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/product" onclick="onclick_loadimg()">
                                                 <i class="fa fa-bar-chart"></i>​<?= Yii::t('app', 'ສີ້ນ​ຄ້າ​ຍັງ​ເຫຼືອ')?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish" onclick="onclick_loadimg()">
                                                 <i class="fa fa-bar-chart"></i>​<?= Yii::t('app', 'ສີ້ນ​ຄ້າທີ່​ໝົດ​ແລ້ວ')?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale">
+                                            <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/repaortsale" onclick="onclick_loadimg()">
                                                 <i class="fa fa-bar-chart"></i><?= Yii::t('app', 'ສີ້ນ​ຄ້າ​ຂາຍ​ແລ້ວ')?></a>
                                         </li>
 
@@ -356,7 +356,10 @@ AppAsset::register($this);
                         </div>
                     </div>
                     </div>
-                    ໂທ: 020 55045770
+                    <div class="row">
+                    <div class="col-md-6">ໂທ: +(856 21) 216066 </div>
+                    <div class="col-md-2"> ອິ​ເມວ: web@cyberia.la</div>
+                    </div>
                 </footer>
                 <?php
             }

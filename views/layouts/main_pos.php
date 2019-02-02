@@ -49,7 +49,7 @@ AppAsset::register($this);
                 $profle=\app\models\ShopProfile::find()->one();
                 if (!empty(Yii::$app->session['user'])) {
                     ?>
-                    <a class="logo hidden-xs" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
+                    <a onclick="onclick_loadimg()" class="logo hidden-xs" href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=products/dashbord">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <span class="logo-mini"><?=$profle->shop_name?></span>
                         <!-- logo for regular state and mobile devices -->
@@ -117,7 +117,7 @@ AppAsset::register($this);
                                 } else {
                                     ?>
                                     <li class="dropdown user user-menu">
-                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord">
+                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/dashbord" onclick="onclick_loadimg()">
                                             <span class="glyphicon glyphicon-home"></span><?= Yii::t('app', 'ໜ້າຫຼັກ')?>
                                         </a>
                                     </li>
@@ -143,10 +143,10 @@ AppAsset::register($this);
                                         <!-- Menu Footer-->
                                         <li class="user-footer bg-blue">
                                             <div class="pull-left">
-                                                <a  href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user/update&prof=true&id=<?= Yii::$app->session['user']->id ?>" class="btn bg-green btn-sm"><span class="fa fa-cogs"></span></a>
+                                                <a onclick="onclick_loadimg()" href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=user/update&prof=true&id=<?= Yii::$app->session['user']->id ?>" class="btn bg-green btn-sm"><span class="fa fa-cogs"></span></a>
                                             </div>
                                             <div class="pull-right">
-                                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=site/logout" class="btn bg-red btn-sm"><span class="fa fa-power-off"></span></a>
+                                                <a onclick="onclick_loadimg()" href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=site/logout" class="btn bg-red btn-sm"><span class="fa fa-power-off"></span></a>
                                             </div>
                                         </li>
                                     </ul>
