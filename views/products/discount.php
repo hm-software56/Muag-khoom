@@ -1,5 +1,4 @@
 <?php
-
 if (isset($discount)) {
     echo yii\helpers\Html::a("<b>" . number_format(\Yii::$app->session['discount'], 2) . "</b>", '#', [
         'onclick' => "
