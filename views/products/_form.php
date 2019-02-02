@@ -8,7 +8,7 @@ use kartik\select2\Select2;
 /* @var $form yii\widgets\ActiveForm */
 
 ?>
-<br/>
+<br />
 <div class="products-form">
     <?php $form = ActiveForm::begin(); ?>
     <?php // $form->field($model, 'category_id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Category::find()->all(), 'id', 'name'), ['class' => 'form-control', 'prompt' => '']) ?>
@@ -26,7 +26,7 @@ use kartik\select2\Select2;
     ?>
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d')])->label(FALSE) ?>
-    
+
     <?= $form->field($model, 'pricesale')->textInput(['data-a-sign' => Yii::$app->session['currency']->name, 'data-a-dec' => ".", 'data-a-sep' => ",", 'id' => "money"]) ?>
 
 
@@ -34,10 +34,10 @@ use kartik\select2\Select2;
     <?php
     if (!empty($model->image)) {
         ?>
-        <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-responsive" />
+    <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="img-responsive" />
 
-        <br/>
-        <?php
+    <br />
+    <?php
     }
     ?>
     <div class="form-group">

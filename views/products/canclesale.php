@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap\Modal;
 ?>
-<div class="row" >
+<div class="row">
     <div class="col-md-12 " id="output">
         <div class="line_bottom">
             <div class="row">
@@ -64,22 +64,25 @@ use yii\bootstrap\Modal;
                         $i++;
                             $total+= $model->price;
                             ?>
-                            <tr>
-                                <?php
+                    <tr>
+                        <?php
                                 if (!in_array($invoice->id, $invoice_id)) {
                                     ?>
-                                    <td rowspan="<?= count($models) ?>">
-                                        <?= $invoice->code ?>
+                        <td rowspan="<?= count($models) ?>">
+                            <?= $invoice->code ?>
 
-                                    </td>
-                                    <?php
+                        </td>
+                        <?php
                                 }
                                 ?>
-                                <td><a title="<?= $model->products->name ?>" rel="popover" data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->products->image ?>"><img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->products->image ?>" class="img-rounded img-thumbnail img-responsive" width="50"/></a></td>
-                                <td><?= $model->products->name ?></td>
-                                <td>
-                                    <div id="qt<?=$i?>">
-                                    <?php
+                        <td><a title="<?= $model->products->name ?>" rel="popover"
+                                data-img="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->products->image ?>"><img
+                                    src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->products->image ?>"
+                                    class="img-rounded img-thumbnail img-responsive" width="50" /></a></td>
+                        <td><?= $model->products->name ?></td>
+                        <td>
+                            <div id="qt<?=$i?>">
+                                <?php
                                     echo yii\helpers\Html::a($model->qautity, '#', [
                                         'onclick' => "
                                             $.ajax({
@@ -94,22 +97,22 @@ use yii\bootstrap\Modal;
                                         'class' => "btn btn-sm bg-link"
                                     ]);
                                     ?>
-                                </div>   
-                                </td>
-                                <td><?=empty($model->qautity)?"0.00":number_format($model->price / $model->qautity, 2) ?></td>
-                                <td><?= number_format($model->price, 2) ?></td>
-                                <?php
+                            </div>
+                        </td>
+                        <td><?=empty($model->qautity)?"0.00":number_format($model->price / $model->qautity, 2) ?></td>
+                        <td><?= number_format($model->price, 2) ?></td>
+                        <?php
                                 if (!in_array($invoice->id, $invoice_id)) {
                                     ?>
-                                    <td rowspan="<?= count($models) ?>">
-                                        <?php
+                        <td rowspan="<?= count($models) ?>">
+                            <?php
                                         $discount = \app\models\Discount::find()->where(['invoice_id' => $invoice->id])->one();
                                         if (!empty($discount)) {
                                             $total_discount+=$discount->discount;
                                             //echo number_format($discount->discount, 2);
                                         ?>
-                                        <div id="dc<?= $discount->id ?>">
-                                            <?php
+                            <div id="dc<?= $discount->id ?>">
+                                <?php
                                             echo yii\helpers\Html::a(number_format($discount->discount, 2), '#', [
                                                 'onclick' => "
                                                     $.ajax({
@@ -123,24 +126,24 @@ use yii\bootstrap\Modal;
                                                 'class' => "btn btn-sm bg-link"
                                             ]);
                                             ?>
-                                        <?php
+                                <?php
                                         }
                                         ?>
-                                    </td>
-                                    <?php
+                        </td>
+                        <?php
                                 }
                                 ?>
-                                <?php
+                        <?php
                                 if (!in_array($invoice->id, $invoice_id)) {
                                     ?>
-                                    <td rowspan="<?= count($models) ?>">
-                                        <?= $model->date ?>
-                                    </td>
-                                    <?php
+                        <td rowspan="<?= count($models) ?>">
+                            <?= $model->date ?>
+                        </td>
+                        <?php
                                 }
                                 ?>
-                            </tr>
-                            <?php
+                    </tr>
+                    <?php
                             $invoice_id[] = $invoice->id;
                         }
                     }
@@ -150,7 +153,7 @@ use yii\bootstrap\Modal;
                         <td class="bg-blue"><b><?= number_format($total, 2) ?></b></td>
                         <td colspan="2" class="bg-yellow"><b><?= number_format($total_discount, 2) ?></b></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td colspan="5" align="right">​<b><?= Yii::t('app', 'ລວມ​ຈຳ​ນວນ​ເງີນ​ທັງ​ໝົດ')?></b></td>
                         <td colspan="3" class="bg-green"><b><?= number_format($total - $total_discount, 2) ?></b></td>
                     </tr>
@@ -162,13 +165,13 @@ use yii\bootstrap\Modal;
 <script src="<?= Yii::$app->urlManager->baseUrl ?>/js/jquery1.8.min.js"></script>
 <script src="<?= Yii::$app->urlManager->baseUrl ?>/js/bootstrap2.2.1.min.js"></script>
 <script>
-    // Add custom JS here
-    $('   a[rel = popover]').popover({
-        html: true,
-        trigger: 'hover',
-        placement: 'right',
-        content: function () {
-            return '<img src = "' + $(this).data('img') + '" width = "150" />';
-        }
-    });
+// Add custom JS here
+$('   a[rel = popover]').popover({
+    html: true,
+    trigger: 'hover',
+    placement: 'right',
+    content: function() {
+        return '<img src = "' + $(this).data('img') + '" width = "150" />';
+    }
+});
 </script>

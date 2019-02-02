@@ -15,11 +15,12 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-line-chart"></i></span>
-            <div class="info-box-content"  style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
+            <span class="info-box-icon bg-red"><i class="fa fa-line-chart"></i></span>
+            <div class="info-box-content"
+                style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍມື້ນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_day-$sum_discount_day,2)?><small></small></span>
-                
+
                 <?php
                 if(Yii::$app->session['user']->user_type != "POS")
                 {
@@ -28,8 +29,10 @@
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
                 <span class="progress-description">
-                    <span style="color:red"><?= number_format((int)$sum_day-(int)$sumprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
-					<span style="color:green"><?= number_format((int)$sumprofit_price_day - $sum_discount_day, 2) ?> ກ​ລ</span>
+                    <span style="color:red"><?= number_format((int)$sum_day-(int)$sumprofit_price_day, 2) ?>
+                        ຕ​ທ</span><br />
+                    <span style="color:green"><?= number_format((int)$sumprofit_price_day - $sum_discount_day, 2) ?>
+                        ກ​ລ</span>
                 </span>
                 <?php
                 }
@@ -52,10 +55,11 @@
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
             <span class="info-box-icon bg-green-active"><i class="fa fa-pie-chart"></i></span>
-            <div class="info-box-content" style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
+            <div class="info-box-content"
+                style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍທິດນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_w-$sum_discount_w,2)?><small></small></span>
-                
+
                 <?php
                 if (Yii::$app->session['user']->user_type != "POS") {
                     ?>
@@ -63,8 +67,10 @@
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
                 <span class="progress-description">
-					<span style="color:red"><?= number_format((int)$sum_w-(int)$wprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
-					<span style="color:green"><?= number_format((int)$wprofit_price_day - $sum_discount_w, 2) ?> ກ​ລ</span>
+                    <span style="color:red"><?= number_format((int)$sum_w-(int)$wprofit_price_day, 2) ?>
+                        ຕ​ທ</span><br />
+                    <span style="color:green"><?= number_format((int)$wprofit_price_day - $sum_discount_w, 2) ?>
+                        ກ​ລ</span>
                 </span>
                 <?php
                 }
@@ -87,20 +93,23 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-light-blue-active"><i class="fa fa-area-chart"></i></span>
-            <div class="info-box-content" style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
+            <span class="info-box-icon bg-light-blue-active"><i class="fa fa-area-chart"></i></span>
+            <div class="info-box-content"
+                style="<?= (Yii::$app->session['user']->user_type == "POS") ? 'padding-top:20px;' : '' ?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍເດືອນນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_m-$sum_discount_m,2)?><small></small></span>
-                
+
                 <?php
                 if (Yii::$app->session['user']->user_type != "POS") {
                     ?>
                 <div class="progress">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
-				<span class="progress-description">
-					<span style="color:red"><?= number_format((int)$sum_m-(int)$mprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
-					<span style="color:green"><?= number_format((int)$mprofit_price_day - $sum_discount_m, 2) ?> ກ​ລ</span>
+                <span class="progress-description">
+                    <span style="color:red"><?= number_format((int)$sum_m-(int)$mprofit_price_day, 2) ?>
+                        ຕ​ທ</span><br />
+                    <span style="color:green"><?= number_format((int)$mprofit_price_day - $sum_discount_m, 2) ?>
+                        ກ​ລ</span>
                 </span>
                 <?php
                 }
@@ -122,11 +131,12 @@
     ?>
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="fa fa-bar-chart"></i></span>
-            <div class="info-box-content" style="<?=(Yii::$app->session['user']->user_type == "POS")?'padding-top:20px;':''?>">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-bar-chart"></i></span>
+            <div class="info-box-content"
+                style="<?=(Yii::$app->session['user']->user_type == "POS")?'padding-top:20px;':''?>">
                 <span class="info-box-text"><b><?=Yii::t('app','​​​ຍອດ​ຂາຍປີນີ້')?></b></span>
                 <span class="info-box-text"><?=number_format((int)$sum_y-$sum_discount_y,2)?><small></small></span>
-                
+
                 <?php
                 if (Yii::$app->session['user']->user_type != "POS") {
                     ?>
@@ -134,8 +144,10 @@
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
                 <span class="progress-description">
-					<span style="color:red"><?= number_format((int)$sum_y-(int)$yprofit_price_day, 2) ?> ຕ​ທ</span><br/> 
-					<span style="color:green"><?= number_format((int)$yprofit_price_day - $sum_discount_y, 2) ?> ກ​ລ</span>
+                    <span style="color:red"><?= number_format((int)$sum_y-(int)$yprofit_price_day, 2) ?>
+                        ຕ​ທ</span><br />
+                    <span style="color:green"><?= number_format((int)$yprofit_price_day - $sum_discount_y, 2) ?>
+                        ກ​ລ</span>
                 </span>
                 <?php
                 }
@@ -148,20 +160,21 @@
 <div class="row">
     <div class="col-md-6">
         <div class="box" style="border-top: 3px solid #c5ba03 !important;">
-        <div class="box-header with-border" style="background:#c5ba03; color:#fff">
-            <h3 class="box-title"><?=Yii::t('app','​ເບີງ​​ຍອດ​ຂາຍຍ້ອນຫຼັງ 5 ມື້')?></h3>
+            <div class="box-header with-border" style="background:#c5ba03; color:#fff">
+                <h3 class="box-title"><?=Yii::t('app','​ເບີງ​​ຍອດ​ຂາຍຍ້ອນຫຼັງ 5 ມື້')?></h3>
 
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                            class="fa fa-times"></i></button>
+                </div>
             </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <div class="row">
-            <div class="col-md-12">
-                <?php
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php
                     $d= date("Y-m-d", strtotime('this day')); 
                     $d1= date("Y-m-d", strtotime('-1 day')); 
                     $d2= date("Y-m-d", strtotime('-2 day')); 
@@ -210,7 +223,7 @@
                     
                     $sum=number_format((int)$rd + (int)$rd1 + (int)$rd2 + (int)$rd3 + (int)$rd4,2);
                 ?>
-                <?php echo \yii2mod\c3\chart\Chart::widget([
+                        <?php echo \yii2mod\c3\chart\Chart::widget([
                     'options' => [
                             'id' => 'd_chart'
                     ],
@@ -243,28 +256,29 @@
                         ]
                     ]
                 ]); ?>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="box" style="border-top: 3px solid #0f7014 !important;">
-        <div class="box-header with-border" style="background:#0f7014; color:#fff">
-            <h3 class="box-title"><?=Yii::t('app','ການ​ເບີງ​ຍ້ອນຫຼັງ​ຍອດ​ຂາຍ 4 ອາ​ທິດ')?></h3>
+            <div class="box-header with-border" style="background:#0f7014; color:#fff">
+                <h3 class="box-title"><?=Yii::t('app','ການ​ເບີງ​ຍ້ອນຫຼັງ​ຍອດ​ຂາຍ 4 ອາ​ທິດ')?></h3>
 
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                            class="fa fa-times"></i></button>
+                </div>
             </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <div class="row">
-            <div class="col-md-12">
-                <?php
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php
                     $w_first= date("Y-m-d", strtotime('monday this week '));  
                     $w_last=date("Y-m-d", strtotime('sunday this week '));
 
@@ -311,7 +325,7 @@
                     
                     $sum=number_format((int)$w + (int)$w1 + (int)$w2 + (int)$w3,2);
                 ?>
-                <?php echo \yii2mod\c3\chart\Chart::widget([
+                        <?php echo \yii2mod\c3\chart\Chart::widget([
                     'options' => [
                             'id' => 'w_chart'
                     ],
@@ -343,29 +357,30 @@
                         ]
                     ]
                 ]); ?>
-            </div>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-        
+
     </div>
 
     <div class="col-md-6">
         <div class="box" style="border-top: 3px solid #153479 !important;">
-        <div class="box-header with-border" style="background:#153479; color:#fff">
-            <h3 class="box-title"><?=Yii::t('app','​ເບີງ​​ຍອດ​ຂາຍຍ້ອນຫຼັງ 4 ເດືອນ')?></h3>
+            <div class="box-header with-border" style="background:#153479; color:#fff">
+                <h3 class="box-title"><?=Yii::t('app','​ເບີງ​​ຍອດ​ຂາຍຍ້ອນຫຼັງ 4 ເດືອນ')?></h3>
 
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                            class="fa fa-times"></i></button>
+                </div>
             </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <div class="row">
-            <div class="col-md-12">
-                <?php
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php
                     $m3_first=date('Y-m-d', strtotime("first day of -3 month"));
                     $m3_last=date('Y-m-d', strtotime("last day of -3 month"));
                     
@@ -412,7 +427,7 @@
                     
                     $sum=number_format((int)$m + (int)$m1 + (int)$m2 + (int)$m3,2);
                 ?>
-                <?php echo \yii2mod\c3\chart\Chart::widget([
+                        <?php echo \yii2mod\c3\chart\Chart::widget([
                     'options' => [
                             'id' => 'm_chart'
                     ],
@@ -449,28 +464,29 @@
                         ]
                     ]
                 ]); ?>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="box" style="border-top: 3px solid #d5081c !important;">
-        <div class="box-header with-border" style="background:#d5081c; color:#fff">
-            <h3 class="box-title"><?=Yii::t('app','​ເບີງ​​ຍອດ​ຂາຍຍ້ອນຫຼັງ 4 ປີ')?></h3>
+            <div class="box-header with-border" style="background:#d5081c; color:#fff">
+                <h3 class="box-title"><?=Yii::t('app','​ເບີງ​​ຍອດ​ຂາຍຍ້ອນຫຼັງ 4 ປີ')?></h3>
 
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                            class="fa fa-times"></i></button>
+                </div>
             </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <div class="row">
-            <div class="col-md-12">
-                <?php
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php
                     $y3_first=date("Y-m-d",strtotime("-3 year January 1st"));
                     $y3_last=date("Y-m-d",strtotime("-3 year December 31st"));
 
@@ -517,7 +533,7 @@
                     
                     $sum=number_format((int)$y + (int)$y1 + (int)$y2 + (int)$y3,2);
                 ?>
-                <?php echo \yii2mod\c3\chart\Chart::widget([
+                        <?php echo \yii2mod\c3\chart\Chart::widget([
                     'options' => [
                             'id' => 'y_chart'
                     ],
@@ -552,9 +568,9 @@
                         ]
                     ]
                 ]); ?>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 </div>

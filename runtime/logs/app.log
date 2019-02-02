@@ -34227,3 +34227,1299 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1549010791.3393
     'REQUEST_TIME' => 1549010791
 ]
+2019-02-02 09:12:43 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'devcyber2_pos'@'localhost' (using password: YES) in F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'devcyber2_pos', 'Da123!@#', NULL)
+#1 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#7 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#8 F:\Projectweb\pos\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#9 F:\Projectweb\pos\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#10 [internal function]: app\controllers\SiteController->actionLogin()
+#11 F:\Projectweb\pos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 F:\Projectweb\pos\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#15 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 F:\Projectweb\pos\web\index.php(12): yii\base\Application->run()
+#17 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'devcyber2_pos'@'localhost' (using password: YES) in F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#5 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#6 F:\Projectweb\pos\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#7 F:\Projectweb\pos\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#8 [internal function]: app\controllers\SiteController->actionLogin()
+#9 F:\Projectweb\pos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#12 F:\Projectweb\pos\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#13 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 F:\Projectweb\pos\web\index.php(12): yii\base\Application->run()
+#15 {main}
+Additional Information:
+
+2019-02-02 09:12:42 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '64859'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073562.899
+    'REQUEST_TIME' => 1549073562
+]
+2019-02-02 09:13:34 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#7 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#8 F:\Projectweb\pos\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#9 F:\Projectweb\pos\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#10 [internal function]: app\controllers\SiteController->actionLogin()
+#11 F:\Projectweb\pos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 F:\Projectweb\pos\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#15 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 F:\Projectweb\pos\web\index.php(12): yii\base\Application->run()
+#17 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#5 F:\Projectweb\pos\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#6 F:\Projectweb\pos\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#7 F:\Projectweb\pos\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#8 [internal function]: app\controllers\SiteController->actionLogin()
+#9 F:\Projectweb\pos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#12 F:\Projectweb\pos\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#13 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 F:\Projectweb\pos\web\index.php(12): yii\base\Application->run()
+#15 {main}
+Additional Information:
+
+2019-02-02 09:13:34 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '64878'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073614.878
+    'REQUEST_TIME' => 1549073614
+]
+2019-02-02 09:14:17 [127.0.0.1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\controllers\SiteController.php:100
+2019-02-02 09:14:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'oylifu8s-V8DXCNkKUa34e5-toJi3xUJvUQF00MaQjLTbFcSt2-9HXVrSC1KKcajgzP0xSa7OFnbJ025An0LRQ=='
+    'hsc' => '657'
+    'wsc' => '1366'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'da123'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '177'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://pos'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://pos/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '64925'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073657.494
+    'REQUEST_TIME' => 1549073657
+]
+2019-02-02 09:14:33 [127.0.0.1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\views\products\sale.php:29
+    in F:\Projectweb\pos\controllers\ProductsController.php:78
+2019-02-02 09:14:33 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://pos/index.php?r=products%2Fdashbord'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '64936'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/sale'
+    'REQUEST_URI' => '/index.php?r=products/sale'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073672.993
+    'REQUEST_TIME' => 1549073672
+]
+2019-02-02 09:15:45 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\controllers\ProductsController.php:294
+2019-02-02 09:15:52 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][error][yii\base\ErrorException:2] yii\base\ErrorException: number_format() expects parameter 1 to be float, string given in F:\Projectweb\pos\views\products\invoice.php:76
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'number_format()...', 'F:\\Projectweb\\p...', 76, Array)
+#1 F:\Projectweb\pos\views\products\invoice.php(76): number_format('', 2)
+#2 F:\Projectweb\pos\vendor\yiisoft\yii2\base\View.php(336): require('F:\\Projectweb\\p...')
+#3 F:\Projectweb\pos\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('F:\\Projectweb\\p...', Array)
+#4 F:\Projectweb\pos\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('F:\\Projectweb\\p...', Array, NULL)
+#5 F:\Projectweb\pos\views\products\comfirm.php(8): yii\base\View->render('invoice', Array)
+#6 F:\Projectweb\pos\vendor\yiisoft\yii2\base\View.php(336): require('F:\\Projectweb\\p...')
+#7 F:\Projectweb\pos\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('F:\\Projectweb\\p...', Array)
+#8 F:\Projectweb\pos\vendor\yiisoft\yii2\web\View.php(212): yii\base\View->renderFile('F:\\Projectweb\\p...', Array, Object(app\controllers\ProductsController))
+#9 F:\Projectweb\pos\vendor\yiisoft\yii2\web\Controller.php(49): yii\web\View->renderAjax('comfirm', Array, Object(app\controllers\ProductsController))
+#10 F:\Projectweb\pos\controllers\ProductsController.php(372): yii\web\Controller->renderAjax('comfirm', Array)
+#11 [internal function]: app\controllers\ProductsController->actionOrdercomfirm()
+#12 F:\Projectweb\pos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#14 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('ordercomfirm', Array)
+#15 F:\Projectweb\pos\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('products/orderc...', Array)
+#16 F:\Projectweb\pos\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 F:\Projectweb\pos\web\index.php(12): yii\base\Application->run()
+#18 {main}
+2019-02-02 09:15:45 [127.0.0.1][-][1621161a4f4dfd86a36ac32efe149eb2][info][application] $_GET = [
+    'r' => 'products/ordercomfirm'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product' => [
+        54 => 1
+        53 => 1
+        52 => 1
+        51 => 1
+        50 => 1
+        26 => 1
+        25 => 1
+        24 => 1
+        27 => 1
+        23 => 1
+        18 => 1
+    ]
+    'product_id' => [
+        0 => 54
+        1 => 53
+        2 => 52
+        3 => 51
+        4 => 50
+        5 => 26
+        6 => 25
+        7 => 24
+        8 => 27
+        9 => 23
+        10 => 18
+    ]
+    'discount' => 500
+    'totalprice' => 55000
+    'payprice_lak_exh' => 55000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceth' => 0
+    'paystill' => 0
+    'paychange' => 0
+    'payprice' => 55000
+    'cormfirm' => true
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://pos'
+    'HTTP_X_CSRF_TOKEN' => 'SbVMFU4mQ0ZVDHH_i3Z-x8C0cWMDJAkUv4YmzzTfTAY58Hl5FmUHBCM7GrboGQ-FrfkzJEdAJETZ5W6ldbgFcQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_REFERER' => 'http://pos/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '64973'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/ordercomfirm'
+    'REQUEST_URI' => '/index.php?r=products/ordercomfirm'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073745.685
+    'REQUEST_TIME' => 1549073745
+]
+2019-02-02 09:16:17 [127.0.0.1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\controllers\ProductsController.php:294
+2019-02-02 09:16:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/ordercomfirm'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product' => [
+        54 => 1
+        53 => 1
+        52 => 1
+        51 => 1
+        50 => 1
+        26 => 1
+        25 => 1
+        24 => 1
+        27 => 1
+        23 => 1
+        18 => 1
+    ]
+    'product_id' => [
+        0 => 54
+        1 => 53
+        2 => 52
+        3 => 51
+        4 => 50
+        5 => 26
+        6 => 25
+        7 => 24
+        8 => 27
+        9 => 23
+        10 => 18
+    ]
+    'discount' => 500
+    'totalprice' => 55000
+    'payprice_lak_exh' => 55000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceth' => 0
+    'paystill' => 0
+    'paychange' => 0
+    'payprice' => 55000
+    'cormfirm' => true
+    'paypriceusd' => 0
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://pos'
+    'HTTP_X_CSRF_TOKEN' => 'SbVMFU4mQ0ZVDHH_i3Z-x8C0cWMDJAkUv4YmzzTfTAY58Hl5FmUHBCM7GrboGQ-FrfkzJEdAJETZ5W6ldbgFcQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_REFERER' => 'http://pos/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '65014'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/ordercomfirm'
+    'REQUEST_URI' => '/index.php?r=products/ordercomfirm'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073777.377
+    'REQUEST_TIME' => 1549073777
+]
+2019-02-02 09:16:46 [127.0.0.1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\views\products\canclesale.php:37
+    in F:\Projectweb\pos\controllers\ProductsController.php:890
+2019-02-02 09:16:46 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/canclesale'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product' => [
+        54 => 1
+        53 => 1
+        52 => 1
+        51 => 1
+        50 => 1
+        26 => 1
+        25 => 1
+        24 => 1
+        27 => 1
+        23 => 1
+        18 => 1
+    ]
+    'product_id' => [
+        0 => 54
+        1 => 53
+        2 => 52
+        3 => 51
+        4 => 50
+        5 => 26
+        6 => 25
+        7 => 24
+        8 => 27
+        9 => 23
+        10 => 18
+    ]
+    'discount' => 500
+    'totalprice' => 55000
+    'payprice_lak_exh' => 55000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceth' => 0
+    'paystill' => 0
+    'paychange' => 0
+    'payprice' => 55000
+    'cormfirm' => true
+    'paypriceusd' => 0
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://pos/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '65066'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/canclesale'
+    'REQUEST_URI' => '/index.php?r=products/canclesale'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073806.334
+    'REQUEST_TIME' => 1549073806
+]
+2019-02-02 09:17:24 [127.0.0.1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\views\products\sale.php:29
+    in F:\Projectweb\pos\controllers\ProductsController.php:78
+2019-02-02 09:17:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 54
+        1 => 53
+        2 => 52
+        3 => 51
+        4 => 50
+        5 => 26
+        6 => 25
+        7 => 24
+        8 => 27
+        9 => 23
+        10 => 18
+    ]
+    'totalprice' => 55000
+    'payprice_lak_exh' => 55000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceth' => 0
+    'paystill' => 0
+    'paychange' => 0
+    'payprice' => 55000
+    'paypriceusd' => 0
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://pos/index.php?r=products/canclesale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '65125'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=products/sale'
+    'REQUEST_URI' => '/index.php?r=products/sale'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073844.77
+    'REQUEST_TIME' => 1549073844
+]
+2019-02-02 09:18:14 [127.0.0.1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: F:\Projectweb\pos\vendor\yiisoft\yii2/messages/lo/yii.php
+    in F:\Projectweb\pos\controllers\ProductsController.php:294
+2019-02-02 09:18:14 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'products/ordercomfirm'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '1621161a4f4dfd86a36ac32efe149eb2'
+    '_csrf' => '5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2019-07-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => 'user_photo.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2018-07-26'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 21034
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20190202'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 204
+        1 => 198
+        2 => 199
+        3 => 197
+        4 => 196
+        5 => 189
+        6 => 188
+        7 => 187
+        8 => 186
+        9 => 56
+        10 => 54
+        11 => 53
+        12 => 52
+    ]
+    'totalprice' => 53000
+    'payprice_lak_exh' => 55000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'product' => [
+        204 => 1
+        198 => 1
+        199 => 1
+        197 => 2
+        196 => 1
+        189 => 1
+        188 => 1
+        187 => 1
+        186 => 1
+        56 => 1
+        54 => 1
+        53 => 1
+        52 => 1
+    ]
+    'discount' => 0
+    'payprice' => 55000
+    'paystill' => 0
+    'paychange' => 2000
+    'paypriceth' => 0
+    'paypriceusd' => 0
+    'cormfirm' => true
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'pos'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://pos'
+    'HTTP_X_CSRF_TOKEN' => 'fsFK7VijYZi8E-rficOR0Jva0S4AWDqdPWds4FD066kOhH-BAOAl2sokgZbqrOCS9peTaUQ8F81bBCSKEZOi3g=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    'HTTP_REFERER' => 'http://pos/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=1621161a4f4dfd86a36ac32efe149eb2; _csrf=5c3977a0d611494767362b573c1d0c8e2abeaa0c460356eadf8d2d35c244628fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pE5lXCDBv7kIcoqBmMBGDd-PfcHjAgIw%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\PuTTY\\;C:\\composer;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Win32) OpenSSL/1.0.2j PHP/7.1.1'
+    'SERVER_NAME' => 'pos'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/Projectweb/pos/web'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/Projectweb/pos/web/index.php'
+    'REMOTE_PORT' => '65228'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=products/ordercomfirm'
+    'REQUEST_URI' => '/index.php?r=products/ordercomfirm'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1549073894.767
+    'REQUEST_TIME' => 1549073894
+]

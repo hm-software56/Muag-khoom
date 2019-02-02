@@ -25,7 +25,8 @@ if (Yii::$app->session->hasFlash('error')) {
     <tr>
         <th>ລຳ​ດັບ</th>
         <th>​<div class="col-md-5 col-sm-5">ລະ​ຫັດ​ບາ​ໂຄດ</div>
-    <div class="col-md-7 col-sm-7"><?php
+            <div class="col-md-7 col-sm-7">
+                <?php
         if (count($models)<1) {
             echo yii\helpers\Html::textInput('barcode', '', [
                 'onchange' => '
@@ -36,20 +37,20 @@ if (Yii::$app->session->hasFlash('error')) {
                 });
             ', 'autofocus' => 'autofocus', 'placeholder' => 'ລະ​ຫັດ​ບາ​ໂຄດ', 'id' => 'search', 'class' => 'form-control']);
         }
-        ?></div>
-</th>
-<td></td>
-</tr>
-<?php
+        ?>
+            </div>
+        </th>
+        <td></td>
+    </tr>
+    <?php
 $i = 0;
 foreach ($models as $model) {
-    $i++;
-    ?>
-    
+    $i++; ?>
+
     <tr>
         <td><?= $i ?></td>
         <td>
-        <img id="barcode<?= $i ?>"></div><?= $model->barcode ?></td>
+            <img id="barcode<?= $i ?>"></div><?= $model->barcode ?></td>
 
         <td>
             <?php
@@ -64,8 +65,7 @@ foreach ($models as $model) {
                            document.getElementById('search').focus();
                        }
                        });return false;",
-            ]);
-            ?>
+            ]); ?>
         </td>
     </tr>
     <?php
