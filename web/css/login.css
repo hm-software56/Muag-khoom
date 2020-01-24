@@ -12,8 +12,8 @@
 }
 
 #formContent {
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px !important;
+    border-radius: 10px 10px 10px 10px !important;
     background: #fff;
     padding: 30px;
     width: 90%;

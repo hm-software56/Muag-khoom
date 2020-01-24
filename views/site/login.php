@@ -6,15 +6,17 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use kartik\alert\Alert;
 echo Yii::$app->getUrlManager()->getBaseUrl();
 $this->registerCssFile(Yii::$app->getUrlManager()->getBaseUrl()."/css/login.css");
 $this->title =Yii::t('app','ເຂົ້າ​ລະ​ບົບ');
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="wrapper1 fadeInDown">
   <div id="formContent">
     <div class="fadeIn first">
     <img src="<?=Yii::$app->request->baseUrl?>/images/thume/<?=\Yii::$app->session['profile']->logo?>" class="img-circle" width="60" />
+    <div class="line_bottom"> <?=\Yii::$app->session['profile']->shop_name?></div>
     </div>
 
     <!-- Login Form -->
@@ -44,12 +46,36 @@ $this->params['breadcrumbs'][] = $this->title;
         $height=null;
     }
     ?>
-    <div class="login-box1 "  style="margin-top: 0px; <?=$height ?> " >
-        <div class="login-box-body">
-            <div class="form-group has-feedback">
-                <div class="line_bottom"><?= Yii::t('app', 'ປ້ອນຊື່ເຂົ້າ​ລະ​ບົບ ແລະ ລະ​ຫັດ​ຜ່ານ')?></div>
+            <div class="login-box1 "  style="margin-top: 0px; <?=$height ?> " >
+                <div class="login-box-body">
+                    <!--<div class="form-group has-feedback">
+                        <div class="line_bottom"><?= Yii::t('app', 'ປ້ອນຊື່ເຂົ້າ​ລະ​ບົບ ແລະ ລະ​ຫັດ​ຜ່ານ')?></div>
 
-            </div>
+                    </div>-->
+                    <div class="col-md-12">
+                <?php
+                    if (Yii::$app->session->hasFlash('su')) {
+                        echo Alert::widget([
+                            'type' => Alert::TYPE_DANGER,
+                            'title' => Yii::$app->session->getFlash('action'),
+                            'icon' => 'glyphicon glyphicon-alert',
+                            'body' => Yii::$app->session->getFlash('su'),
+                            'showSeparator' => false,
+                            'delay' => 5000
+                        ]);
+                    }
+                    if (Yii::$app->session->hasFlash('reg')) {
+                        echo Alert::widget([
+                            'type' => Alert::TYPE_SUCCESS,
+                            'title' => Yii::$app->session->getFlash('action'),
+                            'icon' => 'glyphicon glyphicon-ok',
+                            'body' => Yii::$app->session->getFlash('reg'),
+                            'showSeparator' => false,
+                            'delay' => 12000
+                        ]);
+                    }
+                ?>
+            <div>
             <div class="form-group has-feedback">
                 <input type="text" name="LoginForm[username]" class="fadeIn second" placeholder="<?= Yii::t('app', 'ຊື່​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->username ?>" required >
             </div>
@@ -67,6 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     ActiveForm::end();
     ?>
+    
     <div class="pull-right" style="padding:10px">
         <?php
         $key_acitvated=\Yii::$app->session['key_acitvated'];
