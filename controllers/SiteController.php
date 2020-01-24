@@ -80,8 +80,10 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionLogin() {
+        $this->layout="main_login";
 		
         $atkey = \app\models\ShopProfile::find()->one();
+        \Yii::$app->session['profile']= $atkey;
         $key = $atkey->key_active;
         $key_acitvated = substr($key, 25, 2) . substr($key, 17, -8) . "-" . substr($key, 6, -19) . "-" . substr($key, 0, -25);
         \Yii::$app->session['key_acitvated']= $key_acitvated;

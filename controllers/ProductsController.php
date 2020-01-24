@@ -206,6 +206,7 @@ class ProductsController extends Controller {
             \Yii::$app->session['payprice_lak_exh']=0;
             \Yii::$app->session['payprice_th_exh']=0;
             \Yii::$app->session['payprice_usd_exh']=0;
+
         }
 
         if (isset($_GET['pricelak'])) {
@@ -283,11 +284,12 @@ class ProductsController extends Controller {
         $pro_id = [];
         if (!empty(\Yii::$app->session['product'])) {
             $invioce = new \app\models\Invoice();
-            $lastinvoice = \app\models\Invoice::find()->orderBy('id DESC')->one();
+            $lastinvoice = \app\models\Invoice::find()->where('year(date)="'.date('Y').'"')->orderBy('id DESC')->one();
             if (!empty($lastinvoice)) {
-                $invioce->code = sprintf('%08d', $lastinvoice->code + 1);
+                $code=substr($lastinvoice->code, 0, -3);
+                $invioce->code = sprintf('%08d', $code + 1).'/'.date('y');
             } else {
-                $invioce->code = sprintf('%08d', 1);
+                $invioce->code = sprintf('%08d', 1).'/'.date('y');
             }
             $invioce->date = date('Y-m-d');
             $invioce->user_id = Yii::$app->session['user']->id;
@@ -302,6 +304,18 @@ class ProductsController extends Controller {
             /*=== Save multi currency ==*/
             $pay_multi_currency=new \app\models\PayMultiCurency;
             $pay_multi_currency->invoice_id=$invioce->id;
+            if(is_null(\Yii::$app->session['payprice']))
+            {
+                \Yii::$app->session['payprice']=0;
+            }
+            if(is_null(\Yii::$app->session['paypriceth']))
+            {
+                \Yii::$app->session['paypriceth']=0;
+            }
+            if(is_null(\Yii::$app->session['paypriceusd']))
+            {
+                \Yii::$app->session['paypriceusd']=0;
+            }
             $pay_multi_currency->amount_kip="".\Yii::$app->session['payprice']."";
             $pay_multi_currency->amount_th="".\Yii::$app->session['paypriceth']."";
             $pay_multi_currency->amount_usd="".\Yii::$app->session['paypriceusd']."";

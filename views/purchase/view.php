@@ -17,7 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
     <p>
         <?= Html::a('<i class="fa fa-pencil" aria-hidden="true"></i> '.Yii::t('models', 'ແກ້​ໄຂ'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('<i class="fa fa-check" aria-hidden="true"></i> '.Yii::t('models', 'ຢັ້ງ​ຢືນ​ສຳ​ເລັດ'), ['confirm', 'id' => $model->id], ['class' => 'btn btn-success','data-method' => 'POST']) ?>
+        <?= Html::a('<i class="fa fa-check" aria-hidden="true"></i> '.Yii::t('models', 'ຢັ້ງ​ຢືນ​ສຳ​ເລັດ'), ['confirm', 'id' => $model->id], ['class' => 'btn btn-success',
+            'data' => [
+                'confirm' => Yii::t('models', '່​ທ່ານ​ໄດ້​ກວດຂໍ້​ມູນສີນຄ້າ​ຈັດ​ຊື້​ທັງ​ໝົດ​ທີ່​ທ່ານ​ປ້ອນ​ຖືກ​ຕ້ອງ​ແລ້ວ​​ບໍ່.?')."\n".Yii::t('models', '​ຖ້າ​ຖືກ​ຕ້ອງ​ແລ້ວ​ກົດ OK ​ເພື່ອຢັ້ງ​ຢືນ​​ສຳ​ເລັດ'),
+                'method' => 'post',
+            ],
+        ]) ?>
        <?= Html::a('<i class="fa fa-times" aria-hidden="true"></i> '.Yii::t('models', 'ລືບ​ອອກ'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
