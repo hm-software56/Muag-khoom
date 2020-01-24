@@ -193,7 +193,18 @@ class SiteController extends Controller {
             Yii::$app->session['username'] =$user;
             Yii::$app->session['password'] =$pass;
             Yii::$app->session['database'] =$db;
-            
+            $db = new \yii\db\Connection([
+                'dsn' => 'mysql:host='.$host.';dbname='.$db.'',
+                'username' =>$user,
+                'password' =>$pass,
+                'charset' => 'utf8',
+            ]);
+            if($db->isActive)
+            {
+                echo"ssss";exit;
+            }else{
+                echo "zzzzzzzzzz";exit;
+            }
             // connection hosting 
             $link = @mysqli_connect($host, $user, $pass);
             if (!$link) {

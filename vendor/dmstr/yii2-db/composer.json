@@ -1,0 +1,31 @@
+{
+  "name": "dmstr/yii2-db",
+  "description": "Database extensions",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension",
+    "database",
+    "db"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Tobias Munk",
+      "email": "tobias@diemeisterei.de"
+    }
+  ],
+  "require": {
+    "mikehaertl/php-shellcommand": "1.*",
+    "yiisoft/yii2": "2.*",
+    "schmunk42/retry" : "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "dmstr\\db\\": "db/",
+      "dmstr\\db\\tests\\": "db/tests/",
+      "dmstr\\console\\": "console/",
+      "dmstr\\widgets\\": "widgets/"
+    }
+  }
+}

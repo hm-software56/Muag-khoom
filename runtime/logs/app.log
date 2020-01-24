@@ -35523,3 +35523,3453 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1549073894.767
     'REQUEST_TIME' => 1549073894
 ]
+2020-01-23 08:50:16 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "init". in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('init', Array)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('init', Array)
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 D:\Projectweb\Muag-khoom\yii(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "init". in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('init', Array)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 D:\Projectweb\Muag-khoom\yii(20): yii\base\Application->run()
+#3 {main}
+2020-01-23 08:50:16 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Daxiong\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-LO4UAV8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Daxiong'
+    'LOCALAPPDATA' => 'C:\\Users\\Daxiong\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-LO4UAV8'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Daxiong\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Daxiong\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\php;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Python\\Python37;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\flutter\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\.pub-cache\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\Daxiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 69 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '4501'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Daxiong\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Daxiong\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-LO4UAV8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-LO4UAV8'
+    'USERNAME' => 'Daxiong'
+    'USERPROFILE' => 'C:\\Users\\Daxiong'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'D:\\Projectweb\\Muag-khoom\\'
+    'PHP_SELF' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'SCRIPT_NAME' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'PATH_TRANSLATED' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1579769415.9902
+    'REQUEST_TIME' => 1579769415
+    'argv' => [
+        0 => 'D:\\Projectweb\\Muag-khoom\\yii'
+        1 => 'init'
+    ]
+    'argc' => 2
+]
+2020-01-23 08:50:45 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'pos_db' in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'Da123!@#', NULL)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#7 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#8 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#9 D:\Projectweb\Muag-khoom\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#10 [internal function]: app\controllers\SiteController->actionLogin()
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#15 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#17 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'pos_db' in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#7 D:\Projectweb\Muag-khoom\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#8 [internal function]: app\controllers\SiteController->actionLogin()
+#9 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#15 {main}
+Additional Information:
+
+2020-01-23 08:50:45 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    '_csrf' => '090411c7cf88c75bf9365b5c0eef6b1d4c43720fd6ecda10c66e9a783a70a7d1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"2OEw7R2yEy4Ht8dBcDdQcpIBkYUlYs8X\";}'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '53709'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; _csrf=090411c7cf88c75bf9365b5c0eef6b1d4c43720fd6ecda10c66e9a783a70a7d1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%222OEw7R2yEy4Ht8dBcDdQcpIBkYUlYs8X%22%3B%7D; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt'
+    'REQUEST_TIME_FLOAT' => 1579769445.0151
+    'REQUEST_TIME' => 1579769445
+]
+2020-01-23 08:50:45 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'pos_db' in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'Da123!@#', NULL)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#7 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#8 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#9 D:\Projectweb\Muag-khoom\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#10 [internal function]: app\controllers\SiteController->actionLogin()
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#15 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#17 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'pos_db' in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#7 D:\Projectweb\Muag-khoom\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#8 [internal function]: app\controllers\SiteController->actionLogin()
+#9 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#15 {main}
+Additional Information:
+
+2020-01-23 08:50:45 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    '_csrf' => '090411c7cf88c75bf9365b5c0eef6b1d4c43720fd6ecda10c66e9a783a70a7d1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"2OEw7R2yEy4Ht8dBcDdQcpIBkYUlYs8X\";}'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '53713'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; _csrf=090411c7cf88c75bf9365b5c0eef6b1d4c43720fd6ecda10c66e9a783a70a7d1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%222OEw7R2yEy4Ht8dBcDdQcpIBkYUlYs8X%22%3B%7D; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt'
+    'REQUEST_TIME_FLOAT' => 1579769445.7008
+    'REQUEST_TIME' => 1579769445
+]
+2020-01-23 08:51:13 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The directory does not exist: D:\Projectweb\Muag-khoom\web/assets in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\AssetManager.php:213
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\di\ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(608): yii\base\Module->get('assetManager')
+#8 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\View.php(225): yii\base\Application->getAssetManager()
+#9 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\View.php(285): yii\web\View->getAssetManager()
+#10 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('yii\\widgets\\Act...')
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\widgets\ActiveForm.php(244): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\widgets\ActiveForm.php(228): yii\widgets\ActiveForm->registerClientScript()
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Widget.php(109): yii\widgets\ActiveForm->run()
+#14 D:\Projectweb\Muag-khoom\views\site\install.php(196): yii\base\Widget::end()
+#15 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(336): require('D:\\Projectweb\\M...')
+#16 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('D:\\Projectweb\\M...', Array)
+#17 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\Projectweb\\M...', Array, Object(app\controllers\SiteController))
+#18 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('install', Array, Object(app\controllers\SiteController))
+#19 D:\Projectweb\Muag-khoom\controllers\SiteController.php(23): yii\base\Controller->render('install')
+#20 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(155): app\controllers\SiteController->beforeAction(Object(yii\base\InlineAction))
+#21 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('install', Array)
+#22 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/install', Array)
+#23 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#25 {main}
+2020-01-23 08:51:13 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/install'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    '_csrf' => '090411c7cf88c75bf9365b5c0eef6b1d4c43720fd6ecda10c66e9a783a70a7d1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"2OEw7R2yEy4Ht8dBcDdQcpIBkYUlYs8X\";}'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '53717'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site/install'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site/install'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; _csrf=090411c7cf88c75bf9365b5c0eef6b1d4c43720fd6ecda10c66e9a783a70a7d1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%222OEw7R2yEy4Ht8dBcDdQcpIBkYUlYs8X%22%3B%7D; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt'
+    'REQUEST_TIME_FLOAT' => 1579769473.6375
+    'REQUEST_TIME' => 1579769473
+]
+2020-01-23 08:58:19 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][Error] Error: Call to undefined function app\controllers\mysqli_connect() in D:\Projectweb\Muag-khoom\controllers\SiteController.php:198
+Stack trace:
+#0 [internal function]: app\controllers\SiteController->actionInstall(NULL)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('install', Array)
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/install', Array)
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2020-01-23 08:58:19 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/install'
+]
+
+$_POST = [
+    '_csrf' => 'O7zxfHCrppifHKq2hX5UaDVHNW3Ejmocww-qsg_oIgxsi5cFJu6X2axS3NH8SjsBWwJgNPPPHEqCTsf3ap8SVA=='
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'next' => 'Next >>'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '53888'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site/install'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site/install'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '184'
+    'HTTP_CONTENT_LENGTH' => '184'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site/install'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579769899.5249
+    'REQUEST_TIME' => 1579769899
+]
+2020-01-23 09:04:09 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][Error] Error: Class 'Yii\db\Connection' not found in D:\Projectweb\Muag-khoom\controllers\SiteController.php:196
+Stack trace:
+#0 [internal function]: app\controllers\SiteController->actionInstall(NULL)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('install', Array)
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/install', Array)
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2020-01-23 09:04:09 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/install'
+]
+
+$_POST = [
+    '_csrf' => 'O7zxfHCrppifHKq2hX5UaDVHNW3Ejmocww-qsg_oIgxsi5cFJu6X2axS3NH8SjsBWwJgNPPPHEqCTsf3ap8SVA=='
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'next' => 'Next >>'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54101'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site/install'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site/install'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '184'
+    'HTTP_CONTENT_LENGTH' => '184'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site/install'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579770249.832
+    'REQUEST_TIME' => 1579770249
+]
+2020-01-23 09:10:09 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'pos_db' in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'Da123!@#', NULL)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#7 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#8 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#9 D:\Projectweb\Muag-khoom\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#10 [internal function]: app\controllers\SiteController->actionLogin()
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#15 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#17 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'pos_db' in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#5 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#7 D:\Projectweb\Muag-khoom\controllers\SiteController.php(84): yii\db\ActiveQuery->one()
+#8 [internal function]: app\controllers\SiteController->actionLogin()
+#9 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#15 {main}
+Additional Information:
+
+2020-01-23 09:10:09 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54333'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579770609.1986
+    'REQUEST_TIME' => 1579770609
+]
+2020-01-23 09:11:56 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pos_db.currency' doesn't exist in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php:1258
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1258): PDOStatement->execute()
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#5 D:\Projectweb\Muag-khoom\views\layouts\main.php(370): yii\db\ActiveQuery->one()
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(336): require('D:\\Projectweb\\M...')
+#7 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('D:\\Projectweb\\M...', '[<span class="s...')
+#8 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('D:\\Projectweb\\M...', Array, Object(app\controllers\SiteController))
+#9 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('\r\n<form id="log...')
+#10 D:\Projectweb\Muag-khoom\controllers\SiteController.php(131): yii\base\Controller->render('login', Array)
+#11 [internal function]: app\controllers\SiteController->actionLogin()
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#14 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#15 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#16 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#18 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pos_db.currency' doesn't exist
+The SQL being executed was: SELECT * FROM `currency` WHERE `base_currency`=1 in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Command.php(413): yii\db\Command->queryInternal('fetch', NULL)
+#3 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\Query.php(274): yii\db\Command->queryOne()
+#4 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\db\ActiveQuery.php(292): yii\db\Query->one(NULL)
+#5 D:\Projectweb\Muag-khoom\views\layouts\main.php(370): yii\db\ActiveQuery->one()
+#6 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(336): require('D:\\Projectweb\\M...')
+#7 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('D:\\Projectweb\\M...', '[<span class="s...')
+#8 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('D:\\Projectweb\\M...', Array, Object(app\controllers\SiteController))
+#9 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('\r\n<form id="log...')
+#10 D:\Projectweb\Muag-khoom\controllers\SiteController.php(131): yii\base\Controller->render('login', Array)
+#11 [internal function]: app\controllers\SiteController->actionLogin()
+#12 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#14 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#15 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#16 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 D:\Projectweb\Muag-khoom\web\index.php(12): yii\base\Application->run()
+#18 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'pos_db.currency' doesn't exist
+)
+
+2020-01-23 09:11:55 [::1][-][pu7a5q8nah9a7ieg815l4rcmlt][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+    'key_acitvated' => '2019-07-17'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54365'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579770715.4471
+    'REQUEST_TIME' => 1579770715
+]
+2020-01-23 09:16:26 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:100
+2020-01-23 09:16:26 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => '2p-3ykWZFFbiI3PIfpF6c_ILFpt8N-3WSJI7fo2RtFiNqNGzE9wlF9FtBa8HpRUanE5Dwkt2m4AJ01Y76OaEAA=='
+    'hsc' => '608'
+    'wsc' => '1366'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'Da123!@#'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => 1
+        'action' => 1
+    ]
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+    'key_acitvated' => '2020-09-17'
+    'su' => 'ທ່ານ​ປ້ອນ​ຊື່ຫຼື​ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ​ບໍ່ຖືກ'
+    'action' => ''
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54498'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '186'
+    'HTTP_CONTENT_LENGTH' => '186'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579770986.0388
+    'REQUEST_TIME' => 1579770986
+]
+2020-01-23 09:16:44 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:100
+2020-01-23 09:16:44 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => '5hCUBmndtA2EcAhgsXWjDB7uOyWA2LbS2dXy_uLuDTOxJ_J_P5iFTLc-fgfIQcxlcKtufLeZwISYlJ-7h5k9aw=='
+    'hsc' => '608'
+    'wsc' => '1366'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'Da123!@#'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => 1
+        'action' => 1
+    ]
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+    'key_acitvated' => '2020-09-17'
+    'su' => 'ທ່ານ​ປ້ອນ​ຊື່ຫຼື​ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ​ບໍ່ຖືກ'
+    'action' => ''
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54524'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '186'
+    'HTTP_CONTENT_LENGTH' => '186'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579771004.2269
+    'REQUEST_TIME' => 1579771004
+]
+2020-01-23 09:16:57 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:100
+2020-01-23 09:16:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'HA_JQgjycF-MYXZ_5ps4tWZkXRvWLRUHBqxWBW5zTzFLOK87XrdBHr8vABifr1fcCCEIQuFsY1FH7TtACwR_aQ=='
+    'hsc' => '608'
+    'wsc' => '1366'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'da123'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    'menuIsCollapsed' => 'false'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'pu7a5q8nah9a7ieg815l4rcmlt'
+    '_csrf' => '7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'host' => 'localhost'
+    'username' => 'root'
+    'password' => 'Da123!@#'
+    'database' => 'pos_db'
+    'step' => 1
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 231036
+    'height_screen' => 475
+    'width_screen' => '1366'
+    'date_login' => '20200123'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54551'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '177'
+    'HTTP_CONTENT_LENGTH' => '177'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; menuIsCollapsed=false; _gid=GA1.1.1461907576.1579761914; PHPSESSID=pu7a5q8nah9a7ieg815l4rcmlt; _csrf=7ccc27d7f7cea728affaa4562b226b9a6d6d659f5b68fe910fb78f3899700aeaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22W7fyVE1A3Nvgy4oinEUY7AvVAAmEew0X%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579771017.2378
+    'REQUEST_TIME' => 1579771017
+]
+2020-01-24 01:38:51 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:26
+2020-01-24 01:38:50 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57472'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914'
+    'REQUEST_TIME_FLOAT' => 1579829930.8844
+    'REQUEST_TIME' => 1579829930
+]
+2020-01-24 01:38:51 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:26
+2020-01-24 01:38:51 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57471'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914'
+    'REQUEST_TIME_FLOAT' => 1579829931.4056
+    'REQUEST_TIME' => 1579829931
+]
+2020-01-24 01:38:51 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:28
+2020-01-24 01:38:51 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/dashbord'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'lef0q8ac4d7jnje5gfbt4e696g'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57473'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products%2Fdashbord'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products%2Fdashbord'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=lef0q8ac4d7jnje5gfbt4e696g'
+    'REQUEST_TIME_FLOAT' => 1579829931.5182
+    'REQUEST_TIME' => 1579829931
+]
+2020-01-24 01:38:51 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:28
+2020-01-24 01:38:51 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/dashbord'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57474'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products%2Fdashbord'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products%2Fdashbord'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci'
+    'REQUEST_TIME_FLOAT' => 1579829931.6336
+    'REQUEST_TIME' => 1579829931
+]
+2020-01-24 01:39:34 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "version". in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('version', Array)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('version', Array)
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 D:\Projectweb\Muag-khoom\yii(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "version". in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('version', Array)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 D:\Projectweb\Muag-khoom\yii(20): yii\base\Application->run()
+#3 {main}
+2020-01-24 01:39:34 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Daxiong\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-LO4UAV8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Daxiong'
+    'LOCALAPPDATA' => 'C:\\Users\\Daxiong\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-LO4UAV8'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Daxiong\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Daxiong\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\php;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Python\\Python37;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\flutter\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\.pub-cache\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\Daxiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 69 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '4501'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Daxiong\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Daxiong\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-LO4UAV8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-LO4UAV8'
+    'USERNAME' => 'Daxiong'
+    'USERPROFILE' => 'C:\\Users\\Daxiong'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'D:\\Projectweb\\Muag-khoom\\'
+    'PHP_SELF' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'SCRIPT_NAME' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'PATH_TRANSLATED' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1579829974.6399
+    'REQUEST_TIME' => 1579829974
+    'argv' => [
+        0 => 'D:\\Projectweb\\Muag-khoom\\yii'
+        1 => 'version'
+    ]
+    'argc' => 2
+]
+2020-01-24 01:42:11 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "version". in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('version', Array)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('version', Array)
+#2 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 D:\Projectweb\Muag-khoom\yii(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "version". in D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('version', Array)
+#1 D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 D:\Projectweb\Muag-khoom\yii(20): yii\base\Application->run()
+#3 {main}
+2020-01-24 01:42:11 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Daxiong\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-LO4UAV8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Daxiong'
+    'LOCALAPPDATA' => 'C:\\Users\\Daxiong\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-LO4UAV8'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Daxiong\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Daxiong\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\php;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Python\\Python37;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\flutter\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\.pub-cache\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\Daxiong\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Daxiong\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 69 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '4501'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Daxiong\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Daxiong\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-LO4UAV8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-LO4UAV8'
+    'USERNAME' => 'Daxiong'
+    'USERPROFILE' => 'C:\\Users\\Daxiong'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'D:\\Projectweb\\Muag-khoom\\'
+    'PHP_SELF' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'SCRIPT_NAME' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'PATH_TRANSLATED' => 'D:\\Projectweb\\Muag-khoom\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1579830131.7399
+    'REQUEST_TIME' => 1579830131
+    'argv' => [
+        0 => 'D:\\Projectweb\\Muag-khoom\\yii'
+        1 => 'version'
+    ]
+    'argc' => 2
+]
+2020-01-24 01:42:32 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:100
+2020-01-24 01:42:32 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'r_96adAnLV31NWFzdgeoosVn9A-Reh4YZCYH6ufDMsjIrk9QokBmB51SUQUhfuvHlCagVcAPZG8tczaJhYZ_ow=='
+    'hsc' => '657'
+    'wsc' => '1366'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'da123'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57668'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '177'
+    'HTTP_CONTENT_LENGTH' => '177'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830152.4116
+    'REQUEST_TIME' => 1579830152
+]
+2020-01-24 01:42:33 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:69
+2020-01-24 01:42:32 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57669'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Findex'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Findex'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830152.961
+    'REQUEST_TIME' => 1579830152
+]
+2020-01-24 01:43:25 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\views\products\sale.php:29
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:78
+2020-01-24 01:43:25 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57703'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products/sale'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products/sale'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products%2Fdashbord'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830205.0622
+    'REQUEST_TIME' => 1579830205
+]
+2020-01-24 01:44:22 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:294
+2020-01-24 01:44:22 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/ordercomfirm'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product' => [
+        23 => 1
+        20 => 1
+        19 => 1
+        18 => 1
+    ]
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'discount' => 0
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'cormfirm' => true
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57968'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products/ordercomfirm'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products/ordercomfirm'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CONTENT_LENGTH' => '0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_X_CSRF_TOKEN' => 'p-9vut29vfYZ2RBJDyKY5OhpqvOf8r7ECq881fvzbaTAvlqDr9r2rHG-ID9YW9uBuSj-qc6HxLND-g22mbYgzw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830262.2069
+    'REQUEST_TIME' => 1579830262
+]
+2020-01-24 01:45:22 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\views\products\pos_pro.php:26
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:73
+2020-01-24 01:45:21 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/sale'
+    'cid' => ''
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57994'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products/sale&cid='
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products/sale&cid='
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CONTENT_LENGTH' => '0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_X_CSRF_TOKEN' => 'p-9vut29vfYZ2RBJDyKY5OhpqvOf8r7ECq881fvzbaTAvlqDr9r2rHG-ID9YW9uBuSj-qc6HxLND-g22mbYgzw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830321.5646
+    'REQUEST_TIME' => 1579830321
+]
+2020-01-24 01:45:40 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\models\CurrencySearch.php:32
+    in D:\Projectweb\Muag-khoom\models\CurrencySearch.php:54
+    in D:\Projectweb\Muag-khoom\controllers\CurrencyController.php:39
+2020-01-24 01:45:41 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'models' does not exist: D:\Projectweb\Muag-khoom/messages/lo/models.php
+    in D:\Projectweb\Muag-khoom\views\currency\index.php:10
+    in D:\Projectweb\Muag-khoom\controllers\CurrencyController.php:43
+2020-01-24 01:45:40 [::1][-][-][info][application] $_GET = [
+    'r' => 'currency/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58048'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=currency/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=currency/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/dashbord'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830340.8071
+    'REQUEST_TIME' => 1579830340
+]
+2020-01-24 01:45:54 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\models\UserSearch.php:32
+    in D:\Projectweb\Muag-khoom\models\UserSearch.php:54
+    in D:\Projectweb\Muag-khoom\controllers\UserController.php:52
+2020-01-24 01:45:54 [::1][-][-][info][application] $_GET = [
+    'r' => 'user'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58072'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=user'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=user'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=currency/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830354.5981
+    'REQUEST_TIME' => 1579830354
+]
+2020-01-24 01:46:51 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\views\products\sale.php:29
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:78
+2020-01-24 01:46:50 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/sale'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'user' => app\models\User#1
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'date_login' => '20200124'
+    'currency' => app\models\Currency#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58305'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products/sale'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products/sale'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/product'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830410.7827
+    'REQUEST_TIME' => 1579830410
+]
+2020-01-24 01:47:03 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:147
+2020-01-24 01:47:03 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/logout'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58513'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site/logout'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site/logout'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830423.7796
+    'REQUEST_TIME' => 1579830423
+]
+2020-01-24 01:47:03 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:26
+2020-01-24 01:47:03 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58514'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830423.8703
+    'REQUEST_TIME' => 1579830423
+]
+2020-01-24 01:47:03 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:28
+2020-01-24 01:47:03 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/dashbord'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240262
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58515'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products%2Fdashbord'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products%2Fdashbord'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products/sale'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830423.9557
+    'REQUEST_TIME' => 1579830423
+]
+2020-01-24 01:48:58 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:100
+2020-01-24 01:48:58 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'KgiGtl-8UZOpycHZLzC2W_GT6kOK5pSe5XjXyxSgD4NNWbOPLdsaycGu8a94SfU-oNK-GduT7umsLeaoduVC6A=='
+    'hsc' => '657'
+    'wsc' => '1366'
+    'LoginForm' => [
+        'username' => 'daxiong'
+        'password' => 'da123'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240268
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'user' => app\models\User#2
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'date_login' => '20200124'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58589'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '177'
+    'HTTP_CONTENT_LENGTH' => '177'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830538.4327
+    'REQUEST_TIME' => 1579830538
+]
+2020-01-24 01:48:59 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:69
+2020-01-24 01:48:58 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240268
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'user' => app\models\User#2
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'date_login' => '20200124'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58588'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Findex'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Findex'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830538.9945
+    'REQUEST_TIME' => 1579830538
+]
+2020-01-24 01:49:12 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\views\shop-profile\_form.php:14
+    in D:\Projectweb\Muag-khoom\views\shop-profile\update.php:19
+    in D:\Projectweb\Muag-khoom\controllers\ShopProfileController.php:104
+2020-01-24 01:49:12 [::1][-][-][info][application] $_GET = [
+    'r' => 'shop-profile/update'
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240268
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'user' => app\models\User#2
+    (
+        [enum_labels] => false
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 5
+            'photo' => '2019020102022139.png'
+            'first_name' => 'Da'
+            'last_name' => 'Xiong'
+            'username' => 'daxiong'
+            'password' => 'da123'
+            'status' => 1
+            'user_type' => 'Admin'
+            'date' => '2019-02-01'
+            'height_screen' => null
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+    'date_login' => '20200124'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58618'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=shop-profile/update&id=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=shop-profile/update&id=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=products%2Fdashbord'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830552.5489
+    'REQUEST_TIME' => 1579830552
+]
+2020-01-24 01:49:41 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:147
+2020-01-24 01:49:41 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/logout'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240268
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58652'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site/logout'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site/logout'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=shop-profile/update&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830581.6644
+    'REQUEST_TIME' => 1579830581
+]
+2020-01-24 01:49:41 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\SiteController.php:26
+2020-01-24 01:49:41 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240268
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58651'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=shop-profile/update&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830581.7697
+    'REQUEST_TIME' => 1579830581
+]
+2020-01-24 01:49:41 [::1][-][-][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: D:\Projectweb\Muag-khoom\vendor\yiisoft\yii2/messages/lo/yii.php
+    in D:\Projectweb\Muag-khoom\controllers\ProductsController.php:28
+2020-01-24 01:49:41 [::1][-][-][info][application] $_GET = [
+    'r' => 'products/dashbord'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2038211331.1569901423'
+    'language' => '9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a:2:{i:0;s:8:\"language\";i:1;s:3:\"Lao\";}'
+    '_gid' => 'GA1.1.1461907576.1579761914'
+    'PHPSESSID' => 'p414q17p1kesu9fju9oocdhgci'
+    '_csrf' => 'a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'su' => -1
+        'action' => -1
+    ]
+    'key_acitvated' => '2020-09-17'
+    'timeout' => 240268
+    'height_screen' => 524
+    'width_screen' => '1366'
+    'currency' => app\models\Currency#1
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => [
+            'id' => 1
+            'name' => '​ກີບ'
+            'code' => '$vl*$ra'
+            'rate' => '1'
+            'round_exch' => -500
+            'base_currency' => 1
+        ]
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\db\BaseActiveRecord:_relationsDependencies] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    'product_id' => [
+        0 => 23
+        1 => 20
+        2 => 19
+        3 => 18
+    ]
+    'totalprice' => 9500
+    'payprice_lak_exh' => 10000
+    'payprice_th_exh' => 0
+    'payprice_usd_exh' => 0
+    'paypriceusd' => 0
+    'paystill' => 0
+    'paychange' => 500
+    'paypriceth' => 0
+    'payprice' => 10000
+    'su' => 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'
+    'action' => ''
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'D:\\Projectweb\\Muag-khoom\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58653'
+    'SERVER_SOFTWARE' => 'PHP 7.3.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=products%2Fdashbord'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'D:\\Projectweb\\Muag-khoom\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=products%2Fdashbord'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=shop-profile/update&id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,lo;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => '_ga=GA1.1.2038211331.1569901423; language=9c55ef8b358811a6e5d32c29796a2f95c9fac484944d876c98eaa4b208746187a%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A3%3A%22Lao%22%3B%7D; _gid=GA1.1.1461907576.1579761914; PHPSESSID=p414q17p1kesu9fju9oocdhgci; _csrf=a46724f241893ed96ce6aae7163dae15020a8e5565939c24d3427ee17de7b344a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gQ59rgKZhg0vWyCeQATZQuzwIU1cbEMk%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1579830581.8706
+    'REQUEST_TIME' => 1579830581
+]

@@ -1,0 +1,21 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - git fetch --unshallow
+  - cd tests
+  - docker-compose build --pull
+
+script:
+  - make all
+  - make test
+
+addons:
+  artifacts:
+    s3_region: eu-west-1
+    paths:
+      - tests/_output

@@ -1,0 +1,26 @@
+{
+    "name": "loveorigami/yii2-slimscroll-widget",
+    "description": "Yii2 slimscroll widget",
+    "type": "yii2-extension",
+    "keywords": ["yii2","slimscroll","widget"],
+    "license": "GPL-3.0+",
+    "authors": [
+		{
+            "name": "Andrey Lukyanov",
+            "email": "loveorigami@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "2.0.*",
+        "bower-asset/jquery-slimscroll": "^1.3"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "lo\\widgets\\": ""
+        }
+    }
+}

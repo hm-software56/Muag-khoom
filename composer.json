@@ -14,8 +14,8 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
-        "yiisoft/yii2": ">=2.0.5",
+        "php": ">=7.0.1",
+        "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-money": "*",
@@ -28,12 +28,12 @@
         "yiisoft/yii2-imagine": "*",
         "vilochane/yii2-barcode-generator": "dev-master",
         "kartik-v/yii2-mpdf": "^1.0",
-        "2amigos/yii2-chartjs-widget": "~2.0",
+        "2amigos/yii2-chartjs-widget": "*",
         "yii2mod/yii2-c3-chart": "*",
         "kartik-v/yii2-editable": "*",
         "2amigos/yii2-editable-widget": "~1.0",
         "2amigos/yii2-grid-view-library": "~1.0",
-        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-grid": "*",
         "kartik-v/yii2-widget-select2": "dev-master"
     },
     "require-dev": {
@@ -52,13 +52,11 @@
     },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
-            "setPermission": [
-                {
-                    "runtime": "0777",
-                    "web/assets": "0777",
-                    "yii": "0755"
-                }
-            ],
+            "setPermission": [{
+                "runtime": "0777",
+                "web/assets": "0777",
+                "yii": "0755"
+            }],
             "generateCookieValidationKey": [
                 "config/web.php"
             ]

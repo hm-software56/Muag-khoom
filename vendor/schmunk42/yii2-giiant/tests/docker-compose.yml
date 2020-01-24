@@ -1,0 +1,62 @@
+version: '2'
+services:
+  phpfpm:
+    build: .
+    working_dir: /repo/tests
+    environment:
+      - DB_PORT_3306_TCP_ADDR=mariadb
+      - DB_PORT_3306_TCP_PORT=3306
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=secretadmin
+      - DATABASE_DSN_DB=${GIIANT_TEST_DB}
+      - GIIANT_TEST_DB=${GIIANT_TEST_DB}
+      - APP_CONFIG_FILE=/app/src/config/local.php
+      - APP_NAME=giiant-test
+      - APP_TITLE=Giiant [TEST]
+      - APP_MIGRATION_LOOKUP=@app/migrations
+      - YII_ENV=test
+      - YII_DEBUG=1
+      - FXP_ASSET__GIT_SKIP_UPDATE=2 days
+      - 'FXP_ASSET__VCS_DRIVER_OPTIONS={"github-no-api":true}'
+
+    ports:
+      - '80'
+    depends_on:
+      - mariadb
+      - seleniumfirefox
+    volumes:
+      - /app
+      # host volume for local development
+      - ../:/repo
+      - ./_app/src/config/local.php:/app/src/config/local.php
+      - ./_app/src/components:/app/src/components
+      - ./_app/src/rbac:/app/src/rbac
+      # host volumes for local debugging of generated files
+      - ./_app/_generated/${GIIANT_TEST_DB}:/app/src/modules/${GIIANT_TEST_DB}
+      - ./_app/_generated/common:/app/src/common
+      - ./_app/_generated/backend:/app/src/modules/backend
+      - ./_app/_generated/onlyCrud/controllers:/app/src/controllers/onlyCrud
+      - ./_app/_generated/onlyCrud/models:/app/src/models/onlyCrud
+      - ./_app/_generated/onlyCrud/views:/app/src/views/onlyCrud
+
+  mariadb:
+    image: 'schmunk42/mariadb-example-databases:3.0.0-beta1'
+    ports:
+      - '3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=secretadmin
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=secretadmin
+      - INSTALL_SAKILA=1
+    #volumes:
+    #  - ./_mysql/test.cnf:/etc/mysql/conf.d/test.cnf
+
+  seleniumfirefox:
+    image: 'selenium/standalone-firefox-debug:2.53.0'
+    dns: 8.8.4.4
+    environment:
+        - no_proxy=localhost
+    expose:
+        - '4444'
+    ports:
+        - '5900'

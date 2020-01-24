@@ -1,0 +1,24 @@
+{
+    "name": "igorw/retry",
+    "description": "A tiny library for retrying failing operations.",
+    "keywords": ["failure"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Wiedler",
+            "email": "igor@wiedler.ch"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.2"
+    },
+    "autoload": {
+        "files": ["src/retry.php"]
+    },
+    "extra": {
+        "branch-alias": { "dev-master": "1.0-dev" }
+    }
+}
