@@ -83,8 +83,10 @@ $this->title =Yii::t('app','ເຂົ້າ​ລະ​ບົບ');
                 <input type="password" name="LoginForm[password]" class=" fadeIn second" placeholder="<?= Yii::t('app', 'ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->password ?>" required >
                 </div>
             <div class="form-group has-feedback">
-                <div class="col-md-12" style="padding-right: 0px;" align="center">
+                <div class="col-md-12" align="center">
+                <div class="col-md-12" id="pdbt">
                     <button type="submit" class="btn btn-primary" onclick="onclick_loadimg()"><span class="fa fa-lock" ></span> <?= Yii::t('app','ເຂົ້າ​ລະ​ບົບ')?></button>
+                </div>
                 </div>
             </div>
             <!--<div class="text-red" >Login: <b>user</b> || Password:<b>12345</b></div>-->

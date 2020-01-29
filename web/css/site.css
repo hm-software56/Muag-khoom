@@ -48,6 +48,12 @@ body {
 }
 
 @media(max-width:768px) {
+    .logo {
+        padding: 12px !important;
+    }
+    #pdtpos {
+        padding-top: 23px !important;
+    }
     .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
         position: absolute;
         right: 0% !important;
@@ -78,9 +84,9 @@ table {
 }
 
 .content-wrapper {
-    // width: 100%;
+    /* width: 100%;*/
     float: none;
-    // position: absolute;
+    /* position: absolute;*/
     box-shadow: none;
     overflow: visible;
     min-height: 100%;
@@ -205,6 +211,7 @@ a.desc:after {
 
 .errors {
     position: absolute !important;
+    margin-top: 10px;
 }
 
 .lin_pos {

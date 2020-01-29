@@ -91,7 +91,7 @@ use yii\bootstrap\Modal;
                                             url  : 'index.php?r=products/qautitycancle&idp=" . $model->products_id. "&qautity=" . $model->qautity . "&i=".$i. "&inv_id=".$invoice->id."',
                                             success  : function(response) {
                                                 $('#qt".$i."').html(response);
-                                                document.getElementById('search').focus();
+                                               // document.getElementById('search').focus();
                                             }
                                             });return false;",
                                         'class' => "btn btn-sm bg-link"

@@ -70,6 +70,7 @@ class StillPaySearch extends StillPay
         {
             $query->andFilterWhere(['IN', 'custommer_id', $this->name]);
         }
+        $query->orderBy('id DESC');
         return $dataProvider;
     }
 }

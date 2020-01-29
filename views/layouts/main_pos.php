@@ -68,7 +68,7 @@ AppAsset::register($this);
                 }
                 ?>
                 <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
+                <nav class="navbar navbar-static-top" id="pdtpos">
                     <!-- Sidebar toggle button-->
                     <?php
                     if (!empty(Yii::$app->session['user'])) {
