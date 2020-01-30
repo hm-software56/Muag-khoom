@@ -228,6 +228,8 @@ a.desc:after {
 .lin_pos_b {
     border-top: 2px #3c8dbc solid;
     padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
 }
 
 .btn-box-tool {

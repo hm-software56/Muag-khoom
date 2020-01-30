@@ -77,10 +77,10 @@ $this->title =Yii::t('app','ເຂົ້າ​ລະ​ບົບ');
                 ?>
             <div>
             <div class="form-group has-feedback">
-                <input type="text" name="LoginForm[username]" class="fadeIn second" placeholder="<?= Yii::t('app', 'ຊື່​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->username ?>" required >
+                <input type="text" name="LoginForm[username]" class="fadeIn second" placeholder="<?= Yii::t('app', 'ຊື່​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->username ?>" >
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="LoginForm[password]" class=" fadeIn second" placeholder="<?= Yii::t('app', 'ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->password ?>" required >
+                <input type="password" name="LoginForm[password]" class=" fadeIn second" placeholder="<?= Yii::t('app', 'ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ')?>" value="<?= $model->password ?>" >
                 </div>
             <div class="form-group has-feedback">
                 <div class="col-md-12" align="center">

@@ -55,13 +55,25 @@ use yii\web\UrlManager;
     <?php
     if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and \Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
     {
+        $h=Yii::$app->session['height_screen'] -90;
+        if(!empty(\Yii::$app->session['product']))
+        {
+            $h=Yii::$app->session['height_screen'] -120;
+        }
         ?>
-        <div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+        <div class="row table-responsive" style="height:<?= $h . 'px' ?>;">
     <?php
     }else{ /// for mobile
+        if(!empty(\Yii::$app->session['product']) && count(\Yii::$app->session['product'])>2)
+        {
         ?>
-        <div class="row table-responsive">
+        <div class="row table-responsive" style="overflow-y:auto; height:<?= \Yii::$app->session['height_screen']/3 . 'px' ?>;">
     <?php
+        }else{
+            ?>
+        <div class="row table-responsive">
+            <?php
+        }
     }
     ?>
 
@@ -144,41 +156,45 @@ use yii\web\UrlManager;
                 }
         }
         ?>
+    </table>
+</div>
+<div class="row table-responsive">
+<table class="table table-info">
+    <tr>
+        <td rowspan="2"><div id="load" align='right'></div></td>
+        <td colspan="3" align="right"><b><?=Yii::t('app','ລວມ​ຈຳ​ນວນ​ເງ​ີນ')?></b></td>
+        <td align="right">​<b><?= number_format($total_prince, 2) ?></b></td>
+    </tr>
+    <?php
+    if ($total_prince != 0) {
+        ?>
         <tr>
-            <td colspan="3" align="right"><b><?=Yii::t('app','ລວມ​ຈຳ​ນວນ​ເງ​ີນ')?></b></td>
-            <td align="right">​<b><?= number_format($total_prince, 2) ?></b></td>
+            <td colspan="3" align="right"><b><?=Yii::t('app','ສ່ວນຫລຸດ')?></b></td>
+            <td align="right" style="width:100px;" id="dsc">​<b>
+                    <?php
+                    if (\Yii::$app->session['discount'] == 0) {
+                        \Yii::$app->session['discount'] = 0;
+                    }
+                    echo yii\helpers\Html::a(number_format(\Yii::$app->session['discount'], 2), '#', [
+                        'onclick' => "
+                                $.ajax({
+                                type     :'POST',
+                                cache    : false,
+                                url  : 'index.php?r=products/discount',
+                                success  : function(response) {
+                                $('#dsc').html(response);
+                                document.getElementById('dsc').focus();
+                                }
+                                });return false;",
+                    ]);
+                    ?>
+                </b>
+            </td>
         </tr>
         <?php
-        if ($total_prince != 0) {
-            ?>
-            <tr>
-                <td colspan="3" align="right"><b><?=Yii::t('app','ສ່ວນຫລຸດ')?></b></td>
-                <td align="right" style="width:100px;" id="dsc">​<b>
-                        <?php
-                        if (\Yii::$app->session['discount'] == 0) {
-                            \Yii::$app->session['discount'] = 0;
-                        }
-                        echo yii\helpers\Html::a(number_format(\Yii::$app->session['discount'], 2), '#', [
-                            'onclick' => "
-                                  $.ajax({
-                                  type     :'POST',
-                                  cache    : false,
-                                  url  : 'index.php?r=products/discount',
-                                  success  : function(response) {
-                                  $('#dsc').html(response);
-                                  document.getElementById('dsc').focus();
-                                  }
-                                  });return false;",
-                        ]);
-                        ?>
-                    </b>
-                </td>
-            </tr>
-            <?php
-        }
-        ?>
-    </table>
-    <div id="load" align='right'></div>
+    }
+    ?>
+</table>
 </div>
 <div class="row lin_pos_b" >
     <div class="col-md-6  col-xs-6">

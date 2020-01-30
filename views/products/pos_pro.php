@@ -3,6 +3,8 @@
 use lo\widgets\SlimScroll;
 ?>
 <?php
+if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and \Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+{
 echo SlimScroll::widget([
     'options' => [
         'height' => \Yii::$app->session['height_screen'] . 'px',
@@ -12,6 +14,11 @@ echo SlimScroll::widget([
         "wheelStep" => 100,
     ]
 ]);
+}else{
+    ?>
+<div class="row table-responsive" style=" overflow-y:auto; height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+    <?php
+}
 ?>
 <?php
 foreach ($model as $model) {
@@ -49,4 +56,11 @@ foreach ($model as $model) {
     <?php
 }
 ?>
-<?php  echo SlimScroll::end(); ?>
+<?php  
+if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and \Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+{
+echo SlimScroll::end();
+}else{
+    echo"</div>";
+}
+?>

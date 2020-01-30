@@ -6,13 +6,14 @@ $multi_currency_pay = app\models\PayMultiCurency::find()->where(['invoice_id' =>
 ?>
 <?= $this->render('invoice', ['invoice' => $invoice]); ?>
 <?php
-if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) { ///for PC
+if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and \Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) ///for PC
+{
     ?>
-<div class="row table-responsive" style="height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
+<div class="row table-responsive" style="overflow-y:auto; height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
     <?php
 } else { /// for mobile
     ?>
-    <div class="row table-responsive">
+    <div class="row table-responsive" style="overflow-y:auto; height:<?= \Yii::$app->session['height_screen'] - 30 . 'px' ?>;">
         <?php
     }
     ?>
@@ -93,7 +94,7 @@ if (\Yii::$app->session['height_screen'] > Yii::$app->params['height_disable']) 
         <div id="load" align='right'></div>
     </div>
 
-    <div class="row" style="border-top: 2px green solid; padding-top: 2px;">
+    <div class="row" style="border-top: 2px green solid; padding-top: 2px; padding-bottom: 2px; padding-right: 10px;">
         <div class="col-md-6 col-xs-6">
             <?php
             echo \yii2assets\printthis\PrintThis::widget([
