@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 
 class Web extends StatefulWidget {
   @override
@@ -9,19 +10,27 @@ class Web extends StatefulWidget {
 }
 
 class _WebState extends State<Web> {
-  var url='http://192.168.0.102';
+  var url = 'http://192.168.0.102';
   bool loading = true;
   bool hostyes = true;
 
   void checkingIp() async {
     try {
-      final response = await http.get(url);
+      BaseOptions options = new BaseOptions(
+        baseUrl: url,
+        connectTimeout: 5000,
+        receiveTimeout: 3000,
+      );
+      Dio dio = new Dio(options);
+      dio.options.connectTimeout = 5000; // 5s
+      Response response = await dio.get(url);
+      // final response = await http.get(url);
       setState(() {
         loading = false;
       });
     } on Exception catch (_) {
       setState(() {
-        loading=true;
+        loading = true;
         hostyes = false;
       });
     }
@@ -45,7 +54,8 @@ class _WebState extends State<Web> {
                       children: <Widget>[
                         Text(
                           'ເຊື່ອມຕໍ່ຜິດພາດ/Error connection.!',
-                          style: TextStyle(fontSize: 12.0, color: Colors.brown[200]),
+                          style: TextStyle(
+                              fontSize: 12.0, color: Colors.brown[200]),
                         ),
                         Text(''),
                         Ink(
@@ -67,7 +77,7 @@ class _WebState extends State<Web> {
             ),
           )
         : WebviewScaffold(
-            url:url,
+            url: url,
             withJavascript: true,
             withLocalStorage: true,
             resizeToAvoidBottomInset: true,
