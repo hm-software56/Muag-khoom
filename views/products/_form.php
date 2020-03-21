@@ -10,7 +10,9 @@ use kartik\select2\Select2;
 ?>
 <br />
 <div class="products-form">
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'options' => ['autocomplete' => "off"],
+    ]); ?>
     <?php // $form->field($model, 'category_id')->dropDownList(yii\helpers\ArrayHelper::map(\app\models\Category::find()->all(), 'id', 'name'), ['class' => 'form-control', 'prompt' => '']) ?>
     <?php
     echo $form->field($model, 'category_id')->widget(Select2::classname(), [

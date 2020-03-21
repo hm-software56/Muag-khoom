@@ -94,7 +94,7 @@ class SiteController extends Controller {
             unset(Yii::$app->session['keys']);
             unset(Yii::$app->session['step']);
         }
-        if (!Yii::$app->user->isGuest) {
+        if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
         $login = new \app\models\User();

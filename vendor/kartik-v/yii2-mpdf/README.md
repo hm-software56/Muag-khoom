@@ -2,7 +2,7 @@ yii2-mpdf
 =============
 
 [![Stable Version](https://poser.pugx.org/kartik-v/yii2-mpdf/v/stable)](https://packagist.org/packages/kartik-v/yii2-mpdf)
-[![Unstable Version](https://poser.pugx.org/kartik-v/yii2-mpdf/v/unstable)](https://packagist.org/packages/kartik-v/yii2-mpdf)
+[![Untable Version](https://poser.pugx.org/kartik-v/yii2-mpdf/v/unstable)](https://packagist.org/packages/kartik-v/yii2-mpdf)
 [![License](https://poser.pugx.org/kartik-v/yii2-mpdf/license)](https://packagist.org/packages/kartik-v/yii2-mpdf)
 [![Total Downloads](https://poser.pugx.org/kartik-v/yii2-mpdf/downloads)](https://packagist.org/packages/kartik-v/yii2-mpdf)
 [![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-mpdf/d/monthly)](https://packagist.org/packages/kartik-v/yii2-mpdf)
@@ -120,4 +120,4 @@ For other usage and details, read the detailed [documentation](http://demos.kraj
 
 ## License
 
-**yii2-mpdf** is released under the BSD-3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-mpdf** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.

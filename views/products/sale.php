@@ -52,7 +52,7 @@ use kartik\select2\Select2;
                         $.post( "index.php?r=products/searchpd&searchtxt="+$(this).val(), function( data ) {
                         $( "#proct" ).html( data );
                         });
-                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ'), 'id' => 'search11'
+                ', 'placeholder' => Yii::t('app', 'ຄົ້ນ​ຫາ'),'autocomplete' => "off", 'id' => 'search11'
                     ])->label(false);
                     yii\widgets\ActiveForm::end();
                 

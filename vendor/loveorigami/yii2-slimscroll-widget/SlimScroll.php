@@ -4,7 +4,7 @@ namespace lo\widgets;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
-use lo\widgets\SlimScrollAsset;
+
 class SlimScroll extends \yii\base\Widget
 {
 
@@ -69,7 +69,7 @@ class SlimScroll extends \yii\base\Widget
     public function run()
     {
         $view = $this->getView();
-        SlimScrollAsset::register($view);
+        SlimscrollAsset::register($view);
         $options = Json::encode(ArrayHelper::merge(self::$default, $this->options));
         $view->registerJs("jQuery('#{$this->htmlOptions['id']}').slimScroll($options);");
 

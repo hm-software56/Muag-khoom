@@ -48,7 +48,7 @@ use yii\web\UrlManager;
                   $( "#output" ).html( data );
                   document.getElementById("search").focus();
                 });
-            ', 'autofocus' => 'autofocus', 'placeholder' => Yii::t('app', 'ລະ​ຫັດ​ບາ​ໂຄດ'), 'id' => 'search', 'class' => 'form-control']);
+            ', 'autofocus' => 'autofocus','autocomplete' => "off", 'placeholder' => Yii::t('app', 'ລະ​ຫັດ​ບາ​ໂຄດ'), 'id' => 'search', 'class' => 'form-control']);
     }
     ?>
 </div>

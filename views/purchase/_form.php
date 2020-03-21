@@ -9,7 +9,9 @@ use app\models\PurchaseItem;
 
 <div class="purchase-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin([
+        'options' => ['autocomplete' => "off"],
+    ]); ?>
 
     <?= $form->field($model, 'detail')->textarea(['rows' => 2])->label(Yii::t('models','​ລາຍ​ລະ​ອຽດ'))?>
     <div class="row">
