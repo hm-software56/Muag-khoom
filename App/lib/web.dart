@@ -10,7 +10,8 @@ class Web extends StatefulWidget {
 }
 
 class _WebState extends State<Web> {
-  var url = 'http://192.168.0.102';
+  //var url = 'http://192.168.0.102';
+  var url='https://pos.cyberia.la/Muag-khoom';
   bool loading = true;
   bool hostyes = true;
 

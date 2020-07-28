@@ -26,3 +26,4 @@ phpunit.phar
 /phpunit.xml
 runtime/
 web/assets/
+web/image/
