@@ -39,6 +39,10 @@ class ComposerStaticInit7f89eb470f8d361aa0f4a8a1f6149d80
             'yii2mod\\c3\\chart\\' => 17,
             'yii2assets\\printthis\\' => 21,
         ),
+        't' => 
+        array (
+            'toriphes\\lazyload\\' => 18,
+        ),
         's' => 
         array (
             'schmunk42\\giiant\\' => 17,
@@ -216,6 +220,10 @@ class ComposerStaticInit7f89eb470f8d361aa0f4a8a1f6149d80
         'yii2assets\\printthis\\' => 
         array (
             0 => __DIR__ . '/..' . '/yii2assets/yii2-printthis',
+        ),
+        'toriphes\\lazyload\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toriphes/yii2-widget-lazyload',
         ),
         'schmunk42\\giiant\\' => 
         array (

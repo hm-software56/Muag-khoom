@@ -49,7 +49,7 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
 </script>
     <table class="table table-striped " >
         <tr>
-            <td align="right"><?=Yii::t('app','ລວມ​ຈ​ຳ​ນວນ​ເງ​ີນ​ທັງ​ໝົດ')?>:</td>
+            <td align="right"><?=Yii::t('app','ລວມຈໍານວນເງິີນທັງໝົດ')?>:</td>
             <td><b><?= number_format(Yii::$app->session['totalprice'] + \Yii::$app->session['discount'], 2) ?> <?=Yii::$app->session['currency']->name?></b></td>
 
         </tr>

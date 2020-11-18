@@ -295,4 +295,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'toriphes/yii2-widget-lazyload' => 
+  array (
+    'name' => 'toriphes/yii2-widget-lazyload',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@toriphes/lazyload' => $vendorDir . '/toriphes/yii2-widget-lazyload',
+    ),
+  ),
 );

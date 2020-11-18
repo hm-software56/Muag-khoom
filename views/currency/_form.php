@@ -14,11 +14,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'code')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'code')->textarea(['rows' => 6,'disabled'=>true]) ?>
 
     <?= $form->field($model, 'rate')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'round_exch')->textInput() ?>
+    <?= $form->field($model, 'round_exch')->textInput(['disabled'=>true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('models', 'Save'), ['class' => 'btn btn-success']) ?>

@@ -34,7 +34,8 @@
         "2amigos/yii2-editable-widget": "~1.0",
         "2amigos/yii2-grid-view-library": "~1.0",
         "kartik-v/yii2-grid": "*",
-        "kartik-v/yii2-widget-select2": "dev-master"
+        "kartik-v/yii2-widget-select2": "dev-master",
+        "toriphes/yii2-widget-lazyload": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

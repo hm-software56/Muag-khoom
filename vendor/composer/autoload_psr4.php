@@ -17,6 +17,7 @@ return array(
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'yii2mod\\c3\\chart\\' => array($vendorDir . '/yii2mod/yii2-c3-chart'),
     'yii2assets\\printthis\\' => array($vendorDir . '/yii2assets/yii2-printthis'),
+    'toriphes\\lazyload\\' => array($vendorDir . '/toriphes/yii2-widget-lazyload'),
     'schmunk42\\giiant\\' => array($vendorDir . '/schmunk42/yii2-giiant/src'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'pheme\\settings\\' => array($vendorDir . '/pheme/yii2-settings'),

@@ -69,7 +69,7 @@ class SlimScroll extends \yii\base\Widget
     public function run()
     {
         $view = $this->getView();
-        SlimscrollAsset::register($view);
+        SlimScrollAsset::register($view);
         $options = Json::encode(ArrayHelper::merge(self::$default, $this->options));
         $view->registerJs("jQuery('#{$this->htmlOptions['id']}').slimScroll($options);");
 

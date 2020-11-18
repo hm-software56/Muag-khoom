@@ -84,7 +84,7 @@ if (Yii::$app->session->hasFlash('su')) {
                                         'title' => 'Delete',
                                         'data-pjax' => '0',
                                         'data-method' => "post",
-                                        'data-confirm' => Yii::t('app', 'Are you want to delete this item.?'),
+                                        'data-confirm' => Yii::t('app', 'ທ່ານຕ້ອງການລືບຜູ້ເຂົ້າໃຊ້ລະບົບນິ້ແມ່ນບໍ.?'),
                                         'class' => 'btn btn-danger btn-xs',
                                             ]
                             );

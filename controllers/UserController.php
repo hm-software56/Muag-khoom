@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\User;
 use app\models\UserSearch;
+use yii\db\Exception;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -15,12 +16,14 @@ use Imagine\Image\Box;
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller {
+class UserController extends Controller
+{
 
     /**
      * @inheritdoc
      */
-    public function beforeAction($action) {
+    public function beforeAction($action)
+    {
         if (empty(\Yii::$app->session['user'])) {
             if (Yii::$app->controller->action->id != "login") {
                 $this->redirect(['site/login']);
@@ -28,11 +31,12 @@ class UserController extends Controller {
         } elseif (\Yii::$app->session['date_login'] < date('Ymd')) {
             unset(\Yii::$app->session['user']);
             $this->redirect(['site/login']);
-        } 
+        }
         return parent::beforeAction($action);
     }
 
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -47,13 +51,15 @@ class UserController extends Controller {
      * Lists all User models.
      * @return mixed
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $searchModel = new UserSearch();
+        $searchModel->status = 1;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -62,9 +68,10 @@ class UserController extends Controller {
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
         return $this->render('view', [
-                    'model' => $this->findModel($id),
+            'model' => $this->findModel($id),
         ]);
     }
 
@@ -73,7 +80,8 @@ class UserController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
         ini_set('memory_limit', '2048M');
         $model = new User();
         if ($model->load(Yii::$app->request->post())) {
@@ -81,8 +89,8 @@ class UserController extends Controller {
             $photo_name = date('YmdHmsi') . '.' . $model->photo->extension;
             $model->photo->saveAs(Yii::$app->basePath . '/web/images/' . $photo_name);
             Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 150, 150)
-                    ->resize(new Box(150, 150))
-                    ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
+                ->resize(new Box(150, 150))
+                ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
             unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
             $model->photo = $photo_name;
             $model->date = date('Y-m-d');
@@ -92,7 +100,7 @@ class UserController extends Controller {
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
-                        'model' => $model,
+                'model' => $model,
             ]);
         }
     }
@@ -103,7 +111,8 @@ class UserController extends Controller {
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         ini_set('memory_limit', '2048M');
         $model = $this->findModel($id);
         $photo_old = $model->photo;
@@ -113,8 +122,8 @@ class UserController extends Controller {
                 $photo_name = date('YmdHmsi') . '.' . $photo->extension;
                 $photo->saveAs(Yii::$app->basePath . '/web/images/' . $photo_name);
                 Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 150, 150)
-                        ->resize(new Box(150, 150))
-                        ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
+                    ->resize(new Box(150, 150))
+                    ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
                 unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
                 $model->photo = $photo_name;
             } else {
@@ -132,7 +141,7 @@ class UserController extends Controller {
             }
         } else {
             return $this->render('update', [
-                        'model' => $model,
+                'model' => $model,
             ]);
         }
     }
@@ -143,8 +152,15 @@ class UserController extends Controller {
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id) {
-        $this->findModel($id)->delete();
+    public function actionDelete($id)
+    {
+        try {
+            $this->findModel($id)->delete();
+        } catch (Exception $ex) {
+            $model = $this->findModel($id);
+            User::updateAll(['status' => 0], ['id' => $id]);
+        }
+
 
         return $this->redirect(['index']);
     }
@@ -156,7 +172,8 @@ class UserController extends Controller {
      * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id) {
+    protected function findModel($id)
+    {
         if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {

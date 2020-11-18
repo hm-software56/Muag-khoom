@@ -1,0 +1,22 @@
+{
+    "name": "toriphes/yii2-widget-lazyload",
+    "description": "wrapper of http://www.appelsiini.net/projects/lazyload jquery library",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","lazyload","image","widget"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Giulio Ganci",
+            "email": "giulioganci@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/jquery.lazyload": "~1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "toriphes\\lazyload\\": ""
+        }
+    }
+}

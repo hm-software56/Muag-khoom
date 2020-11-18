@@ -96,13 +96,19 @@ AppAsset::register($this);
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish" onclick="onclick_loadimg()">
                                         <span class="label label-danger" style="right: 80px !important; "><?= ($prd > 0) ? $prd : '' ?></span>
                                         <i class="fa fa-bullhorn"></i>
-                                        <?= Yii::t('app', 'ສີນ​ຄ້າ​ໝົດ') ?>
+                                        <?= Yii::t('app', 'ສີນຄ້າໝົດ') ?>
                                         
                                     </a>
                                 </li>
+                                <!--<li class="dropdown user user-menu">
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale" onclick="onclick_loadimg()">
+                                        <span class="glyphicon glyphicon-share-alt"></span><?=Yii::t('app', 'ຮ້ານອາຫານ')?>
+                                    </a>
+                                </li>-->
+
                                 <li class="dropdown user user-menu">
                                     <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale" onclick="onclick_loadimg()">
-                                        <span class="glyphicon glyphicon-shopping-cart"></span><?=Yii::t('app', 'ຂາຍ​ໜ້າ​ຮ້ານ(POS)')?>
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><?=Yii::t('app', 'ຂາຍໜ້າຮ້ານ(POS)')?>
                                     </a>
                                 </li>
                                 <li class="dropdown user user-menu">
