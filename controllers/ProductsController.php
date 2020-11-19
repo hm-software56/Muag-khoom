@@ -6,6 +6,7 @@ use Yii;
 use app\models\Products;
 use app\models\ProductsSearch;
 use yii\data\Pagination;
+use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -78,7 +79,10 @@ class ProductsController extends Controller
                 'model' => $model,
             ]);
         } else {
-            $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(60)->all();
+            $model = Products::find()->where(['status' => 1])
+                //->orderBy('id ASC')
+                ->orderBy(new Expression('rand()'))
+                ->limit(60)->all();
             return $this->render('sale', [
                 'model' => $model,
             ]);

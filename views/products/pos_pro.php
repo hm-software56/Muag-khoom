@@ -23,7 +23,6 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
 ?>
     <style>
         /* display this row with flex and use wrap (= respect columns' widths) */
-
         .row-flex {
             display: flex;
             flex-wrap: wrap;
