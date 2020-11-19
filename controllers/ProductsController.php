@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Products;
 use app\models\ProductsSearch;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -47,7 +48,7 @@ class ProductsController extends Controller
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         //$dataProvider->pagination = ['defaultPageSize' => 200];
-        $dataProvider->pagination->pageSize = 1000;
+        $dataProvider->pagination->pageSize = 30;
 
 
         return $this->render('index', [
@@ -71,13 +72,13 @@ class ProductsController extends Controller
             if (!empty($_GET['cid'])) {
                 $model = Products::find()->where(['status' => 1, 'category_id' => $_GET['cid']])->orderBy('id ASC')->all();
             } else {
-                $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->all();
+                $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(60)->all();
             }
             return $this->renderAjax('pos_pro', [
                 'model' => $model,
             ]);
         } else {
-            $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->all();
+            $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(60)->all();
             return $this->render('sale', [
                 'model' => $model,
             ]);
@@ -910,8 +911,19 @@ class ProductsController extends Controller
 
     public function actionProduct()
     {
-        $model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1])->all();
-        return $this->render('product', ['model' => $model]);
+        #$model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1])->all();
+       # return $this->render('product', ['model' => $model]);
+        $query = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count()]);
+        $model = $query->offset($pages->offset)
+            ->limit(20)
+            ->all();
+
+        return $this->render('product', [
+            'model' => $model,
+            'pages' => $pages,
+        ]);
     }
 
     public function actionProductfinish()
@@ -919,6 +931,7 @@ class ProductsController extends Controller
         $profle = \app\models\ShopProfile::find()->one();
         $model = Products::find()->where('qautity<=' . $profle->alert . '')->andwhere(['status' => 1])->all();
         return $this->render('productfinish', ['model' => $model]);
+
     }
 
     public function actionRepsaleornot()
@@ -986,7 +999,7 @@ class ProductsController extends Controller
         if (isset($_GET['searchtxt']) && !empty($_GET['searchtxt'])) {
             $model = Products::find()->where("name like '%" . $_GET['searchtxt'] . "%' and status=1")->all();
         } else {
-            $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->all();
+            $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(60)->all();
         }
         return $this->renderAjax('pos_pro', ['model' => $model]);
     }
@@ -1030,7 +1043,7 @@ class ProductsController extends Controller
     {
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination->pageSize = 1000;
+        $dataProvider->pagination->pageSize = 30;
         return $this->render('checkpd', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

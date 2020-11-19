@@ -70,7 +70,7 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
                 <td align="right">​<b><?= number_format($multi_currency_pay->amount_usd, 2) ?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນຖອນ</td>
+                <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນທອນ</td>
                 <td align="right">​<b>
                         <?php
                         if (\Yii::$app->session['paychange'] > 0) {

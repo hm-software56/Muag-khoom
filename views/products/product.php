@@ -43,6 +43,14 @@
                 </tr>
             </tbody>
         </table>
+        <?php
+        // display pagination
+        echo \yii\widgets\LinkPager::widget([
+            'pagination' => $pages,
+            'firstPageLabel' => 'First',
+            'lastPageLabel'  => 'Last'
+        ]);
+        ?>
     </div>
 </div>
 

@@ -124,7 +124,7 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
 
         </tr>
         <tr>
-            <td align="right"><?= Yii::t('app', 'ຈ​ຳ​ນວນ​​ເງີນຖອນ') ?>:</td>
+            <td align="right"><?= Yii::t('app', 'ຈ​ຳ​ນວນ​​ເງີນທອນ') ?>:</td>
             <td style="color: green"><b><div id="p_d">
                 <?php
                 if (\Yii::$app->session['paychange']>0) {
