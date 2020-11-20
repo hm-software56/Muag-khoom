@@ -1,6 +1,6 @@
 Yii 2 Point of Sale (POS)
 ============================
-
+<img src="https://github.com/ntajxyooj/Muag-khoom/blob/master/images/home.png" width="100%"> 
 
 REQUIREMENTS
 ------------
