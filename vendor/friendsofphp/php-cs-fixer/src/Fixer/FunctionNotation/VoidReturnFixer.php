@@ -48,11 +48,13 @@ final class VoidReturnFixer extends AbstractFixer
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before PhpdocNoEmptyReturnFixer, ReturnTypeDeclarationFixer.
+     * Must run after NoSuperfluousPhpdocTagsFixer, SimplifiedNullReturnFixer.
      */
     public function getPriority()
     {
-        // must run before ReturnTypeDeclarationFixer and PhpdocNoEmptyReturnFixer
-        return 15;
+        return 5;
     }
 
     /**
@@ -77,7 +79,7 @@ final class VoidReturnFixer extends AbstractFixer
     protected function applyFix(\SplFileInfo $file, Tokens $tokens)
     {
         // These cause syntax errors.
-        static $blacklistFuncNames = [
+        static $excludeFuncNames = [
             [T_STRING, '__construct'],
             [T_STRING, '__destruct'],
             [T_STRING, '__clone'],
@@ -89,7 +91,7 @@ final class VoidReturnFixer extends AbstractFixer
             }
 
             $funcName = $tokens->getNextMeaningfulToken($index);
-            if ($tokens[$funcName]->equalsAny($blacklistFuncNames, false)) {
+            if ($tokens[$funcName]->equalsAny($excludeFuncNames, false)) {
                 continue;
             }
 

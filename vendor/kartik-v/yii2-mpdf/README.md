@@ -1,8 +1,18 @@
-yii2-mpdf
-=============
+<h1 align="center">
+    <a href="http://demos.krajee.com" title="Krajee Demos" target="_blank">
+        <img src="http://kartik-v.github.io/bootstrap-fileinput-samples/samples/krajee-logo-b.png" alt="Krajee Logo"/>
+    </a>
+    <br>
+    yii2-mpdf
+    <hr>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DTP3NZQ6G2AYU"
+       title="Donate via Paypal" target="_blank">
+        <img src="http://kartik-v.github.io/bootstrap-fileinput-samples/samples/donate.png" alt="Donate"/>
+    </a>
+</h1>
 
 [![Stable Version](https://poser.pugx.org/kartik-v/yii2-mpdf/v/stable)](https://packagist.org/packages/kartik-v/yii2-mpdf)
-[![Untable Version](https://poser.pugx.org/kartik-v/yii2-mpdf/v/unstable)](https://packagist.org/packages/kartik-v/yii2-mpdf)
+[![Unstable Version](https://poser.pugx.org/kartik-v/yii2-mpdf/v/unstable)](https://packagist.org/packages/kartik-v/yii2-mpdf)
 [![License](https://poser.pugx.org/kartik-v/yii2-mpdf/license)](https://packagist.org/packages/kartik-v/yii2-mpdf)
 [![Total Downloads](https://poser.pugx.org/kartik-v/yii2-mpdf/downloads)](https://packagist.org/packages/kartik-v/yii2-mpdf)
 [![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-mpdf/d/monthly)](https://packagist.org/packages/kartik-v/yii2-mpdf)
@@ -71,7 +81,7 @@ public function actionReport() {
         'content' => $content,  
         // format content from your own css file if needed or use the
         // enhanced bootstrap css built by Krajee for mPDF formatting 
-        'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+        'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
         // any css to be embedded if required
         'cssInline' => '.kv-heading-1{font-size:18px}', 
          // set mPDF properties on the fly
@@ -118,6 +128,36 @@ return $pdf->render();
 
 For other usage and details, read the detailed [documentation](http://demos.krajee.com/mpdf).
 
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/kartik-v/yii2-mpdf/graphs/contributors"><img src="https://opencollective.com/yii2-mpdf/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/yii2-mpdf/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/yii2-mpdf"><img src="https://opencollective.com/yii2-mpdf/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/yii2-mpdf/contribute)]
+
+<a href="https://opencollective.com/yii2-mpdf/organization/0/website"><img src="https://opencollective.com/yii2-mpdf/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/1/website"><img src="https://opencollective.com/yii2-mpdf/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/2/website"><img src="https://opencollective.com/yii2-mpdf/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/3/website"><img src="https://opencollective.com/yii2-mpdf/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/4/website"><img src="https://opencollective.com/yii2-mpdf/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/5/website"><img src="https://opencollective.com/yii2-mpdf/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/6/website"><img src="https://opencollective.com/yii2-mpdf/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/7/website"><img src="https://opencollective.com/yii2-mpdf/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/8/website"><img src="https://opencollective.com/yii2-mpdf/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/yii2-mpdf/organization/9/website"><img src="https://opencollective.com/yii2-mpdf/organization/9/avatar.svg"></a>
+
 ## License
 
-**yii2-mpdf** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-mpdf** is released under the BSD-3-Clause License. See the bundled `LICENSE.md` for details.

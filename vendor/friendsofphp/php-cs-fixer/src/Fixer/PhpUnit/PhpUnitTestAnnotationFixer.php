@@ -12,16 +12,15 @@
 
 namespace PhpCsFixer\Fixer\PhpUnit;
 
-use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\DocBlock\DocBlock;
 use PhpCsFixer\DocBlock\Line;
+use PhpCsFixer\Fixer\AbstractPhpUnitFixer;
 use PhpCsFixer\Fixer\ConfigurationDefinitionFixerInterface;
 use PhpCsFixer\Fixer\WhitespacesAwareFixerInterface;
 use PhpCsFixer\FixerConfiguration\FixerConfigurationResolver;
 use PhpCsFixer\FixerConfiguration\FixerOptionBuilder;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
-use PhpCsFixer\Indicator\PhpUnitTestCaseIndicator;
 use PhpCsFixer\Preg;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
@@ -30,7 +29,7 @@ use PhpCsFixer\Tokenizer\TokensAnalyzer;
 /**
  * @author Gert de Pagter
  */
-final class PhpUnitTestAnnotationFixer extends AbstractFixer implements ConfigurationDefinitionFixerInterface, WhitespacesAwareFixerInterface
+final class PhpUnitTestAnnotationFixer extends AbstractPhpUnitFixer implements ConfigurationDefinitionFixerInterface, WhitespacesAwareFixerInterface
 {
     /**
      * {@inheritdoc}
@@ -66,32 +65,25 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
         );
     }
 
+    /**
+     * {@inheritdoc}
+     *
+     * Must run before NoEmptyPhpdocFixer, PhpUnitMethodCasingFixer, PhpdocTrimFixer.
+     */
     public function getPriority()
     {
-        // must be run before the PhpdocSeparationFixer and PhpdocOrderFixer
         return 10;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function isCandidate(Tokens $tokens)
+    protected function applyPhpUnitClassFix(Tokens $tokens, $startIndex, $endIndex)
     {
-        return $tokens->isAllTokenKindsFound([T_CLASS, T_FUNCTION]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function applyFix(\SplFileInfo $file, Tokens $tokens)
-    {
-        $phpUnitTestCaseIndicator = new PhpUnitTestCaseIndicator();
-        foreach ($phpUnitTestCaseIndicator->findPhpUnitClasses($tokens) as $indexes) {
-            if ('annotation' === $this->configuration['style']) {
-                $this->applyTestAnnotation($tokens, $indexes[0], $indexes[1]);
-            } else {
-                $this->applyTestPrefix($tokens, $indexes[0], $indexes[1]);
-            }
+        if ('annotation' === $this->configuration['style']) {
+            $this->applyTestAnnotation($tokens, $startIndex, $endIndex);
+        } else {
+            $this->applyTestPrefix($tokens, $startIndex, $endIndex);
         }
     }
 
@@ -127,25 +119,23 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
             $functionNameIndex = $tokens->getNextMeaningfulToken($i);
             $functionName = $tokens[$functionNameIndex]->getContent();
 
-            if ($this->hasTestPrefix($functionName)) {
+            if ($this->hasTestPrefix($functionName) && !$this->hasProperTestAnnotation($tokens, $i)) {
                 $newFunctionName = $this->removeTestPrefix($functionName);
                 $tokens[$functionNameIndex] = new Token([T_STRING, $newFunctionName]);
             }
 
             $docBlockIndex = $this->getDocBlockIndex($tokens, $i);
 
-            // Create a new docblock if it didn't have one before;
-            if (!$this->hasDocBlock($tokens, $i)) {
+            if ($this->isPHPDoc($tokens, $docBlockIndex)) {
+                $lines = $this->updateDocBlock($tokens, $docBlockIndex);
+                $lines = $this->addTestAnnotation($lines, $tokens, $docBlockIndex);
+                $lines = implode('', $lines);
+
+                $tokens[$docBlockIndex] = new Token([T_DOC_COMMENT, $lines]);
+            } else {
+                // Create a new docblock if it didn't have one before;
                 $this->createDocBlock($tokens, $docBlockIndex);
-
-                continue;
             }
-            $lines = $this->updateDocBlock($tokens, $docBlockIndex);
-
-            $lines = $this->addTestAnnotation($lines, $tokens, $docBlockIndex);
-
-            $lines = implode('', $lines);
-            $tokens[$docBlockIndex] = new Token([T_DOC_COMMENT, $lines]);
         }
     }
 
@@ -157,14 +147,17 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
     {
         for ($i = $endIndex - 1; $i > $startIndex; --$i) {
             // We explicitly check again if the function has a doc block to save some time.
-            if (!$this->isTestMethod($tokens, $i) || !$this->hasDocBlock($tokens, $i)) {
+            if (!$this->isTestMethod($tokens, $i)) {
                 continue;
             }
 
             $docBlockIndex = $this->getDocBlockIndex($tokens, $i);
 
-            $lines = $this->updateDocBlock($tokens, $docBlockIndex);
+            if (!$this->isPHPDoc($tokens, $docBlockIndex)) {
+                continue;
+            }
 
+            $lines = $this->updateDocBlock($tokens, $docBlockIndex);
             $lines = implode('', $lines);
             $tokens[$docBlockIndex] = new Token([T_DOC_COMMENT, $lines]);
 
@@ -196,21 +189,17 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
         $functionNameIndex = $tokens->getNextMeaningfulToken($index);
         $functionName = $tokens[$functionNameIndex]->getContent();
 
-        if ($this->startsWith('test', $functionName)) {
+        if ($this->hasTestPrefix($functionName)) {
             return true;
-        }
-        // If the function doesn't have test in its name, and no doc block, its not a test
-        if (!$this->hasDocBlock($tokens, $index)) {
-            return false;
         }
 
         $docBlockIndex = $this->getDocBlockIndex($tokens, $index);
-        $doc = $tokens[$docBlockIndex]->getContent();
-        if (false === strpos($doc, '@test')) {
-            return false;
-        }
 
-        return true;
+        // If the function doesn't have test in its name, and no doc block, its not a test
+        return
+            $this->isPHPDoc($tokens, $docBlockIndex)
+            && false !== strpos($tokens[$docBlockIndex]->getContent(), '@test')
+        ;
     }
 
     /**
@@ -226,62 +215,26 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
     }
 
     /**
-     * @param string $needle
-     * @param string $haystack
-     *
-     * @return bool
-     */
-    private function startsWith($needle, $haystack)
-    {
-        $len = \strlen($needle);
-
-        return substr($haystack, 0, $len) === $needle;
-    }
-
-    /**
-     * @param int $index
-     *
-     * @return bool
-     */
-    private function hasDocBlock(Tokens $tokens, $index)
-    {
-        $docBlockIndex = $this->getDocBlockIndex($tokens, $index);
-
-        return $tokens[$docBlockIndex]->isGivenKind(T_DOC_COMMENT);
-    }
-
-    /**
-     * @param int $index
-     *
-     * @return int
-     */
-    private function getDocBlockIndex(Tokens $tokens, $index)
-    {
-        do {
-            $index = $tokens->getPrevNonWhitespace($index);
-        } while ($tokens[$index]->isGivenKind([T_PUBLIC, T_PROTECTED, T_PRIVATE, T_FINAL, T_ABSTRACT, T_COMMENT]));
-
-        return $index;
-    }
-
-    /**
      * @param string $functionName
      *
      * @return bool
      */
     private function hasTestPrefix($functionName)
     {
-        if (!$this->startsWith('test', $functionName)) {
-            return false;
-        }
+        return 0 === strpos($functionName, 'test');
+    }
 
-        if ('test' === $functionName) {
-            return true;
-        }
+    /**
+     * @param int $index
+     *
+     * @return bool
+     */
+    private function hasProperTestAnnotation(Tokens $tokens, $index)
+    {
+        $docBlockIndex = $this->getDocBlockIndex($tokens, $index);
+        $doc = $tokens[$docBlockIndex]->getContent();
 
-        $nextCharacter = $functionName[4];
-
-        return $nextCharacter === strtoupper($nextCharacter);
+        return 1 === Preg::match('/\*\s+@test\b/', $doc);
     }
 
     /**
@@ -291,9 +244,9 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
      */
     private function removeTestPrefix($functionName)
     {
-        $remainder = Preg::replace('/^test_?/', '', $functionName);
+        $remainder = Preg::replace('/^test(?=[A-Z_])_?/', '', $functionName);
 
-        if ('' === $remainder || is_numeric($remainder[0])) {
+        if ('' === $remainder) {
             return $functionName;
         }
 
@@ -467,7 +420,7 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
         $dependsIndex = $this->findWhereDependsFunctionNameStarts($line);
         $dependsFunctionName = implode('', \array_slice($line, $dependsIndex));
 
-        if ($this->startsWith('test', $dependsFunctionName)) {
+        if ($this->hasTestPrefix($dependsFunctionName)) {
             $dependsFunctionName = $this->removeTestPrefix($dependsFunctionName);
         }
         array_splice($line, $dependsIndex);
@@ -484,7 +437,7 @@ public function testItDoesSomething() {}}'.$this->whitespacesConfig->getLineEndi
         $dependsIndex = $this->findWhereDependsFunctionNameStarts($line);
         $dependsFunctionName = implode('', \array_slice($line, $dependsIndex));
 
-        if (!$this->startsWith('test', $dependsFunctionName)) {
+        if (!$this->hasTestPrefix($dependsFunctionName)) {
             $dependsFunctionName = $this->addTestPrefix($dependsFunctionName);
         }
 

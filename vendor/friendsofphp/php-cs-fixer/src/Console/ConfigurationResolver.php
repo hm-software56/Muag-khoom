@@ -344,7 +344,7 @@ final class ConfigurationResolver
                 );
 
                 if (\count($riskyFixers)) {
-                    throw new InvalidConfigurationException(sprintf('The rules contain risky fixers (%s), but they are not allowed to run. Perhaps you forget to use --allow-risky=yes option?', implode(', ', $riskyFixers)));
+                    throw new InvalidConfigurationException(sprintf('The rules contain risky fixers (%s), but they are not allowed to run. Perhaps you forget to use --allow-risky=yes option?', implode('", "', $riskyFixers)));
                 }
             }
         }
@@ -379,7 +379,13 @@ final class ConfigurationResolver
                 $this->path = $this->options['path'];
             } else {
                 $this->path = array_map(
-                    static function ($path) use ($cwd, $filesystem) {
+                    static function ($rawPath) use ($cwd, $filesystem) {
+                        $path = trim($rawPath);
+
+                        if ('' === $path) {
+                            throw new InvalidConfigurationException("Invalid path: \"{$rawPath}\".");
+                        }
+
                         $absolutePath = $filesystem->isAbsolutePath($path)
                             ? $path
                             : $cwd.\DIRECTORY_SEPARATOR.$path;
@@ -580,10 +586,11 @@ final class ConfigurationResolver
             $configDir = $this->cwd;
         } elseif (1 < \count($path)) {
             throw new InvalidConfigurationException('For multiple paths config parameter is required.');
-        } elseif (is_file($path[0]) && $dirName = pathinfo($path[0], PATHINFO_DIRNAME)) {
-            $configDir = $dirName;
-        } else {
+        } elseif (!is_file($path[0])) {
             $configDir = $path[0];
+        } else {
+            $dirName = pathinfo($path[0], PATHINFO_DIRNAME);
+            $configDir = $dirName ?: $path[0];
         }
 
         $candidates = [
@@ -682,7 +689,7 @@ final class ConfigurationResolver
         if ('{' === $rules[0]) {
             $rules = json_decode($rules, true);
             if (JSON_ERROR_NONE !== json_last_error()) {
-                throw new InvalidConfigurationException(sprintf('Invalid JSON rules input: %s.', json_last_error_msg()));
+                throw new InvalidConfigurationException(sprintf('Invalid JSON rules input: "%s".', json_last_error_msg()));
             }
 
             return $rules;
@@ -762,7 +769,7 @@ final class ConfigurationResolver
             if (isset($rules[$fixerName]) && $fixer instanceof DeprecatedFixerInterface) {
                 $successors = $fixer->getSuccessorsNames();
                 $messageEnd = [] === $successors
-                    ? sprintf(' and will be removed in version %d.0.', (int) Application::VERSION + 1)
+                    ? sprintf(' and will be removed in version %d.0.', Application::getMajorVersion())
                     : sprintf('. Use %s instead.', str_replace('`', '"', Utils::naturalLanguageJoinWithBackticks($successors)));
 
                 $message = "Rule \"{$fixerName}\" is deprecated{$messageEnd}";
@@ -847,7 +854,7 @@ final class ConfigurationResolver
             }
 
             return new \CallbackFilterIterator(
-                $nestedFinder,
+                new \IteratorIterator($nestedFinder),
                 static function (\SplFileInfo $current) use ($pathsByType) {
                     $currentRealPath = $current->getRealPath();
 

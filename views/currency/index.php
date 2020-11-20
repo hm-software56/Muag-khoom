@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'base_currency',
                 'label'=>Yii::t('models','Base Currency'),
-                'format' => 'html',
+                'format' => 'raw',
                 'contentOptions' => ['style' => 'text-align:center;'],
                 'value' => function ($data) {
                     return ($data->base_currency==1)?'<span style="color:green; "><i class="fa fa-check" aria-hidden="true"></i></span>':"";

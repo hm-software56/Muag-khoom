@@ -40,7 +40,7 @@ final class NoUnneededControlParenthesesFixer extends AbstractFixer implements C
     ];
 
     /**
-     * Dynamic yield option set on constructor.
+     * Dynamic `null` coalesce option set on constructor.
      */
     public function __construct()
     {
@@ -105,9 +105,9 @@ yield(2);
     }
 
     /**
-     * Should be run before no_trailing_whitespace.
-     *
      * {@inheritdoc}
+     *
+     * Must run before NoTrailingWhitespaceFixer.
      */
     public function getPriority()
     {

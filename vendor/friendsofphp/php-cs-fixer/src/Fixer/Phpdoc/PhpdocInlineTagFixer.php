@@ -46,6 +46,17 @@ final class PhpdocInlineTagFixer extends AbstractFixer
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before PhpdocAlignFixer.
+     * Must run after CommentToPhpdocFixer, PhpdocIndentFixer, PhpdocScalarFixer, PhpdocToCommentFixer, PhpdocTypesFixer.
+     */
+    public function getPriority()
+    {
+        return 0;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function isCandidate(Tokens $tokens)
     {
@@ -69,7 +80,7 @@ final class PhpdocInlineTagFixer extends AbstractFixer
             // Make sure the tags are written in lower case, remove white space between end
             // of text and closing bracket and between the tag and inline comment.
             $content = Preg::replaceCallback(
-                '#(?:@{+|{+[ \t]*@)[ \t]*(example|id|internal|inheritdoc|link|source|toc|tutorial)s?([^}]*)(?:}+)#i',
+                '#(?:@{+|{+\h*@)[ \t]*(example|id|internal|inheritdoc|link|source|toc|tutorial)s?([^}]*)(?:}+)#i',
                 static function (array $matches) {
                     $doc = trim($matches[2]);
 

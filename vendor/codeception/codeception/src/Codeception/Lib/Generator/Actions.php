@@ -5,6 +5,7 @@ use Codeception\Codecept;
 use Codeception\Configuration;
 use Codeception\Lib\Di;
 use Codeception\Lib\ModuleContainer;
+use Codeception\Util\ReflectionHelper;
 use Codeception\Util\Template;
 
 class Actions
@@ -115,7 +116,7 @@ EOF;
             ->place('module', $module)
             ->place('method', $refMethod->name)
             ->place('return_type', $returnType)
-            ->place('return', $returnType === 'void' ? '' : 'return ')
+            ->place('return', $returnType === ': void' ? '' : 'return ')
             ->place('params', $params);
 
         if (0 === strpos($refMethod->name, 'see')) {
@@ -155,7 +156,7 @@ EOF;
         $params = [];
         foreach ($refMethod->getParameters() as $param) {
             if ($param->isOptional()) {
-                $params[] = '$' . $param->name . ' = null';
+                $params[] = '$' . $param->name . ' = ' . ReflectionHelper::getDefaultValue($param);
             } else {
                 $params[] = '$' . $param->name;
             };

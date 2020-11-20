@@ -36,7 +36,7 @@ final class NoSuperfluousPhpdocTagsFixer extends AbstractFixer implements Config
     public function getDefinition()
     {
         return new FixerDefinition(
-            'Removes `@param` and `@return` tags that don\'t provide any useful information.',
+            'Removes `@param`, `@return` and `@var` tags that don\'t provide any useful information.',
             [
                 new CodeSample('<?php
 class Foo {
@@ -91,10 +91,12 @@ class Foo {
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before NoEmptyPhpdocFixer, PhpdocAlignFixer, VoidReturnFixer.
+     * Must run after CommentToPhpdocFixer, FullyQualifiedStrictTypesFixer, PhpdocAddMissingParamAnnotationFixer, PhpdocIndentFixer, PhpdocReturnSelfReferenceFixer, PhpdocScalarFixer, PhpdocToCommentFixer, PhpdocToParamTypeFixer, PhpdocToReturnTypeFixer, PhpdocTypesFixer.
      */
     public function getPriority()
     {
-        // should run before NoEmptyPhpdocFixer and after PhpdocToParamTypeFixer
         return 6;
     }
 
@@ -133,12 +135,14 @@ class Foo {
 
             $token = $tokens[$documentedElementIndex];
 
-            if ($token->isGivenKind(T_FUNCTION)) {
-                $content = $this->fixFunctionDocComment($content, $tokens, $index, $shortNames);
-            }
-
             if ($this->configuration['remove_inheritdoc']) {
                 $content = $this->removeSuperfluousInheritDoc($content);
+            }
+
+            if ($token->isGivenKind(T_FUNCTION)) {
+                $content = $this->fixFunctionDocComment($content, $tokens, $index, $shortNames);
+            } elseif ($token->isGivenKind(T_VARIABLE)) {
+                $content = $this->fixPropertyDocComment($content, $tokens, $index, $shortNames);
             }
 
             if ($content !== $initialContent) {
@@ -161,7 +165,7 @@ class Foo {
                 ->setAllowedTypes(['bool'])
                 ->setDefault(false)
                 ->getOption(),
-            (new FixerOptionBuilder('allow_unused_params', 'Whether `param` annontation without actual signature is allowed (`true`) or considered superfluous (`false`)'))
+            (new FixerOptionBuilder('allow_unused_params', 'Whether `param` annotation without actual signature is allowed (`true`) or considered superfluous (`false`)'))
                 ->setAllowedTypes(['bool'])
                 ->setDefault(false)
                 ->getOption(),
@@ -187,7 +191,7 @@ class Foo {
 
         $index = $tokens->getNextMeaningfulToken($docCommentIndex);
 
-        $kindsBeforeProperty = [T_STATIC, T_PRIVATE, T_PROTECTED, T_PUBLIC];
+        $kindsBeforeProperty = [T_STATIC, T_PRIVATE, T_PROTECTED, T_PUBLIC, CT::T_NULLABLE_TYPE, CT::T_ARRAY_TYPEHINT, T_STRING, T_NS_SEPARATOR];
 
         if (!$tokens[$index]->isGivenKind($kindsBeforeProperty)) {
             return null;
@@ -243,6 +247,31 @@ class Foo {
 
         foreach ($docBlock->getAnnotationsOfType('return') as $annotation) {
             if ($this->annotationIsSuperfluous($annotation, $returnTypeInfo, $shortNames)) {
+                $annotation->remove();
+            }
+        }
+
+        return $docBlock->getContent();
+    }
+
+    /**
+     * @param string $content
+     * @param int    $index   Index of the DocComment token
+     *
+     * @return string
+     */
+    private function fixPropertyDocComment($content, Tokens $tokens, $index, array $shortNames)
+    {
+        $docBlock = new DocBlock($content);
+
+        do {
+            $index = $tokens->getNextMeaningfulToken($index);
+        } while ($tokens[$index]->isGivenKind([T_STATIC, T_PRIVATE, T_PROTECTED, T_PUBLIC]));
+
+        $propertyTypeInfo = $this->getPropertyTypeInfo($tokens, $index);
+
+        foreach ($docBlock->getAnnotationsOfType('var') as $annotation) {
+            if ($this->annotationIsSuperfluous($annotation, $propertyTypeInfo, $shortNames)) {
                 $annotation->remove();
             }
         }
@@ -313,6 +342,23 @@ class Foo {
      *
      * @return array
      */
+    private function getPropertyTypeInfo(Tokens $tokens, $index)
+    {
+        if ($tokens[$index]->isGivenKind(T_VARIABLE)) {
+            return [
+                'type' => null,
+                'allows_null' => true,
+            ];
+        }
+
+        return $this->parseTypeHint($tokens, $index);
+    }
+
+    /**
+     * @param int $index The index of the first token of the type hint
+     *
+     * @return array
+     */
     private function parseTypeHint(Tokens $tokens, $index)
     {
         $allowsNull = false;
@@ -329,7 +375,7 @@ class Foo {
         }
 
         return [
-            'type' => $type,
+            'type' => '' === $type ? null : $type,
             'allows_null' => $allowsNull,
         ];
     }
@@ -342,7 +388,9 @@ class Foo {
     private function annotationIsSuperfluous(Annotation $annotation, array $info, array $symbolShortNames)
     {
         if ('param' === $annotation->getTag()->getName()) {
-            $regex = '/@param\s+(?:\S|\s(?!\$))+\s\$\S+\s+\S/';
+            $regex = '/@param\s+(?:\S|\s(?!\$))++\s\$\S+\s+\S/';
+        } elseif ('var' === $annotation->getTag()->getName()) {
+            $regex = '/@var\s+\S+(\s+\$\S+)?(\s+)([^$\s]+)/';
         } else {
             $regex = '/@return\s+\S+\s+\S/';
         }

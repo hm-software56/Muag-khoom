@@ -68,10 +68,11 @@ final class ListSyntaxFixer extends AbstractFixer implements ConfigurationDefini
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before BinaryOperatorSpacesFixer, TernaryOperatorSpacesFixer.
      */
     public function getPriority()
     {
-        // should be run before the BinaryOperatorSpacesFixer and TernaryOperatorSpacesFixer.
         return 1;
     }
 
@@ -119,7 +120,7 @@ final class ListSyntaxFixer extends AbstractFixer implements ConfigurationDefini
     {
         static $typesOfInterest = [
             [CT::T_DESTRUCTURING_SQUARE_BRACE_CLOSE],
-            [CT::T_ARRAY_SQUARE_BRACE_OPEN],
+            '[', // [CT::T_ARRAY_SQUARE_BRACE_OPEN],
         ];
 
         $closeIndex = $tokens->getNextTokenOfKind($index, $typesOfInterest);

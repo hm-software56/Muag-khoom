@@ -20,6 +20,8 @@ use PhpCsFixer\Preg;
  * It internally splits it up into "lines" that we can manipulate.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ *
+ * @final
  */
 class DocBlock
 {
@@ -78,9 +80,7 @@ class DocBlock
      */
     public function getLine($pos)
     {
-        if (isset($this->lines[$pos])) {
-            return $this->lines[$pos];
-        }
+        return isset($this->lines[$pos]) ? $this->lines[$pos] : null;
     }
 
     /**
@@ -133,7 +133,7 @@ class DocBlock
 
         $lineContent = $this->getSingleLineDocBlockEntry($this->lines[0]);
 
-        if ('*' === $lineContent) {
+        if ('' === $lineContent) {
             $this->lines = [
                 new Line('/**'.$lineEnd),
                 new Line($indent.' *'.$lineEnd),
@@ -184,9 +184,7 @@ class DocBlock
     {
         $annotations = $this->getAnnotations();
 
-        if (isset($annotations[$pos])) {
-            return $annotations[$pos];
-        }
+        return isset($annotations[$pos]) ? $annotations[$pos] : null;
     }
 
     /**
@@ -261,19 +259,13 @@ class DocBlock
 
         $lineString = str_replace('*/', '', $lineString);
         $lineString = trim($lineString);
-        $lineArray = str_split($lineString);
-        $i = \count($lineArray);
 
-        do {
-            --$i;
-        } while ('*' !== $lineString[$i] && '*' !== $lineString[$i - 1] && '/' !== $lineString[$i - 2]);
-
-        if (' ' === $lineString[$i]) {
-            ++$i;
+        if ('/**' === substr($lineString, 0, 3)) {
+            $lineString = substr($lineString, 3);
+        } elseif ('*' === substr($lineString, 0, 1)) {
+            $lineString = substr($lineString, 1);
         }
 
-        $lineArray = \array_slice($lineArray, $i);
-
-        return implode('', $lineArray);
+        return trim($lineString);
     }
 }

@@ -28,25 +28,26 @@ final class NoUnneededFinalMethodFixer extends AbstractFixer
     public function getDefinition()
     {
         return new FixerDefinition(
-            'A final class must not have final methods.',
+            'A `final` class must not have `final` methods and `private` methods must not be `final`.',
             [
                 new CodeSample(
                     '<?php
-final class Foo {
-    final public function foo() {}
+final class Foo
+{
+    final public function foo1() {}
     final protected function bar() {}
     final private function baz() {}
 }
-'
-                ),
-                new CodeSample(
-                    '<?php
-class Foo {
-    final private function bar() {}
+
+class Bar
+{
+    final private function bar1() {}
 }
 '
                 ),
-            ]
+            ],
+            null,
+            'Risky when child class overrides a `private` method.'
         );
     }
 
@@ -56,6 +57,11 @@ class Foo {
     public function isCandidate(Tokens $tokens)
     {
         return $tokens->isAllTokenKindsFound([T_CLASS, T_FINAL]);
+    }
+
+    public function isRisky()
+    {
+        return true;
     }
 
     /**
@@ -84,6 +90,7 @@ class Foo {
     private function fixClass(Tokens $tokens, $classOpenIndex, $classIsFinal)
     {
         $tokensCount = \count($tokens);
+
         for ($index = $classOpenIndex + 1; $index < $tokensCount; ++$index) {
             // Class end
             if ($tokens[$index]->equals('}')) {
@@ -101,15 +108,16 @@ class Foo {
                 continue;
             }
 
-            if (!$classIsFinal && !$this->isPrivateMethod($tokens, $index, $classOpenIndex)) {
+            if (!$classIsFinal && !$this->isPrivateMethodOtherThanConstructor($tokens, $index, $classOpenIndex)) {
                 continue;
             }
 
             $tokens->clearAt($index);
 
-            $nextTokenIndex = $index + 1;
-            if ($tokens[$nextTokenIndex]->isWhitespace()) {
-                $tokens->clearAt($nextTokenIndex);
+            ++$index;
+
+            if ($tokens[$index]->isWhitespace()) {
+                $tokens->clearAt($index);
             }
         }
     }
@@ -120,18 +128,19 @@ class Foo {
      *
      * @return bool
      */
-    private function isPrivateMethod(Tokens $tokens, $index, $classOpenIndex)
+    private function isPrivateMethodOtherThanConstructor(Tokens $tokens, $index, $classOpenIndex)
     {
         $index = max($classOpenIndex + 1, $tokens->getPrevTokenOfKind($index, [';', '{', '}']));
+        $private = false;
 
         while (!$tokens[$index]->isGivenKind(T_FUNCTION)) {
             if ($tokens[$index]->isGivenKind(T_PRIVATE)) {
-                return true;
+                $private = true;
             }
 
-            ++$index;
+            $index = $tokens->getNextMeaningfulToken($index);
         }
 
-        return false;
+        return $private && '__construct' !== strtolower($tokens[$tokens->getNextMeaningfulToken($index)]->getContent());
     }
 }

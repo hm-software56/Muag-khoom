@@ -12,9 +12,9 @@
 
 namespace PhpCsFixer\Fixer\PhpUnit;
 
-use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\DocBlock\DocBlock;
 use PhpCsFixer\DocBlock\Line;
+use PhpCsFixer\Fixer\AbstractPhpUnitFixer;
 use PhpCsFixer\Fixer\ConfigurationDefinitionFixerInterface;
 use PhpCsFixer\Fixer\WhitespacesAwareFixerInterface;
 use PhpCsFixer\FixerConfiguration\AllowedValueSubset;
@@ -22,14 +22,13 @@ use PhpCsFixer\FixerConfiguration\FixerConfigurationResolver;
 use PhpCsFixer\FixerConfiguration\FixerOptionBuilder;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
-use PhpCsFixer\Indicator\PhpUnitTestCaseIndicator;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
 /**
  * @author Gert de Pagter <BackEndTea@gmail.com>
  */
-final class PhpUnitInternalClassFixer extends AbstractFixer implements WhitespacesAwareFixerInterface, ConfigurationDefinitionFixerInterface
+final class PhpUnitInternalClassFixer extends AbstractPhpUnitFixer implements WhitespacesAwareFixerInterface, ConfigurationDefinitionFixerInterface
 {
     /**
      * {@inheritdoc}
@@ -38,25 +37,24 @@ final class PhpUnitInternalClassFixer extends AbstractFixer implements Whitespac
     {
         return new FixerDefinition(
             'All PHPUnit test classes should be marked as internal.',
-            [new CodeSample("<?php\nclass MyTest extends TestCase {}\n")]
+            [
+                new CodeSample("<?php\nclass MyTest extends TestCase {}\n"),
+                new CodeSample(
+                    "<?php\nclass MyTest extends TestCase {}\nfinal class FinalTest extends TestCase {}\nabstract class AbstractTest extends TestCase {}\n",
+                    ['types' => ['final']]
+                ),
+            ]
         );
     }
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before FinalInternalClassFixer.
      */
     public function getPriority()
     {
-        // should be run before FinalInternalClassFixer
-        return 1;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isCandidate(Tokens $tokens)
-    {
-        return $tokens->isTokenKindFound(T_CLASS);
+        return 68;
     }
 
     /**
@@ -75,19 +73,10 @@ final class PhpUnitInternalClassFixer extends AbstractFixer implements Whitespac
         ]);
     }
 
-    protected function applyFix(\SplFileInfo $file, Tokens $tokens)
-    {
-        $phpUnitTestCaseIndicator = new PhpUnitTestCaseIndicator();
-
-        foreach ($phpUnitTestCaseIndicator->findPhpUnitClasses($tokens, true) as $indexes) {
-            $this->markClassInternal($tokens, $indexes[0]);
-        }
-    }
-
     /**
-     * @param int $startIndex
+     * {@inheritdoc}
      */
-    private function markClassInternal(Tokens $tokens, $startIndex)
+    protected function applyPhpUnitClassFix(Tokens $tokens, $startIndex, $endIndex)
     {
         $classIndex = $tokens->getPrevTokenOfKind($startIndex, [[T_CLASS]]);
 
@@ -97,13 +86,11 @@ final class PhpUnitInternalClassFixer extends AbstractFixer implements Whitespac
 
         $docBlockIndex = $this->getDocBlockIndex($tokens, $classIndex);
 
-        if ($this->hasDocBlock($tokens, $classIndex)) {
+        if ($this->isPHPDoc($tokens, $docBlockIndex)) {
             $this->updateDocBlockIfNeeded($tokens, $docBlockIndex);
-
-            return;
+        } else {
+            $this->createDocBlock($tokens, $docBlockIndex);
         }
-
-        $this->createDocBlock($tokens, $docBlockIndex);
     }
 
     /**
@@ -153,32 +140,6 @@ final class PhpUnitInternalClassFixer extends AbstractFixer implements Whitespac
     /**
      * @param int $index
      *
-     * @return bool
-     */
-    private function hasDocBlock(Tokens $tokens, $index)
-    {
-        $docBlockIndex = $this->getDocBlockIndex($tokens, $index);
-
-        return $tokens[$docBlockIndex]->isGivenKind(T_DOC_COMMENT);
-    }
-
-    /**
-     * @param int $index
-     *
-     * @return int
-     */
-    private function getDocBlockIndex(Tokens $tokens, $index)
-    {
-        do {
-            $index = $tokens->getPrevNonWhitespace($index);
-        } while ($tokens[$index]->isGivenKind([T_PUBLIC, T_PROTECTED, T_PRIVATE, T_FINAL, T_ABSTRACT, T_COMMENT]));
-
-        return $index;
-    }
-
-    /**
-     * @param int $index
-     *
      * @return string
      */
     private function detectIndent(Tokens $tokens, $index)
@@ -216,55 +177,12 @@ final class PhpUnitInternalClassFixer extends AbstractFixer implements Whitespac
     {
         $lines = $doc->getLines();
         if (1 === \count($lines) && empty($doc->getAnnotationsOfType('internal'))) {
-            $lines = $this->splitUpDocBlock($lines, $tokens, $docBlockIndex);
+            $indent = $this->detectIndent($tokens, $tokens->getNextNonWhitespace($docBlockIndex));
+            $doc->makeMultiLine($indent, $this->whitespacesConfig->getLineEnding());
 
-            return new DocBlock(implode('', $lines));
+            return $doc;
         }
 
         return $doc;
-    }
-
-    /**
-     * Take a one line doc block, and turn it into a multi line doc block.
-     *
-     * @param Line[] $lines
-     * @param int    $docBlockIndex
-     *
-     * @return Line[]
-     */
-    private function splitUpDocBlock($lines, Tokens $tokens, $docBlockIndex)
-    {
-        $lineContent = $this->getSingleLineDocBlockEntry($lines);
-        $lineEnd = $this->whitespacesConfig->getLineEnding();
-        $originalIndent = $this->detectIndent($tokens, $tokens->getNextNonWhitespace($docBlockIndex));
-
-        return [
-            new Line('/**'.$lineEnd),
-            new Line($originalIndent.' * '.$lineContent.$lineEnd),
-            new Line($originalIndent.' */'),
-        ];
-    }
-
-    /**
-     * @param Line[] $line
-     *
-     * @return string
-     */
-    private function getSingleLineDocBlockEntry($line)
-    {
-        $line = $line[0];
-        $line = str_replace('*/', '', $line);
-        $line = trim($line);
-        $line = str_split($line);
-        $i = \count($line);
-        do {
-            --$i;
-        } while ('*' !== $line[$i] && '*' !== $line[$i - 1] && '/' !== $line[$i - 2]);
-        if (' ' === $line[$i]) {
-            ++$i;
-        }
-        $line = \array_slice($line, $i);
-
-        return implode('', $line);
     }
 }

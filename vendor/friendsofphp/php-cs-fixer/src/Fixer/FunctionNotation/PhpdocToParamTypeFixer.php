@@ -12,12 +12,9 @@
 
 namespace PhpCsFixer\Fixer\FunctionNotation;
 
-use PhpCsFixer\AbstractFixer;
+use PhpCsFixer\AbstractPhpdocToTypeDeclarationFixer;
 use PhpCsFixer\DocBlock\Annotation;
 use PhpCsFixer\DocBlock\DocBlock;
-use PhpCsFixer\Fixer\ConfigurationDefinitionFixerInterface;
-use PhpCsFixer\FixerConfiguration\FixerConfigurationResolver;
-use PhpCsFixer\FixerConfiguration\FixerOptionBuilder;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\VersionSpecification;
 use PhpCsFixer\FixerDefinition\VersionSpecificCodeSample;
@@ -29,7 +26,7 @@ use PhpCsFixer\Tokenizer\Tokens;
 /**
  * @author Jan Gantzert <jan@familie-gantzert.de>
  */
-final class PhpdocToParamTypeFixer extends AbstractFixer implements ConfigurationDefinitionFixerInterface
+final class PhpdocToParamTypeFixer extends AbstractPhpdocToTypeDeclarationFixer
 {
     /** @internal */
     const CLASS_REGEX = '/^\\\\?[a-zA-Z_\\x7f-\\xff](?:\\\\?[a-zA-Z0-9_\\x7f-\\xff]+)*(?<array>\[\])*$/';
@@ -38,9 +35,9 @@ final class PhpdocToParamTypeFixer extends AbstractFixer implements Configuratio
     const MINIMUM_PHP_VERSION = 70000;
 
     /**
-     * @var array<int, string>
+     * @var array{int, string}[]
      */
-    private $blacklistFuncNames = [
+    private $excludeFuncNames = [
         [T_STRING, '__clone'],
         [T_STRING, '__destruct'],
     ];
@@ -52,6 +49,7 @@ final class PhpdocToParamTypeFixer extends AbstractFixer implements Configuratio
         'mixed' => true,
         'resource' => true,
         'static' => true,
+        'void' => true,
     ];
 
     /**
@@ -82,7 +80,7 @@ function my_foo($bar)
                 ),
             ],
             null,
-            '[1] This rule is EXPERIMENTAL and is not covered with backward compatibility promise. [2] `@param` annotation is mandatory for the fixer to make changes, signatures of methods without it (no docblock, inheritdocs) will not be fixed. [3] Manual actions are required if inherited signatures are not properly documented.'
+            'This rule is EXPERIMENTAL and [1] is not covered with backward compatibility promise. [2] `@param` annotation is mandatory for the fixer to make changes, signatures of methods without it (no docblock, inheritdocs) will not be fixed. [3] Manual actions are required if inherited signatures are not properly documented.'
         );
     }
 
@@ -96,10 +94,12 @@ function my_foo($bar)
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before NoSuperfluousPhpdocTagsFixer, PhpdocAlignFixer.
+     * Must run after CommentToPhpdocFixer, PhpdocIndentFixer, PhpdocScalarFixer, PhpdocToCommentFixer, PhpdocTypesFixer.
      */
     public function getPriority()
     {
-        // should be run before NoSuperfluousPhpdocTagsFixer
         return 8;
     }
 
@@ -114,19 +114,6 @@ function my_foo($bar)
     /**
      * {@inheritdoc}
      */
-    protected function createConfigurationDefinition()
-    {
-        return new FixerConfigurationResolver([
-            (new FixerOptionBuilder('scalar_types', 'Fix also scalar types; may have unexpected behaviour due to PHP bad type coercion system.'))
-                ->setAllowedTypes(['bool'])
-                ->setDefault(true)
-                ->getOption(),
-        ]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function applyFix(\SplFileInfo $file, Tokens $tokens)
     {
         for ($index = $tokens->count() - 1; 0 < $index; --$index) {
@@ -135,7 +122,7 @@ function my_foo($bar)
             }
 
             $funcName = $tokens->getNextMeaningfulToken($index);
-            if ($tokens[$funcName]->equalsAny($this->blacklistFuncNames, false)) {
+            if ($tokens[$funcName]->equalsAny($this->excludeFuncNames, false)) {
                 continue;
             }
 
@@ -155,7 +142,6 @@ function my_foo($bar)
 
                 $hasIterable = false;
                 $hasNull = false;
-                $hasVoid = false;
                 $hasArray = false;
                 $hasString = false;
                 $hasInt = false;
@@ -185,11 +171,6 @@ function my_foo($bar)
                         $hasNull = true;
                         unset($types[$key]);
                         $minimumTokenPhpVersion = 70100;
-                    }
-
-                    if ('void' === $type) {
-                        $hasVoid = true;
-                        unset($types[$key]);
                     }
 
                     if ('string' === $type) {
@@ -261,6 +242,10 @@ function my_foo($bar)
                     continue;
                 }
 
+                if (!$this->isValidSyntax(sprintf('<?php function f(%s $x) {}', $paramType))) {
+                    continue;
+                }
+
                 $this->fixFunctionDefinition(
                     $paramType,
                     $tokens,
@@ -268,7 +253,6 @@ function my_foo($bar)
                     $hasNull,
                     $hasArray,
                     $hasIterable,
-                    $hasVoid,
                     $hasString,
                     $hasInt,
                     $hasFloat,
@@ -356,7 +340,6 @@ function my_foo($bar)
      * @param bool   $hasNull
      * @param bool   $hasArray
      * @param bool   $hasIterable
-     * @param bool   $hasVoid
      * @param bool   $hasString
      * @param bool   $hasInt
      * @param bool   $hasFloat
@@ -371,7 +354,6 @@ function my_foo($bar)
         $hasNull,
         $hasArray,
         $hasIterable,
-        $hasVoid,
         $hasString,
         $hasInt,
         $hasFloat,
@@ -381,9 +363,7 @@ function my_foo($bar)
     ) {
         $newTokens = [];
 
-        if (true === $hasVoid) {
-            $newTokens[] = new Token('void');
-        } elseif (true === $hasIterable && true === $hasArray) {
+        if (true === $hasIterable && true === $hasArray) {
             $newTokens[] = new Token([CT::T_ARRAY_TYPEHINT, 'array']);
         } elseif (true === $hasIterable) {
             $newTokens[] = new Token([T_STRING, 'iterable']);

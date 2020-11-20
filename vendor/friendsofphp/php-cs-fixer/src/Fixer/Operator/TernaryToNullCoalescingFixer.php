@@ -199,8 +199,8 @@ final class TernaryToNullCoalescingFixer extends AbstractFixer
         static $operatorsPerId = [
             T_DEC,
             T_INC,
-            T_STRING,
             T_YIELD,
+            T_YIELD_FROM,
         ];
 
         foreach ($tokens as $token) {

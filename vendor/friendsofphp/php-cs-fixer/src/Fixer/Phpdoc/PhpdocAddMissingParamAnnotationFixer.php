@@ -77,11 +77,12 @@ function f9(string $foo, $bar, $baz) {}
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before NoEmptyPhpdocFixer, NoSuperfluousPhpdocTagsFixer, PhpdocAlignFixer, PhpdocAlignFixer, PhpdocOrderFixer.
+     * Must run after CommentToPhpdocFixer, PhpdocIndentFixer, PhpdocNoAliasTagFixer, PhpdocScalarFixer, PhpdocToCommentFixer, PhpdocTypesFixer.
      */
     public function getPriority()
     {
-        // must be run after PhpdocNoAliasTagFixer
-        // must be run before PhpdocAlignFixer and PhpdocNoEmptyReturnFixer
         return 10;
     }
 
@@ -91,14 +92,6 @@ function f9(string $foo, $bar, $baz) {}
     public function isCandidate(Tokens $tokens)
     {
         return $tokens->isTokenKindFound(T_DOC_COMMENT);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isRisky()
-    {
-        return false;
     }
 
     /**

@@ -22,6 +22,7 @@ use PhpCsFixer\FixerFactory;
 use PhpCsFixer\Linter\CachingLinter;
 use PhpCsFixer\Linter\Linter;
 use PhpCsFixer\Linter\LinterInterface;
+use PhpCsFixer\Linter\ProcessLinter;
 use PhpCsFixer\Runner\Runner;
 use PhpCsFixer\Tests\TestCase;
 use PhpCsFixer\Tokenizer\Tokens;
@@ -65,12 +66,12 @@ abstract class AbstractIntegrationTestCase extends TestCase
     use IsIdenticalConstraint;
 
     /**
-     * @var LinterInterface
+     * @var null|LinterInterface
      */
     protected $linter;
 
     /**
-     * @var FileRemoval
+     * @var null|FileRemoval
      */
     private static $fileRemoval;
 
@@ -393,7 +394,9 @@ abstract class AbstractIntegrationTestCase extends TestCase
 
                 $linter = $linterProphecy->reveal();
             } else {
-                $linter = new CachingLinter(new Linter());
+                $linter = new CachingLinter(
+                    getenv('FAST_LINT_TEST_CASES') ? new Linter() : new ProcessLinter()
+                );
             }
         }
 

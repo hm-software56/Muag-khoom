@@ -54,6 +54,16 @@ EOF;
 
     /**
      * {@inheritdoc}
+     *
+     * Must run after BacktickToShellExecFixer, EscapeImplicitBackslashesFixer.
+     */
+    public function getPriority()
+    {
+        return 0;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function isCandidate(Tokens $tokens)
     {

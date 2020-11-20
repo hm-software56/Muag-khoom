@@ -94,10 +94,11 @@ namespace {
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before GlobalNamespaceImportFixer.
      */
     public function getPriority()
     {
-        // must be run before GlobalNamespaceImportFixer
         return 10;
     }
 
@@ -153,7 +154,7 @@ namespace {
 
         $caseInsensitiveConstantsToEscape = array_diff(
             array_unique($caseInsensitiveConstantsToEscape),
-            array_map(function ($function) { return strtolower($function); }, $uniqueConfiguredExclude)
+            array_map(static function ($function) { return strtolower($function); }, $uniqueConfiguredExclude)
         );
 
         // Store the cache

@@ -53,10 +53,11 @@ final class PowToExponentiationFixer extends AbstractFunctionReferenceFixer
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before BinaryOperatorSpacesFixer, MethodArgumentSpaceFixer, NativeFunctionCasingFixer, NoSpacesAfterFunctionNameFixer, NoSpacesInsideParenthesisFixer.
      */
     public function getPriority()
     {
-        // must be run before BinaryOperatorSpacesFixer
         return 3;
     }
 
@@ -183,7 +184,9 @@ final class PowToExponentiationFixer extends AbstractFunctionReferenceFixer
                 continue;
             }
 
-            if (null !== $blockType = Tokens::detectBlockType($tokens[$i])) {
+            $blockType = Tokens::detectBlockType($tokens[$i]);
+
+            if (null !== $blockType) {
                 $i = $tokens->findBlockEnd($blockType['type'], $i);
 
                 continue;

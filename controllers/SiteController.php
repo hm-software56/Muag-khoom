@@ -171,7 +171,7 @@ class SiteController extends Controller
                 \Yii::$app->getSession()->setFlash('error_key', \Yii::t('app', 'Your key expired please try again.'));
             }
         }
-        return $this->redirect(['site/login']);
+        return $this->redirect(['site/login','key'=>1]);
     }
 
     public function actionKeygenerate()

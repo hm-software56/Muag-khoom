@@ -189,7 +189,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
         'fixturesMethod' => '_fixtures',
         'cleanup'     => true,
         'ignoreCollidingDSN' => false,
-        'transaction' => null,
+        'transaction' => true,
         'entryScript' => '',
         'entryUrl'    => 'http://localhost/index-test.php',
         'responseCleanMethod' => Yii2Connector::CLEAN_CLEAR,
@@ -574,7 +574,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
         $record->setAttributes($attributes, false);
         $res = $record->save(false);
         if (!$res) {
-            $this->fail("Record $model was not saved");
+            $this->fail("Record $model was not saved: " . \yii\helpers\Json::encode($record->errors));
         }
         return $record->primaryKey;
     }
@@ -886,13 +886,13 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
     public function _backupSession()
     {
         if (isset(Yii::$app) && Yii::$app->session->useCustomStorage) {
-            throw new ModuleException("Yii2 MultiSession only supports the default session backend.");
+            throw new ModuleException($this, "Yii2 MultiSession only supports the default session backend.");
         }
         return [
             'clientContext' => $this->client->getContext(),
             'headers' => $this->headers,
-            'cookie' => $_COOKIE,
-            'session' => $_SESSION,
+            'cookie' => isset($_COOKIE) ? $_COOKIE : [],
+            'session' => isset($_SESSION) ? $_SESSION : [],
         ];
     }
 

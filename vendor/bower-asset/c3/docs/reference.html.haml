@@ -154,6 +154,7 @@
           = partial :reference_menu_item, locals: { id: 'subchart.show', experimental: true }
           = partial :reference_menu_item, locals: { id: 'subchart.size.height', experimental: true }
           = partial :reference_menu_item, locals: { id: 'subchart.onbrush', experimental: true }
+          = partial :reference_menu_item, locals: { id: 'subchart.axis.x.show', experimental: true }
 
           %li Zoom
           = partial :reference_menu_item, locals: { id: 'zoom.enabled', experimental: true }
@@ -3011,6 +3012,25 @@
 
       %section
         %h3
+          = partial :reference_item_link, locals: { id: 'subchart.axis.x.show', experimental: true }
+        %p Show or hide x axis of subchart.
+        %h5 Default:
+        <code>true</code>
+        %h5 Format:
+        %div.sourcecode
+          %pre
+            %code.html.javascript
+              subchart: {
+              &nbsp;&nbsp;axis: {
+              &nbsp;&nbsp;&nbsp;&nbsp;x: {
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show: true
+              &nbsp;&nbsp;&nbsp;&nbsp;}
+              &nbsp;&nbsp;}
+              }
+      %hr
+
+      %section
+        %h3
           = partial :reference_item_link, locals: { id: 'zoom.enabled', experimental: true }
         %p Enable zooming.
         %h5 Default:
@@ -4144,7 +4164,7 @@
               \// Load data1 and unload data2 and data3
               chart.load({
               &nbsp;&nbsp;columns: [
-              &nbsp;&nbsp;&nbsp;&nbsp;['data1, 100, 200, 150, ...],
+              &nbsp;&nbsp;&nbsp;&nbsp;['data1', 100, 200, 150, ...],
               &nbsp;&nbsp;&nbsp;&nbsp;...
               &nbsp;&nbsp;],
               &nbsp;&nbsp;unload: ['data2', 'data3']

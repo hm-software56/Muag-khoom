@@ -46,7 +46,8 @@ final class PhpdocScalarFixer extends AbstractPhpdocTypesFixer implements Config
     {
         return new FixerDefinition(
             'Scalar types should always be written in the same form. `int` not `integer`, `bool` not `boolean`, `float` not `real` or `double`.',
-            [new CodeSample('<?php
+            [
+                new CodeSample('<?php
 /**
  * @param integer $a
  * @param boolean $b
@@ -58,10 +59,31 @@ function sample($a, $b, $c)
 {
     return sample2($a, $b, $c);
 }
-')]
+'),
+                new CodeSample(
+                    '<?php
+/**
+ * @param integer $a
+ * @param boolean $b
+ * @param real $c
+ */
+function sample($a, $b, $c)
+{
+    return sample2($a, $b, $c);
+}
+',
+                    ['types' => ['boolean']]
+                ),
+            ]
         );
     }
 
+    /**
+     * {@inheritdoc}
+     *
+     * Must run before GeneralPhpdocAnnotationRemoveFixer, NoBlankLinesAfterPhpdocFixer, NoEmptyPhpdocFixer, NoSuperfluousPhpdocTagsFixer, PhpdocAddMissingParamAnnotationFixer, PhpdocAlignFixer, PhpdocAlignFixer, PhpdocInlineTagFixer, PhpdocLineSpanFixer, PhpdocNoAccessFixer, PhpdocNoAliasTagFixer, PhpdocNoEmptyReturnFixer, PhpdocNoPackageFixer, PhpdocNoUselessInheritdocFixer, PhpdocOrderFixer, PhpdocReturnSelfReferenceFixer, PhpdocSeparationFixer, PhpdocSingleLineVarSpacingFixer, PhpdocSummaryFixer, PhpdocToParamTypeFixer, PhpdocToReturnTypeFixer, PhpdocToReturnTypeFixer, PhpdocTrimConsecutiveBlankLineSeparationFixer, PhpdocTrimFixer, PhpdocTypesOrderFixer, PhpdocVarAnnotationCorrectOrderFixer, PhpdocVarWithoutNameFixer.
+     * Must run after PhpdocTypesFixer.
+     */
     public function getPriority()
     {
         /*

@@ -47,7 +47,7 @@ final class SingleLineThrowFixer extends AbstractFixer
         return new FixerDefinition(
             'Throwing exception must be done in single line.',
             [
-                new CodeSample("<?php\nthrow new Exception(\n    'Error',\n    500\n);\n"),
+                new CodeSample("<?php\nthrow new Exception(\n    'Error.',\n    500\n);\n"),
             ]
         );
     }
@@ -62,6 +62,8 @@ final class SingleLineThrowFixer extends AbstractFixer
 
     /**
      * {@inheritdoc}
+     *
+     * Must run before ConcatSpaceFixer.
      */
     public function getPriority()
     {
