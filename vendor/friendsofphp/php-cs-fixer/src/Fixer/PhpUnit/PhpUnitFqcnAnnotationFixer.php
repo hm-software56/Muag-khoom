@@ -53,7 +53,7 @@ final class MyTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      *
-     * Must run before NoUnusedImportsFixer, PhpUnitOrderedCoversFixer.
+     * Must run before NoUnusedImportsFixer, PhpdocOrderByValueFixer.
      */
     public function getPriority()
     {
@@ -66,9 +66,11 @@ final class MyTest extends \PHPUnit_Framework_TestCase
     protected function applyPhpUnitClassFix(Tokens $tokens, $startIndex, $endIndex)
     {
         $prevDocCommentIndex = $tokens->getPrevTokenOfKind($startIndex, [[T_DOC_COMMENT]]);
+
         if (null !== $prevDocCommentIndex) {
             $startIndex = $prevDocCommentIndex;
         }
+
         $this->fixPhpUnitClass($tokens, $startIndex, $endIndex);
     }
 

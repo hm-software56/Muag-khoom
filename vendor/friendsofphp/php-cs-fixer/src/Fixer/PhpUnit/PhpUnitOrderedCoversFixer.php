@@ -12,18 +12,20 @@
 
 namespace PhpCsFixer\Fixer\PhpUnit;
 
-use PhpCsFixer\DocBlock\DocBlock;
-use PhpCsFixer\Fixer\AbstractPhpUnitFixer;
+use PhpCsFixer\AbstractProxyFixer;
+use PhpCsFixer\Fixer\DeprecatedFixerInterface;
+use PhpCsFixer\Fixer\Phpdoc\PhpdocOrderByValueFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
-use PhpCsFixer\Preg;
-use PhpCsFixer\Tokenizer\Token;
-use PhpCsFixer\Tokenizer\Tokens;
 
 /**
+ * @deprecated since 2.16, replaced by PhpdocOrderByValueFixer
+ *
+ * @todo To be removed at 3.0
+ *
  * @author Filippo Tessarotto <zoeslam@gmail.com>
  */
-final class PhpUnitOrderedCoversFixer extends AbstractPhpUnitFixer
+final class PhpUnitOrderedCoversFixer extends AbstractProxyFixer implements DeprecatedFixerInterface
 {
     /**
      * {@inheritdoc}
@@ -47,56 +49,23 @@ final class MyTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * {@inheritdoc}
-     *
-     * Must run after PhpUnitFqcnAnnotationFixer.
-     */
-    public function getPriority()
+    public function getSuccessorsNames()
     {
-        return -10;
+        return array_keys($this->proxyFixers);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function applyPhpUnitClassFix(Tokens $tokens, $startIndex, $endIndex)
+    protected function createProxyFixers()
     {
-        $classIndex = $tokens->getPrevTokenOfKind($startIndex, [[T_CLASS]]);
-        $docBlockIndex = $this->getDocBlockIndex($tokens, $classIndex);
+        $fixer = new PhpdocOrderByValueFixer();
 
-        for ($index = $endIndex; $index >= $docBlockIndex; --$index) {
-            if (!$tokens[$index]->isGivenKind(T_DOC_COMMENT) || 0 === Preg::match('/@covers\s.+@covers\s/s', $tokens[$index]->getContent())) {
-                continue;
-            }
+        $fixer->configure([
+            'annotations' => [
+                'covers',
+            ],
+        ]);
 
-            $docBlock = new DocBlock($tokens[$index]->getContent());
-            $covers = $docBlock->getAnnotationsOfType('covers');
-
-            $coversMap = [];
-            foreach ($covers as $annotation) {
-                $rawContent = $annotation->getContent();
-
-                $comparableContent = Preg::replace('/\*\s*@covers\s+(.+)/', '\1', strtolower(trim($rawContent)));
-                $coversMap[$comparableContent] = $rawContent;
-            }
-            $orderedCoversMap = $coversMap;
-            ksort($orderedCoversMap, SORT_STRING);
-            if ($orderedCoversMap === $coversMap) {
-                continue;
-            }
-
-            $lines = $docBlock->getLines();
-            foreach (array_reverse($covers) as $annotation) {
-                array_splice(
-                    $lines,
-                    $annotation->getStart(),
-                    $annotation->getEnd() - $annotation->getStart() + 1,
-                    array_pop($orderedCoversMap)
-                );
-            }
-
-            $tokens[$index] = new Token([T_DOC_COMMENT, implode('', $lines)]);
-        }
+        return [
+            $fixer,
+        ];
     }
 }

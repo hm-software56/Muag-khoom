@@ -79,7 +79,7 @@ function f9(string $foo, $bar, $baz) {}
      * {@inheritdoc}
      *
      * Must run before NoEmptyPhpdocFixer, NoSuperfluousPhpdocTagsFixer, PhpdocAlignFixer, PhpdocAlignFixer, PhpdocOrderFixer.
-     * Must run after CommentToPhpdocFixer, PhpdocIndentFixer, PhpdocNoAliasTagFixer, PhpdocScalarFixer, PhpdocToCommentFixer, PhpdocTypesFixer.
+     * Must run after CommentToPhpdocFixer, GeneralPhpdocTagRenameFixer, PhpdocIndentFixer, PhpdocNoAliasTagFixer, PhpdocScalarFixer, PhpdocToCommentFixer, PhpdocTypesFixer.
      */
     public function getPriority()
     {
@@ -102,7 +102,6 @@ function f9(string $foo, $bar, $baz) {}
         $argumentsAnalyzer = new ArgumentsAnalyzer();
 
         for ($index = 0, $limit = $tokens->count(); $index < $limit; ++$index) {
-            $mainIndex = $index;
             $token = $tokens[$index];
 
             if (!$token->isGivenKind(T_DOC_COMMENT)) {
@@ -120,6 +119,7 @@ function f9(string $foo, $bar, $baz) {}
                 continue;
             }
 
+            $mainIndex = $index;
             $index = $tokens->getNextMeaningfulToken($index);
 
             if (null === $index) {

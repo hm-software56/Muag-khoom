@@ -347,7 +347,7 @@ use Bar;
         for ($i = \count($uses) - 1; $i >= 0; --$i) {
             $index = $uses[$i];
 
-            $startIndex = $tokens->getTokenNotOfKindSibling($index + 1, 1, [[T_WHITESPACE]]);
+            $startIndex = $tokens->getTokenNotOfKindsSibling($index + 1, 1, [T_WHITESPACE]);
             $endIndex = $tokens->getNextTokenOfKind($startIndex, [';', [T_CLOSE_TAG]]);
             $previous = $tokens->getPrevMeaningfulToken($endIndex);
 
@@ -408,9 +408,9 @@ use Bar;
 
                                 // if there is any line ending inside the group import, it should be indented properly
                                 if (
-                                    '' === $firstIndent &&
-                                    $namespaceTokens[$k2]->isWhitespace() &&
-                                    false !== strpos($namespaceTokens[$k2]->getContent(), $lineEnding)
+                                    '' === $firstIndent
+                                    && $namespaceTokens[$k2]->isWhitespace()
+                                    && false !== strpos($namespaceTokens[$k2]->getContent(), $lineEnding)
                                 ) {
                                     $lastIndent = $lineEnding;
                                     $firstIndent = $lineEnding.$this->whitespacesConfig->getIndent();

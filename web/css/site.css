@@ -304,3 +304,13 @@ a.desc:after {
 .wrapper {
     background-color: white !important;
 }
+
+#printOnlyBarcode {
+    display : none;
+}
+
+@media print {
+    #printOnlyBarcode {
+        display : block;
+    }
+}

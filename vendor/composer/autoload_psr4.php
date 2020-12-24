@@ -20,7 +20,7 @@ return array(
     'toriphes\\lazyload\\' => array($vendorDir . '/toriphes/yii2-widget-lazyload'),
     'setasign\\Fpdi\\' => array($vendorDir . '/setasign/fpdi/src'),
     'schmunk42\\giiant\\' => array($vendorDir . '/schmunk42/yii2-giiant/src'),
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'pheme\\settings\\' => array($vendorDir . '/pheme/yii2-settings'),
     'mikehaertl\\shellcommand\\' => array($vendorDir . '/mikehaertl/php-shellcommand/src'),
     'lo\\widgets\\' => array($vendorDir . '/loveorigami/yii2-slimscroll-widget'),
@@ -94,5 +94,5 @@ return array(
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'Codeception\\PHPUnit\\' => array($vendorDir . '/codeception/phpunit-wrapper/src'),
     'Codeception\\Extension\\' => array($vendorDir . '/codeception/codeception/ext'),
-    'Codeception\\' => array($vendorDir . '/codeception/verify/src/Codeception', $vendorDir . '/codeception/stub/src', $vendorDir . '/codeception/codeception/src/Codeception'),
+    'Codeception\\' => array($vendorDir . '/codeception/stub/src', $vendorDir . '/codeception/verify/src/Codeception', $vendorDir . '/codeception/codeception/src/Codeception'),
 );

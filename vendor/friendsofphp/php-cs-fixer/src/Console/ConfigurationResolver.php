@@ -33,7 +33,7 @@ use PhpCsFixer\Linter\Linter;
 use PhpCsFixer\Linter\LinterInterface;
 use PhpCsFixer\Report\ReporterFactory;
 use PhpCsFixer\Report\ReporterInterface;
-use PhpCsFixer\RuleSet;
+use PhpCsFixer\RuleSet\RuleSet;
 use PhpCsFixer\StdinFileInfo;
 use PhpCsFixer\ToolInfoInterface;
 use PhpCsFixer\Utils;
@@ -193,9 +193,13 @@ final class ConfigurationResolver
     public function getCacheManager()
     {
         if (null === $this->cacheManager) {
-            if ($this->getUsingCache() && ($this->toolInfo->isInstalledAsPhar() || $this->toolInfo->isInstalledByComposer())) {
+            $cacheFile = $this->getCacheFile();
+
+            if (null === $cacheFile) {
+                $this->cacheManager = new NullCacheManager();
+            } else {
                 $this->cacheManager = new FileCacheManager(
-                    new FileHandler($this->getCacheFile()),
+                    new FileHandler($cacheFile),
                     new Signature(
                         PHP_VERSION,
                         $this->toolInfo->getVersion(),
@@ -206,8 +210,6 @@ final class ConfigurationResolver
                     $this->isDryRun(),
                     $this->getDirectory()
                 );
-            } else {
-                $this->cacheManager = new NullCacheManager();
             }
         }
 
@@ -270,26 +272,36 @@ final class ConfigurationResolver
                 'udiff' => static function () { return new UnifiedDiffer(); },
             ];
 
-            if ($this->options['diff-format']) {
-                $option = $this->options['diff-format'];
-                if (!isset($mapper[$option])) {
-                    throw new InvalidConfigurationException(sprintf(
-                        '"diff-format" must be any of "%s", got "%s".',
-                        implode('", "', array_keys($mapper)),
-                        $option
-                    ));
-                }
+            if (!$this->options['diff']) {
+                $defaultOption = 'null';
+            } elseif (getenv('PHP_CS_FIXER_FUTURE_MODE')) {
+                $defaultOption = 'udiff';
             } else {
-                $default = 'sbd'; // @TODO: 3.0 change to udiff as default
-
-                if (getenv('PHP_CS_FIXER_FUTURE_MODE')) {
-                    $default = 'udiff';
-                }
-
-                $option = $this->options['diff'] ? $default : 'null';
+                $defaultOption = 'sbd'; // @TODO: 3.0 change to udiff as default
             }
 
-            $this->differ = $mapper[$option]();
+            $option = isset($this->options['diff-format'])
+                ? $this->options['diff-format']
+                : $defaultOption;
+
+            if (!\is_string($option)) {
+                throw new InvalidConfigurationException(sprintf(
+                    '"diff-format" must be a string, "%s" given.',
+                    \gettype($option)
+                ));
+            }
+
+            if (is_subclass_of($option, DifferInterface::class)) {
+                $this->differ = new $option();
+            } elseif (!isset($mapper[$option])) {
+                throw new InvalidConfigurationException(sprintf(
+                    '"diff-format" must be any of "%s", got "%s".',
+                    implode('", "', array_keys($mapper)),
+                    $option
+                ));
+            } else {
+                $this->differ = $mapper[$option]();
+            }
         }
 
         return $this->differ;
@@ -514,6 +526,8 @@ final class ConfigurationResolver
                 $this->usingCache = $this->resolveOptionBooleanValue('using-cache');
             }
         }
+
+        $this->usingCache = $this->usingCache && ($this->toolInfo->isInstalledAsPhar() || $this->toolInfo->isInstalledByComposer());
 
         return $this->usingCache;
     }
@@ -769,7 +783,7 @@ final class ConfigurationResolver
             if (isset($rules[$fixerName]) && $fixer instanceof DeprecatedFixerInterface) {
                 $successors = $fixer->getSuccessorsNames();
                 $messageEnd = [] === $successors
-                    ? sprintf(' and will be removed in version %d.0.', Application::getMajorVersion())
+                    ? sprintf(' and will be removed in version %d.0.', Application::getMajorVersion() + 1)
                     : sprintf('. Use %s instead.', str_replace('`', '"', Utils::naturalLanguageJoinWithBackticks($successors)));
 
                 $message = "Rule \"{$fixerName}\" is deprecated{$messageEnd}";

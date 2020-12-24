@@ -16,6 +16,7 @@ use PhpCsFixer\ConfigurationException\InvalidFixerConfigurationException;
 use PhpCsFixer\Fixer\ConfigurableFixerInterface;
 use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\Fixer\WhitespacesAwareFixerInterface;
+use PhpCsFixer\RuleSet\RuleSetInterface;
 use Symfony\Component\Finder\Finder as SymfonyFinder;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -219,6 +220,7 @@ final class FixerFactory
     {
         static $conflictMap = [
             'no_blank_lines_before_namespace' => ['single_blank_line_before_namespace'],
+            'single_import_per_statement' => ['group_import'],
         ];
 
         $fixerName = $fixer->getName();
