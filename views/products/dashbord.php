@@ -527,7 +527,7 @@
                     $invoices_y3s = Yii::$app->getDb()->createCommand("select DISTINCT invoice_id from sale where date>='" . $y3_first . "' and date<='" . $y3_last . "' ")->queryAll();
                     $sum_discount_y3 = 0;
                     foreach ($invoices_y3s as $invoices_y) {
-                        $sum_discount_y3 += Yii::$app->getDb()->createCommand("select sum(discount) from discount where invoice_id='" . $invoices_y3['invoice_id'] . "'")->queryScalar();
+                        $sum_discount_y3 += Yii::$app->getDb()->createCommand("select sum(discount) from discount where invoice_id='" . $invoices_y['invoice_id'] . "'")->queryScalar();
                     }
                     $y3 = $y3 - $sum_discount_y3;
                     

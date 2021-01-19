@@ -1054,9 +1054,10 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function actionTest()
+    public function actionDisplayclientorder()
     {
-        return $this->render('invoice', ['invoice' => $invoice]);
+        $this->layout='main_client_pos';
+        return $this->render('display_client_order');
     }
 
 }

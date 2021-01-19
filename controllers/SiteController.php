@@ -89,11 +89,11 @@ class SiteController extends Controller
     {
         $this->layout = "main_login";
 
-        $atkey = \app\models\ShopProfile::find()->one();
+        /*$atkey = \app\models\ShopProfile::find()->one();
         \Yii::$app->session['profile'] = $atkey;
         $key = $atkey->key_active;
         $key_acitvated = substr($key, 25, 2) . substr($key, 17, -8) . "-" . substr($key, 6, -19) . "-" . substr($key, 0, -25);
-        \Yii::$app->session['key_acitvated'] = $key_acitvated;
+        \Yii::$app->session['key_acitvated'] = $key_acitvated;*/
 
         if (isset($_GET['true'])) {
             unset(Yii::$app->session['key']);
@@ -106,32 +106,22 @@ class SiteController extends Controller
         $login = new \app\models\User();
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post())) {
-            $model->username=htmlspecialchars($model->username);
-            $model->password=htmlspecialchars($model->password);
-            if (date('Y-m-d') > $key_acitvated) {
-                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', ' ​ໝົດອາ​ຍຸ​ການ​ນຳ​ໃຊ້ລະ​ບົບ ຖ້າ​ຕ້ອງ​ການ​ໃຊ້​ງານ​ຕໍ່​ທ່ານ​ຕ​ິດ​ຕໍ່ເບີ​ໂທ​ທັງ​ລູ່ມ.'));
-                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-                return $this->render('login', [
-                    'model' => $model,
-                    'login' => $login,
-                ]);
-            }
+            $model->username = htmlspecialchars($model->username);
+            $model->password = htmlspecialchars($model->password);
 
             $user = \app\models\User::findOne(['username' => $model->username, 'password' => $model->password, 'status' => 1]);
             if (!empty($user->id)) {
                 \Yii::$app->session['user'] = $user;
-                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານ​ເຂົ້າ​ລະ​ບົບ​ຖືກ​ຕ້ອງກຳ​ລັງ​ເຂົ້າ​ຫາ​ຂໍ້​ມູນ​......'));
+                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານເຂົ້າລະບົບຖືກຕ້ອງກຳລັງເຂົ້າຫາຂໍ້ມູນ......'));
                 \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
                 \Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
                 \Yii::$app->session['height_screen'] = ($_POST['hsc'] - 133);
                 \Yii::$app->session['width_screen'] = ($_POST['wsc']);
                 \Yii::$app->session['date_login'] = date('Ymd');
-                // $user->height_screen = ($_POST['hsc'] - 131);
-                //$user->save();
                 Yii::$app->session['currency'] = \app\models\Currency::find()->where(['base_currency' => 1])->one();
                 return $this->redirect(['site/index']);
             } else {
-                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານ​ປ້ອນ​ຊື່ຫຼື​ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ​ບໍ່ຖືກ'));
+                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານປ້ອນຊື່ຫຼືລະຫັດເຂົ້າລະບົບບໍ່ຖືກ'));
                 \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
             }
         }
@@ -162,16 +152,14 @@ class SiteController extends Controller
         if (isset($_POST['key']) && $_POST['key']) {
             $atkey = \app\models\ShopProfile::find()->one();
             $key = $_POST['key'];
-            $key_acitvated = substr($key, 25, 2) . substr($key, 17, -8) . "-" . substr($key, 6, -19) . "-" . substr($key, 0, -25);
-            if (empty($atkey->key_active) || date('Y-m-d') <= $key_acitvated) {
-                $atkey->key_active = $key;
+            $atkey->key_active = $key;
+            print(\Yii::$app->session->get('error_keys'));
+            if (\Yii::$app->session->get('error_keys')!=1) {
                 $atkey->save();
                 \Yii::$app->getSession()->setFlash('success_key', \Yii::t('app', 'Successfull activated Key '));
-            } else {
-                \Yii::$app->getSession()->setFlash('error_key', \Yii::t('app', 'Your key expired please try again.'));
             }
         }
-        return $this->redirect(['site/login','key'=>1]);
+        return $this->redirect(['site/login', 'key' => 1]);
     }
 
     public function actionKeygenerate()

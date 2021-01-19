@@ -11,16 +11,17 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
+    'on beforeRequest'=>require(__DIR__ . '/request.php'),
     'components' => [
         'i18n' => [
             'translations' => [
                 '*' => [
-                    'class'          => 'yii\i18n\PhpMessageSource',
-                    'basePath'       => '@app/messages', // if advanced application, set @frontend/messages
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages', // if advanced application, set @frontend/messages
                     'sourceLanguage' => 'en',
-                    'fileMap'        => [
+                    'fileMap' => [
                         //'main' => 'main.php',
                     ],
                 ],
@@ -31,7 +32,7 @@ $config = [
             'format' => Pdf::FORMAT_A4,
             'orientation' => Pdf::ORIENT_PORTRAIT,
             'destination' => Pdf::DEST_BROWSER,
-        // refer settings section for all configuration options
+            // refer settings section for all configuration options
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -43,7 +44,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-        // 'authTimeout' => 30,
+            // 'authTimeout' => 30,
         ],
         'session' => [
             'timeout' => 10,
@@ -68,14 +69,14 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-    /*
-      'urlManager' => [
-      'enablePrettyUrl' => true,
-      'showScriptName' => false,
-      'rules' => [
-      ],
-      ],
-     */
+        /*
+          'urlManager' => [
+          'enablePrettyUrl' => true,
+          'showScriptName' => false,
+          'rules' => [
+          ],
+          ],
+         */
     ],
     'params' => $params,
 ];
