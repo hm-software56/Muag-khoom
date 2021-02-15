@@ -22,6 +22,7 @@ final class PHP56MigrationSet extends AbstractRuleSetDescription
     public function getRules()
     {
         return [
+            '@PHP54Migration' => true,
         ];
     }
 

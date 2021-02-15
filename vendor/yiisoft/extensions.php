@@ -304,4 +304,13 @@ return array (
       '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine/src',
     ),
   ),
+  'lajax/yii2-translate-manager' => 
+  array (
+    'name' => 'lajax/yii2-translate-manager',
+    'version' => '1.8.1.0',
+    'alias' => 
+    array (
+      '@lajax/translatemanager' => $vendorDir . '/lajax/yii2-translate-manager',
+    ),
+  ),
 );

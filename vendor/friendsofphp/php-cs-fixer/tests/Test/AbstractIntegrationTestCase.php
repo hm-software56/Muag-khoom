@@ -129,6 +129,7 @@ abstract class AbstractIntegrationTestCase extends TestCase
      * @dataProvider provideIntegrationCases
      *
      * @see doTest()
+     * @large
      */
     public function testIntegration(IntegrationCase $case)
     {
@@ -142,9 +143,11 @@ abstract class AbstractIntegrationTestCase extends TestCase
      */
     public function provideIntegrationCases()
     {
-        $fixturesDir = realpath(static::getFixturesDir());
+        $dir = static::getFixturesDir();
+        $fixturesDir = realpath($dir);
+
         if (!is_dir($fixturesDir)) {
-            throw new \UnexpectedValueException(sprintf('Given fixture dir "%s" is not a directory.', $fixturesDir));
+            throw new \UnexpectedValueException(sprintf('Given fixture dir "%s" is not a directory.', \is_string($fixturesDir) ? $fixturesDir : $dir));
         }
 
         $factory = static::createIntegrationCaseFactory();

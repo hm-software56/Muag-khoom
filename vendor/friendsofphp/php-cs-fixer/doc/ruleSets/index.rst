@@ -2,6 +2,7 @@
 List of Available Rule sets
 ===========================
 - `@DoctrineAnnotation <./DoctrineAnnotation.rst>`_
+- `@PHP54Migration <./PHP54Migration.rst>`_
 - `@PHP56Migration <./PHP56Migration.rst>`_
 - `@PHP56Migration:risky <./PHP56MigrationRisky.rst>`_
 - `@PHP70Migration <./PHP70Migration.rst>`_
@@ -28,6 +29,8 @@ List of Available Rule sets
 - `@PHPUnit75Migration:risky <./PHPUnit75MigrationRisky.rst>`_
 - `@PHPUnit84Migration:risky <./PHPUnit84MigrationRisky.rst>`_
 - `@PSR1 <./PSR1.rst>`_
+- `@PSR12 <./PSR12.rst>`_
+- `@PSR12:risky <./PSR12Risky.rst>`_
 - `@PSR2 <./PSR2.rst>`_
 - `@PhpCsFixer <./PhpCsFixer.rst>`_
 - `@PhpCsFixer:risky <./PhpCsFixerRisky.rst>`_

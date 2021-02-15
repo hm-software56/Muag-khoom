@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 ?>
 
 <div class="modal-body">
-    <?php $form = ActiveForm::begin(['action' => ['site/key']]); ?>
+    <?php $form = ActiveForm::begin(['action' => ['site/key'], 'options' => ['autocomplete' => 'off']]); ?>
     <?php
     if (Yii::$app->session->hasFlash('success_key')) {
         ?>
@@ -17,11 +17,12 @@ use yii\bootstrap\ActiveForm;
         <div class="row">
             <div class="col-md-12" align="center">
                 <?php
-                echo Html::textInput('key', '', ['autocomplete' => "on", 'required' => 'required', 'placeholder' => Yii::t('app', 'ປ້ອນລະຫັດ Activate'), 'class' => 'fadeIn second ']);
+                echo Html::textInput('key', '', ['autocomplete' => "off", 'required' => 'required', 'placeholder' => Yii::t('app', 'ປ້ອນລະຫັດ Activate'), 'class' => 'fadeIn second ']);
                 ?>
             </div>
             <div class="col-md-12" align="center">
-                <button type="submit" class="btn btn-primary "><?= Yii::t('app', 'Activate') ?></button>
+                <button type="submit" class="btn btn-primary "><span
+                            class="fa fa-key"></span> <?= Yii::t('app', 'Activate') ?></button>
             </div>
             <div class="col-md-12">
                 <?php
@@ -33,6 +34,10 @@ use yii\bootstrap\ActiveForm;
                 }
                 ?>
             </div>
+            <div align="center" style="padding:10px;">
+                <span class="fa fa-volume-control-phone"></span> <?= Yii::t('app', 'ໂທ:') . "020 55045770;" ?> <?= Yii::t('app', 'ອີເມວ:') . "daxionginfo@gmail.com" ?>
+            </div>
+
         </div>
 
         <?php

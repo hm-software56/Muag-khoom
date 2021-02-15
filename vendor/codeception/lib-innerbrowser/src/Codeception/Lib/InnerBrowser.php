@@ -209,7 +209,7 @@ class InnerBrowser extends Module implements Web, PageSourceSaver, ElementLocato
                 }
             }
 
-            if ($method !== 'GET' && $content === null && !empty($parameters)) {
+            if (!in_array($method, ['GET', 'HEAD'], true) && $content === null && !empty($parameters)) {
                 $content = http_build_query($parameters);
             }
         }
@@ -1003,6 +1003,18 @@ class InnerBrowser extends Module implements Web, PageSourceSaver, ElementLocato
     {
         $fakeDom = new \DOMDocument();
         $fakeDom->appendChild($fakeDom->importNode($form->getNode(0), true));
+
+        //add fields having form attribute with id of this form
+        $formId = $form->attr('id');
+        if ($formId !== null) {
+            $fakeForm = $fakeDom->firstChild;
+            $topParent = $form->parents()->last();
+            $fieldsByFormAttribute = $topParent->filter("input[form=$formId],select[form=$formId],textarea[form=$formId]");
+            foreach ($fieldsByFormAttribute as $field) {
+                $fakeForm->appendChild($fakeDom->importNode($field, true));
+            }
+        }
+
         $node = $fakeDom->documentElement;
         $action = (string)$this->getFormUrl($form);
         $cloned = new Crawler($node, $action, $this->getBaseUrl());
@@ -2061,5 +2073,62 @@ class InnerBrowser extends Module implements Web, PageSourceSaver, ElementLocato
     public function haveServerParameter($name, $value)
     {
         $this->client->setServerParameter($name, $value);
+    }
+
+    /**
+     * Prevents automatic redirects to be followed by the client.
+     *
+     * ```php
+     * <?php
+     * $I->stopFollowingRedirects();
+     * ```
+     *
+     */
+    public function stopFollowingRedirects()
+    {
+        $this->client->followRedirects(false);
+    }
+
+    /**
+     * Enables automatic redirects to be followed by the client.
+     *
+     * ```php
+     * <?php
+     * $I->startFollowingRedirects();
+     * ```
+     *
+     */
+    public function startFollowingRedirects()
+    {
+        $this->client->followRedirects(true);
+    }
+
+    /**
+     * Follow pending redirect if there is one.
+     *
+     * ```php
+     * <?php
+     * $I->followRedirect();
+     * ```
+     *
+     */
+    public function followRedirect()
+    {
+        $this->client->followRedirect();
+    }
+
+    /**
+     * Sets the maximum number of redirects that the Client can follow.
+     *
+     * ```php
+     * <?php
+     * $I->setMaxRedirects(2);
+     * ```
+     *
+     * @param int $maxRedirects
+     */
+    public function setMaxRedirects($maxRedirects)
+    {
+        $this->client->setMaxRedirects($maxRedirects);
     }
 }

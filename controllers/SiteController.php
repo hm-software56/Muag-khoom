@@ -88,20 +88,10 @@ class SiteController extends Controller
     public function actionLogin()
     {
         $this->layout = "main_login";
-
-        /*$atkey = \app\models\ShopProfile::find()->one();
-        \Yii::$app->session['profile'] = $atkey;
-        $key = $atkey->key_active;
-        $key_acitvated = substr($key, 25, 2) . substr($key, 17, -8) . "-" . substr($key, 6, -19) . "-" . substr($key, 0, -25);
-        \Yii::$app->session['key_acitvated'] = $key_acitvated;*/
-
         if (isset($_GET['true'])) {
             unset(Yii::$app->session['key']);
             unset(Yii::$app->session['keys']);
             unset(Yii::$app->session['step']);
-        }
-        if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
         }
         $login = new \app\models\User();
         $model = new LoginForm();
@@ -149,12 +139,11 @@ class SiteController extends Controller
 
     public function actionKey()
     {
-        if (isset($_POST['key']) && $_POST['key']) {
+        if (Yii::$app->request->post('key')) {
             $atkey = \app\models\ShopProfile::find()->one();
-            $key = $_POST['key'];
+            $key = Yii::$app->request->post('key');
             $atkey->key_active = $key;
-            print(\Yii::$app->session->get('error_keys'));
-            if (\Yii::$app->session->get('error_keys')!=1) {
+            if (\Yii::$app->session->get('error_keys') != 1 and strlen($atkey->key_active) == 36) {
                 $atkey->save();
                 \Yii::$app->getSession()->setFlash('success_key', \Yii::t('app', 'Successfull activated Key '));
             }
@@ -237,7 +226,7 @@ class SiteController extends Controller
                         }
 
                     } else {
-                        \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'Database ນີ້​ມີ​ແລ້ວ​ທ່ານ​ຕ້ອງ​ປ່ຽນ​ຊື່ database ໃໝ່'));
+                        \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'Database ນີ້ມີແລ້ວທ່ານຕ້ອງປ່ຽນຊື່ database ໃໝ່'));
                     }
                 }
 

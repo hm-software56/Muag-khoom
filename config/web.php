@@ -13,10 +13,32 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
-    'on beforeRequest'=>require(__DIR__ . '/request.php'),
+    'on beforeRequest' => require(__DIR__ . '/request.php'),
+    'modules' => [
+        'translatemanager' => [
+            'class' => 'lajax\translatemanager\Module',
+            'root' => '@app',               // The root directory of the project scan.
+            'scanRootParentDirectory' => true,
+            #'layout' => '/main',         // Name of the used layout. If using own layout use 'null'.
+            #'allowedIPs' => ['127.0.0.1'],  // IP addresses from which the translation interface is accessible.
+            #'roles' => ['*'],
+        ],
+    ],
     'components' => [
         'i18n' => [
             'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en', // Developer language
+                    'sourceMessageTable' => '{{%language_source}}',
+                    'messageTable' => '{{%language_translate}}',
+                    'cachingDuration' => 86400,
+                    'enableCaching' => false,
+                    'forceTranslation' => true,
+                ],
+            ],
+            /*'translations' => [
                 '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@app/messages', // if advanced application, set @frontend/messages
@@ -25,7 +47,7 @@ $config = [
                         //'main' => 'main.php',
                     ],
                 ],
-            ],
+            ],*/
         ],
         'pdf' => [
             'class' => Pdf::classname(),
