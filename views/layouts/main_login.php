@@ -55,16 +55,6 @@ AppAsset::register($this);
 
     <?php $this->endBody() ?>
 </body>
-<?php
-           if (Yii::$app->session->hasFlash('success_key') || Yii::$app->session->hasFlash('error_key')) {
-        ?>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#modal_key").modal('show');
-            });
-        </script>
-        <?php
-            }
-        ?>
+
 </html>
 <?php $this->endPage() ?>

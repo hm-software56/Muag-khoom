@@ -313,4 +313,22 @@ return array (
       '@lajax/translatemanager' => $vendorDir . '/lajax/yii2-translate-manager',
     ),
   ),
+  '2amigos/yii2-arrayquery-component' => 
+  array (
+    'name' => '2amigos/yii2-arrayquery-component',
+    'version' => '1.0.3.0',
+    'alias' => 
+    array (
+      '@dosamigos/arrayquery' => $vendorDir . '/2amigos/yii2-arrayquery-component/src',
+    ),
+  ),
+  'yii2mod/yii2-rbac' => 
+  array (
+    'name' => 'yii2mod/yii2-rbac',
+    'version' => '2.3.0.0',
+    'alias' => 
+    array (
+      '@yii2mod/rbac' => $vendorDir . '/yii2mod/yii2-rbac',
+    ),
+  ),
 );

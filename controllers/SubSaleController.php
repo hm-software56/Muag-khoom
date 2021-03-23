@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii2mod\rbac\filters\AccessControl;
 
 /**
  * SubSaleController implements the CRUD actions for SubSale model.
@@ -20,6 +21,9 @@ class SubSaleController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' =>AccessControl::class,
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

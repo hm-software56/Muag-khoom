@@ -8,6 +8,7 @@ use app\models\CurrencySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii2mod\rbac\filters\AccessControl;
 
 /**
  * CurrencyController implements the CRUD actions for Currency model.
@@ -20,6 +21,9 @@ class CurrencyController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' =>AccessControl::class,
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -26,7 +26,7 @@ if (Yii::$app->session['step'] ==1)
 {
 ?>
 <img src="images/step2.jpg">
-<h3><?=Yii::t('app','ປ້ອນ​ລາຍ​ລະ​ອຽດ​ການ​ຕິດ​ຕໍ່ Server ແລະ ຖານ​ຂໍ້​ມູນ')?></h3>
+<h3><?=Yii::t('app','ປ້ອນລາຍລະອຽດການຕິດຕໍ່ Server ແລະ ຖານຂໍ້ມູນ')?></h3>
 <div class="row">
     <div class="col-md-4">
     <input value='<?= Yii::$app->session['host'] ?>' type="text" class="form-control" name="host" placeholder="localhost" required>
@@ -55,25 +55,24 @@ if (Yii::$app->session['step'] ==1)
 {
 ?>
     <img src="images/step3.jpg">
-    <h5><?=Yii::t('app', 'ກົດ')?><a href="<?=Yii::$app->urlManager->baseUrl?>/index.php?r=site/keygenerate"> <?= Yii::t('app', 'Generate') ?></a> <?= Yii::t('app', 'ເພື່ອ​ເອົາລາຍ​ເຊັນ Key') ?></h5>
     <div class="row">
-        <div class="col-md-4">
-            <input autocomplete='off' value='<?= @Yii::$app->session['keys'] ?>' type="text" class="form-control" name="key" placeholder="linces key" required>
+        <div class="col-md-12">
+            <input autocomplete='off' value='<?= Yii::$app->session['key_install'] ?>' type="text" class="form-control" name="key_install" placeholder="linces key" required>
         </div>
     </div>
     <br/>
-    <h5><?=Yii::t('app','ເລືອ​ກ Database ທີ່​ທ່ານ​ຕ້ອງ​ການ​ໃຊ້')?></h5>
+    <h5><?=Yii::t('app','ເລືອກ Database ທີ່ທ່ານຕ້ອງການໃຊ້')?></h5>
     <div class="row">
         <div class="col-md-4">
-        <input type="radio" name="data" value="0" checked> Database ທີ​ມີ​ຂໍ້​ມ​ູນ​ຕົວ​ຢ່າງ<br>
-        <input type="radio" name="data" value="1"> Database ຫວ່າງ​ເປົ່າ<br>
+        <input type="radio" name="data" value="0" checked> Database ທີມີຂໍ້ມູນຕົວຢ່າງ<br>
+        <input type="radio" name="data" value="1"> Database ຫວ່າງເປົ່າ<br>
         </div>
     </div>
 <?php
 } else if (Yii::$app->session['step'] == 3) {
     ?>
     <img src="images/step4.jpg">
-    <h5><?=Yii::t('app', 'ປ້ອນຊື່ ​ແລະ ລະ​ຫັດຂອງ administrator ເພື່ອເຂົ້າ​ລະ​ບົບ')?></h5>
+    <h5><?=Yii::t('app', 'ປ້ອນຊື່ ແລະ ລະຫັດຂອງ administrator ເພື່ອເຂົ້າລະບົບ')?></h5>
     <div class="row">
         <div class="col-md-4">
             <input type="text" name="user_admin" placeholder="username" required class="form-control">
@@ -91,14 +90,14 @@ if (Yii::$app->session['step'] ==1)
 } else if (Yii::$app->session['step'] ==4) {
     ?>
     <img src="images/step5.jpg">
-    <h5 style="color:green"><?=Yii::t('app','ທ່ານ​ໄດ້​ຕິດ​ຕັ້ງ​ລະ​ບົບ​ສຳ​ເລັດ​ແລ້ວ ກົດປຸ່ມ​ຂ້າງ​ລຸ່ມ​ເພື່ອ​ເຂົ້​າ​ຫາ​ລະ​ບົບ')?></h5>
+    <h5 style="color:green"><?=Yii::t('app','ທ່ານໄດ້ຕິດຕັ້ງລະບົບສຳເລັດແລ້ວ ກົດປຸ່ມຂ້າງລຸ່ມເພື່ອເຂົ້າຫາລະບົບ')?></h5>
     <a href="index.php?r=site/login&true=true" class="btn btn-danger btn-sm">Login >></a>
 <?php
 
 } else{
     ?>
     <img src="images/step1.jpg">
-    <h3><?=Yii::t('app','ຄວາມ​ຕ້ອງ​ການ​ຂອງ​ລ​ະ​ບົບ')?></h3>
+    <h3><?=Yii::t('app','ຄວາມຕ້ອງການຂອງລະບົບ')?></h3>
     <table class="table table-bordered">
             <tbody><tr><th>Name</th><th>Result</th><th>Required By</th><th>Memo</th></tr>
                 <tr class="success">

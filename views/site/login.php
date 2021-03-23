@@ -113,7 +113,7 @@ $this->title = Yii::t('app', 'ເຂົ້າລະບົບ');
                         </div>
                         <!--<div class="text-red">Login: <b>user</b> || Password:<b>12345</b></div>-->
                     </div>
-                    <div class="text-right">Version:1.3</div>
+                    <div class="text-right"><?= Yii::$app->params['version'] ?></div>
                 </div>
                 <div class="pull-right" style="padding:10px">
                     <?php
@@ -121,9 +121,6 @@ $this->title = Yii::t('app', 'ເຂົ້າລະບົບ');
                     if (empty($key_acitvated) || date('Y-m-d', strtotime(Yii::$app->params['alert_date'])) > $key_acitvated) {
                         ?>
                         <?php
-                        $atkey = \app\models\ShopProfile::find()->one();
-                        $key = $atkey->key_active;
-                        $key_acitvated = substr($key, 25, 2) . substr($key, 17, -8) . "-" . substr($key, 6, -19) . "-" . substr($key, 0, -25);
                         if (date('Y-m-d', strtotime(Yii::$app->params['alert_date'])) > $key_acitvated) {
                             echo "<span style='color:red'><< " . Yii::t('app', 'ໝົດອາຍຸນຳໃຊ້ວັນທີ: ') . $key_acitvated . " >></span>";
                         }

@@ -36,7 +36,8 @@
         "kartik-v/yii2-grid": "*",
         "kartik-v/yii2-widget-select2": "dev-master",
         "toriphes/yii2-widget-lazyload": "*",
-        "lajax/yii2-translate-manager": "^1.8"
+        "lajax/yii2-translate-manager": "^1.8",
+        "yii2mod/yii2-rbac": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

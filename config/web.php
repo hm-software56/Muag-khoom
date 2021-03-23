@@ -23,8 +23,14 @@ $config = [
             #'allowedIPs' => ['127.0.0.1'],  // IP addresses from which the translation interface is accessible.
             #'roles' => ['*'],
         ],
+        'rbac' => [
+            'class' => 'yii2mod\rbac\Module',
+        ],
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
         'i18n' => [
             'translations' => [
                 '*' => [

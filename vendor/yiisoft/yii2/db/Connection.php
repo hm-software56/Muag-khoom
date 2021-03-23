@@ -119,7 +119,7 @@ use yii\caching\CacheInterface;
  * @property-read PDO $masterPdo The PDO instance for the currently active master connection. This property is
  * read-only.
  * @property QueryBuilder $queryBuilder The query builder for the current DB connection. Note that the type of
- * this property differs in getter and setter. See [[getQueryBuilder()]]  and [[setQueryBuilder()]] for details.
+ * this property differs in getter and setter. See [[getQueryBuilder()]] and [[setQueryBuilder()]] for details.
  * @property-read Schema $schema The schema information for the database opened by this connection. This
  * property is read-only.
  * @property-read string $serverVersion Server version as a string. This property is read-only.
@@ -694,8 +694,10 @@ class Connection extends Component
                 $driver = strtolower(substr($this->dsn, 0, $pos));
             }
             if (isset($driver)) {
-                if ($driver === 'mssql' || $driver === 'dblib') {
+                if ($driver === 'mssql') {
                     $pdoClass = 'yii\db\mssql\PDO';
+                } elseif ($driver === 'dblib') {
+                    $pdoClass = 'yii\db\mssql\DBLibPDO';
                 } elseif ($driver === 'sqlsrv') {
                     $pdoClass = 'yii\db\mssql\SqlsrvPDO';
                 }
@@ -1139,7 +1141,7 @@ class Connection extends Component
      *
      * If none of the servers are available the status cache is ignored and connection attempts are made to all
      * servers (Since version 2.0.35). This is to avoid downtime when all servers are unavailable for a short time.
-     * After a successful connection attempt the server is marked as avaiable again.
+     * After a successful connection attempt the server is marked as available again.
      *
      * @param array $pool the list of connection configurations in the server pool
      * @param array $sharedConfig the configuration common to those given in `$pool`.

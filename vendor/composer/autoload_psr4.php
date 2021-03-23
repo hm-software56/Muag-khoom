@@ -15,6 +15,7 @@ return array(
     'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap/src'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'yii2mod\\rbac\\' => array($vendorDir . '/yii2mod/yii2-rbac'),
     'yii2mod\\c3\\chart\\' => array($vendorDir . '/yii2mod/yii2-c3-chart'),
     'yii2assets\\printthis\\' => array($vendorDir . '/yii2assets/yii2-printthis'),
     'toriphes\\lazyload\\' => array($vendorDir . '/toriphes/yii2-widget-lazyload'),
@@ -42,6 +43,7 @@ return array(
     'dosamigos\\editable\\' => array($vendorDir . '/2amigos/yii2-editable-widget/src'),
     'dosamigos\\chartjs\\' => array($vendorDir . '/2amigos/yii2-chartjs-widget/src'),
     'dosamigos\\assets\\' => array($vendorDir . '/2amigos/yii2-dosamigos-asset-bundle'),
+    'dosamigos\\arrayquery\\' => array($vendorDir . '/2amigos/yii2-arrayquery-component/src'),
     'dmstr\\widgets\\' => array($vendorDir . '/dmstr/yii2-db/widgets'),
     'dmstr\\helpers\\' => array($vendorDir . '/dmstr/yii2-helpers/src'),
     'dmstr\\db\\tests\\' => array($vendorDir . '/dmstr/yii2-db/db/tests'),
@@ -95,5 +97,5 @@ return array(
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'Codeception\\PHPUnit\\' => array($vendorDir . '/codeception/phpunit-wrapper/src'),
     'Codeception\\Extension\\' => array($vendorDir . '/codeception/codeception/ext'),
-    'Codeception\\' => array($vendorDir . '/codeception/codeception/src/Codeception', $vendorDir . '/codeception/stub/src', $vendorDir . '/codeception/verify/src/Codeception'),
+    'Codeception\\' => array($vendorDir . '/codeception/stub/src', $vendorDir . '/codeception/verify/src/Codeception', $vendorDir . '/codeception/codeception/src/Codeception'),
 );

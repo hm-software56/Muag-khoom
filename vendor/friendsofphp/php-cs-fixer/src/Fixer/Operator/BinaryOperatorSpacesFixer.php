@@ -216,6 +216,42 @@ $foo = \json_encode($bar, JSON_PRESERVE_ZERO_FRACTION | JSON_PRETTY_PRINT);
 ',
                     ['operators' => ['|' => 'no_space']]
                 ),
+                new CodeSample(
+                    '<?php
+$array = [
+    "foo"            =>   1,
+    "baaaaaaaaaaar"  =>  11,
+];
+',
+                    ['operators' => ['=>' => 'single_space']]
+                ),
+                new CodeSample(
+                    '<?php
+$array = [
+    "foo" => 12,
+    "baaaaaaaaaaar"  => 13,
+];
+',
+                    ['operators' => ['=>' => 'align']]
+                ),
+                new CodeSample(
+                    '<?php
+$array = [
+    "foo" => 12,
+    "baaaaaaaaaaar"  => 13,
+];
+',
+                    ['operators' => ['=>' => 'align_single_space']]
+                ),
+                new CodeSample(
+                    '<?php
+$array = [
+    "foo" => 12,
+    "baaaaaaaaaaar"  => 13,
+];
+',
+                    ['operators' => ['=>' => 'align_single_space_minimal']]
+                ),
             ]
         );
     }
@@ -457,14 +493,17 @@ $foo = \json_encode($bar, JSON_PRESERVE_ZERO_FRACTION | JSON_PRETTY_PRINT);
             }
         }
 
+        // @TODO: drop condition when PHP 7.0+ is required
         if (!\defined('T_SPACESHIP')) {
             unset($operators['<=>']);
         }
 
+        // @TODO: drop condition when PHP 7.0+ is required
         if (!\defined('T_COALESCE')) {
             unset($operators['??']);
         }
 
+        // @TODO: drop condition when PHP 7.4+ is required
         if (!\defined('T_COALESCE_EQUAL')) {
             unset($operators['??=']);
         }

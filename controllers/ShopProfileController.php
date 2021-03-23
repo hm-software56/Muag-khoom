@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\imagine\Image;
 use Imagine\Image\Box;
+use yii2mod\rbac\filters\AccessControl;
 
 /**
  * ShopProfileController implements the CRUD actions for ShopProfile model.
@@ -22,6 +23,9 @@ class ShopProfileController extends Controller {
      */
     public function behaviors() {
         return [
+            'access' => [
+                'class' =>AccessControl::class,
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

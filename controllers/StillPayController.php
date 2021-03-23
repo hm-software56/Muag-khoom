@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\Custommer;
+use yii2mod\rbac\filters\AccessControl;
 
 /**
  * StillPayController implements the CRUD actions for StillPay model.
@@ -21,6 +22,9 @@ class StillPayController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' =>AccessControl::class,
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -14,7 +14,8 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle {
+class AppAsset extends AssetBundle
+{
 
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -26,13 +27,14 @@ class AppAsset extends AssetBundle {
         'adminlte/dist/css/skins/_all-skins.min.css',
         // 'adminlte/plugins/iCheck/flat/blue.css',
         'adminlte/bootstrap/css/bootstrap.css',
-            // 'adminlte/plugins/morris/morris.css',
-            //  'adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css',
-            // 'adminlte/plugins/datepicker/datepicker3.css',
-            // 'adminlte/plugins/daterangepicker/daterangepicker.css',
-            //  'adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
+        // 'adminlte/plugins/morris/morris.css',
+        //  'adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css',
+        // 'adminlte/plugins/datepicker/datepicker3.css',
+        // 'adminlte/plugins/daterangepicker/daterangepicker.css',
+        //  'adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
     ];
     public $js = [
+        'https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js',
         //  'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js', //
         //   'adminlte/plugins/morris/morris.min.js',
         // 'adminlte/plugins/sparkline/jquery.sparkline.min.js',

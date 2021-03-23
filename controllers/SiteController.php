@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -88,31 +89,34 @@ class SiteController extends Controller
     public function actionLogin()
     {
         $this->layout = "main_login";
-        if (isset($_GET['true'])) {
-            unset(Yii::$app->session['key']);
-            unset(Yii::$app->session['keys']);
-            unset(Yii::$app->session['step']);
-        }
+        unset(\Yii::$app->session['install']);
+        unset(Yii::$app->session['step']);
+        unset(Yii::$app->session['key']);
+        unset(Yii::$app->session['keys']);
+        unset(Yii::$app->session['step']);
+        unset(\Yii::$app->session['key_install']);
         $login = new \app\models\User();
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post())) {
             $model->username = htmlspecialchars($model->username);
             $model->password = htmlspecialchars($model->password);
-
-            $user = \app\models\User::findOne(['username' => $model->username, 'password' => $model->password, 'status' => 1]);
-            if (!empty($user->id)) {
-                \Yii::$app->session['user'] = $user;
-                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານເຂົ້າລະບົບຖືກຕ້ອງກຳລັງເຂົ້າຫາຂໍ້ມູນ......'));
-                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-                \Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
-                \Yii::$app->session['height_screen'] = ($_POST['hsc'] - 133);
-                \Yii::$app->session['width_screen'] = ($_POST['wsc']);
-                \Yii::$app->session['date_login'] = date('Ymd');
-                Yii::$app->session['currency'] = \app\models\Currency::find()->where(['base_currency' => 1])->one();
-                return $this->redirect(['site/index']);
-            } else {
-                \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານປ້ອນຊື່ຫຼືລະຫັດເຂົ້າລະບົບບໍ່ຖືກ'));
-                \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+            if ($model->login()) {
+                #$user = \app\models\User::findOne(['username' => $model->username, 'password' => $model->password, 'status' => 1]);
+                $user = \app\models\User::findOne(['id'=>Yii::$app->user->id]);
+                if (!empty($user->id)) {
+                    \Yii::$app->session['user'] = $user;
+                    \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານເຂົ້າລະບົບຖືກຕ້ອງກຳລັງເຂົ້າຫາຂໍ້ມູນ......'));
+                    \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+                    \Yii::$app->session['timeout'] = Yii::$app->params['timeout'];
+                    \Yii::$app->session['height_screen'] = ($_POST['hsc'] - 133);
+                    \Yii::$app->session['width_screen'] = ($_POST['wsc']);
+                    \Yii::$app->session['date_login'] = date('Ymd');
+                    Yii::$app->session['currency'] = \app\models\Currency::find()->where(['base_currency' => 1])->one();
+                    return $this->redirect(['site/index']);
+                } else {
+                    \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານປ້ອນຊື່ຫຼືລະຫັດເຂົ້າລະບົບບໍ່ຖືກ'));
+                    \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
+                }
             }
         }
         return $this->render('login', [
@@ -151,22 +155,12 @@ class SiteController extends Controller
         return $this->redirect(['site/login', 'key' => 1]);
     }
 
-    public function actionKeygenerate()
-    {
-        $try_m = 'last day of 2 month'; /// try to use 5 moth
-        $key_generate = date('dis') . date('m', strtotime("" . $try_m . "")) . mt_rand(100000000, 999999999) . date('y', strtotime("" . $try_m . "")) . date('his') . substr(date('Y', strtotime("" . $try_m . "")), 0, 2);
-        Yii::$app->session['key'] = $key_generate;
-        Yii::$app->session['keys'] = base64_encode($key_generate);
-        // return $this->redirect(['site/install']);
-        echo $key_generate;
-    }
-
     public function actionInstall($step = null)
     {
-        Yii::$app->session['host'] = '';
+        /*Yii::$app->session['host'] = '';
         Yii::$app->session['username'] = '';
         Yii::$app->session['password'] = '';
-        Yii::$app->session['database'] = '';
+        Yii::$app->session['database'] = '';*/
         if (isset($_POST['host']) && isset($_POST['username']) && isset($_POST['password'])) {
             $host = $_POST['host'];
             $user = $_POST['username'];
@@ -177,23 +171,10 @@ class SiteController extends Controller
             Yii::$app->session['username'] = $user;
             Yii::$app->session['password'] = $pass;
             Yii::$app->session['database'] = $db;
-            $db = new \yii\db\Connection([
-                'dsn' => 'mysql:host=' . $host . ';dbname=' . $db . '',
-                'username' => $user,
-                'password' => $pass,
-                'charset' => 'utf8',
-            ]);
-            if ($db->isActive) {
-                echo "ssss";
-                exit;
-            } else {
-                echo "zzzzzzzzzz";
-                exit;
-            }
             // connection hosting 
             $link = @mysqli_connect($host, $user, $pass);
             if (!$link) {
-                \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'ຂໍ້​ມູນ​ບໍ່​ຖືກ​ຕ້ອງ. ທ່ານກວດ​ Host name, Username ແລະ  Password ເຂົ້າ Database ໃຫ້​ຖືກ​ຕ້ອງ'));
+                \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'ຂໍ້ມູນບໍ່ຖືກຕ້ອງ. ທ່ານກວດ Host name, Username ແລະ  Password ເຂົ້າ Database ໃຫ້ຖືກຕ້ອງ'));
             } else {
                 if (isset($_POST['database'])) {
                     // create Database
@@ -233,23 +214,44 @@ class SiteController extends Controller
             }
         } else {
             // unset(Yii::$app->session['step']);exit;
+            $host = Yii::$app->session['host'];
+            $user = Yii::$app->session['username'];
+            $pass = Yii::$app->session['password'];
+            $db = Yii::$app->session['database'];
+
+
             if (Yii::$app->session['step'] == 2) {
                 if (isset($_POST['data']) && $_POST ['data'] == '0') {
                     \Yii::$app->db->createCommand(file_get_contents(Yii::$app->basePath . '/database/db_demo.sql'))->execute();
-                    $profile = \app\models\ShopProfile::find()->one();
-                    $profile->key_active = \Yii::$app->session['key'];
-                    $profile->save();
+
+                    $connection = new \yii\db\Connection([
+                        'dsn' => 'mysql:host=' . $host . ';dbname=' . $db . '',
+                        'username' => $user,
+                        'password' => $pass,
+                        'charset' => 'utf8',
+                    ]);
+                    $connection->open();
+                    $connection->createCommand('update shop_profile set key_active="' . \Yii::$app->session['key_install'] . '"')->execute();
+                    $connection->close();
+
                     \Yii::$app->session['step'] = 3;
-                    unset(Yii::$app->session['key']);
-                    //return $this->redirect(['site/login']);
+                    unset(Yii::$app->session['key_install']);
                 }
                 if (isset($_POST['data']) && $_POST['data'] == '1') {
                     \Yii::$app->db->createCommand(file_get_contents(Yii::$app->basePath . '/database/db_blank.sql'))->execute();
-                    $profile = \app\models\ShopProfile::find()->one();
-                    $profile->key_active = \Yii::$app->session['key'];
-                    $profile->save();
+
+                    $connection = new \yii\db\Connection([
+                        'dsn' => 'mysql:host=' . $host . ';dbname=' . $db . '',
+                        'username' => $user,
+                        'password' => $pass,
+                        'charset' => 'utf8',
+                    ]);
+                    $connection->open();
+                    $connection->createCommand('update shop_profile set key_active="' . \Yii::$app->session['key_install'] . '"')->execute();
+                    $connection->close();
+
                     \Yii::$app->session['step'] = 3;
-                    unset(Yii::$app->session['key']);
+                    unset(Yii::$app->session['key_install']);
                     //return $this->redirect(['site/login']);
                 }
             }
@@ -273,7 +275,6 @@ class SiteController extends Controller
             if (isset($_POST['next'])) {
                 Yii::$app->session['step'] = 1;
             }
-
             unset(Yii::$app->session['key']);
         }
         return $this->render('install');

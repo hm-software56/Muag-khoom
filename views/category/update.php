@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="category-update">
 
-    <div class="line_bottom">ແກ້​ໄຂປະ​ເພດ​ສີນ​ຄ້າ</div>
+    <div class="line_bottom"><?=Yii::t('app','ແກ້ໄຂປະເພດສີນຄ້າ')?></div>
     <br/>
 
     <?=

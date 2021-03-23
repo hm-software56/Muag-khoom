@@ -19,6 +19,7 @@ use app\models\PurchaseItem;
 use app\models\SaleHasPurchase;
 use app\models\LostProduct;
 use kartik\mpdf\Pdf;
+use yii2mod\rbac\filters\AccessControl;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -26,6 +27,14 @@ use kartik\mpdf\Pdf;
 class ProductsController extends Controller
 {
 
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' =>AccessControl::class,
+            ],
+        ];
+    }
     public function beforeAction($action)
     {
         if (empty(\Yii::$app->session['user'])) {

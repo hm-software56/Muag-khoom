@@ -74,7 +74,7 @@ if (Yii::$app->params['enable_display_client_pos'] == true) {
     ?>
     <script type="text/javascript">
         window.onload = function () {
-            window.open('<?=Yii::$app->params['url_display_client_pos']?>', 'new games release', ' menubar=0, resizable=0,dependent=0,status=0,width=700,height=300,left=30,top=50')
+            window.open('<?=yii\helpers\Url::base(true) . '/index.php?r=products/displayclientorder'?>', 'Display', ' menubar=0, resizable=0,dependent=0,status=0,width=700,height=300,left=30,top=50')
         }
     </script>
     <?php
