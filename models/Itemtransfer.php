@@ -3,13 +3,13 @@
 namespace app\models;
 
 use Yii;
-use \app\models\base\Itemtransferwarehouse as BaseItemtransferwarehouse;
+use \app\models\base\Itemtransfer as BaseItemtransfer;
 use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "item_transfer_to_warehouse".
+ * This is the model class for table "item_transfer".
  */
-class Itemtransferwarehouse extends BaseItemtransferwarehouse
+class Itemtransfer extends BaseItemtransfer
 {
 
     public function behaviors()

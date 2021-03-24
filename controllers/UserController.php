@@ -13,6 +13,7 @@ use yii\web\UploadedFile;
 use yii\imagine\Image;
 use Imagine\Image\Box;
 use yii2mod\rbac\filters\AccessControl;
+
 /**
  * UserController implements the CRUD actions for User model.
  */
@@ -39,7 +40,7 @@ class UserController extends Controller
     {
         return [
             'access' => [
-                'class' =>AccessControl::class,
+                'class' => AccessControl::class,
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -97,8 +98,12 @@ class UserController extends Controller
             unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
             $model->photo = $photo_name;
             $model->date = date('Y-m-d');
-            $model->save();
-            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ໄດ້ສ້າງຜູ້​ເຂົ້​າ​ໃຊ້ລະ​ບົບ​​ແລ້ວ........'));
+            if ($model->save()) {
+                $auth = Yii::$app->authManager;
+                $role = $auth->getRole($model->user_type);
+                $auth->assign($role, $model->id);
+            }
+            \Yii::$app->getSession()->setFlash('success', \Yii::t('app', 'ໄດ້ສ້າງຜູ້ເຂົ້າໃຊ້ລະບົບແລ້ວ........'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
             return $this->redirect(['index']);
         } else {
@@ -119,7 +124,12 @@ class UserController extends Controller
         ini_set('memory_limit', '2048M');
         $model = $this->findModel($id);
         $photo_old = $model->photo;
+        $old_password = $model->password;
+        $old_type = $model->user_type;
         if ($model->load(Yii::$app->request->post())) {
+            if ($old_password != $model->password) {
+                $model->password = Yii::$app->security->generatePasswordHash($model->password);
+            }
             $photo = UploadedFile::getInstance($model, 'photo');
             if (!empty($photo)) {
                 $photo_name = date('YmdHmsi') . '.' . $photo->extension;
@@ -133,10 +143,16 @@ class UserController extends Controller
                 $model->photo = $photo_old;
             }
             $model->date = date('Y-m-d');
-            $model->save();
-            \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ທ່ານ​ໄດ້​ແກ້​ໄຂ​ຂໍ້​ມູນສ່ວນ​ຕົວ​ສຳ​ເລັດ​ແລ້ວ.......'));
+            if ($model->save()) {
+                $auth = Yii::$app->authManager;
+                $item = $auth->getRole($old_type);
+                $auth->revoke($item, $model->id);
+                $role = $auth->getRole($model->user_type);
+                $auth->assign($role, $model->id);
+            }
+            \Yii::$app->getSession()->setFlash('success', \Yii::t('app', 'ທ່ານໄດ້ແກ້ໄຂຂໍ້ມູນສ່ວນຕົວສຳເລັດແລ້ວ.......'));
             \Yii::$app->getSession()->setFlash('action', \Yii::t('app', ''));
-            Yii::$app->session['user'] = $model;
+            #Yii::$app->session['user'] = $model;
             if (isset($_GET['prof'])) {
                 return $this->redirect(['site/index']);
             } else {

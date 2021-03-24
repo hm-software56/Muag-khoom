@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 //use karpoff\icrop\CropImageUpload;
 use budyaga\cropper\Widget;
 use yii\helpers\Url;
@@ -19,28 +20,40 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'first_name')->textInput(['maxlength' => true])->label('ຊື່') ?>
 
-    <?= $form->field($model, 'last_name')->textInput(['maxlength' => true])->label('ນາມ​ສະ​ກຸນ') ?>
+    <?= $form->field($model, 'last_name')->textInput(['maxlength' => true])->label('ນາມສະກຸນ') ?>
     <?php
     if (isset($_GET['prof'])) {
-        echo $form->field($model, 'username')->textInput(['maxlength' => true, 'disabled' => 'disabled'])->label('ຊື່​ເຂົ້າ​ລະ​ບົບ');
+        echo $form->field($model, 'username')->textInput(['maxlength' => true, 'disabled' => 'disabled'])->label('ຊື່ເຂົ້າລະບົບ');
     } else {
-        echo $form->field($model, 'username')->textInput(['maxlength' => true])->label('ຊື່​ເຂົ້າ​ລະ​ບົບ');
+        echo $form->field($model, 'username')->textInput(['maxlength' => true])->label('ຊື່ເຂົ້າລະບົບ');
     }
     ?>
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true])->label('ລະ​ຫັດ​ເຂົ້າ​ລະ​ບົບ') ?>
+    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true])->label('ລະຫັດເຂົ້າລະບົບ') ?>
     <?php
     if (!isset($_GET['prof'])) {
         ?>
-        <?= $form->field($model, 'status')->dropDownList([ '1' => 'ເປິດ', '​0' => 'ປິດ',], ['prompt' => ''])->label('ສະ​ຖາ​ນະ') ?>
+        <?php
+        echo $form->field($model, 'branch_id')->widget(\kartik\select2\Select2::classname(), [
+            'data' => yii\helpers\ArrayHelper::map(\app\models\Branch::find()->where(['status' => 1])->all(), 'id', 'branch_name'),
+            'options' => [
+                'placeholder' => Yii::t('app','=== ເລຶອກສາຂາ ==='),
+            ],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ])->label(Yii::t('app','ສາຂາ'));
 
-        <?= $form->field($model, 'user_type')->dropDownList([ 'Admin' => 'ຜູ້​ຄຸ້ມລະ​ບົບ', 'User' => '​ຜູ້​ໃຊ້​ລະ​ບົບ', 'POS' => 'ຜູ້​ຂາຍ​ໜ້າ​ຮ້ານ'], ['prompt' => ''])->label('ສິດ​ຜູ້​ໃຊ້ລະ​ບົບ') ?>
+        ?>
+        <?= $form->field($model, 'status')->dropDownList(['1' => 'ເປິດ', '0' => 'ປິດ',], ['prompt' => ''])->label('ສະຖານະ') ?>
+
+        <?= $form->field($model, 'user_type')->dropDownList(['Admin' => 'ຜູ້ຄຸ້ມລະບົບ', 'User' => 'ຜູ້ໃຊ້ລະບົບ', 'POS' => 'ຜູ້ຂາຍໜ້າຮ້ານ'], ['prompt' => ''])->label('ສິດຜູ້ໃຊ້ລະບົບ') ?>
 
         <?= $form->field($model, 'date')->hiddenInput(['value' => date('Y-m-d')])->label(false) ?>
         <?php
     }
     ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span> ບັນ​ທືກ' : '<span class="fa fa-save"></span> ບັນ​ທືກ', ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '<span class="fa fa-save"></span> ບັນທືກ' : '<span class="fa fa-save"></span> ບັນທືກ', ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

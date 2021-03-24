@@ -33,14 +33,6 @@ use yii\helpers\Html;
                                data-v-min="0" data-v-max="999999" autocomplete="off">
                     </td>
                     <td>
-                        <label class="control-label"
-                               for="purchase-currency_id"><?= Yii::t('app', 'ລາຄາຕໍ່ໜ່ວຍ') ?></label>
-                        <input type="text" id="price" class="form-control money_format" name="PurchaseItem['price'][]"
-                               autocomplete="off">
-                    </td>
-                    <td>
-                    </td>
-                    <td>
                         <br/>
                         <?php
                         echo yii\helpers\Html::a("+", '#', [
@@ -48,11 +40,10 @@ use yii\helpers\Html;
                                     $.ajax({
                                     type     :'POST',
                                     cache    : false,
-                                    url  : 'index.php?r=purchase/addpurchaseitems',
+                                    url  : 'index.php?r=product-transfer/additems',
                                     data: {
                                         product_id: $('#pro_id').val(),
                                         qauntity: $('#qtt').val(),
-                                        price: $('#price').val(),
                                     },
                                     success  : function(response) {
                                     $('#list_pt').html(response);
@@ -71,7 +62,7 @@ use yii\helpers\Html;
                     <td></td>
                     <th><?= Yii::t('app', 'ຊື່ສີນຄ້າ') ?></th>
                     <th><?= Yii::t('app', 'ຈຳນວນ') ?></th>
-                    <th><?= Yii::t('app', 'ລາຄາຕໍ່ໜ່ວຍ') ?></th>
+                    <th><?= Yii::t('app', 'ລາຄາຂາຍ/ຕໍ່ໜ່ວຍ') ?></th>
                     <th><?= Yii::t('app', 'ລວມເງີນ') ?></th>
                     <th></th>
                 </tr>
@@ -89,22 +80,20 @@ use yii\helpers\Html;
                 <?php
 
                 $tatol = 0;
-                if (!empty(Yii::$app->session['model_items'])) {
+                if (!empty(Yii::$app->session->get('model_items'))) {
                     $i = 0;
-                    $count = count(Yii::$app->session['model_items']);
-                    foreach (Yii::$app->session['model_items'] as $key => $model) {
+                    $count = count(Yii::$app->session->get('model_items'));
+                    foreach (Yii::$app->session->get('model_items') as $key => $model) {
                         $i++;
                         $count--;
-                        $tatol += $model->qautity * $model->pricebuy;
+                        $tatol += $model->qautity * $model->price_buy;
                         ?>
                         <tr id="list_pt<?= $key ?>">
                             <td><?= $count + 1 ?></td>
                             <td><?= $model->products->name ?></td>
                             <td><?= $model->qautity ?> </td>
-                            <td><?=number_format($model->pricebuy, 2) ?>
-
-                            </td>
-                            <td><?= number_format($model->qautity * $model->pricebuy, 2) ?></td>
+                            <td><?= number_format($model->price_buy, 2) ?></td>
+                            <td><?= number_format($model->qautity * $model->price_buy, 2) ?></td>
                             <td align="right">
                                 <?php
                                 echo yii\helpers\Html::a("-", '#', [
@@ -114,7 +103,7 @@ use yii\helpers\Html;
                                         $.ajax({
                                         type     :'POST',
                                         cache    : false,
-                                        url  : 'index.php?r=purchase/delpurchaseitems',
+                                        url  : 'index.php?r=product-transfer/delitems',
                                         data: {
                                             key_array:" . $key . ",
                                             id:'" . $model->id . "',

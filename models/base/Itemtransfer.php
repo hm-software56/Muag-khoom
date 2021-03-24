@@ -7,20 +7,19 @@ namespace app\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "item_transfer_to_warehouse".
+ * This is the base-model class for table "item_transfer".
  *
  * @property integer $id
  * @property integer $qautity
- * @property string $date
- * @property string $status
- * @property integer $branch_id
+ * @property string $price_buy
+ * @property integer $product_transfer_id
  * @property integer $products_id
  *
- * @property \app\models\Branch $branch
+ * @property \app\models\ProductTransfer $productTransfer
  * @property \app\models\Products $products
  * @property string $aliasModel
  */
-abstract class Itemtransferwarehouse extends \yii\db\ActiveRecord
+abstract class Itemtransfer extends \yii\db\ActiveRecord
 {
 
 
@@ -30,7 +29,7 @@ abstract class Itemtransferwarehouse extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'item_transfer_to_warehouse';
+        return 'item_transfer';
     }
 
     /**
@@ -39,11 +38,10 @@ abstract class Itemtransferwarehouse extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['qautity', 'branch_id', 'products_id'], 'integer'],
-            [['date', 'status', 'branch_id', 'products_id'], 'required'],
-            [['date'], 'safe'],
-            [['status'], 'string', 'max' => 45],
-            [['branch_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Branch::className(), 'targetAttribute' => ['branch_id' => 'id']],
+            [['qautity', 'product_transfer_id', 'products_id'], 'integer'],
+            [['price_buy', 'product_transfer_id', 'products_id'], 'required'],
+            [['price_buy'], 'string', 'max' => 45],
+            [['product_transfer_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\ProductTransfer::className(), 'targetAttribute' => ['product_transfer_id' => 'id']],
             [['products_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Products::className(), 'targetAttribute' => ['products_id' => 'id']]
         ];
     }
@@ -56,9 +54,8 @@ abstract class Itemtransferwarehouse extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('models', 'ID'),
             'qautity' => Yii::t('models', 'Qautity'),
-            'date' => Yii::t('models', 'Date'),
-            'status' => Yii::t('models', 'Status'),
-            'branch_id' => Yii::t('models', 'Branch ID'),
+            'price_buy' => Yii::t('models', 'Price Buy'),
+            'product_transfer_id' => Yii::t('models', 'Product Transfer ID'),
             'products_id' => Yii::t('models', 'Products ID'),
         ];
     }
@@ -66,9 +63,9 @@ abstract class Itemtransferwarehouse extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBranch()
+    public function getProductTransfer()
     {
-        return $this->hasOne(\app\models\Branch::className(), ['id' => 'branch_id']);
+        return $this->hasOne(\app\models\ProductTransfer::className(), ['id' => 'product_transfer_id']);
     }
 
     /**

@@ -19,9 +19,13 @@ use Yii;
  * @property string $user_type
  * @property string $date
  * @property string $height_screen
+ * @property integer $branch_id
  *
+ * @property \app\models\Barcode[] $barcodes
+ * @property \app\models\Invoice[] $invoices
  * @property \app\models\Products[] $products
  * @property \app\models\Sale[] $sales
+ * @property \app\models\Branch $branch
  * @property string $aliasModel
  */
 abstract class User extends \yii\db\ActiveRecord
@@ -44,20 +48,20 @@ abstract class User extends \yii\db\ActiveRecord
         return 'user';
     }
 
-
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['first_name', 'username', 'password', 'user_type', 'date'], 'required'],
-            [['status'], 'integer'],
+            [['first_name', 'username', 'password', 'user_type', 'date', 'branch_id'], 'required'],
+            [['status', 'branch_id'], 'integer'],
             [['user_type'], 'string'],
             [['date'], 'safe'],
             [['photo'], 'string', 'max' => 45],
             [['first_name', 'last_name', 'username', 'password'], 'string', 'max' => 255],
             [['height_screen'], 'string', 'max' => 10],
+            [['branch_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Branch::className(), 'targetAttribute' => ['branch_id' => 'id']],
             ['user_type', 'in', 'range' => [
                     self::USER_TYPE_ADMIN,
                     self::USER_TYPE_USER,
@@ -73,17 +77,34 @@ abstract class User extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'photo' => 'Photo',
-            'first_name' => 'First Name',
-            'last_name' => 'Last Name',
-            'username' => 'Username',
-            'password' => 'Password',
-            'status' => 'Status',
-            'user_type' => 'User Type',
-            'date' => 'Date',
-            'height_screen' => 'Height Screen',
+            'id' => Yii::t('models', 'ID'),
+            'photo' => Yii::t('models', 'Photo'),
+            'first_name' => Yii::t('models', 'First Name'),
+            'last_name' => Yii::t('models', 'Last Name'),
+            'username' => Yii::t('models', 'Username'),
+            'password' => Yii::t('models', 'Password'),
+            'status' => Yii::t('models', 'Status'),
+            'user_type' => Yii::t('models', 'User Type'),
+            'date' => Yii::t('models', 'Date'),
+            'height_screen' => Yii::t('models', 'Height Screen'),
+            'branch_id' => Yii::t('models', 'Branch ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBarcodes()
+    {
+        return $this->hasMany(\app\models\Barcode::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getInvoices()
+    {
+        return $this->hasMany(\app\models\Invoice::className(), ['user_id' => 'id']);
     }
 
     /**
@@ -100,6 +121,14 @@ abstract class User extends \yii\db\ActiveRecord
     public function getSales()
     {
         return $this->hasMany(\app\models\Sale::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBranch()
+    {
+        return $this->hasOne(\app\models\Branch::className(), ['id' => 'branch_id']);
     }
 
 
@@ -125,9 +154,9 @@ abstract class User extends \yii\db\ActiveRecord
     public static function optsUserType()
     {
         return [
-            self::USER_TYPE_ADMIN => self::USER_TYPE_ADMIN,
-            self::USER_TYPE_USER => self::USER_TYPE_USER,
-            self::USER_TYPE_POS => self::USER_TYPE_POS,
+            self::USER_TYPE_ADMIN => Yii::t('models', 'Admin'),
+            self::USER_TYPE_USER => Yii::t('models', 'User'),
+            self::USER_TYPE_POS => Yii::t('models', 'Pos'),
         ];
     }
 
