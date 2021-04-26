@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Warehousebranch;
 use Yii;
 use app\models\Products;
 use app\models\ProductsSearch;
@@ -88,18 +89,38 @@ class ProductsController extends Controller
 
         if (isset($_GET['cid'])) {
             if (!empty($_GET['cid'])) {
-                $model = Products::find()->where(['status' => 1, 'category_id' => $_GET['cid']])->orderBy('id ASC')->all();
+                if (Yii::$app->user->identity->branch_id) {
+                    $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                        ->where(['status' => 1, 'category_id' => $_GET['cid'], 'branch_id' => Yii::$app->user->identity->branch_id])
+                        ->orderBy('id ASC')
+                        ->limit(60)->all();
+                } else {
+                    $model = Products::find()->where(['status' => 1, 'category_id' => $_GET['cid']])->orderBy('id ASC')->all();
+                }
             } else {
-                $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(60)->all();
+                if (Yii::$app->user->identity->branch_id) {
+                    $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                        ->where(['status' => 1, 'branch_id' => Yii::$app->user->identity->branch_id])
+                        ->orderBy('id ASC')
+                        ->limit(60)->all();
+                } else {
+                    $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(60)->all();
+                }
             }
             return $this->renderAjax('pos_pro', [
                 'model' => $model,
             ]);
         } else {
-            $model = Products::find()->where(['status' => 1])
-                //->orderBy('id ASC')
-                ->orderBy(new Expression('rand()'))
-                ->limit(60)->all();
+            if (Yii::$app->user->identity->branch_id) {
+                $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                    ->where(['status' => 1, 'branch_id' => Yii::$app->user->identity->branch_id])
+                    ->orderBy(new Expression('rand()'))
+                    ->limit(60)->all();
+            } else {
+                $model = Products::find()->where(['status' => 1])
+                    ->orderBy(new Expression('rand()'))
+                    ->limit(60)->all();
+            }
             return $this->render('sale', [
                 'model' => $model,
             ]);
@@ -115,8 +136,15 @@ class ProductsController extends Controller
             unset(\Yii::$app->session['discount']);
             unset(Yii::$app->session['product_id']);
         }
-
-        $model = Products::find()->where('id=' . $id . ' and qautity>0')->one();
+        if (Yii::$app->user->identity->branch_id) {
+            $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                ->select('products.id as id, warehouse_branch.qautity as qautity')
+                ->where(['products_id' => $id, 'branch_id' => Yii::$app->user->identity->branch_id])
+                ->andWhere('warehouse_branch.qautity>0')
+                ->one();
+        } else {
+            $model = Products::find()->where('id=' . $id . ' and qautity>0')->one();
+        }
         if (!empty($model)) {
             if (!empty(\Yii::$app->session['product'])) {
                 $array = [];
@@ -400,9 +428,16 @@ class ProductsController extends Controller
                             }
                         }
                     }
-                    $product->qautity = $product->qautity - $sale->qautity;
-                    $product->pricesale = number_format($product->pricesale, 2);
-                    $product->save();
+
+                    if (Yii::$app->user->identity->branch_id) {
+                        $wh_b = Warehousebranch::find()->where(['products_id' => $product->id, 'branch_id' => Yii::$app->user->identity->branch_id])->one();
+                        $wh_b->qautity = $wh_b->qautity - $sale->qautity;
+                        $wh_b->save();
+                    } else {
+                        $product->qautity = $product->qautity - $sale->qautity;
+                        $product->pricesale = number_format($product->pricesale, 2);
+                        $product->save();
+                    }
                 }
             }
         }

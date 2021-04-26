@@ -38,8 +38,17 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
             <div class="col-md-2 col-sm-3 col-xs-6 ">
                 <div class="row">
                     <div class="col-md-12 " align="center">
-                        <div class="col-md-12 aa"><span
-                                    style='background:#003300; padding-left:5px; padding-right:5px;border-radius:2px;'><?= $model->qautity ?></span>
+                        <div class="col-md-12 aa">
+                            <span style='background:#003300; padding-left:5px; padding-right:5px;border-radius:2px;'>
+                                <?php
+                                if (Yii::$app->user->identity->branch_id) {
+                                    $qtt = \app\models\Warehousebranch::find()->where(['products_id' => $model->id])->one();
+                                    echo $qtt->qautity;
+                                } else {
+                                    echo $model->qautity;
+                                }
+                                ?>
+                            </span>
                         </div>
                         <!-- <img src="<?= Yii::$app->urlManager->baseUrl ?>/images/thume/<?= $model->image ?>" class="thumbnail img-responsive" />-->
                         <?php
