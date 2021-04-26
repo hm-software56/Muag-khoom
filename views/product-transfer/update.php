@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="product-transfer-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="line_bottom"><?= Yii::t('app', 'ແກ້ໄຂໂອນສີນຄ້າໃຫ້ສາຂາ') ?></div>
 
     <?= $this->render('_form', [
         'model' => $model,

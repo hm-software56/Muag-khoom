@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\Itemtransfer;
 use app\models\Products;
+use app\models\Warehousebranch;
+use dmstr\db\tests\unit\Product;
 use Yii;
 use app\models\ProductTransfer;
 use app\models\ProductTransferSearch;
@@ -37,6 +39,7 @@ class ProductTransferController extends Controller
      */
     public function actionIndex()
     {
+        \Yii::$app->session->set('model_items', null);
         $searchModel = new ProductTransferSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -68,7 +71,9 @@ class ProductTransferController extends Controller
     {
         $model = new ProductTransfer();
         if ($model->load(Yii::$app->request->post()) && Yii::$app->session->get('model_items')) {
-            $model->date = date('Y-m-d H:i:s');
+            $model->date_create = date('Y-m-d H:i:s');
+            $model->date_edit = date('Y-m-d H:i:s');
+            $model->tra_user_id = Yii::$app->user->id;
             if ($model->save()) {
                 foreach (Yii::$app->session->get('model_items') as $pd) {
                     $items = new Itemtransfer();
@@ -78,6 +83,8 @@ class ProductTransferController extends Controller
                     $items->product_transfer_id = $model->id;
                     $items->save();
                 }
+                Yii::$app->session->set('model_items', null);
+                Yii::$app->session->setFlash('success', Yii::t('app', 'ການໂອນສີີນຄ້າໃຫ້ສາຂາສໍາເລັດ.!'));
             }
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -103,7 +110,7 @@ class ProductTransferController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $model->date_edit = date('Y-m-d H:i:s');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             foreach (Yii::$app->session->get('model_items') as $pd) {
                 $items = Itemtransfer::find()->where(['id' => $pd->id])->one();
@@ -114,13 +121,16 @@ class ProductTransferController extends Controller
                 $items->qautity = $pd->qautity;
                 $items->price_buy = $pd->price_buy;
                 $items->product_transfer_id = $model->id;
+
                 $items->save();
             }
-
+            Yii::$app->session->set('model_items', null);
+            Yii::$app->session->setFlash('success', Yii::t('app', 'ແກ້ໄຂໂອນສີີນຄ້າໃຫ້ສາຂາສໍາເລັດ.!'));
             return $this->redirect(['view', 'id' => $model->id]);
         }
         $items = Itemtransfer::find()->where(['product_transfer_id' => $model->id])->orderBy('id DESC')->all();
         Yii::$app->session->set('model_items', $items);
+
         /* ========== list all product========*/
         $products = Products::find()->where(['status' => 1])->all();
         $product_arr = [];
@@ -146,6 +156,37 @@ class ProductTransferController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionConfirm($id)
+    {
+        $model = ProductTransfer::find()->where(['id' => $id])->one();
+        if ($model) {
+            $model->status = 1;
+            $model->date_edit = date('Y-m-d H:i:s');
+            if ($model->save()) {
+                $items = Itemtransfer::find()->where(['product_transfer_id' => $model->id])->all();
+                foreach ($items as $item) {
+                    $warehouseB = Warehousebranch::find()->where(['products_id' => $item->products_id, 'branch_id' => $model->branch_id])->one();
+                    if (empty($warehouseB)) {
+                        $warehouseB = new Warehousebranch();
+                    }
+                    $warehouseB->qautity = $warehouseB->qautity + $item->qautity;
+                    $warehouseB->products_id = $item->products_id;
+                    $warehouseB->branch_id = $model->branch_id;
+                    if ($warehouseB->save()) {
+                        $warehousemain = Products::find()->where(['id' => $item->products_id])->one();
+                        $warehousemain->qautity = $warehousemain->qautity - $item->qautity;
+                        $warehousemain->pricesale = number_format($warehousemain->pricesale, 2);
+                        $warehousemain->save();
+
+                    }
+
+                }
+                Yii::$app->session->setFlash('success', Yii::t('app', 'ທ່ານໄດ້ໂອນສີີນຄ້າໃຫ້ສາຂາສໍາເລັດແລ້ວ.!'));
+            }
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
     }
 
     /**
@@ -174,23 +215,25 @@ class ProductTransferController extends Controller
         } else {
             $model_item->products_id = $_POST['product_id'];
             $model_item->qautity = preg_replace('/[^A-Za-z0-9\-]/', '', $_POST['qauntity']);
+            $mainwarehouse = Products::find()->where(['id' => $model_item->products_id])->one();
+            if ($mainwarehouse->qautity >= $model_item->qautity) {
+                $purchase = \app\models\PurchaseItem::find()->where(['products_id' => $model_item->products_id])->orderBy('id DESC')->one();
+                $model_item->price_buy = $purchase->pricebuy;
 
-            $purchase = \app\models\PurchaseItem::find()->where(['products_id' => $model_item->products_id])->orderBy('id DESC')->one();
-            $model_item->price_buy = $purchase->pricebuy;
-
-            $model_item_arr[] = $model_item;
-            if (!empty(Yii::$app->session->get('model_items'))) {
-                \Yii::$app->session->set('model_items', array_merge($model_item_arr, Yii::$app->session->get('model_items')));
+                $model_item_arr[] = $model_item;
+                if (!empty(Yii::$app->session->get('model_items'))) {
+                    \Yii::$app->session->set('model_items', array_merge($model_item_arr, Yii::$app->session->get('model_items')));
+                } else {
+                    \Yii::$app->session->set('model_items', $model_item_arr);
+                }
             } else {
-                \Yii::$app->session->set('model_items', $model_item_arr);
+                Yii::$app->session->setFlash('success', Yii::t('app', 'ລາຍການນີ້ຈໍານວນສີນຄ້າບໍ່ພໍໂອນ.'));
             }
-
         }
         $product_arr = [];
         foreach ($products as $product) {
             $product_arr[$product->id] = $product->name;
         }
-
         return $this->renderAjax('list_items', ['product_arr' => $product_arr, 'model_item_arr' => $model_item_arr]);
     }
 

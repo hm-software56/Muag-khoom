@@ -59,11 +59,16 @@ class ProductTransferSearch extends ProductTransfer
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'date' => $this->date,
+            'date_create' => $this->date_create,
+            'date_edit' => $this->date_edit,
             'status' => $this->status,
-            'branch_id' => $this->branch_id,
         ]);
-
+        if (!empty(\Yii::$app->session['user']->branch_id)) {
+            $query->andFilterWhere(['branch_id' => \Yii::$app->session['user']->branch_id]);
+        } else {
+            $query->andFilterWhere(['branch_id' => $this->branch_id]);
+        }
+        $query->orderBy('id', 'DESC');
         return $dataProvider;
     }
 }

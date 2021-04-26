@@ -31,4 +31,13 @@ class ProductTransfer extends BaseProductTransfer
             ]
         );
     }
+
+    public static function Status($status)
+    {
+        if ($status == 0) {
+            return Yii::t('app', 'Draft');
+        } elseif ($status == 1) {
+            return Yii::t('app', 'Confirm');
+        }
+    }
 }

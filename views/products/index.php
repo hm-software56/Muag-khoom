@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\PaymentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title=Yii::t("app",'​ສີນ​ຄ້າ');
+$this->title = Yii::t("app", '​ສີນ​ຄ້າ');
 $this->params['breadcrumbs'][] = $this->title;
 if (Yii::$app->session->hasFlash('su')) {
     echo Alert::widget([
@@ -27,12 +27,17 @@ if (Yii::$app->session->hasFlash('su')) {
     <div class="row">
         <div class="col-md-8 col-xs-8 col-sm-8 ">
             <div class="line_bottom">
-                ລາຍ​ການ​ສີ້ນ​ຄ້າ
+                <?php
+                echo Yii::t('app','ລາຍການສີ້ນຄ້າ');
+                if(Yii::$app->session->get('branch_id')){
+                    echo' - '.\app\models\Branch::find()->where(['id'=>Yii::$app->session->get('branch_id')])->one()->branch_name;
+                }
+                ?>
             </div>
         </div>
         <div class="col-md-4 col-xs-4 col-sm-4">
             <p align='right'>
-                <?= Html::a('<span class="fa fa-plus-circle"></span> '. Yii::t('app', 'ປ້ອນ​ສີ້​ນຄ້າ'), ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+                <?= Html::a('<span class="fa fa-plus-circle"></span> ' . Yii::t('app', 'ປ້ອນ​ສີ້​ນຄ້າ'), ['create'], ['class' => 'btn btn-success btn-sm']) ?>
             </p>
         </div>
     </div>
@@ -52,8 +57,8 @@ if (Yii::$app->session->hasFlash('su')) {
                     'format' => 'html',
                     'contentOptions' => ['style' => 'min-width: 50px;'],
                     'value' => function ($data) {
-                return Html::img(Yii::$app->request->BaseUrl . '/images/thume/' . $data->image, ['width' => '50px', 'class' => "img-responsive img-rounded"]);
-            },
+                        return Html::img(Yii::$app->request->BaseUrl . '/images/thume/' . $data->image, ['width' => '50px', 'class' => "img-responsive img-rounded"]);
+                    },
                 ],
                 [
                     //'filter' => false,
@@ -61,29 +66,22 @@ if (Yii::$app->session->hasFlash('su')) {
                     'format' => 'html',
                     'contentOptions' => ['style' => 'width: 650px;white-space:nowrap;'],
                     'value' => function ($data) {
-                return $data->name;
-            },
+                        return $data->name;
+                    },
                 ],
                 [
                     'filter' => false,
                     'attribute' => 'qautity',
                     'format' => 'raw',
+                    'value' => function ($data) {
+                        if (Yii::$app->session->get('branch_id') == 0) {
+                            return $data->qautity;
+                        } else {
+                            $qtt = \app\models\Warehousebranch::find()->where(['products_id' => $data->id, 'branch_id' => Yii::$app->session->get('branch_id')])->one();
+                            return $qtt->qautity;
+                        }
+                    },
                     'contentOptions' => ['style' => 'width:80px;'],
-                    /*'value' => function ($data) {
-                        return "<div id=qt".$data->id.">".Html::a($data->qautity, '#', [
-                                'onclick' => "
-                                $.ajax({
-                                type:'POST',
-                                cache: false,
-                                url:'index.php?r=products/qautityupdateindex&idp=" . $data->id . "&qautity=" . $data->qautity . "',
-                                success:function(response) {
-                                    $('#qt". $data->id ."').html(response);
-                                    document.getElementById('search').focus();
-                                }
-                                });return false;",
-                                        'class' => "btn btn-sm bg-link",
-                                ])."</div>";
-                    },*/
                 ],
                 [
                     'filter' => false,
@@ -91,18 +89,18 @@ if (Yii::$app->session->hasFlash('su')) {
                     'format' => 'html',
                     'contentOptions' => ['style' => 'white-space:nowrap;'],
                     'value' => function ($data) {
-                return number_format($data->pricesale, 2)." ".Yii::$app->session['currency']->name;
-            },
+                        return number_format($data->pricesale, 2) . " " . Yii::$app->session['currency']->name;
+                    },
                 ],
-               /* [
-                    'filter' => false,
-                    'attribute' => 'user_id',
-                    'format' => 'html',
-                    'contentOptions' => ['style' => 'min-width: 50px;'],
-                    'value' => function ($data) {
-                return $data->user->first_name;
-            },
-                ],*/
+                /* [
+                     'filter' => false,
+                     'attribute' => 'user_id',
+                     'format' => 'html',
+                     'contentOptions' => ['style' => 'min-width: 50px;'],
+                     'value' => function ($data) {
+                 return $data->user->first_name;
+             },
+                 ],*/
                 // 'image',
                 ['class' => 'yii\grid\ActionColumn',
                     'template' => '{view} {update} {delete}',
@@ -117,34 +115,34 @@ if (Yii::$app->session->hasFlash('su')) {
                     'buttons' => [
                         'view' => function ($url, $model) {
                             return Html::a(
-                                            '<span class="glyphicon glyphicon-barcode"></span>', ['products/view', 'id' => $model->id], [
-                                            'class' => 'btn bg-blue btn-xs',
-                                            ]
+                                '<span class="glyphicon glyphicon-barcode"></span>', ['products/view', 'id' => $model->id], [
+                                    'class' => 'btn bg-blue btn-xs',
+                                ]
                             );
                         },
-                                'update' => function ($url, $model) {
+                        'update' => function ($url, $model) {
                             return Html::a(
-                                            '<span class="glyphicon glyphicon-edit"></span>', ['products/update', 'id' => $model->id], [
-                                        'class' => 'btn btn-success btn-xs',
-                                            ]
+                                '<span class="glyphicon glyphicon-edit"></span>', ['products/update', 'id' => $model->id], [
+                                    'class' => 'btn btn-success btn-xs',
+                                ]
                             );
                         },
-                                'delete' => function ($url, $model) {
+                        'delete' => function ($url, $model) {
                             return Html::a(
-                                            '<span class="glyphicon glyphicon-remove"></span>', $url, [
-                                        'title' => 'Delete',
-                                        'data-pjax' => '0',
-                                        'data-method' => "post",
-                                        'data-confirm' => Yii::t('app', 'Are you want to delete this item.?'),
-                                        'class' => 'btn btn-danger btn-xs',
-                                            ]
+                                '<span class="glyphicon glyphicon-remove"></span>', $url, [
+                                    'title' => 'Delete',
+                                    'data-pjax' => '0',
+                                    'data-method' => "post",
+                                    'data-confirm' => Yii::t('app', 'Are you want to delete this item.?'),
+                                    'class' => 'btn btn-danger btn-xs',
+                                ]
                             );
                         },
-                            ],
-                            'contentOptions' => ['align' => 'right', 'style' => 'white-space:nowrap;'],
-                        ],
                     ],
-                ]);
-                ?>
+                    'contentOptions' => ['align' => 'right', 'style' => 'white-space:nowrap;'],
+                ],
+            ],
+        ]);
+        ?>
     </div>
 </div>

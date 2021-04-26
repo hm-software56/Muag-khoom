@@ -1,7 +1,6 @@
 <?php
 
 namespace app\models;
-
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -41,7 +40,13 @@ class ProductsSearch extends Products
      */
     public function search($params)
     {
-        $query = Products::find();
+
+        if (Yii::$app->session->get('branch_id')) {
+            $query = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id');
+        } else {
+            $query = Products::find();
+
+        }
 
         // add conditions that should always apply here
 
@@ -64,24 +69,24 @@ class ProductsSearch extends Products
             'date' => $this->date,
             'category_id' => $this->category_id,
             'user_id' => $this->user_id,
-            'status'=>'1',
+            'status' => '1',
         ]);
-
+        if (Yii::$app->session->get('branch_id')) {
+            $query->andFilterWhere(['branch_id' => Yii::$app->session->get('branch_id')]);
+        }
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'pricesale', $this->pricesale]);
-            if(empty($_GET['sort'])){
-                $query->orderBy('id DESC');
-            }
-        if(!empty($this->image))
-        {
-            $categary=Category::find()->select('id')->where(['like','name',$this->image])->asArray()->all();
-            $id=[];
-            foreach($categary as $categary)
-            {
-                $id[]=$categary['id'];
+        if (empty($_GET['sort'])) {
+            $query->orderBy('id DESC');
+        }
+        if (!empty($this->image)) {
+            $categary = Category::find()->select('id')->where(['like', 'name', $this->image])->asArray()->all();
+            $id = [];
+            foreach ($categary as $categary) {
+                $id[] = $categary['id'];
             }
             $query->andFilterWhere(['in', 'category_id', $id]);
-        }    
+        }
         return $dataProvider;
     }
 }

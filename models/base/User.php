@@ -23,6 +23,8 @@ use Yii;
  *
  * @property \app\models\Barcode[] $barcodes
  * @property \app\models\Invoice[] $invoices
+ * @property \app\models\ProductTransfer[] $productTransfers
+ * @property \app\models\ProductTransfer[] $productTransfers0
  * @property \app\models\Products[] $products
  * @property \app\models\Sale[] $sales
  * @property \app\models\Branch $branch
@@ -54,7 +56,7 @@ abstract class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['first_name', 'username', 'password', 'user_type', 'date', 'branch_id'], 'required'],
+            [['first_name', 'username', 'password', 'user_type', 'date'], 'required'],
             [['status', 'branch_id'], 'integer'],
             [['user_type'], 'string'],
             [['date'], 'safe'],
@@ -105,6 +107,22 @@ abstract class User extends \yii\db\ActiveRecord
     public function getInvoices()
     {
         return $this->hasMany(\app\models\Invoice::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProductTransfers()
+    {
+        return $this->hasMany(\app\models\ProductTransfer::className(), ['tra_user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProductTransfers0()
+    {
+        return $this->hasMany(\app\models\ProductTransfer::className(), ['get_user_id' => 'id']);
     }
 
     /**

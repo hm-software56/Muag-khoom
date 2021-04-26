@@ -31,10 +31,11 @@ class ProductsController extends Controller
     {
         return [
             'access' => [
-                'class' =>AccessControl::class,
+                'class' => AccessControl::class,
             ],
         ];
     }
+
     public function beforeAction($action)
     {
         if (empty(\Yii::$app->session['user'])) {
@@ -55,6 +56,13 @@ class ProductsController extends Controller
      */
     public function actionIndex()
     {
+        if (isset(Yii::$app->request->queryParams['branch_id'])) {
+            if (Yii::$app->request->queryParams['branch_id'] == 0) {
+                Yii::$app->session->set('branch_id', null);
+            } else {
+                Yii::$app->session->set('branch_id', Yii::$app->request->queryParams['branch_id']);
+            }
+        }
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         //$dataProvider->pagination = ['defaultPageSize' => 200];
@@ -377,7 +385,7 @@ class ProductsController extends Controller
                                 $item->qtt_saled = $purchaseitem->qautity;
                                 if ($item->save()) {
                                     $ext = Products::exchage($purchaseitem->purchase->currency_id, $item->pricebuy);
-                                    $cal=(($product->pricesale - $ext) * $item->qtt_saled) + $sale->profit_price;
+                                    $cal = (($product->pricesale - $ext) * $item->qtt_saled) + $sale->profit_price;
                                     $sale->profit_price = '' . $cal . '';
                                     $sale->save();
 
@@ -510,13 +518,17 @@ class ProductsController extends Controller
         $model->qautity = 0;
         if ($model->load(Yii::$app->request->post())) {
             $model->image = UploadedFile::getInstance($model, 'image');
-            $photo_name = date('YmdHmsi') . '.' . $model->image->extension;
-            $model->image->saveAs(Yii::$app->basePath . '/web/images/' . $photo_name);
-            Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 250, 300)
-                ->resize(new Box(250, 300))
-                ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
-            unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
-            $model->image = $photo_name;
+            if ($model->image) {
+                $photo_name = date('YmdHmsi') . '.' . $model->image->extension;
+                $model->image->saveAs(Yii::$app->basePath . '/web/images/' . $photo_name);
+                Image::thumbnail(Yii::$app->basePath . '/web/images/' . $photo_name, 250, 300)
+                    ->resize(new Box(250, 300))
+                    ->save(Yii::$app->basePath . '/web/images/thume/' . $photo_name, ['quality' => 70]);
+                unlink(Yii::$app->basePath . '/web/images/' . $photo_name);
+                $model->image = $photo_name;
+            } else {
+                $model->image = 'no_img.jpg';
+            }
             $model->user_id = Yii::$app->session['user']->id;
             $model->save();
             \Yii::$app->getSession()->setFlash('su', \Yii::t('app', 'ລາຍ​ຈ່າຍ​ຖືກ​ເກັບ​ໄວ້​ໃນ​ລະ​ບົບ​ແລ້ວ'));
@@ -925,7 +937,7 @@ class ProductsController extends Controller
     public function actionProduct()
     {
         #$model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1])->all();
-       # return $this->render('product', ['model' => $model]);
+        # return $this->render('product', ['model' => $model]);
         $query = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1]);
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
@@ -1065,7 +1077,7 @@ class ProductsController extends Controller
 
     public function actionDisplayclientorder()
     {
-        $this->layout='main_client_pos';
+        $this->layout = 'main_client_pos';
         return $this->render('display_client_order');
     }
 

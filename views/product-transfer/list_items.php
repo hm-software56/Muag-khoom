@@ -62,7 +62,7 @@ use yii\helpers\Html;
                     <td></td>
                     <th><?= Yii::t('app', 'ຊື່ສີນຄ້າ') ?></th>
                     <th><?= Yii::t('app', 'ຈຳນວນ') ?></th>
-                    <th><?= Yii::t('app', 'ລາຄາຂາຍ/ຕໍ່ໜ່ວຍ') ?></th>
+                    <th><?= Yii::t('app', 'ລາຄາຊື້/ຕໍ່ໜ່ວຍ') ?></th>
                     <th><?= Yii::t('app', 'ລວມເງີນ') ?></th>
                     <th></th>
                 </tr>

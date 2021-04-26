@@ -232,7 +232,7 @@ JS;
                             </a>
                             <ul class="treeview-menu">
                                 <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products"
+                                    <a href="<?= \yii\helpers\Url::toRoute(['products/index', 'branch_id' => !empty(Yii::$app->session['user']->branch_id) ? Yii::$app->session['user']->branch_id : '0']) ?>"
                                        onclick="onclick_loadimg()">
                                         <i class="fa fa-sellsy"></i> <span><?= Yii::t('app', 'ສີນຄ້າ') ?></span>
                                     </a>
@@ -253,7 +253,11 @@ JS;
                                 </li>
                             </ul>
                         </li>
-
+                        <li>
+                            <a href="<?= \yii\helpers\Url::toRoute(['warehouse/index']) ?>">
+                                <i class="fa fa-home"></i> <span><?= Yii::t('app', 'ສາງສີ້ນຄ້າ') ?></span>
+                            </a>
+                        </li>
                         <li>
                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/sale"
                                onclick="onclick_loadimg()">

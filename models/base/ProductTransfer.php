@@ -10,12 +10,17 @@ use Yii;
  * This is the base-model class for table "product_transfer".
  *
  * @property integer $id
- * @property string $date
+ * @property string $date_create
+ * @property string $date_edit
  * @property integer $status
  * @property integer $branch_id
+ * @property integer $tra_user_id
+ * @property integer $get_user_id
  *
  * @property \app\models\ItemTransfer[] $itemTransfers
  * @property \app\models\Branch $branch
+ * @property \app\models\User $traUser
+ * @property \app\models\User $getUser
  * @property string $aliasModel
  */
 abstract class ProductTransfer extends \yii\db\ActiveRecord
@@ -37,10 +42,12 @@ abstract class ProductTransfer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'branch_id'], 'required'],
-            [['date'], 'safe'],
-            [['status', 'branch_id'], 'integer'],
-            [['branch_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Branch::className(), 'targetAttribute' => ['branch_id' => 'id']]
+            [['date_create', 'date_edit', 'branch_id'], 'required'],
+            [['date_create', 'date_edit'], 'safe'],
+            [['status', 'branch_id', 'tra_user_id', 'get_user_id'], 'integer'],
+            [['branch_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Branch::className(), 'targetAttribute' => ['branch_id' => 'id']],
+            [['tra_user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['tra_user_id' => 'id']],
+            [['get_user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\User::className(), 'targetAttribute' => ['get_user_id' => 'id']]
         ];
     }
 
@@ -51,9 +58,12 @@ abstract class ProductTransfer extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('models', 'ID'),
-            'date' => Yii::t('models', 'Date'),
+            'date_create' => Yii::t('models', 'Date Create'),
+            'date_edit' => Yii::t('models', 'Date Edit'),
             'status' => Yii::t('models', 'Status'),
             'branch_id' => Yii::t('models', 'Branch ID'),
+            'tra_user_id' => Yii::t('models', 'Tra User ID'),
+            'get_user_id' => Yii::t('models', 'Get User ID'),
         ];
     }
 
@@ -71,6 +81,22 @@ abstract class ProductTransfer extends \yii\db\ActiveRecord
     public function getBranch()
     {
         return $this->hasOne(\app\models\Branch::className(), ['id' => 'branch_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTraUser()
+    {
+        return $this->hasOne(\app\models\User::className(), ['id' => 'tra_user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGetUser()
+    {
+        return $this->hasOne(\app\models\User::className(), ['id' => 'get_user_id']);
     }
 
 
