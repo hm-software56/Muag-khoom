@@ -9,7 +9,39 @@ use yii\helpers\Html;
             <?= Yii::t('app', 'ລາຍ​ງານ​ສີ້ນ​ຄ້າ​ທີໝົດ​ແລ້ວ') ?>
 
         </div>
-
+        <div style="padding: 2px; float: right">
+            <?php
+            echo Html::beginForm(['products/productfinish'], 'get');
+            ?>
+            <table>
+                <tr>
+                    <td style="padding-left: 10px; padding-right: 10px;"><?= Yii::t('app', 'ສາຂາ') ?></td>
+                    <td style="padding-left: 10px; padding-right: 10px;">
+                        <?php
+                        if (Yii::$app->user->identity->branch_id) {
+                            $listData = [];
+                            $branch = \app\models\Branch::find()->where(['id' => Yii::$app->user->identity->branch_id])->all();
+                        } else {
+                            $listData = [Yii::t('app', 'All')];
+                            $branch = \app\models\Branch::find()->all();
+                        }
+                        foreach ($branch as $data) {
+                            $listData[$data->id] = $data->branch_name;
+                        }
+                        echo Html::dropDownList('branch_id', Yii::$app->request->get('branch_id'), $listData, ['class' => 'form-control']);
+                        ?>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">
+                            <il class="fa fa-search"></il>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            <?php
+            echo Html::endForm();
+            ?>
+        </div>
     </div>
     <div class="col-md-12 table-responsive">
         <table class="table table-bordered">
@@ -39,7 +71,15 @@ use yii\helpers\Html;
                                     class="img-rounded img-thumbnail img-responsive" width="30"/></a></td>
                     <td><?= $model->name ?></td>
                     <td><?php
-                        echo $model->qautity;
+                        if (Yii::$app->request->get('branch_id')) {
+                            $qtt = \app\models\Warehousebranch::find()->where(['products_id' => $model->id, 'branch_id' => Yii::$app->request->get('branch_id')])->one();
+                            echo $qtt->qautity;
+                        } elseif (Yii::$app->user->identity->branch_id) {
+                            $qtt = \app\models\Warehousebranch::find()->where(['products_id' => $model->id, 'branch_id' => Yii::$app->user->identity->branch_id])->one();
+                            echo $qtt->qautity;
+                        } else {
+                            echo $model->qautity;
+                        }
                         /*echo "<div id=qt" . $model->id . ">" . Html::a($model->qautity, '#', [
                                 'onclick' => "
                                 $.ajax({

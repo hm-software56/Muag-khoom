@@ -385,6 +385,7 @@ class ProductsController extends Controller
                     $sale->price = '' . $product->pricesale * $qautity . '';
                     $sale->profit_price = '0';
                     $sale->invoice_id = $invioce->id;
+                    $sale->branch_id = Yii::$app->user->identity->branch_id;
                     if ($sale->save()) {
                         $purchaseitems = PurchaseItem::find()->where('qautity>0')->andwhere(['products_id' => $sale->products_id])->orderBy('id ASC')->all();
                         $qtt_same = 0;
@@ -889,41 +890,51 @@ class ProductsController extends Controller
                     }
                 }
             } elseif (isset($_GET['date']) || isset($_GET['date_to'])) {
-                if (empty(Yii::$app->session['date'])) {
-                    Yii::$app->session['date'] = null;
+                if (!Yii::$app->session->get('date')) {
+                    Yii::$app->session->set('date', null);
                 }
-                if (empty(Yii::$app->session['date_to'])) {
-                    Yii::$app->session['date_to'] = null;
+                if (!Yii::$app->session->get('date_to')) {
+                    Yii::$app->session->set('date_to', null);
                 }
                 if (!empty($_GET['date'])) {
-                    Yii::$app->session['date'] = $_GET['date'];
+                    Yii::$app->session->set('date', $_GET['date']);
                 }
                 if (!empty($_GET['date_to'])) {
-                    Yii::$app->session['date_to'] = $_GET['date_to'];
+                    Yii::$app->session->set('date_to', $_GET['date_to']);
+                }
+                if (!empty($_GET['branch_id'])) {
+                    Yii::$app->session->set('branch_id', $_GET['branch_id']);
+                } else {
+                    Yii::$app->session->set('branch_id', null);
                 }
                 if (Yii::$app->session['user']->user_type == "POS") {
                     $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->andWhere('date>="' . Yii::$app->session['date'] . '" and date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
-                    /*if (empty($invoices) && empty(Yii::$app->session['date']) && empty(Yii::$app->session['date_to'])) {
-                        $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
-                    }*/
                 } else {
-                    $invoices = \app\models\Invoice::find()->where('date>="' . Yii::$app->session['date'] . '" and date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
-                    /*if (empty($invoices) && empty(Yii::$app->session['date']) && empty(Yii::$app->session['date_to'])) {
-                        $invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
-                    }*/
+                    if (Yii::$app->user->identity->branch_id) {
+                        $invoices = \app\models\Invoice::find()->joinWith('user')->where(['branch_id' => Yii::$app->user->identity->branch_id])->andWhere('invoice.date>="' . Yii::$app->session['date'] . '" and invoice.date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                    } else {
+                        if (Yii::$app->session->get('branch_id')) {
+                            $invoices = \app\models\Invoice::find()->joinWith('user')->where(['branch_id' => Yii::$app->session->get('branch_id')])->andWhere('invoice.date>="' . Yii::$app->session['date'] . '" and invoice.date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                        } else {
+                            $invoices = \app\models\Invoice::find()->joinWith('user')->where('invoice.date>="' . Yii::$app->session['date'] . '" and invoice.date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                        }
+                    }
+
                 }
             }
 
-            return $this->renderAjax('reportsale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
+            return $this->render('reportsale', ['invoices' => $invoices, 'invoice_code' => @$_GET['invoice_code'], 'date' => @$_GET['date']]);
         } else {
             Yii::$app->session['date'] = date('Y-m-d');
             Yii::$app->session['date_to'] = date('Y-m-d');
             if (Yii::$app->session['user']->user_type == "POS") {
                 $invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->andWhere('date>="' . Yii::$app->session['date'] . '" and date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
-                //$invoices = \app\models\Invoice::find()->where(['user_id' => Yii::$app->session['user']->id])->orderBy('id DESC')->all();
             } else {
-                //$invoices = \app\models\Invoice::find()->orderBy('id DESC')->all();
-                $invoices = \app\models\Invoice::find()->where('date>="' . Yii::$app->session['date'] . '" and date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                if (Yii::$app->user->identity->branch_id) {
+                    $invoices = \app\models\Invoice::find()->joinWith('user')->where(['branch_id' => Yii::$app->user->identity->branch_id])->andWhere('invoice.date>="' . Yii::$app->session['date'] . '" and invoice.date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                } else {
+                    $invoices = \app\models\Invoice::find()->where('date>="' . Yii::$app->session['date'] . '" and date<="' . Yii::$app->session['date_to'] . '"')->orderBy('id DESC')->all();
+                }
             }
             return $this->render('reportsale', ['invoices' => $invoices, 'invoice_code' => "", 'date' => ""]);
         }
@@ -971,9 +982,20 @@ class ProductsController extends Controller
 
     public function actionProduct()
     {
-        #$model = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1])->all();
-        # return $this->render('product', ['model' => $model]);
-        $query = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1]);
+        if (Yii::$app->user->identity->branch_id) {
+            $query = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                ->where(['not in', 'warehouse_branch.qautity', [0]])
+                ->andwhere(['status' => 1, 'branch_id' => Yii::$app->user->identity->branch_id]);
+        } else {
+            if (Yii::$app->request->get('branch_id')) {
+                $query = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                    ->where(['not in', 'warehouse_branch.qautity', [0]])
+                    ->andwhere(['status' => 1, 'branch_id' => Yii::$app->request->get('branch_id')]);
+            } else {
+                $query = Products::find()->where(['not in', 'qautity', [0]])->andwhere(['status' => 1]);
+            }
+        }
+
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
         $model = $query->offset($pages->offset)
@@ -989,7 +1011,23 @@ class ProductsController extends Controller
     public function actionProductfinish()
     {
         $profle = \app\models\ShopProfile::find()->one();
-        $model = Products::find()->where('qautity<=' . $profle->alert . '')->andwhere(['status' => 1])->all();
+
+        if (Yii::$app->user->identity->branch_id) {
+            $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                ->where('warehouse_branch.qautity<=' . $profle->alert . '')
+                ->andwhere(['status' => 1, 'branch_id' => Yii::$app->user->identity->branch_id])
+                ->all();
+        } else {
+            if (Yii::$app->request->get('branch_id')) {
+                $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                    ->where('warehouse_branch.qautity<=' . $profle->alert . '')
+                    ->andwhere(['status' => 1, 'branch_id' => Yii::$app->request->get('branch_id')])
+                    ->all();
+            } else {
+                $model = Products::find()->where('qautity<=' . $profle->alert . '')->andwhere(['status' => 1])->all();
+            }
+        }
+
         return $this->render('productfinish', ['model' => $model]);
 
     }

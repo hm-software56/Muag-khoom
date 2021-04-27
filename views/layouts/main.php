@@ -3,6 +3,7 @@
 
 /* @var $content string */
 
+use app\models\Products;
 use yii\helpers\Html;
 
 //use yii\bootstrap\Nav;
@@ -135,7 +136,16 @@ JS;
                 <ul class="nav navbar-nav">
                     <?php
                     if (!empty(Yii::$app->session['user'])) {
-                        $prd = \app\models\Products::find()->where('status=1 and qautity<=' . $profle->alert . '')->count();
+                        #$prd = \app\models\Products::find()->where('status=1 and qautity<=' . $profle->alert . '')->count();
+                        if (Yii::$app->user->identity->branch_id) {
+                            $prd = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                                ->where('warehouse_branch.qautity<=' . $profle->alert . '')
+                                ->andwhere(['status' => 1, 'branch_id' => Yii::$app->user->identity->branch_id])
+                                ->count();
+                        } else {
+                            $prd = Products::find()->where('qautity<=' . $profle->alert . '')->andwhere(['status' => 1])->count();
+
+                        }
                         ?>
                         <li class="dropdown messages-menu">
                             <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=products/productfinish"
