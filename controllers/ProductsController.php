@@ -679,9 +679,16 @@ class ProductsController extends Controller
     public function actionQautityupdateindex($id = null, $qautity, $idp = null)
     {
         if (!empty($id)) {
-            $product = \app\models\Products::find()->where(['id' => $id])->one();
-            if ((int)$qautity >= 0 && $qautity <= $product->qautity) {
-                $qtt_dedute = $product->qautity - $qautity;
+            if (Yii::$app->user->identity->branch_id) {
+                $product = \app\models\Products::find()->where(['id' => $id])->one();
+                $warehousebranch = Warehousebranch::find()->where(['products_id' => $product->id, 'branch_id' => Yii::$app->user->identity->branch_id])->one();
+                $qtt = $warehousebranch->qautity;
+            } else {
+                $product = \app\models\Products::find()->where(['id' => $id])->one();
+                $qtt = $product->qautity;
+            }
+            if ((int)$qautity >= 0 && $qautity <= $qtt) {
+                $qtt_dedute = $qtt - $qautity;
 
                 $product->qautity = (int)$qautity;
                 $product->pricesale = number_format($product->pricesale, 2);
@@ -694,12 +701,16 @@ class ProductsController extends Controller
                         $qtt_dedute = $qtt_dedute - $purchaseitem->qautity;
                         $purchaseitem->qtt_saled = $purchaseitem->qautity + $purchaseitem->qtt_saled;
                         $purchaseitem->qautity = 0;
+
                         if ($purchaseitem->save()) {
                             $lostproduct = new LostProduct;
                             $lostproduct->qautity = $qtt_deduct_each_item;
                             $lostproduct->date = date('Y-m-d');
                             $lostproduct->pricebuy = $purchaseitem->pricebuy;
                             $lostproduct->purchase_item_id = $purchaseitem->id;
+                            if (Yii::$app->user->identity->branch_id) {
+                                $lostproduct->branch_id = Yii::$app->user->identity->branch_id;
+                            }
                             $lostproduct->save();
                         }
                     } else {
@@ -711,6 +722,9 @@ class ProductsController extends Controller
                             $lostproduct->date = date('Y-m-d');
                             $lostproduct->pricebuy = $purchaseitem->pricebuy;
                             $lostproduct->purchase_item_id = $purchaseitem->id;
+                            if (Yii::$app->user->identity->branch_id) {
+                                $lostproduct->branch_id = Yii::$app->user->identity->branch_id;
+                            }
                             if ($lostproduct->qautity != 0) {
                                 $lostproduct->save();
                             }
@@ -718,7 +732,13 @@ class ProductsController extends Controller
                         $qtt_dedute = 0;
                     }
                 }
-                $product->save();
+                if (Yii::$app->user->identity->branch_id) {
+                    $warehousebranch->qautity = (int)$qautity;
+                    $warehousebranch->save();
+                } else {
+                    $product->save();
+                }
+
             }
             return "<div id=qt" . $product->id . ">" . Html::a($product->qautity, '#', [
                     'onclick' => "
@@ -1139,6 +1159,9 @@ class ProductsController extends Controller
 
     public function actionCheckpd()
     {
+        if (Yii::$app->user->identity->branch_id) {
+            Yii::$app->session->set('branch_id', Yii::$app->user->identity->branch_id);
+        }
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->pagination->pageSize = 30;

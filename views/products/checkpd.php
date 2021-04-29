@@ -77,12 +77,18 @@ if (Yii::$app->session->hasFlash('su')) {
                     'format' => 'raw',
                     'contentOptions' => ['style' => 'width:80px;'],
                     'value' => function ($data) {
-                        return "<div id=qt".$data->id.">".Html::a($data->qautity, '#', [
+                        if(Yii::$app->user->identity->branch_id){
+                            $qtt = \app\models\Warehousebranch::find()->where(['products_id' => $data->id, 'branch_id' => Yii::$app->session->get('branch_id')])->one();
+                            $qautity=$qtt->qautity;
+                        }else{
+                            $qautity=$data->qautity;
+                        }
+                        return "<div id=qt".$data->id.">".Html::a($qautity, '#', [
                                 'onclick' => "
                                 $.ajax({
                                 type:'POST',
                                 cache: false,
-                                url:'index.php?r=products/qautityupdateindex&idp=" . $data->id . "&qautity=" . $data->qautity . "',
+                                url:'index.php?r=products/qautityupdateindex&idp=" . $data->id . "&qautity=" . $qautity. "',
                                 success:function(response) {
                                     $('#qt". $data->id ."').html(response);
                                     document.getElementById('search').focus();

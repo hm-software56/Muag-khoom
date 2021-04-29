@@ -14,7 +14,9 @@ use Yii;
  * @property string $date
  * @property string $pricebuy
  * @property integer $purchase_item_id
+ * @property integer $branch_id
  *
+ * @property \app\models\Branch $branch
  * @property \app\models\PurchaseItem $purchaseItem
  * @property string $aliasModel
  */
@@ -38,9 +40,10 @@ abstract class LostProduct extends \yii\db\ActiveRecord
     {
         return [
             [['qautity', 'date', 'pricebuy', 'purchase_item_id'], 'required'],
-            [['qautity', 'purchase_item_id'], 'integer'],
+            [['qautity', 'purchase_item_id', 'branch_id'], 'integer'],
             [['date'], 'safe'],
             [['pricebuy'], 'string', 'max' => 255],
+            [['branch_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Branch::className(), 'targetAttribute' => ['branch_id' => 'id']],
             [['purchase_item_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\PurchaseItem::className(), 'targetAttribute' => ['purchase_item_id' => 'id']]
         ];
     }
@@ -56,7 +59,16 @@ abstract class LostProduct extends \yii\db\ActiveRecord
             'date' => Yii::t('models', 'Date'),
             'pricebuy' => Yii::t('models', 'Pricebuy'),
             'purchase_item_id' => Yii::t('models', 'Purchase Item ID'),
+            'branch_id' => Yii::t('models', 'Branch ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBranch()
+    {
+        return $this->hasOne(\app\models\Branch::className(), ['id' => 'branch_id']);
     }
 
     /**
