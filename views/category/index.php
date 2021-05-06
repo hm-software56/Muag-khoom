@@ -17,11 +17,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Yii::t('app', 'ປະເພດສີນຄ້າ') ?>
             </div>
         </div>
-        <div class="col-md-6 col-xs-6 col-sm-6">
-            <p align='right'>
-                <?= Html::a('<span class="fa fa-plus-circle"></span> ' . Yii::t('app', 'ເພີ່ມປະເພດສີນຄ້າ') . '', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
-            </p>
-        </div>
+        <?php
+        if (!Yii::$app->user->identity->branch_id) {
+            ?>
+            <div class="col-md-6 col-xs-6 col-sm-6">
+                <p align='right'>
+                    <?= Html::a('<span class="fa fa-plus-circle"></span> ' . Yii::t('app', 'ເພີ່ມປະເພດສີນຄ້າ') . '', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+                </p>
+            </div>
+            <?php
+        }
+        ?>
     </div>
     <div class="table-responsive" style="padding-top: 2px;">
         <?=
@@ -49,6 +55,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 //  'date',
                 ['class' => 'yii\grid\ActionColumn',
                     'template' => '{sub} {update} {delete}',
+                    'visibleButtons' => [
+                        'sub' => function ($model, $key, $index) {
+                            return (\Yii::$app->session['user']->user_type == "Admin" && !Yii::$app->user->identity->branch_id) ? true : false;
+                        },
+                        'update' => function ($model, $key, $index) {
+                            return (\Yii::$app->session['user']->user_type == "Admin" && !Yii::$app->user->identity->branch_id) ? true : false;
+                        },
+                        'delete' => function ($model, $key, $index) {
+                            return (\Yii::$app->session['user']->user_type == "Admin" && !Yii::$app->user->identity->branch_id) ? true : false;
+                        },
+                    ],
                     'buttons' => [
                         'sub' => function ($url, $model) {
                             return Html::a(

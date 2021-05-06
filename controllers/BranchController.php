@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\ProfileBranch;
 use Yii;
 use app\models\Branch;
 use yii\data\ActiveDataProvider;
@@ -65,14 +66,19 @@ class BranchController extends Controller
     public function actionCreate()
     {
         $model = new Branch();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success',Yii::t('app','ສໍາເລັດການເພີ່ມສາຂາ'));
+        $profile_branch = new ProfileBranch();
+        if ($model->load(Yii::$app->request->post()) && $profile_branch->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                $profile_branch->branch_id = $model->id;
+                $profile_branch->save();
+            }
+            Yii::$app->session->setFlash('success', Yii::t('app', 'ສໍາເລັດການເພີ່ມສາຂາ'));
             return $this->redirect(['index']);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'profile_branch' => $profile_branch
         ]);
     }
 
@@ -86,14 +92,23 @@ class BranchController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $profile_branch = ProfileBranch::find()->where(['branch_id' => $model->id])->one();
+        if (!$profile_branch) {
+            $profile_branch = new ProfileBranch();
+        }
+        if ($model->load(Yii::$app->request->post()) && $profile_branch->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                $profile_branch->branch_id = $model->id;
+                $profile_branch->save();
+            }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success',Yii::t('app','ສໍາເລັດການແກ້ສາຂາ'));
+            Yii::$app->session->setFlash('success', Yii::t('app', 'ສໍາເລັດການແກ້ສາຂາ'));
             return $this->redirect(['index']);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'profile_branch' => $profile_branch
         ]);
     }
 
@@ -106,10 +121,10 @@ class BranchController extends Controller
      */
     public function actionDelete($id)
     {
-        if($this->findModel($id)->delete()){
-            Yii::$app->session->setFlash('success',Yii::t('app','ສໍາເລັດການລຶບສາຂາ'));
-        }else{
-            Yii::$app->session->setFlash('error',Yii::t('app','ມີຂໍຜິດພາດການລຶບສາຂາ'));
+        if ($this->findModel($id)->delete()) {
+            Yii::$app->session->setFlash('success', Yii::t('app', 'ສໍາເລັດການລຶບສາຂາ'));
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'ມີຂໍຜິດພາດການລຶບສາຂາ'));
         }
 
         return $this->redirect(['index']);

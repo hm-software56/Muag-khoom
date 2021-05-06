@@ -28,18 +28,24 @@ if (Yii::$app->session->hasFlash('su')) {
         <div class="col-md-8 col-xs-8 col-sm-8 ">
             <div class="line_bottom">
                 <?php
-                echo Yii::t('app','ລາຍການສີ້ນຄ້າ');
-                if(Yii::$app->session->get('branch_id')){
-                    echo' - '.\app\models\Branch::find()->where(['id'=>Yii::$app->session->get('branch_id')])->one()->branch_name;
+                echo Yii::t('app', 'ລາຍການສີ້ນຄ້າ');
+                if (Yii::$app->session->get('branch_id')) {
+                    echo ' - ' . \app\models\Branch::find()->where(['id' => Yii::$app->session->get('branch_id')])->one()->branch_name;
                 }
                 ?>
             </div>
         </div>
-        <div class="col-md-4 col-xs-4 col-sm-4">
-            <p align='right'>
-                <?= Html::a('<span class="fa fa-plus-circle"></span> ' . Yii::t('app', 'ປ້ອນ​ສີ້​ນຄ້າ'), ['create'], ['class' => 'btn btn-success btn-sm']) ?>
-            </p>
-        </div>
+        <?php
+        if (!Yii::$app->user->identity->branch_id) {
+            ?>
+            <div class="col-md-4 col-xs-4 col-sm-4">
+                <p align='right'>
+                    <?= Html::a('<span class="fa fa-plus-circle"></span> ' . Yii::t('app', 'ປ້ອນ​ສີ້​ນຄ້າ'), ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+                </p>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 
     <div class="table-responsive">
@@ -106,10 +112,10 @@ if (Yii::$app->session->hasFlash('su')) {
                     'template' => '{view} {update} {delete}',
                     'visibleButtons' => [
                         'update' => function ($model, $key, $index) {
-                            return (\Yii::$app->session['user']->user_type == "Admin") ? true : false;
+                            return (\Yii::$app->session['user']->user_type == "Admin" && !Yii::$app->user->identity->branch_id) ? true : false;
                         },
                         'delete' => function ($model, $key, $index) {
-                            return (\Yii::$app->session['user']->user_type == "Admin") ? true : false;
+                            return (\Yii::$app->session['user']->user_type == "Admin" && !Yii::$app->user->identity->branch_id) ? true : false;
                         },
                     ],
                     'buttons' => [

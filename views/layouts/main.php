@@ -144,7 +144,6 @@ JS;
                                 ->count();
                         } else {
                             $prd = Products::find()->where('qautity<=' . $profle->alert . '')->andwhere(['status' => 1])->count();
-
                         }
                         ?>
                         <li class="dropdown messages-menu">
@@ -248,10 +247,10 @@ JS;
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=purchase"
+                                    <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index"
                                        onclick="onclick_loadimg()">
                                         <i class="fa fa-sellsy"></i>
-                                        <span><?= Yii::t('app', 'ຈັດຊື້ສີນຄ້າ') ?></span>
+                                        <span><?= Yii::t('app', 'ປະເພດສີນຄ້າ') ?></span>
                                     </a>
                                 </li>
                                 <li>
@@ -263,6 +262,19 @@ JS;
                                 </li>
                             </ul>
                         </li>
+                        <?php
+                        if (!Yii::$app->user->identity->branch_id) {
+                            ?>
+                            <li>
+                                <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=purchase"
+                                   onclick="onclick_loadimg()">
+                                    <i class="fa fa-sellsy"></i>
+                                    <span><?= Yii::t('app', 'ຈັດຊື້ສີນຄ້າ') ?></span>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
                         <li>
                             <a href="<?= \yii\helpers\Url::toRoute(['warehouse/index']) ?>">
                                 <i class="fa fa-home"></i> <span><?= Yii::t('app', 'ສາງສີ້ນຄ້າ') ?></span>
@@ -310,13 +322,7 @@ JS;
                                     <i class="fa fa-gears"></i> <span><?= Yii::t('app', 'ຕັ້ງຄ່າ') ?></span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li>
-                                        <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=category/index"
-                                           onclick="onclick_loadimg()">
-                                            <i class="fa fa-sellsy"></i>
-                                            <span><?= Yii::t('app', 'ປະເພດສີນຄ້າ') ?></span>
-                                        </a>
-                                    </li>
+
                                     <li>
                                         <a href="<?= Yii::$app->urlManager->baseUrl ?>/index.php?r=currency/index"
                                            onclick="onclick_loadimg()">

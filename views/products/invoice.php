@@ -1,9 +1,20 @@
 <?php
 $profile = app\models\ShopProfile::find()->where(['id' => 1])->one();
 $multi_currency_pay = app\models\PayMultiCurency::find()->where(['invoice_id' => $invoice->id])->one();
+if (Yii::$app->user->identity->branch_id) {
+    $profile_branch = \app\models\ProfileBranch::find()->where(['branch_id' => Yii::$app->user->identity->branch_id])->one();
+    $branch = \app\models\Branch::find()->where(['id' => Yii::$app->user->identity->branch_id])->one();
+    if ($profile_branch) {
+        $profile->shop_name = $profile->shop_name . " - " . $branch->branch_name;
+        $profile->telephone = $profile_branch->telephone;
+        $profile->phone_number = $profile_branch->phone_number;
+        $profile->adress = $profile_branch->address;
+        $profile->email = $profile_branch->email;
+    }
+}
 ?>
 <div style="display:none">
-    <div class="table-responsive" id="print" >
+    <div class="table-responsive" id="print">
         <table class="table" style="font-size:11px !important;">
             <tr>
                 <td>

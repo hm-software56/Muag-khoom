@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
     <br/>
     <?= $this->render('_form', [
         'model' => $model,
+        'profile_branch' => $profile_branch
     ]) ?>
 
 </div>

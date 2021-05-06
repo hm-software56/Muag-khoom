@@ -14,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <br/>
     <?= $this->render('_form', [
         'model' => $model,
+        'profile_branch' => $profile_branch
     ]) ?>
 
 </div>

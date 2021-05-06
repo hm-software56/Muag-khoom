@@ -10,8 +10,8 @@ class Web extends StatefulWidget {
 }
 
 class _WebState extends State<Web> {
-  //var url = 'http://192.168.0.102';
-  var url='https://pos.cyberia.la/Muag-khoom';
+  var url = 'http://192.168.50.108';
+  //var url='https://pos.cyberia.la/Muag-khoom';
   bool loading = true;
   bool hostyes = true;
 
@@ -82,6 +82,19 @@ class _WebState extends State<Web> {
             withJavascript: true,
             withLocalStorage: true,
             resizeToAvoidBottomInset: true,
+            allowFileURLs: true,
+            supportMultipleWindows: true,
+            clearCache: true,
+            clearCookies: true,
+            hidden: true,
+            initialChild: Container(
+              color: Colors.white,
+              child: const Center(
+                child: CircularProgressIndicator(
+                  semanticsLabel: 'Waitting....',
+                ),
+              ),
+            ),
           );
   }
 }

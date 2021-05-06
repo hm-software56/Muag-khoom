@@ -54,8 +54,9 @@ foreach ($models as $model) {
 
         <td>
             <?php
-            echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove" style="color: red;"></span>', '#', [
-                'onclick' => "
+            if(!Yii::$app->user->identity->branch_id) {
+                echo yii\helpers\Html::a('<span class="glyphicon glyphicon-remove" style="color: red;"></span>', '#', [
+                    'onclick' => "
                         $.ajax({
                        type     :'POST',
                        cache    : false,
@@ -65,7 +66,9 @@ foreach ($models as $model) {
                            document.getElementById('search').focus();
                        }
                        });return false;",
-            ]); ?>
+                ]);
+            }
+            ?>
         </td>
     </tr>
     <?php

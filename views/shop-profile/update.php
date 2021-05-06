@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="shop-profile-update">
 
-    <div class="line_bottom">ຂໍ້​ມູນ​ຂອງ​ຮ້ານ</div>
+    <div class="line_bottom">ຂໍ້ມູນຂອງຮ້ານ</div>
     <br/>
     <?=
     $this->render('_form', [

@@ -19,9 +19,9 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
     ?>
         <table class="table table-striped">
             <tr>
-                <th>ລາຍ​ການ</th>
-                <th>ຈຳ​ນວນ</th>
-                <th>ລາ​ຄາ</th>
+                <th>ລາຍການ</th>
+                <th>ຈຳນວນ</th>
+                <th>ລາຄາ</th>
             </tr>
             <?php
             $total_prince = 0;
@@ -46,32 +46,32 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
             }
 ?>
             <tr>
-                <td colspan="2" align="right">ລວມ​ຈຳ​ນວນ​ເງ​ີນ</td>
-                <td align="right">​<b><?= number_format($total_prince, 2) ?></b></td>
+                <td colspan="2" align="right">ລວມຈຳນວນເງີນ</td>
+                <td align="right"><b><?= number_format($total_prince, 2) ?></b></td>
             </tr>
 
             <tr>
-                <td colspan="2" align="right">ຈຳ​ນວນ​ເງ​ີນສ່ວນຫຼຸດ</td>
-                <td align="right">​<b><?= number_format(\Yii::$app->session['discount'], 2) ?></b></td>
+                <td colspan="2" align="right">ຈຳນວນເງີນສ່ວນຫຼຸດ</td>
+                <td align="right"><b><?= number_format(\Yii::$app->session['discount'], 2) ?></b></td>
             </tr>
             <tr>
                 <td colspan="2" align="right">
-                    <?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ') . "(" . Yii::t('app', 'LAK') . ")" ?></td>
-                <td align="right">​<b><?= number_format($multi_currency_pay->amount_kip, 2) ?></b></td>
+                    <?= Yii::t('app', 'ຈຳນວນເງີນຈ່າຍ') . "(" . Yii::t('app', 'LAK') . ")" ?></td>
+                <td align="right"><b><?= number_format($multi_currency_pay->amount_kip, 2) ?></b></td>
             </tr>
             <tr>
                 <td colspan="2" align="right">
-                    <?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ') . "(" . Yii::t('app', 'TH') . ")" ?></td>
-                <td align="right">​<b><?= number_format($multi_currency_pay->amount_th, 2) ?></b></td>
+                    <?= Yii::t('app', 'ຈຳນວນເງີນຈ່າຍ') . "(" . Yii::t('app', 'TH') . ")" ?></td>
+                <td align="right"><b><?= number_format($multi_currency_pay->amount_th, 2) ?></b></td>
             </tr>
             <tr>
                 <td colspan="2" align="right">
-                    <?= Yii::t('app', '​ຈຳ​ນວນ​ເງ​ີນຈ່າຍ') . "(" . Yii::t('app', 'USD') . ")" ?></td>
-                <td align="right">​<b><?= number_format($multi_currency_pay->amount_usd, 2) ?></b></td>
+                    <?= Yii::t('app', 'ຈຳນວນເງີນຈ່າຍ') . "(" . Yii::t('app', 'USD') . ")" ?></td>
+                <td align="right"><b><?= number_format($multi_currency_pay->amount_usd, 2) ?></b></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">ຈ​ຳ​ນວນ​​ເງີນທອນ</td>
-                <td align="right">​<b>
+                <td colspan="2" align="right">ຈຳນວນເງີນທອນ</td>
+                <td align="right"><b>
                         <?php
                         if (\Yii::$app->session['paychange'] > 0) {
                             $return_pay = \Yii::$app->session['paychange'] + (Yii::$app->session['currency']->round_exch);
@@ -102,7 +102,7 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
                     'id' => 'print',
                     'btnClass' => 'btn bg-red',
                     'btnId' => 'btnPrintThis',
-                    'btnText' => 'ພີມ​ໃບ​ບີນ',
+                    'btnText' => 'ພີມໃບບີນ',
                     'btnIcon' => 'glyphicon glyphicon-print'
                 ],
                 'options' => [
@@ -121,7 +121,7 @@ if (\Yii::$app->session['width_screen'] > Yii::$app->params['width_disable'] and
         </div>
         <div class="col-md-6 col-xs-6 " align="right">
             <?php
-            echo yii\helpers\Html::a('ສັ່ງ​ຊື້​ຕໍ່ <span class="glyphicon glyphicon-forward"></span>', '#', [
+            echo yii\helpers\Html::a('ສັ່ງຊື້ຕໍ່ <span class="glyphicon glyphicon-forward"></span>', '#', [
                 'onclick' => "
                         $.ajax({
                        type     :'POST',
