@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/pos': (context) => pos(),
       },*/
-      home:Print(data)
+      home:Pos()
     );
   }
 }

@@ -20,28 +20,34 @@ class ApiProductController extends \yii\web\Controller
     public function actionSale()
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        if (isset($_GET['cid'])) {
-            if (!empty($_GET['cid'])) {
-                if (Yii::$app->user->identity->branch_id) {
+        if (\Yii::$app->request->post('keyword')) {
+                if (\Yii::$app->request->post('branch_id')) {
                     $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
-                        ->where(['status' => 1, 'category_id' => $_GET['cid'], 'branch_id' => Yii::$app->user->identity->branch_id])
+                        ->where(['status' => 1,'branch_id' => \Yii::$app->request->post('branch_id')])
+                        ->andWhere(['Like','name',\Yii::$app->request->post('keyword')])
                         ->orderBy('id ASC')
                         ->limit(60)->all();
                 } else {
-                    $model = Products::find()->where(['status' => 1, 'category_id' => $_GET['cid']])->orderBy('id ASC')->all();
+                    $model = Products::find()->where(['status' => 1])->andWhere(['Like','name',\Yii::$app->request->post('keyword')])->orderBy('id ASC')->all();
                 }
-            } else {
-                if (Yii::$app->user->identity->branch_id) {
-                    $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
-                        ->where(['status' => 1, 'branch_id' => Yii::$app->user->identity->branch_id])
-                        ->orderBy('id ASC')
-                        ->limit(60)->all();
-                } else {
-                    $model = Products::find()->where(['status' => 1])->orderBy('id ASC')->limit(5)->all();
-                }
-            }
             return $model;
+        }elseif (\Yii::$app->request->post('barcode')) {
+        if (\Yii::$app->request->post('branch_id')) {
+            $model = Products::find()
+                ->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
+                ->innerJoin('barcode', 'products.id=barcode.products_id')
+                ->where(['products.status' => 1,'branch_id' => \Yii::$app->request->post('branch_id')])
+                ->andWhere(['like','barcode',\Yii::$app->request->post('barcode')])
+                ->orderBy('id ASC')
+                ->limit(60)->all();
         } else {
+            $model = Products::find()->innerJoin('barcode', 'products.id=barcode.products_id')
+            ->where(['products.status' => 1])
+                ->andWhere(['like','barcode',\Yii::$app->request->post('barcode')])
+                ->orderBy('id ASC')->all();
+        }
+        return $model;
+    } else {
             if (\Yii::$app->request->post('branch_id')) {
                 $model = Products::find()->innerJoin('warehouse_branch', 'products.id=warehouse_branch.products_id')
                     ->where(['status' => 1, 'branch_id' => \Yii::$app->request->post('branch_id')])
@@ -49,8 +55,8 @@ class ApiProductController extends \yii\web\Controller
                     ->limit(60)->all();
             } else {
                 $model = Products::find()->where(['status' => 1])
-                    ->orderBy(new Expression('rand()'))
-                    ->limit(60)->all();
+                    //->orderBy(new Expression('rand()'))
+                    ->limit(8)->all();
             }
             return $model;
         }
