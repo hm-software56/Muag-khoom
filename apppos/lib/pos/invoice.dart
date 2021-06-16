@@ -30,86 +30,48 @@ class _InvoiceState extends State<Invoice> {
   _InvoiceState(this.added_items, this.discount, this.price_total,
       this.loginData, this.data_validate, this.invoiceData);
 
-  Future<void> Testprint() async {
-    final profile = await CapabilityProfile.load();
-    final generator = Generator(PaperSize.mm80, profile);
-    List<int> bytes = [];
-    bytes += generator.text('Bold text', styles: PosStyles(bold: true));
-    bytes += generator.text('Reverse text', styles: PosStyles(reverse: true));
-    bytes += generator.text('Underlined text',
-        styles: PosStyles(underline: true), linesAfter: 1);
-    bytes +=
-        generator.text('Align left', styles: PosStyles(align: PosAlign.left));
-    bytes += generator.text('Align center',
-        styles: PosStyles(align: PosAlign.center));
-    bytes += generator.text('Align right',
-        styles: PosStyles(align: PosAlign.right), linesAfter: 1);
-
-    bytes += generator.row([
-      PosColumn(
-        text: 'col3',
-        width: 3,
-        styles: PosStyles(align: PosAlign.center, underline: true),
-      ),
-      PosColumn(
-        text: 'col6',
-        width: 6,
-        styles: PosStyles(align: PosAlign.center, underline: true),
-      ),
-      PosColumn(
-        text: 'col3',
-        width: 3,
-        styles: PosStyles(align: PosAlign.center, underline: true),
-      ),
-    ]);
-
-    bytes += generator.text('Text size 200%',
-        styles: PosStyles(
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
-        ));
-    bytes += generator.feed(2);
-    bytes += generator.cut();
-    return bytes;
+  void Donepaid() {
+    Alert(Icons.done, Colors.white, 'ສໍາເລັດການຈ່າຍເງີນແລ້ວ.!', Colors.green,
+        2500);
   }
 
+/*======== Alert msg ==============*/
+  void Alert(
+      IconData icon, Color iconcolor, var msg, Color bgcolor, int timeshow) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Row(
+        children: <Widget>[
+          Icon(
+            icon,
+            color: iconcolor,
+          ),
+          Text(
+            msg,
+            style: TextStyle(fontFamily: 'Phetsarath OT'),
+          ),
+        ],
+      ),
+      backgroundColor: bgcolor,
+      duration: Duration(milliseconds: timeshow),
+    ));
+  }
+GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
+  void initState() {
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
+    //Donepaid();
     return Scaffold(
-        drawer: drawer,
+      //key: _scaffoldKey,
+        drawer: Menu(loginData),
         appBar: new AppBar(
           title: const Text(
             'ໃບຮັບເງີນ',
             style: TextStyle(fontFamily: 'Phetsarath OT'),
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.shopping_cart),
-              tooltip: 'View Orders',
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute<void>(
-                  builder: (BuildContext context) {
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: const Text('Next page'),
-                      ),
-                      body: const Center(
-                        child: Text(
-                          'This is the next page',
-                          style: TextStyle(fontSize: 24),
-                        ),
-                      ),
-                    );
-                  },
-                ));
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.logout),
-              tooltip: 'Logout',
-              onPressed: () {},
-            ),
-          ],
         ),
         body: Container(
           child: Padding(
@@ -224,7 +186,6 @@ class _InvoiceState extends State<Invoice> {
                           color: Colors.blue,
                           label: const Text('ພີມໃບບີນ'),
                           onPressed: () {
-                            Testprint();
                           },
                         ),
                       ),
