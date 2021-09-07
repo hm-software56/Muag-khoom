@@ -582,7 +582,7 @@ class _PosState extends State<Pos> {
                                                     '${ip}/images/thume/${item['image']}',
                                                 fit: BoxFit.cover,
                                                 placeholder: (context, url) =>
-                                                    CircularProgressIndicator(),
+                                                    Center(child: CircularProgressIndicator()),
                                                 errorWidget:
                                                     (context, url, error) =>
                                                         Icon(Icons.error),

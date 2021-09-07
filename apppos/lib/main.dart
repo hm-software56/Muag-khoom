@@ -1,6 +1,8 @@
 // main.dart
+import 'package:apppos/aa.dart';
 import 'package:apppos/login/screen.dart';
 import 'package:apppos/pos/pos.dart';
+import 'package:apppos/pp.dart';
 import 'package:apppos/test_print.dart';
 import 'package:apppos/webview/web.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +11,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
    final List<Map<String, dynamic>> data = [
     {
-      'title': 'Produk 1',
+      'title': 'ໂອອີຊີ',
       'price': 10000,
       'qty': 2,
       'total_price': 20000,
     },
-    {
+    /*{
       'title': 'Produk 2',
       'price': 20000,
       'qty': 2,
@@ -25,17 +27,18 @@ class MyApp extends StatelessWidget {
       'price': 12000,
       'qty': 1,
       'total_price': 12000,
-    },
+    },*/
   ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       title: 'POS',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         accentColor: Colors.orange,
         cursorColor: Colors.orange,
+        
         textTheme: TextTheme(
           headline3: TextStyle(
             fontFamily: 'Phetsarath OT',
@@ -53,7 +56,9 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/pos': (context) => pos(),
       },*/
-      home:Pos()
+      //home:Print(data)
+      home:Pos(),
+      
     );
   }
 }

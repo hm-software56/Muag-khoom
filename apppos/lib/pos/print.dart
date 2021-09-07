@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'dart:ui';
-import 'package:charset_converter/charset_converter.dart';
 import 'package:flutter/material.dart' hide Image;
 import 'package:esc_pos_bluetooth/esc_pos_bluetooth.dart';
 import 'package:esc_pos_utils/esc_pos_utils.dart';
@@ -11,14 +9,13 @@ import 'dart:io' show Platform;
 import 'package:image/image.dart';
 
 class Print extends StatefulWidget {
-  final List<Map<String, dynamic>> data;
+  var data;
   Print(this.data);
   @override
   _PrintState createState() => _PrintState();
 }
 
 class _PrintState extends State<Print> {
-
   PrinterBluetoothManager _printerManager = PrinterBluetoothManager();
   List<PrinterBluetooth> _devices = [];
   String _devicesMsg;
@@ -27,6 +24,7 @@ class _PrintState extends State<Print> {
   @override
   void initState() {
     if (Platform.isAndroid) {
+      print('xxxxxxxxxxxxxxxxxxxxxx');
       bluetoothManager.state.listen((val) {
         print('state = $val');
         if (!mounted) return;
@@ -70,7 +68,8 @@ class _PrintState extends State<Print> {
   }
 
   void initPrinter() {
-    _printerManager.startScan(Duration(seconds: 5));
+    _printerManager.startScan(Duration(seconds: 16));
+    print('xxxxxxxxxx');
     _printerManager.scanResults.listen((val) {
       if (!mounted) return;
       setState(() => _devices = val);
@@ -80,7 +79,8 @@ class _PrintState extends State<Print> {
 
   Future<void> _startPrint(PrinterBluetooth printer) async {
     _printerManager.selectPrinter(printer);
-    final result = await _printerManager.printTicket(await _ticket(PaperSize.mm80));
+    final result =
+        await _printerManager.printTicket(await _ticket(PaperSize.mm80));
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
@@ -100,37 +100,39 @@ class _PrintState extends State<Print> {
     ticket.image(image);*/
     ticket.text(
       'TOKO KU',
-      styles: PosStyles(align: PosAlign.center,height: PosTextSize.size2,width: PosTextSize.size2),
+      styles: PosStyles(
+          align: PosAlign.center,
+          height: PosTextSize.size2,
+          width: PosTextSize.size2),
       linesAfter: 1,
     );
 
-    for (var i = 0; i < widget.data.length; i++) {
-      total += widget.data[i]['total_price'];
-      final data = widget.data[i]['title'];
-    String source = widget.data[i]['title'];
+    for (var items in widget.data) {
+      total += int.parse(items['price']);
+      //ticket.textEncoded(items['name']);
 
-List<int> list = utf8.encode(source);
-Uint8List bytes = Uint8List.fromList(list);
-Uint8List encThai = await CharsetConverter.encode(
-    'utf8', source);
-      ticket.textEncoded(encThai, styles:PosStyles(codeTable: PosCodeTable.wpc1257));
+      //ticket.row([PosColumn(textEncoded: utf8.encode(items['name']))]);
+      String foo = 'BBBBBcc,ກກກກCC';
+      List<int> list = utf8.encode(foo);
+      Uint8List bytes = Uint8List.fromList(list);
+
+      ticket.textEncoded(bytes,styles: PosStyles(codeTable: PosCodeTable.pc864_2,));
+      //ticket.text(foo,styles: PosStyles(codeTable: PosCodeTable.wp1256));
       ticket.row([
-        PosColumn(
-            text: '${widget.data[i]['price']} x ${widget.data[i]['qty']}',
-            width: 6),
-        PosColumn(text: 'Rp ${widget.data[i]['total_price']}', width: 6),
+        PosColumn(text: '${items['price']} x ${items['qautity']}', width: 6),
+        PosColumn(text: 'Rp ${items['price']}', width: 6),
       ]);
     }
-    
+
     ticket.feed(1);
     ticket.row([
       PosColumn(text: 'Total', width: 6, styles: PosStyles(bold: true)),
       PosColumn(text: 'Rp $total', width: 6, styles: PosStyles(bold: true)),
     ]);
-    //ticket.feed(2);
-    //ticket.text('Thank You',styles: PosStyles(align: PosAlign.center, bold: true));
+    ticket.feed(2);
+    ticket.text('Thank You',
+        styles: PosStyles(align: PosAlign.center, bold: true));
     ticket.cut();
-
     return ticket;
   }
 
@@ -139,5 +141,4 @@ Uint8List encThai = await CharsetConverter.encode(
     _printerManager.stopScan();
     super.dispose();
   }
-
 }

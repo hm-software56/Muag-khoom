@@ -2,6 +2,7 @@
     package="com.example.apppos">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
+        android:requestLegacyExternalStorage="true"
         android:label="apppos"
         android:usesCleartextTraffic="true" 
         android:icon="@mipmap/ic_launcher">

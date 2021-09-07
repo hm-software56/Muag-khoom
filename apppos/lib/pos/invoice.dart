@@ -1,9 +1,17 @@
+import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 import 'package:apppos/pos/menu.dart';
 import 'package:apppos/pos/pos.dart';
+import 'package:apppos/pos/print.dart';
+import 'package:charset_converter/charset_converter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:esc_pos_utils/esc_pos_utils.dart';
+
+//import 'package:network_pos_printer/network_pos_printer.dart';
+import 'package:esc_pos_printer/esc_pos_printer.dart';
 import 'package:esc_pos_utils/esc_pos_utils.dart';
 
 class Invoice extends StatefulWidget {
@@ -55,7 +63,122 @@ class _InvoiceState extends State<Invoice> {
       duration: Duration(milliseconds: timeshow),
     ));
   }
-GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  Print(var added_items, var invoiceData, var data_validate, var price_total,
+      var discount) async {
+    final PrinterNetworkManager printerManager = PrinterNetworkManager();
+    printerManager.selectPrinter('192.168.100.70', port: 9100);
+    final PosPrintResult res = await printerManager.printTicket(
+        await PrintRecived(
+            added_items, invoiceData, data_validate, price_total, discount));
+    print('Print result: ${res.msg}');
+  }
+
+  Future<Ticket> PrintRecived(var added_items, var invoiceData,
+      var data_validate, var price_total, var discount) async {
+    final Ticket ticket = Ticket(PaperSize.mm80);
+    ticket.text('Received',
+        styles: PosStyles(
+          align: PosAlign.center,
+          height: PosTextSize.size2,
+          width: PosTextSize.size2,
+        ));
+    ticket.text('No.:${invoiceData['code']}',
+        styles: PosStyles(align: PosAlign.right), linesAfter: 1);
+    for (var item in added_items) {
+      var price=NumberFormat.currency(locale: 'eu', symbol: 'Kip').format(int.parse(item['price']));
+      ticket.row([
+        PosColumn(
+          textEncoded:
+              await CharsetConverter.encode("windows1252", item['name']),
+          width: 6,
+          containsChinese: false,
+          styles: PosStyles(
+              align: PosAlign.center, codeTable: PosCodeTable.wpc1252_1),
+        ),
+        PosColumn(
+          text: '${item['qautity']}',
+          width: 3,
+          styles: PosStyles(align: PosAlign.center),
+        ),
+        PosColumn(
+          text: '${price}',
+          width: 3,
+          styles: PosStyles(align: PosAlign.center),
+        ),
+      ]);
+    }
+    ticket.emptyLines(0);
+    ticket.row([
+      PosColumn(
+        text: 'Discount',
+        width: 9,
+        styles: PosStyles(align: PosAlign.right,reverse: true),
+      ),
+      PosColumn(
+        text: '${NumberFormat.currency(locale: 'eu', symbol: 'LAK').format(discount)}',
+        width: 3,
+        styles: PosStyles(align: PosAlign.right),
+      ),
+    ]);
+    var total=price_total - discount;
+    ticket.row([
+      PosColumn(
+        text: 'Total',
+        width: 9,
+        styles: PosStyles(align: PosAlign.right,reverse: true),
+      ),
+      PosColumn(
+        text: '${NumberFormat.currency(locale: 'eu', symbol: 'LAK').format(total)}',
+        width: 3,
+        styles: PosStyles(align: PosAlign.right),
+      ),
+    ]);
+    ticket.emptyLines(1);
+    ticket.row([
+      PosColumn(
+        text: 'Pay (LAK)',
+        width: 9,
+        styles: PosStyles(align: PosAlign.left),
+      ),
+      PosColumn(
+        text: '${NumberFormat.currency(locale: 'eu', symbol: 'LAK').format(data_validate['pay_lak']==null?0:data_validate['pay_lak'])}',
+        width: 3,
+        styles: PosStyles(align: PosAlign.right),
+      ),
+    ]);
+    ticket.row([
+      PosColumn(
+        text: 'Pay (TH)',
+        width: 9,
+        styles: PosStyles(align: PosAlign.left),
+      ),
+      PosColumn(
+        text: '${NumberFormat.currency(locale: 'eu', symbol: 'BATH').format(data_validate['pay_th']==null?0:data_validate['pay_th'])}',
+        width: 3,
+        styles: PosStyles(align: PosAlign.right),
+      ),
+    ]);
+    ticket.row([
+      PosColumn(
+        text: 'Pay (USD)',
+        width: 9,
+        styles: PosStyles(align: PosAlign.left),
+      ),
+      PosColumn(
+        text: '${NumberFormat.currency(locale: 'eu', symbol: 'USD').format(data_validate['pay_usd']==null?0:data_validate['pay_usd'])}',
+        width: 3,
+        styles: PosStyles(align: PosAlign.right),
+      ),
+    ]);
+    final List<int> barData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 4];
+    ticket.barcode(Barcode.upcA(barData));
+    ticket.feed(2);
+    ticket.cut();
+    return ticket;
+  }
+
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -63,9 +186,10 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   }
 
   Widget build(BuildContext context) {
+    print(added_items);
     //Donepaid();
     return Scaffold(
-      //key: _scaffoldKey,
+        //key: _scaffoldKey,
         drawer: Menu(loginData),
         appBar: new AppBar(
           title: const Text(
@@ -186,6 +310,10 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
                           color: Colors.blue,
                           label: const Text('ພີມໃບບີນ'),
                           onPressed: () {
+                            Print(added_items, invoiceData, data_validate,
+                                price_total, discount);
+
+                            // testTicket();
                           },
                         ),
                       ),
